@@ -3,7 +3,7 @@
  * 同步PlayRevenue
  * $start开始日期、$end结束日期、$step日期间隔
  */
-$start = '20161101';
+$start = '20161201';
 $end = date('Ymd');
 $step = 5;
 $i = 0;
