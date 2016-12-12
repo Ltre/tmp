@@ -1,0 +1,2 @@
+根据VID列表，导出时间段内每日的播放量
+vids-range-dayplay.php文件必须保存为GB2312编码

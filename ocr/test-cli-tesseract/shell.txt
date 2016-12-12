@@ -1,0 +1,1 @@
+tesseract img/mhzs.jpg 'your_base_output_filename' -l chi_sim eng
