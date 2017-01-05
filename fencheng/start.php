@@ -14,9 +14,9 @@ function rmdir_force($dir){
     @rmdir($dir);
 }
 
-//选择任务所用的php文件，通过如下命令传入参数：php start.php "fencheng.php"
+//选择任务所用的php文件，通过如下命令传入参数：php start.php "fencheng-lite.php"
 $phpFile = $_SERVER['argv'][1];
-if (! in_array($phpFile, array('fencheng.php', 'fencheng-calcmore.php'))) die('argv[1] for $phpFile is error!');
+if (! in_array($phpFile, array('fencheng-lite.php', 'fencheng.php', 'fencheng-calcmore.php'))) die('argv[1] for $phpFile is error!');
 
 $pieceLen = 20;//每个任务计算的UID个数
 $uidsFile = 'uids.txt';

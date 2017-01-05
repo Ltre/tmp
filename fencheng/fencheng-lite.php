@@ -56,11 +56,11 @@ class fengcheng{
     
     public function __construct(){
         @mkdir("data/upload_uid", 0777, true);
-        @mkdir("data/video_uid", 0777, true);
+        //@mkdir("data/video_uid", 0777, true);
         file_put_contents("data/upload_uid/total.csv", implode(',', array_keys($this->uidVVDefault))."\r\n");
-        file_put_contents("data/video_uid/total.csv",  implode(',', array_keys($this->uidVVDefault))."\r\n");
+        //file_put_contents("data/video_uid/total.csv",  implode(',', array_keys($this->uidVVDefault))."\r\n");
         file_put_contents("data/upload_uid/ad-total.csv", implode(',', array_keys($this->uidAdVVDefault))."\r\n");
-        file_put_contents("data/video_uid/ad-total.csv",  implode(',', array_keys($this->uidAdVVDefault))."\r\n");
+        //file_put_contents("data/video_uid/ad-total.csv",  implode(',', array_keys($this->uidAdVVDefault))."\r\n");
     }
     
     public function calc(array $uids){
@@ -82,7 +82,7 @@ class fengcheng{
         $json = json_decode($ret, true);
                 
         $this->calcVVByUid($uid, $json, 'upload_uid');
-        $this->calcVVByUid($uid, $json, 'video_uid');
+        //$this->calcVVByUid($uid, $json, 'video_uid');
     }
     
     protected function calcVVByUid($uid, $json, $uidFlag='upload_uid'){
