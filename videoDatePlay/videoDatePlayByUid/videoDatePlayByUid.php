@@ -10,7 +10,6 @@ $start = '20170101';
 $end = '20170131';//若不限制，则设置为空串
 $gap = (strtotime($end ?: date('Ymd')) - strtotime($start ?: date('Ymd'))) / 86400 + 1;//日期总间隔
 $step = intval($yourStep ?: floor($gap > $processNum ? $gap / $processNum : 1));
-var_dump($step);
 $dir = 'phpcache';
 $uids = array(
     '9604747',
@@ -45,5 +44,5 @@ for ($date = $start; $date <= $end; ) {
     file_put_contents("{$dir}/{$execFile}", "start php {$currPhp}\r\n", FILE_APPEND);
     $date = date('Ymd', strtotime("{$date} +{$step} day"));
 }
-//exec("start /D {$dir} {$execFile}");
+exec("start /D {$dir} {$execFile}");
 //4216,5228,5356
