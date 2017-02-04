@@ -41,8 +41,8 @@ for ($date = $start; $date <= ($end > date('Ymd') ? date('Ymd') : $end); ) {
         }";
     $currPhp = "process_{$date}.php";
     file_put_contents("{$dir}/{$currPhp}", $c);
-    file_put_contents("{$dir}/{$execFile}", "start php {$currPhp}\r\n", FILE_APPEND);
+    file_put_contents("{$dir}/{$execFile}", "start \"TASK: {$date} TO {$dateTo}\" php {$currPhp}\r\n", FILE_APPEND);
     $date = date('Ymd', strtotime("{$date} +{$step} day"));
 }
-exec("start /D {$dir} {$execFile}");
+//exec("start /D {$dir} {$execFile}");
 //4216,5228,5356
