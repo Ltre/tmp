@@ -1,5 +1,8 @@
 <?php
 mb_internal_encoding("GB2312");//本文件运行编码环境为简体中文
+date_default_timezone_set('PRC');
+ini_set("display_errors", "On");
+error_reporting(E_ALL & ~E_STRICT);
 
 function rmdir_force($dir){
     if (! is_dir($dir)) return;

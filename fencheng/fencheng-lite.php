@@ -3,12 +3,12 @@ date_default_timezone_set('PRC');
 ini_set("display_errors", "On");
 error_reporting(E_ALL & ~E_STRICT);
 /**
- * 声明：本脚本仅适用于四月开始的计算
+ * 声明：本脚本仅适用于2016四月开始的计算
  */
 mb_internal_encoding("GB2312");//本文件运行编码环境为简体中文
 
-define('START_TIME', 20161201);
-define('END_TIME', 20161231);
+define('START_TIME', 20170101);
+define('END_TIME', 20170131);
 define('GET_VIDS_URL', "http://v.huya.com/?r=test/GetVidByUid&calcMore=0&uid=");//获取vid和duration（不按分月取）
 define('GET_VV_URL', "http://playstats-manager.v.duowan.com/?r=api/getAdPlay&startTime=".START_TIME."&endTime=".END_TIME."&vid="); 
 
