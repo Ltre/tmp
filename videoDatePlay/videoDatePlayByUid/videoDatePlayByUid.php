@@ -3,7 +3,7 @@
  * 生成批量请求
  * $start开始日期、$end结束日期、$step日期分段长度
  */
-$processNum = 6;//控制总进程数(实际可能会多1或少1)
+$processNum = 5;//控制总进程数(实际可能会多1或少1)
 $yourStep = 0;//设置为0时，将采用根据start和end推算出的最佳间隔；设置大于0的整数时，$processNum将无效
 $i = 0;
 $start = '20170101';
@@ -44,5 +44,5 @@ for ($date = $start; $date <= ($end > date('Ymd') ? date('Ymd') : $end); ) {
     file_put_contents("{$dir}/{$execFile}", "start \"TASK: {$date} TO {$dateTo}\" php {$currPhp}\r\n", FILE_APPEND);
     $date = date('Ymd', strtotime("{$date} +{$step} day"));
 }
-//exec("start /D {$dir} {$execFile}");
+exec("start /D {$dir} {$execFile}");
 //4216,5228,5356
