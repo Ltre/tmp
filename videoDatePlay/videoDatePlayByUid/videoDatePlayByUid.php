@@ -25,21 +25,21 @@ $uids = array(
 @mkdir($dir, 0777);
 $execFile = "exec.bat";
 @unlink("{$dir}/{$execFile}");
-for ($date = $start; $date <= $end; ) {
-    $taskId = sha1(rand(0, 100000).'-'.$date);
-    //$end = date('Ymd', strtotime($date." +".($step-1)."days"));
-    if ($end >= date('Ymd')) $end = '';
+for ($date = $start; $date <= ($end > date('Ymd') ? date('Ymd') : $end); ) {
+    $dateTo = date('Ymd', strtotime($date." +".($step-1)." day"));
+    if ($dateTo > $end) $dateTo = $end;
     $whileBody = '';
     foreach ($uids as $uid) {
+        $taskId = sha1(rand(0, 100000).$date.$uid);
         $whileBody .= 
-            "\$r = file_get_contents('http://huya.cms.duowan.com/cron/SyncVideoDatePlay?yyuid={$uid}&start={$date}&end={$end}&taskId={$taskId}');
-            print_r(\$r)";
+            "\$r = file_get_contents('http://huya.cms.duowan.com/cron/SyncVideoDatePlay?yyuid={$uid}&start={$date}&end={$dateTo}&taskId={$taskId}');
+            print_r(\$r);\r\n";
     }
     $c = "<?php
             while(1) {
             {$whileBody}
         }";
-    $currPhp = "videodateplay{$date}.php";
+    $currPhp = "process_{$date}.php";
     file_put_contents("{$dir}/{$currPhp}", $c);
     file_put_contents("{$dir}/{$execFile}", "start php {$currPhp}\r\n", FILE_APPEND);
     $date = date('Ymd', strtotime("{$date} +{$step} day"));
