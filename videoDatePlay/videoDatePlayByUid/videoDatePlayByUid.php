@@ -6,8 +6,8 @@
 $processNum = 5;//控制总进程数(实际可能会多1或少1)
 $yourStep = 0;//设置为0时，将采用根据start和end推算出的最佳间隔；设置大于0的整数时，$processNum将无效
 $i = 0;
-$start = '20170101';
-$end = '20170131';//若不限制，则设置为空串
+$start = '20170201';
+$end = '20170228';//若不限制，则设置为空串
 $gap = (strtotime($end ?: date('Ymd')) - strtotime($start ?: date('Ymd'))) / 86400 + 1;//日期总间隔
 $step = intval($yourStep ?: floor($gap > $processNum ? $gap / $processNum : 1));
 $dir = 'phpcache';
