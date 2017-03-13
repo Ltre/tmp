@@ -1,0 +1,9 @@
+先拉取评论数据到本地保存
+http://zx.mbox.duowan.com/?r=cron/saveFBoxComment
+
+再读取本地数据，将数据发送到通用评论系统
+http://zx.mbox.duowan.com/?r=cron/syncPublicComment
+
+通用评论系统，本身也有定时任务，维护饭盒评论数据
+http://comment3.duowan.com/?r=import/upFboxNum
+
