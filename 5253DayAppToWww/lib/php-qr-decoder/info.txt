@@ -1,0 +1,1 @@
+http://git.oschina.net/capitalist/php-qr-decoder/tree/master/
