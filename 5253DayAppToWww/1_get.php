@@ -8,7 +8,7 @@ include 'lib/php-qr-decoder/lib/QrReader.php';
 file_put_contents('log', '');
 file_put_contents('export', '');//用于导出的数据
 
-$p = 5;//test
+$p = 1;//test
 
 while ($p >= 1) {
 //while ($p <= 56) {
@@ -27,7 +27,7 @@ while ($p >= 1) {
         $data['url'] = 'http://www.5253.com' . $objA->attr('href');
         $objImg = $objA->find('>img:first');
         $data['cover'] = $objImg->attr('src');
-        //$data['publishTime'] = $objE->find('>div.bottom>p.head>span:first')->text() . ' 00:00:00';
+        $data['publishTime'] = $objE->find('>div.bottom>p.head>span:first')->text() . ' 00:00:00';
         $data['title'] = $objE->find('>div.bottom>p.des>a:first')->text();
         $list[] = $data;
     });
