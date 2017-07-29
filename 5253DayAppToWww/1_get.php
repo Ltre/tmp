@@ -8,7 +8,7 @@ include 'lib/php-qr-decoder/lib/QrReader.php';
 file_put_contents('log', '');
 file_put_contents('export', '');//用于导出的数据
 
-$p = 56;//test
+$p = 55;//test  55 to 56
 
 //while ($p >= 1) {
 while ($p <= 56) {
