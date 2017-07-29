@@ -3,7 +3,7 @@
 include 'lib/phpQuery/phpQuery.php';
 include 'lib/php-qr-decoder/lib/QrReader.php';
 
-、、@$p = file_get_contents('p') ?: 56;
+//@$p = file_get_contents('p') ?: 56;
 @$p = file_get_contents('p') ?: 1;
 file_put_contents('log', '');
 file_put_contents('export', '');//用于导出的数据
