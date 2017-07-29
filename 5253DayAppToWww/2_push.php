@@ -17,12 +17,13 @@ function postArticleByBackend($vid, $channel, $title, $content, $tags, $other = 
     $http = new dwHttp();
     $ret = $http->post("http://61.147.186.105/api/postCmsArticle", $data, 30, "Host: huya.cms.duowan.com");
     $json = json_decode($ret, 1);
-    if (false === $ret || ! $json['rs']) {
-        file_put_contents('pushLog', 'VID='.$vid . '      '.print_r(array('vid'=>$vid, 'postData'=>$data, 'ret' =>$ret), 1)."\r\n", FILE_APPEND);
-    }
+    /* if (false === $ret || ! $json['rs']) {
+    } */
+    file_put_contents('pushLog', 'VID='.$vid . '      '.print_r(array('vid'=>$vid, 'postData'=>$data, 'ret' =>$ret), 1)."\r\n", FILE_APPEND);
     return $ret;
 }
 
+file_put_contents('pushLog', '');
 file_put_contents('list_to_update', '');//用于第三步的文件
 
 $fp = fopen('export', 'rb');
@@ -33,13 +34,13 @@ while (! feof($fp)) {
     if ($data) {
         $channel = 'ceshi';
         $tags = '2017新闻中心,2016新闻栏目,2017游戏要闻,2017原创视频,每日app,5253';
-        $ret = postArticleByBackend(0, $channel, $data['title'], $data['content'], $tags, array(
-            'digest' => $data['desc'],
+        $ret = postArticleByBackend('0', trim($channel), trim($data['title']), trim($data['content']), trim($tags), array(
+            'digest' => trim($data['desc']),
             'author' => '多玩原创视频团队',
             'source' => '多玩原创',
-            'coverUrl' => $data['cover'],
+            'coverUrl' => trim($data['cover']),
             'templateId' => '335802585657',//1608-专题栏目页
-            'userId' => '手游机器人',
+            'userId' => '每日APP机器人',
         ));
         var_dump($ret);
         echo '<br>';
@@ -49,8 +50,10 @@ while (! feof($fp)) {
         $articleId = $ret['postRet']['articleId'];
         print_r($ret);        
         if ($articleId) {
-            file_put_contents('list_to_update', json_encode(array('rawUrl' => $data['url'], 'artiUrl' => "http://cms.duowan.com/article/toEditArticlePage.do?articleId={$articleId}&channelId={$channel}", 'time' => $data['publishTime']), JSON_UNESCAPED_UNICODE).",\r\n", FILE_APPEND);
+            file_put_contents('list_to_update', json_encode(array('rawUrl' => $data['url'], 'artiUrl' => "http://cms.duowan.com/article/toEditArticlePage.do?articleId={$articleId}&channelId={$channel}", 'time' => $data['publishTime'], 'channel' => $channel, 'articleId' => $articleId), JSON_UNESCAPED_UNICODE).",\r\n", FILE_APPEND);
         }
     }
+    sleep(1);
+    echo "waiting...\r\n";
     //die;
 }

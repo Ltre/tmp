@@ -1,5 +1,6 @@
-//在cms.duowan.com域名下执行：
-//找到contentIframe的frame，加上ID abcdefghijklmn
+//鐢ㄤ簬鎵归噺鍒犻櫎鏂囩珷
+//鍦╟ms.duowan.com鍩熷悕涓嬫墽琛岋細
+//鎵惧埌contentIframe鐨刦rame锛屽姞涓奍D abcdefghijklmn
 
 var list = [
     {"rawUrl":"http:\/\/www.5253.com\/articles\/328489.html","artiUrl":"http:\/\/cms.duowan.com\/article\/toEditArticlePage.do?articleId=365283634889&channelId=ceshi","time":"2017-06-22 00:00:00","channel":"ceshi","articleId":"365283634889"},
@@ -24,9 +25,10 @@ function doit(o, cb){
     document.getElementById('abcdefghijklmn').setAttribute('src', o.artiUrl);
     setTimeout(function(){
         var win = window['abcdefghijklmn'].contentWindow;
-        var doc = window['abcdefghijklmn'].contentDocument;
-        doc.getElementById('newPublishTimeStr').value = o.time;
-        win.updatePublishTime();
+        var __bk = win.confirm;
+        win.confirm = function(msg){ return true; };
+        win.deleteArticle(o.channel, o.articleId);
+        win.confirm = __bk;
         setTimeout(function(){
             cb();
         }, 2000);
@@ -41,3 +43,4 @@ function cb(){
 
 i = 0;
 doit(list[i], cb);
+

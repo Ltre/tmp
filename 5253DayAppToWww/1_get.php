@@ -3,15 +3,15 @@
 include 'lib/phpQuery/phpQuery.php';
 include 'lib/php-qr-decoder/lib/QrReader.php';
 
-@$p = file_get_contents('p') ?: 56;
-//@$p = file_get_contents('p') ?: 1;
+、、@$p = file_get_contents('p') ?: 56;
+@$p = file_get_contents('p') ?: 1;
 file_put_contents('log', '');
 file_put_contents('export', '');//用于导出的数据
 
-$p = 1;//test
+$p = 56;//test
 
-while ($p >= 1) {
-//while ($p <= 56) {
+//while ($p >= 1) {
+while ($p <= 56) {
     echo "current page is : {$p} \r\n";
     file_put_contents('log', "current page is : {$p} \r\n", FILE_APPEND);
     
@@ -124,8 +124,8 @@ while ($p >= 1) {
     }
     file_put_contents('log', print_r($list, 1), FILE_APPEND);
 
-    $p --;
-    //$p ++;
+    //$p --;
+    $p ++;
     file_put_contents('p', $p);
 
     /* sleep(1);
@@ -137,5 +137,5 @@ while ($p >= 1) {
     sleep(1);
     echo "waiting.. 2\r\n";
     sleep(1);
-    echo "waiting.. 1\r\n"; */
+    echo "waiting.. 1\r\n";*/
 }
