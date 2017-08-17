@@ -1,0 +1,4 @@
+http://tu.baidu.com/n/pc_search?queryImageUrl=http%3A%2F%2Fs1.dwstatic.com%2Fauthor-grab%2F20170802%2F11%2F4511577.jpeg&fm=result_camera&uptype=paste&drag=1
+
+if $('#guessInfo > div.guess-info-text').text() 含有 “对该图片的最佳猜测”
+则获取$('#guessInfo > div.guess-info-text > a').text()
