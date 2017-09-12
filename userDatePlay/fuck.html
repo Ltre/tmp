@@ -3,8 +3,8 @@
     function getData(cb){
         $.get('http://grab-v.duowan.com/test/UpdateToFBox?cache=update', cb, 'jsonp');    
     }
-    function cb(){
-        $('body').append("<span>" + JSON.stringify(j) + "<span>");
+    function cb(j){
+        $('body').append("<pre>" + JSON.stringify(j) + "<pre>");
         getData(cb);
     }
     getData(cb);
