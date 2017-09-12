@@ -1,0 +1,11 @@
+<script src="http://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+<script>
+    function getData(cb){
+        $.get('http://grab-v.duowan.com/test/UpdateToFBox?cache=update', cb, 'jsonp');    
+    }
+    function cb(){
+        $('body').append("<span>" + JSON.stringify(j) + "<span>");
+        getData(cb);
+    }
+    getData(cb);
+</script>
