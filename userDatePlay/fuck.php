@@ -9,20 +9,20 @@ class dwHttp {
 	protected $way='';
 
 	public function __construct($way=''){	
-		if(in_array($way,array('curl','socket','file_get_contents'))){ //Èç¹ûÖ¸¶¨·ÃÎÊ·½Ê½£¬Ôò°´Ö¸¶¨µÄ·½Ê½È¥·ÃÎÊ
+		if(in_array($way,array('curl','socket','file_get_contents'))){ //å¦‚æœæŒ‡å®šè®¿é—®æ–¹å¼ï¼Œåˆ™æŒ‰æŒ‡å®šçš„æ–¹å¼å»è®¿é—®
 			$this->way=$way;	
-		}elseif(function_exists('curl_init')){ //curl·½Ê½
+		}elseif(function_exists('curl_init')){ //curlæ–¹å¼
 			$this->way='curl';
 		}else if(function_exists('fsockopen')){ //socket
 			$this->way='socket';
-		}else if(function_exists('file_get_contents')){ //phpÏµÍ³º¯Êıfile_get_contents
+		}else if(function_exists('file_get_contents')){ //phpç³»ç»Ÿå‡½æ•°file_get_contents
 			$this->way='file_get_contents';
 		}else{
 			$this->way='';
 		}	
 	}
 	
-	//Í¨¹ıget·½Ê½»ñÈ¡Êı¾İ
+	//é€šè¿‡getæ–¹å¼è·å–æ•°æ®
 	public function get($url, $timeout=5, $header="") {	
 		if(empty($url)||empty($timeout)) return false;
 		if(!preg_match('/^(http|https)/is',$url)) $url="http://".$url;
@@ -35,7 +35,7 @@ class dwHttp {
 		}
 	}
 	
-	//Í¨¹ıPOST·½Ê½·¢ËÍÊı¾İ
+	//é€šè¿‡POSTæ–¹å¼å‘é€æ•°æ®
 	public function post($url, $post_data=array(), $timeout=5, $header="") {
 		if(empty($url)||empty($timeout)) return false;
 		if(!preg_match('/^(http|https)/is',$url)) $url="http://".$url;
@@ -48,7 +48,7 @@ class dwHttp {
 		}
 	}	
 	
-	//·¢ËÍÎÄ¼ş
+	//å‘é€æ–‡ä»¶
 	public function postFile($url, $post_data=array(), $timeout=30, $cookie=''){
 		$c = curl_init(); 
 		curl_setopt($c, CURLOPT_RETURNTRANSFER, true); 
@@ -64,7 +64,7 @@ class dwHttp {
 		return $data;	
 	}
 	
-	//Í¨¹ıcurl getÊı¾İ
+	//é€šè¿‡curl getæ•°æ®
 	protected function curlGet($url, $timeout=5, $header="") {
 		$header = empty($header) ? $this->defaultHeader() : $header;
 		$ch = curl_init();
@@ -75,13 +75,13 @@ class dwHttp {
 		curl_setopt($ch, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($ch, CURLOPT_MAXREDIRS, 3);
-		curl_setopt($ch, CURLOPT_HTTPHEADER, explode("\r\n", $header));//Ä£ÄâµÄheaderÍ·
+		curl_setopt($ch, CURLOPT_HTTPHEADER, explode("\r\n", $header));//æ¨¡æ‹Ÿçš„headerå¤´
 		$result = curl_exec($ch);
 		curl_close($ch);
 		return $result;
 	}
 	
-	//Í¨¹ıcurl postÊı¾İ
+	//é€šè¿‡curl postæ•°æ®
 	protected function curlPost($url, $post_data='', $timeout=5, $header="") {
 		$header = empty($header) ? $this->defaultHeader() : $header;
 		$post_string = is_array($post_data) ? http_build_query($post_data) : $post_data;  
@@ -95,13 +95,13 @@ class dwHttp {
 		curl_setopt($ch, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($ch, CURLOPT_MAXREDIRS, 3);        
-		curl_setopt($ch, CURLOPT_HTTPHEADER, explode("\r\n", $header));//Ä£ÄâµÄheaderÍ·
+		curl_setopt($ch, CURLOPT_HTTPHEADER, explode("\r\n", $header));//æ¨¡æ‹Ÿçš„headerå¤´
 		$result = curl_exec($ch);
 		curl_close($ch);
 		return $result;
 	}
 	
-	//Í¨¹ısocket getÊı¾İ
+	//é€šè¿‡socket getæ•°æ®
 	protected function socketGet($url,$timeout=5,$header="") {
 		$header = empty($header) ? $this->defaultHeader() : $header;
 		$url2 = parse_url($url);
@@ -130,7 +130,7 @@ class dwHttp {
 		return $this->GetHttpContent($fsock);
 	}
 	
-	//Í¨¹ısocket postÊı¾İ
+	//é€šè¿‡socket postæ•°æ®
 	protected function socketPost($url, $post_data='', $timeout=5, $header="") {
 		$header = empty($header) ? $this->defaultHeader() : $header;
 		$post_string = is_array($post_data) ? http_build_query($post_data) : $post_data;  
@@ -139,7 +139,7 @@ class dwHttp {
 		$url2["path"] = ($url2["path"] == "" ? "/" : $url2["path"]);
 		$url2["port"] = ($url2["port"] == "" ? 80 : $url2["port"]);
 		$host_ip = @gethostbyname($url2["host"]);
-		$fsock_timeout = $timeout; //³¬Ê±Ê±¼ä
+		$fsock_timeout = $timeout; //è¶…æ—¶æ—¶é—´
 		if(($fsock = fsockopen($host_ip, $url2['port'], $errno, $errstr, $fsock_timeout)) < 0){
 			return false;
 		}
@@ -159,30 +159,30 @@ class dwHttp {
 		return $this->GetHttpContent($fsock);
 	}
 
-	//Í¨¹ıfile_get_contentsº¯ÊıgetÊı¾İ
+	//é€šè¿‡file_get_contentså‡½æ•°getæ•°æ®
 	protected function phpGet($url,$timeout=5, $header="") {
 		$header = empty($header) ? $this->defaultHeader() : $header;
 		$opts = array( 
 				'http'=>array(
-							'protocol_version'=>'1.0', //httpĞ­Òé°æ±¾(Èô²»Ö¸¶¨php5.2ÏµÄ¬ÈÏÎªhttp1.0)
-							'method'=>"GET",//»ñÈ¡·½Ê½
-							'timeout' => $timeout ,//³¬Ê±Ê±¼ä
+							'protocol_version'=>'1.0', //httpåè®®ç‰ˆæœ¬(è‹¥ä¸æŒ‡å®šphp5.2ç³»é»˜è®¤ä¸ºhttp1.0)
+							'method'=>"GET",//è·å–æ–¹å¼
+							'timeout' => $timeout ,//è¶…æ—¶æ—¶é—´
 							'header'=> $header)
 				  ); 
 		$context = stream_context_create($opts);    
 		return  @file_get_contents($url,false,$context);
 	}
 	
-	//Í¨¹ıfile_get_contents º¯ÊıpostÊı¾İ
+	//é€šè¿‡file_get_contents å‡½æ•°postæ•°æ®
 	protected function phpPost($url, $post_data=array(), $timeout=5, $header="") {
 		$header = empty($header) ? $this->defaultHeader() : $header;
 		$post_string = is_array($post_data) ? http_build_query($post_data) : $post_data;   
 		$header.="Content-length: ".strlen($post_string);
 		$opts = array( 
 				'http'=>array(
-							'protocol_version'=>'1.0',//httpĞ­Òé°æ±¾(Èô²»Ö¸¶¨php5.2ÏµÄ¬ÈÏÎªhttp1.0)
-							'method'=>"POST",//»ñÈ¡·½Ê½
-							'timeout' => $timeout ,//³¬Ê±Ê±¼ä 
+							'protocol_version'=>'1.0',//httpåè®®ç‰ˆæœ¬(è‹¥ä¸æŒ‡å®šphp5.2ç³»é»˜è®¤ä¸ºhttp1.0)
+							'method'=>"POST",//è·å–æ–¹å¼
+							'timeout' => $timeout ,//è¶…æ—¶æ—¶é—´ 
 							'header'=> $header,  
 							'content'=> $post_string)
 				  ); 
@@ -190,7 +190,7 @@ class dwHttp {
 		return  @file_get_contents($url,false,$context);
 	}
 	
-	//Ä¬ÈÏÄ£ÄâµÄheaderÍ·
+	//é»˜è®¤æ¨¡æ‹Ÿçš„headerå¤´
 	protected function defaultHeader(){
 		$header="User-Agent:Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9.2.12) Gecko/20101026 Firefox/3.6.12\r\n";
 		$header.="Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\n";
@@ -199,7 +199,7 @@ class dwHttp {
 		return $header;
 	}
 	
-	//»ñÈ¡Í¨¹ısocket·½Ê½getºÍpostÒ³ÃæµÄ·µ»ØÊı¾İ
+	//è·å–é€šè¿‡socketæ–¹å¼getå’Œposté¡µé¢çš„è¿”å›æ•°æ®
 	protected function GetHttpContent($fsock=null){
 		$out = null;
 		while($buff = @fgets($fsock, 2048)){
