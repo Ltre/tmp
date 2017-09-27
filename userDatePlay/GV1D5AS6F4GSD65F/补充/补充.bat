@@ -1,0 +1,8 @@
+start "buchong-1" php "b (1).php"
+start "buchong-2" php "b (2).php"
+start "buchong-3" php "b (3).php"
+start "buchong-4" php "b (4).php"
+start "buchong-5" php "b (5).php"
+start "buchong-6" php "b (6).php"
+start "buchong-7" php "b (7).php"
+start "buchong-8" php "b (8).php"

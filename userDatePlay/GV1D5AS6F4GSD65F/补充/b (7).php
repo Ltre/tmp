@@ -1,6 +1,6 @@
 <?php
 while (1) {
-    print_r((new dwHttp)->post('http://61.147.186.105/cron/syncUserDatePlay', ['taskId' => 'fdsadsaf42222222', 'start' => 20150301], 55, "Host: huya.cms.duowan.com"));
+    print_r((new dwHttp)->post('http://61.147.186.105/cron/syncUserDatePlay', ['taskId' => 'fdsfucks1f6520161111', 'start' => 20161111], 55, "Host: huya.cms.duowan.com"));
 }
 
 
