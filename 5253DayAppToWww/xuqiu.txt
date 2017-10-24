@@ -20,7 +20,7 @@ http://www.duowan.com/news/364996583116.html
 
 脚本解释：
 1_get.php  从5253专区导出文章列表数据到export
-2_push.php  从上一步导出的export文件，转发文章到首页专区，并记录日志pushLog和list_to_update。
+2_push.php  根据上一步导出的export文件，转发文章到首页专区，并记录日志pushLog和list_to_update。
             其中，list_to_update文件，用于第三步(js脚本批量改文章发布时间)
 3_update.js   在chrome console粘贴该脚本，将逐个打开文章编辑页，进行文章发布时间的修改。
                 由于是逐篇修改，故速度很慢。中间出现小错误，有可能造成中止（具体不详，需多测试）
