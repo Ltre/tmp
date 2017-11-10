@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>视频信息 -- 视频后台</title>
+    <link href="static/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="static/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="static/css/style.css" rel="stylesheet"/>
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/layer/layer.min.js"></script>
+    <script src="static/js/common.js"></script>
+    <link href="static/css/gridview.css" rel="stylesheet"/>
+    <script src="static/js/gridview.js"></script>
+    <script type="text/javascript" src="static/js/sortable.js"></script>
+</head>
+<body>
+    <div class="item-environment">
+            </div>
+    <div class="navbar navbar-inverse  navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid" >
+                <div class="row-fluid">
+                    <div class="span6">
+                        <a href="/index.php?r=video/index" class="brand">　 视频后台</a>
+                        <ul class="nav">
+                            <li>
+                                <a href="http://cloud.v.duowan.com/public">前台</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="http://vucleint.webdev.duowan.com/setup.exe">下载客户端</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="upload/index.php">网页上传</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="span6">
+                        <ul class="nav pull-right">
+                            <li><a>您好！</a></li>
+                            <li><a href="/index.php?r=default/logout">退出</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container-fluid content-body">
+    <div class="row-fluid">
+        <div class="span2 navbar-fixed-top" style="margin-left:10px;margin-top:40px;">
+            <ul class="accordion" >
+            <div class="accordion-group" >
+                            <div class="accordion-heading">
+                    <a class="accordion-toggle   text" data-toggle="collapse" title="视频" data-target="#collapse_menu_0" href="javascript:void(0);"><i class=""></i> 视频</a>
+                </div>
+                <div id="collapse_menu_0" class="accordion-body collapse in">
+                                        <a class="accordion-inner clearfix text actived" title="视频列表" href="/index.php?r=video/index" target=""><i class=""></i> 视频列表</a>
+                                        <a class="accordion-inner clearfix text " title="转码列表" href="/index.php?r=task/index" target=""><i class=""></i> 转码列表</a>
+                                        <a class="accordion-inner clearfix text " title="节点列表" href="/index.php?r=videonode/index" target=""><i class=""></i> 节点列表</a>
+                                    </div>
+                    </div>
+            <div class="accordion-group" >
+                            <div class="accordion-heading">
+                    <a class="accordion-toggle   " data-toggle="collapse" title="抓取" data-target="#collapse_menu_1" href="javascript:void(0);"><i class=""></i> 抓取</a>
+                </div>
+                <div id="collapse_menu_1" class="accordion-body collapse in">
+                                        <a class="accordion-inner clearfix  " title="爱拍抓取" href="/index.php?r=aipai/index" target=""><i class=""></i> 爱拍抓取</a>
+                                    </div>
+                    </div>
+            <div class="accordion-group" >
+                            <div class="accordion-heading">
+                    <a class="accordion-toggle   " data-toggle="collapse" title="储存" data-target="#collapse_menu_2" href="javascript:void(0);"><i class=""></i> 储存</a>
+                </div>
+                <div id="collapse_menu_2" class="accordion-body collapse in">
+                                        <a class="accordion-inner clearfix  " title="机房" href="/index.php?r=machineroom/index" target=""><i class=""></i> 机房</a>
+                                        <a class="accordion-inner clearfix  " title="服务器" href="/index.php?r=machineips/index" target=""><i class=""></i> 服务器</a>
+                                        <a class="accordion-inner clearfix  " title="储存节点" href="/index.php?r=storagenode/index" target=""><i class=""></i> 储存节点</a>
+                                        <a class="accordion-inner clearfix  " title="迁移记录" href="/index.php?r=migrate/log" target=""><i class=""></i> 迁移记录</a>
+                                    </div>
+                    </div>
+            <div class="accordion-group" >
+                            <div class="accordion-button">
+                    <a class="  " title="CDN统计" href="http://stats.v.duowan.com/index.php?r=manager/index" target="_brank"><i class=""></i> CDN统计</a>
+                </div>
+                    </div>
+            <div class="accordion-group" >
+                            <div class="accordion-button">
+                    <a class="  " title="方案" href="/index.php?r=program/index" target=""><i class=""></i> 方案</a>
+                </div>
+                    </div>
+            <div class="accordion-group" >
+                            <div class="accordion-button">
+                    <a class="  " title="服务器监控" href="/index.php?r=server/index" target=""><i class=""></i> 服务器监控</a>
+                </div>
+                    </div>
+            <div class="accordion-group" >
+                            <div class="accordion-heading">
+                    <a class="accordion-toggle  collapsed " data-toggle="collapse" title="配置" data-target="#collapse_menu_6" href="javascript:void(0);"><i class=""></i> 配置</a>
+                </div>
+                <div id="collapse_menu_6" class="accordion-body collapse ">
+                                        <a class="accordion-inner clearfix  " title="上传客户端" href="/index.php?r=sourceclient/index" target=""><i class=""></i> 上传客户端</a>
+                                        <a class="accordion-inner clearfix  " title="授权管理" href="/index.php?r=authorization/index" target=""><i class=""></i> 授权管理</a>
+                                        <a class="accordion-inner clearfix  " title="其它配置" href="/index.php?r=configure/index" target=""><i class=""></i> 其它配置</a>
+                                    </div>
+                    </div>
+            <div class="accordion-group" >
+                            <div class="accordion-button">
+                    <a class="  " title="管理员" href="/index.php?r=manager/index" target=""><i class=""></i> 管理员</a>
+                </div>
+                    </div>
+            <div class="accordion-group" >
+                            <div class="accordion-heading">
+                    <a class="accordion-toggle  collapsed " data-toggle="collapse" title="日志" data-target="#collapse_menu_8" href="javascript:void(0);"><i class=""></i> 日志</a>
+                </div>
+                <div id="collapse_menu_8" class="accordion-body collapse ">
+                                        <a class="accordion-inner clearfix  " title="错误日志" href="/index.php?r=log/index" target=""><i class=""></i> 错误日志</a>
+                                        <a class="accordion-inner clearfix  " title="操作日志" href="/index.php?r=logoperate/index" target=""><i class=""></i> 操作日志</a>
+                                        <a class="accordion-inner clearfix  " title="上传错误" href="/index.php?r=log/index&amp;log%5Btype%5D=upload&amp;type=upload_error" target=""><i class=""></i> 上传错误</a>
+                                    </div>
+                    </div>
+    </ul>
+
+<script >
+    $(function(){
+        $('.accordion-body .actived').parent().addClass('in').prev('.accordion-heading').find('.accordion-toggle').removeClass('collapsed');
+    });
+</script>
+ 
+        </div>
+        <div class="span10 pull-right" style="margin-right:10px;">
+            <div class="admin_title">
+                <div class="pull-right">
+                                            <a class="button cyan" href="/index.php?r=video/index">返回列表</a>
+                                    </div>
+                <div class="title">
+                    <a class="active"><b>视频信息</b></a>
+                </div>
+            </div>
+            <style type="text/css">
+.video-base-info .name{display: inline-block;width: 120px;}   
+.video-base-info .value{color: #d14;} 
+.video-detail{font-size: 0.9em;}  
+table.video-detail td, th {padding: 0.5em 1.5em;}
+</style>
+
+<table class="dw-table-detail video-detail dw-table-striped">
+    <tbody>
+        <tr>
+            <td width="8%" class="title">VID</td>
+            <td width="22%">8448337</td>
+            <td width="8%" class="title">文件ID</td>
+            <td width="22%">8448337</td>
+            <td width="8%" class="title">认证</td>
+            <td width="22%">cfcd208495d565ef66e7dff9f98764da</td>
+        </tr>
+        <tr>
+            <td class="title">视频名称</td>
+            <td><a target="_brank" href="http://upload.v.duowan.com/index.php?r=upload/test&vid=8448337">8448337.mp4</a></td>
+            <td class="title">源文件后缀</td>
+            <td>mp4</td>
+            <td class="title">上传开始时间</td>
+            <td>2017-07-31 14:39:50</td>
+        </tr>
+        <tr>
+            <td class="title">视频标题</td>
+            <td>性感美女主播学生制服丝袜美腿性感诱惑热舞</td>
+            <td class="title">源文件名称</td>
+            <td>export_201707311431.mp4</td>
+            <td class="title">上传完成时间</td>
+            <td>2017-07-31 14:44:30</td>
+        </tr>
+        <tr>
+            <td class="title">频道</td>
+            <td>duowanvideo</td>
+            <td class="title">源文件MD5</td>
+            <td>5e543256c480ac577d30f76f9120eb74</td>
+            <td class="title">视频宽高</td>
+            <td>640 * 360</td>
+        </tr>
+        <tr>
+            <td class="title">YYUID</td>
+            <td>1809709490</td>
+            <td class="title">源文件大小</td>
+            <td>188.18 M</td>
+            <td class="title">视频解码器</td>
+            <td>h264</td>
+        </tr>
+        <tr>
+            <td class="title">UDB</td>
+            <td>newqq_5k4qunoqw</td>
+            <td class="title">上传IP</td>
+            <td>122.136.231.234</td>
+            <td class="title">视频比特率</td>
+            <td>2162 b/s</td>
+        </tr>
+        <tr>
+            <td class="title">服务器IP</td>
+            <td>61.147.186.115</td>
+            <td class="title">上传客户端</td>
+            <td>
+                                多玩视频H5
+            </td>
+            <td class="title">音频解码器</td>
+            <td>aac</td>
+        </tr>
+        <tr>
+            <td class="title">保存路径</td>
+            <td></td>
+            <td class="title">时长</td>
+            <td>00:12:10</td>
+            <td class="title">音频比特率</td>
+            <td>128 b/s</td>
+        </tr>
+        <tr>
+            <td class="title">
+                            </td>
+            <td>
+                <a href="/index.php?r=public/play&vid=8448337&sdk=dw" class="button button-mini cyan" data-layer="true" data-title="多玩" >多玩</a>
+                <a href="/index.php?r=public/play&vid=8448337&sdk=letv" class="button button-mini cyan" data-layer="true" data-title="乐视" >乐视</a>
+                <a target="_brank" href="http://playapi.v.duowan.com/index.php?r=play/video&vid=8448337" class="button button-mini ">API</a>
+                <a target="_brank" href="/index.php?r=console/info&table=video&id=8448337&showformat=json" class="button button-mini ">详细</a>
+                <a target="_brank" href="/index.php?r=log/index&log[vid]=8448337" class="button button-mini ">错误日志</a>
+                <a target="_brank" href="/index.php?r=logoperate/index&logoperate[tableName]=upload_list&logoperate[table_id]=8448337" class="button button-mini ">操作日志</a>
+            </td>
+            <td></td>
+            <td>
+                <a target="_brank" href="/index.php?r=video/handle&action=redo%2Findex&vid=8448337" class="button button-mini ">重新截图</a>
+                <a target="_brank" href="/index.php?r=video/handle&action=upload%2Fprobe&vid=8448337" class="button button-mini ">探测视频信息</a>
+                <a target="_brank" href="/index.php?r=video/handle&action=redo%2Fpull&vid=8448337" class="button button-mini ">重新拉源</a>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+    
+<div class="video-list" dw-grid-ajax="true" dw-grid-url="/index.php?r=video/view&amp;id=8448337" dw-grid-filter-url="/index.php?r=video/view&amp;r=video%2Fview&amp;id=8448337" id="dw-grid-0">
+
+<div style="overflow-x: auto;"><table class="table  dw-table-detail dw-table-striped "><thead >
+<tr><th class="dw-grid-sort"><span>任务ID</span></th><th class="dw-grid-sort"><span>转码ID</span></th><th class="dw-grid-sort"><span>视频名</span></th><th class="dw-grid-sort"><span>转码信息</span></th><th class="dw-grid-sort"><span>视频信息</span></th><th class="dw-grid-sort"><span>转码信息</span></th><th class="dw-grid-sort"><span>节点</span></th><th class="dw-grid-sort"><span>状态</span></th><th class="dw-grid-sort"><span>操作</span></th></tr><tr class="hide"><td class="dw-grid-filter"></td></tr>
+</thead>
+<tbody>
+<tr><td>11376513</td><td>11271951</td><td>source_8448337.mp4</td><td><div class="video-info" style="color:#d14;">方案ID：127<br/>方案名称：源<br/></div></td><td style="white-space:nowrap;"><div class="video-info" style="color:#d14;">清晰度：source<br/>大小：188.05 M<br/>尺寸：640 * 360<br/>时长：00:12:10<br/>比特率：2160334 kb/s<br/></div></td><td><div class="video-info" style="color:#d14;">开始时间：2017-07-31 14:45:07<br/>结束时间：2017-07-31 14:45:33<br/>时间：26s<br/>转码IP：10.25.64.27<br/></div></td><td><p><a href="/index.php?r=videonode/resend&ids=33878885&callback=%2Findex.php%3Fr%3Dvideo%2Fview%26id%3D8448337" class="label">重发</a> <a data-toggle="tooltip" data-original-title="http://jd30wevsrx.dwstatic.com/81/4/1731/source_8448337.mp4" data-placement="top"  class="label label-inverse" href="/index.php?r=public/play&url=http%3A%2F%2Fjd30wevsrx.dwstatic.com%2F81%2F4%2F1731%2Fsource_8448337.mp4" data-layer="true" data-title="节点1">节点1</a></p><p><a href="/index.php?r=videonode/resend&ids=33878891&callback=%2Findex.php%3Fr%3Dvideo%2Fview%26id%3D8448337" class="label">重发</a> <a data-toggle="tooltip" data-original-title="http://jd30wevsrx.dwstatic.com/88/7/1731/source_8448337.mp4" data-placement="top"  class="label label-inverse" href="/index.php?r=public/play&url=http%3A%2F%2Fjd30wevsrx.dwstatic.com%2F88%2F7%2F1731%2Fsource_8448337.mp4" data-layer="true" data-title="节点2">节点2</a></p><p><a href="/index.php?r=videonode/resend&ids=33878893&callback=%2Findex.php%3Fr%3Dvideo%2Fview%26id%3D8448337" class="label">重发</a> <a data-toggle="tooltip" data-original-title="http://jd30wevsrx.dwstatic.com/93/8/1731/source_8448337.mp4" data-placement="top"  class="label label-inverse" href="/index.php?r=public/play&url=http%3A%2F%2Fjd30wevsrx.dwstatic.com%2F93%2F8%2F1731%2Fsource_8448337.mp4" data-layer="true" data-title="备点">备点</a></p></td><td><span class="label label-success">发布完成</span></td><td style="width:50px;"><a href="/index.php?r=task/view&id=11376513" class="button button-mini cyan">查看</a><span data-a="true" class="button button-mini cyan" href="/index.php?r=task/edit&id=11376513&callback=%2Findex.php%3Fr%3Dvideo%2Fview%26id%3D8448337">重转</span><span data-a="true" data-hint="你确认要删除该记录吗？" class="button button-mini cyan" href="/index.php?r=task/delete&id=11376513&callback=%2Findex.php%3Fr%3Dvideo%2Fview%26id%3D8448337">删除</span></td></tr><tr><td>11376511</td><td>11272069</td><td>8448337-100-1501483470.mp4</td><td><div class="video-info" style="color:#d14;">方案ID：100<br/>方案名称：超清<br/></div></td><td style="white-space:nowrap;"><div class="video-info" style="color:#d14;">清晰度：1300<br/>大小：82.88 M<br/>尺寸：640 * 360<br/>时长：00:12:10<br/>比特率：952158 kb/s<br/></div></td><td><div class="video-info" style="color:#d14;">开始时间：2017-07-31 14:44:59<br/>结束时间：2017-07-31 14:48:37<br/>时间：218s<br/>转码IP：10.25.64.27<br/></div></td><td><p><a href="/index.php?r=videonode/resend&ids=33879243&callback=%2Findex.php%3Fr%3Dvideo%2Fview%26id%3D8448337" class="label">重发</a> <a data-toggle="tooltip" data-original-title="http://jd30wevsrx.dwstatic.com/83/5/1731/8448337-100-1501483470.mp4" data-placement="top"  class="label label-inverse" href="/index.php?r=public/play&url=http%3A%2F%2Fjd30wevsrx.dwstatic.com%2F83%2F5%2F1731%2F8448337-100-1501483470.mp4" data-layer="true" data-title="节点1">节点1</a></p><p><a href="/index.php?r=videonode/resend&ids=33879245&callback=%2Findex.php%3Fr%3Dvideo%2Fview%26id%3D8448337" class="label">重发</a> <a data-toggle="tooltip" data-original-title="http://jd30wevsrx.dwstatic.com/88/4/1731/8448337-100-1501483470.mp4" data-placement="top"  class="label label-inverse" href="/index.php?r=public/play&url=http%3A%2F%2Fjd30wevsrx.dwstatic.com%2F88%2F4%2F1731%2F8448337-100-1501483470.mp4" data-layer="true" data-title="节点2">节点2</a></p><p><a href="/index.php?r=videonode/resend&ids=33879247&callback=%2Findex.php%3Fr%3Dvideo%2Fview%26id%3D8448337" class="label">重发</a> <a data-toggle="tooltip" data-original-title="http://jd30wevsrx.dwstatic.com/94/1/1731/8448337-100-1501483470.mp4" data-placement="top"  class="label label-inverse" href="/index.php?r=public/play&url=http%3A%2F%2Fjd30wevsrx.dwstatic.com%2F94%2F1%2F1731%2F8448337-100-1501483470.mp4" data-layer="true" data-title="备点">备点</a></p></td><td><span class="label label-success">发布完成</span></td><td style="width:50px;"><a href="/index.php?r=task/view&id=11376511" class="button button-mini cyan">查看</a><span data-a="true" class="button button-mini cyan" href="/index.php?r=task/edit&id=11376511&callback=%2Findex.php%3Fr%3Dvideo%2Fview%26id%3D8448337">重转</span><span data-a="true" data-hint="你确认要删除该记录吗？" class="button button-mini cyan" href="/index.php?r=task/delete&id=11376511&callback=%2Findex.php%3Fr%3Dvideo%2Fview%26id%3D8448337">删除</span></td></tr><tr><td>11376509</td><td>11272067</td><td>8448337-99-1501483470.mp4</td><td><div class="video-info" style="color:#d14;">方案ID：99<br/>方案名称：高清<br/></div></td><td style="white-space:nowrap;"><div class="video-info" style="color:#d14;">清晰度：1000<br/>大小：46.69 M<br/>尺寸：640 * 360<br/>时长：00:12:10<br/>比特率：536395 kb/s<br/></div></td><td><div class="video-info" style="color:#d14;">开始时间：2017-07-31 14:45:06<br/>结束时间：2017-07-31 14:48:28<br/>时间：202s<br/>转码IP：10.25.64.25<br/></div></td><td><p><a href="/index.php?r=videonode/resend&ids=33879237&callback=%2Findex.php%3Fr%3Dvideo%2Fview%26id%3D8448337" class="label">重发</a> <a data-toggle="tooltip" data-original-title="http://jd30wevsrx.dwstatic.com/82/7/1731/8448337-99-1501483470.mp4" data-placement="top"  class="label label-inverse" href="/index.php?r=public/play&url=http%3A%2F%2Fjd30wevsrx.dwstatic.com%2F82%2F7%2F1731%2F8448337-99-1501483470.mp4" data-layer="true" data-title="节点1">节点1</a></p><p><a href="/index.php?r=videonode/resend&ids=33879239&callback=%2Findex.php%3Fr%3Dvideo%2Fview%26id%3D8448337" class="label">重发</a> <a data-toggle="tooltip" data-original-title="http://jd30wevsrx.dwstatic.com/83/1/1731/8448337-99-1501483470.mp4" data-placement="top"  class="label label-inverse" href="/index.php?r=public/play&url=http%3A%2F%2Fjd30wevsrx.dwstatic.com%2F83%2F1%2F1731%2F8448337-99-1501483470.mp4" data-layer="true" data-title="节点2">节点2</a></p><p><a href="/index.php?r=videonode/resend&ids=33879241&callback=%2Findex.php%3Fr%3Dvideo%2Fview%26id%3D8448337" class="label">重发</a> <a data-toggle="tooltip" data-original-title="http://jd30wevsrx.dwstatic.com/93/3/1731/8448337-99-1501483470.mp4" data-placement="top"  class="label label-inverse" href="/index.php?r=public/play&url=http%3A%2F%2Fjd30wevsrx.dwstatic.com%2F93%2F3%2F1731%2F8448337-99-1501483470.mp4" data-layer="true" data-title="备点">备点</a></p></td><td><span class="label label-success">发布完成</span></td><td style="width:50px;"><a href="/index.php?r=task/view&id=11376509" class="button button-mini cyan">查看</a><span data-a="true" class="button button-mini cyan" href="/index.php?r=task/edit&id=11376509&callback=%2Findex.php%3Fr%3Dvideo%2Fview%26id%3D8448337">重转</span><span data-a="true" data-hint="你确认要删除该记录吗？" class="button button-mini cyan" href="/index.php?r=task/delete&id=11376509&callback=%2Findex.php%3Fr%3Dvideo%2Fview%26id%3D8448337">删除</span></td></tr><tr><td>11376507</td><td>11272055</td><td>8448337-98-1501483470.mp4</td><td><div class="video-info" style="color:#d14;">方案ID：98<br/>方案名称：流畅<br/></div></td><td style="white-space:nowrap;"><div class="video-info" style="color:#d14;">清晰度：350<br/>大小：25.65 M<br/>尺寸：640 * 360<br/>时长：00:12:10<br/>比特率：294650 kb/s<br/></div></td><td><div class="video-info" style="color:#d14;">开始时间：2017-07-31 14:44:42<br/>结束时间：2017-07-31 14:48:08<br/>时间：206s<br/>转码IP：10.25.64.25<br/></div></td><td><p><a href="/index.php?r=videonode/resend&ids=33879201&callback=%2Findex.php%3Fr%3Dvideo%2Fview%26id%3D8448337" class="label">重发</a> <a data-toggle="tooltip" data-original-title="http://jd30wevsrx.dwstatic.com/81/3/1731/8448337-98-1501483470.mp4" data-placement="top"  class="label label-inverse" href="/index.php?r=public/play&url=http%3A%2F%2Fjd30wevsrx.dwstatic.com%2F81%2F3%2F1731%2F8448337-98-1501483470.mp4" data-layer="true" data-title="节点1">节点1</a></p><p><a href="/index.php?r=videonode/resend&ids=33879203&callback=%2Findex.php%3Fr%3Dvideo%2Fview%26id%3D8448337" class="label">重发</a> <a data-toggle="tooltip" data-original-title="http://jd30wevsrx.dwstatic.com/89/5/1731/8448337-98-1501483470.mp4" data-placement="top"  class="label label-inverse" href="/index.php?r=public/play&url=http%3A%2F%2Fjd30wevsrx.dwstatic.com%2F89%2F5%2F1731%2F8448337-98-1501483470.mp4" data-layer="true" data-title="节点2">节点2</a></p><p><a href="/index.php?r=videonode/resend&ids=33879205&callback=%2Findex.php%3Fr%3Dvideo%2Fview%26id%3D8448337" class="label">重发</a> <a data-toggle="tooltip" data-original-title="http://jd30wevsrx.dwstatic.com/91/9/1731/8448337-98-1501483470.mp4" data-placement="top"  class="label label-inverse" href="/index.php?r=public/play&url=http%3A%2F%2Fjd30wevsrx.dwstatic.com%2F91%2F9%2F1731%2F8448337-98-1501483470.mp4" data-layer="true" data-title="备点">备点</a></p></td><td><span class="label label-success">发布完成</span></td><td style="width:50px;"><a href="/index.php?r=task/view&id=11376507" class="button button-mini cyan">查看</a><span data-a="true" class="button button-mini cyan" href="/index.php?r=task/edit&id=11376507&callback=%2Findex.php%3Fr%3Dvideo%2Fview%26id%3D8448337">重转</span><span data-a="true" data-hint="你确认要删除该记录吗？" class="button button-mini cyan" href="/index.php?r=task/delete&id=11376507&callback=%2Findex.php%3Fr%3Dvideo%2Fview%26id%3D8448337">删除</span></td></tr><tr><td>11376505</td><td>11271877</td><td>8448337-102-1501483470.mp4</td><td><div class="video-info" style="color:#d14;">方案ID：102<br/>方案名称：原画(不转码)<br/></div></td><td style="white-space:nowrap;"><div class="video-info" style="color:#d14;">清晰度：yuanhua<br/>大小：188.18 M<br/>尺寸：640 * 360<br/>时长：00:12:10<br/>比特率：2161827 kb/s<br/></div></td><td><div class="video-info" style="color:#d14;">开始时间：2017-07-31 14:44:41<br/>结束时间：2017-07-31 14:44:43<br/>时间：2s<br/>转码IP：10.25.64.25<br/></div></td><td><p><a href="/index.php?r=videonode/resend&ids=33878665&callback=%2Findex.php%3Fr%3Dvideo%2Fview%26id%3D8448337" class="label">重发</a> <a data-toggle="tooltip" data-original-title="http://jd30wevsrx.dwstatic.com/81/11/1731/8448337-102-1501483470.mp4" data-placement="top"  class="label label-inverse" href="/index.php?r=public/play&url=http%3A%2F%2Fjd30wevsrx.dwstatic.com%2F81%2F11%2F1731%2F8448337-102-1501483470.mp4" data-layer="true" data-title="节点1">节点1</a></p><p><a href="/index.php?r=videonode/resend&ids=33878675&callback=%2Findex.php%3Fr%3Dvideo%2Fview%26id%3D8448337" class="label">重发</a> <a data-toggle="tooltip" data-original-title="http://jd30wevsrx.dwstatic.com/87/1/1731/8448337-102-1501483470.mp4" data-placement="top"  class="label label-inverse" href="/index.php?r=public/play&url=http%3A%2F%2Fjd30wevsrx.dwstatic.com%2F87%2F1%2F1731%2F8448337-102-1501483470.mp4" data-layer="true" data-title="节点2">节点2</a></p><p><a href="/index.php?r=videonode/resend&ids=33878721&callback=%2Findex.php%3Fr%3Dvideo%2Fview%26id%3D8448337" class="label">重发</a> <a data-toggle="tooltip" data-original-title="http://jd30wevsrx.dwstatic.com/90/4/1731/8448337-102-1501483470.mp4" data-placement="top"  class="label label-inverse" href="/index.php?r=public/play&url=http%3A%2F%2Fjd30wevsrx.dwstatic.com%2F90%2F4%2F1731%2F8448337-102-1501483470.mp4" data-layer="true" data-title="备点">备点</a></p></td><td><span class="label label-success">发布完成</span></td><td style="width:50px;"><a href="/index.php?r=task/view&id=11376505" class="button button-mini cyan">查看</a><span data-a="true" class="button button-mini cyan" href="/index.php?r=task/edit&id=11376505&callback=%2Findex.php%3Fr%3Dvideo%2Fview%26id%3D8448337">重转</span><span data-a="true" data-hint="你确认要删除该记录吗？" class="button button-mini cyan" href="/index.php?r=task/delete&id=11376505&callback=%2Findex.php%3Fr%3Dvideo%2Fview%26id%3D8448337">删除</span></td></tr>
+</tbody>
+<tfoot></tfoot></table></div>
+<div class="dw-grid-pager"></div></div>
+<script type="text/javascript">
+	jQuery(document).ready(function(){jQuery('#dw-grid-0').dwGridView()});
+</script>
+
+
+<div dw-json-format="true">{&quot;codec&quot;:&quot;h264&quot;,&quot;bitrate&quot;:&quot;2161827&quot;,&quot;duration&quot;:&quot;730.198000&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;video_stream&quot;:{&quot;index&quot;:0,&quot;codec_name&quot;:&quot;h264&quot;,&quot;codec_long_name&quot;:&quot;H.264 \/ AVC \/ MPEG-4 AVC \/ MPEG-4 part 10&quot;,&quot;profile&quot;:&quot;Constrained Baseline&quot;,&quot;codec_type&quot;:&quot;video&quot;,&quot;codec_time_base&quot;:&quot;16384\/983041&quot;,&quot;codec_tag_string&quot;:&quot;avc1&quot;,&quot;codec_tag&quot;:&quot;0x31637661&quot;,&quot;width&quot;:640,&quot;height&quot;:360,&quot;coded_width&quot;:640,&quot;coded_height&quot;:360,&quot;has_b_frames&quot;:0,&quot;sample_aspect_ratio&quot;:&quot;0:1&quot;,&quot;display_aspect_ratio&quot;:&quot;0:1&quot;,&quot;pix_fmt&quot;:&quot;yuv420p&quot;,&quot;level&quot;:30,&quot;chroma_location&quot;:&quot;left&quot;,&quot;refs&quot;:1,&quot;is_avc&quot;:&quot;true&quot;,&quot;nal_length_size&quot;:&quot;4&quot;,&quot;r_frame_rate&quot;:&quot;983041\/32768&quot;,&quot;avg_frame_rate&quot;:&quot;983041\/32768&quot;,&quot;time_base&quot;:&quot;1\/983041&quot;,&quot;start_pts&quot;:0,&quot;start_time&quot;:&quot;0.000000&quot;,&quot;duration_ts&quot;:717783115,&quot;duration&quot;:&quot;730.166000&quot;,&quot;bit_rate&quot;:&quot;2026594&quot;,&quot;bits_per_raw_sample&quot;:&quot;8&quot;,&quot;nb_frames&quot;:&quot;21905&quot;,&quot;disposition&quot;:{&quot;default&quot;:1,&quot;dub&quot;:0,&quot;original&quot;:0,&quot;comment&quot;:0,&quot;lyrics&quot;:0,&quot;karaoke&quot;:0,&quot;forced&quot;:0,&quot;hearing_impaired&quot;:0,&quot;visual_impaired&quot;:0,&quot;clean_effects&quot;:0,&quot;attached_pic&quot;:0,&quot;timed_thumbnails&quot;:0},&quot;tags&quot;:{&quot;language&quot;:&quot;und&quot;,&quot;handler_name&quot;:&quot;VideoHandler&quot;}},&quot;a_codec&quot;:&quot;aac&quot;,&quot;a_bitrate&quot;:&quot;128444&quot;,&quot;audio_stream&quot;:{&quot;index&quot;:1,&quot;codec_name&quot;:&quot;aac&quot;,&quot;codec_long_name&quot;:&quot;AAC (Advanced Audio Coding)&quot;,&quot;profile&quot;:&quot;LC&quot;,&quot;codec_type&quot;:&quot;audio&quot;,&quot;codec_time_base&quot;:&quot;1\/44100&quot;,&quot;codec_tag_string&quot;:&quot;mp4a&quot;,&quot;codec_tag&quot;:&quot;0x6134706d&quot;,&quot;sample_fmt&quot;:&quot;fltp&quot;,&quot;sample_rate&quot;:&quot;44100&quot;,&quot;channels&quot;:2,&quot;channel_layout&quot;:&quot;stereo&quot;,&quot;bits_per_sample&quot;:0,&quot;r_frame_rate&quot;:&quot;0\/0&quot;,&quot;avg_frame_rate&quot;:&quot;0\/0&quot;,&quot;time_base&quot;:&quot;1\/44100&quot;,&quot;start_pts&quot;:0,&quot;start_time&quot;:&quot;0.000000&quot;,&quot;duration_ts&quot;:32200673,&quot;duration&quot;:&quot;730.173991&quot;,&quot;bit_rate&quot;:&quot;128444&quot;,&quot;max_bit_rate&quot;:&quot;128444&quot;,&quot;nb_frames&quot;:&quot;31447&quot;,&quot;disposition&quot;:{&quot;default&quot;:1,&quot;dub&quot;:0,&quot;original&quot;:0,&quot;comment&quot;:0,&quot;lyrics&quot;:0,&quot;karaoke&quot;:0,&quot;forced&quot;:0,&quot;hearing_impaired&quot;:0,&quot;visual_impaired&quot;:0,&quot;clean_effects&quot;:0,&quot;attached_pic&quot;:0,&quot;timed_thumbnails&quot;:0},&quot;tags&quot;:{&quot;language&quot;:&quot;und&quot;,&quot;handler_name&quot;:&quot;SoundHandler&quot;}},&quot;size&quot;:&quot;197320248&quot;,&quot;format&quot;:{&quot;filename&quot;:&quot;\/data1\/video_upload\/8448337.mp4&quot;,&quot;nb_streams&quot;:2,&quot;nb_programs&quot;:0,&quot;format_name&quot;:&quot;mov,mp4,m4a,3gp,3g2,mj2&quot;,&quot;format_long_name&quot;:&quot;QuickTime \/ MOV&quot;,&quot;start_time&quot;:&quot;0.000000&quot;,&quot;duration&quot;:&quot;730.198000&quot;,&quot;size&quot;:&quot;197320248&quot;,&quot;bit_rate&quot;:&quot;2161827&quot;,&quot;probe_score&quot;:100,&quot;tags&quot;:{&quot;major_brand&quot;:&quot;isom&quot;,&quot;minor_version&quot;:&quot;512&quot;,&quot;compatible_brands&quot;:&quot;isomiso2avc1mp41&quot;,&quot;encoder&quot;:&quot;Lavf55.15.10&quot;}}}</div>
+            
+<div class="hide addEncode" style="padding: 30px 60px;">
+    <select id="program_id" name="program">
+        <option value="">请选择转码方案</option>
+                    <option value="172">原画(vhuyafans)</option>
+                    <option value="173">超清(vhuyafans)</option>
+                    <option value="147">VR原画</option>
+                    <option value="143">VR高清</option>
+                    <option value="144">VR超清</option>
+                    <option value="148">VR原画(不转码)</option>
+                    <option value="170">直播转FLV</option>
+                    <option value="166">热点[无水印]</option>
+                    <option value="168">热点[水印+二维码]</option>
+                    <option value="156">热点[水印]</option>
+                    <option value="157">直播热点[转码]</option>
+                    <option value="171">热点(原画)</option>
+                    <option value="137">爱拍450P</option>
+                    <option value="138">爱拍450P①</option>
+                    <option value="139">爱拍720P</option>
+                    <option value="154">爱拍720P①</option>
+                    <option value="152">爱拍1080P</option>
+                    <option value="155">爱拍1080P①</option>
+                    <option value="136">源-ignore</option>
+                    <option value="140">流畅-ignore</option>
+                    <option value="141">原画-ignore</option>
+                    <option value="142">超清-ignore</option>
+                    <option value="149">高清-ignore</option>
+                    <option value="179">流畅(偶家-旋转)</option>
+                    <option value="181">高清(偶家-旋转)</option>
+                    <option value="183">超清(偶家-旋转)</option>
+                    <option value="185">原画(偶家-旋转)</option>
+                    <option value="108">流畅(不转码)</option>
+                    <option value="151">原画(偶家)</option>
+                    <option value="167">原画[直播热点]</option>
+                    <option value="107">高清(不转码)</option>
+                    <option value="106">超清(不转码)</option>
+                    <option value="102">原画(不转码)</option>
+                    <option value="165">热点[水印+二维码]-测试</option>
+                    <option value="169">热点[水印+二维码]-测试[sar]</option>
+                    <option value="98">流畅</option>
+                    <option value="175">超清[analyzeduration]</option>
+                    <option value="177">流畅(旋转)</option>
+                    <option value="99">高清</option>
+                    <option value="100">超清</option>
+                    <option value="101">原画</option>
+                    <option value="109">流畅(270k)</option>
+                    <option value="110">高清(500k)</option>
+                    <option value="111">超清(920k)</option>
+                    <option value="112">原画(2048k)</option>
+                    <option value="113">乐视拉取</option>
+                    <option value="114">流畅-pass1</option>
+                    <option value="115">高清-pass1</option>
+                    <option value="116">超清-pass1</option>
+                    <option value="117">原画-pass1</option>
+                    <option value="118">流畅-损坏frame方案</option>
+                    <option value="121">测试</option>
+                    <option value="122">参数备注</option>
+                    <option value="123">流畅(skip_frame)</option>
+                    <option value="124">高清(skip_frame)</option>
+                    <option value="125">超清(skip_frame)</option>
+                    <option value="126">原画(skip_frame)</option>
+                    <option value="127">源</option>
+                    <option value="128">流畅-微信ios</option>
+                    <option value="129">高清-微信ios</option>
+                    <option value="130">源-pass1</option>
+            </select>
+    <select id="server_ip" name="server_ip">
+        <option value="">转码服务器</option>
+                    <option value="10.20.160.8">19(10.20.160.8)</option>
+                    <option value="10.20.160.9">20(10.20.160.9)</option>
+                    <option value="10.20.160.10">21(10.20.160.10)</option>
+                    <option value="10.20.160.11">22(10.20.160.11)</option>
+                    <option value="10.20.160.12">23(10.20.160.12)</option>
+                    <option value="10.20.160.13">24(10.20.160.13)</option>
+                    <option value="10.20.160.14">25(10.20.160.14)</option>
+                    <option value="10.20.160.15">26(10.20.160.15)</option>
+                    <option value="10.20.160.16">27(10.20.160.16)</option>
+                    <option value="10.20.160.17">28(10.20.160.17)</option>
+                    <option value="10.20.160.18">29(10.20.160.18)</option>
+                    <option value="10.20.160.20">31(10.20.160.20)</option>
+                    <option value="10.20.160.21">32(10.20.160.21)</option>
+                    <option value="10.20.160.22">33(10.20.160.22)</option>
+                    <option value="10.20.160.23">34(10.20.160.23)</option>
+                    <option value="10.20.160.24">35(10.20.160.24)</option>
+                    <option value="10.20.160.25">36(10.20.160.25)</option>
+                    <option value="10.20.160.26">37(10.20.160.26)</option>
+                    <option value="10.20.160.27">38(10.20.160.27)</option>
+                    <option value="10.20.160.29">40(10.20.160.29)</option>
+                    <option value="10.25.64.25">69(10.25.64.25)</option>
+                    <option value="10.25.64.27">70(10.25.64.27)</option>
+                    <option value="10.25.64.75">71(10.25.64.75)</option>
+                    <option value="10.25.64.189">72(10.25.64.189)</option>
+                    <option value="10.25.67.125">74(10.25.67.125)</option>
+                    <option value="10.25.67.126">75(10.25.67.126)</option>
+                    <option value="10.25.67.178">76(10.25.67.178)</option>
+                    <option value="10.25.67.164">77(10.25.67.164)</option>
+                    <option value="10.25.67.165">78(10.25.67.165)</option>
+            </select>
+    <div style="margin-top:20px;">
+        <button onclick="submitTranscode()" class="button btn-block orange">提交</button>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+var vid;
+var transcodeUrl = "/index.php?r=video/transcode";
+</script>
+<script type="text/javascript" src="static/js/video-index.js"></script>
+<script src="static/jsonFormater/jsonFormater.js"></script>
+        </div>
+    </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+    $(function(){
+        $('.content-body').css('min-height',$(window).height() - 100);
+        $('[data-toggle=tooltip]').tooltip();
+        $('[data-toggle=popover]').popover();
+    });
+</script>
+</html>
