@@ -1,5 +1,5 @@
-//Ë¢²¥·ÅÁ¿
-//Õ³Ìùµ½http://video.duowan.com/play/xxxxxx.htmlÒ³ÃæconsoleÖĞ¼´¿É
+//åˆ·æ’­æ”¾é‡
+//ç²˜è´´åˆ°http://video.duowan.com/play/xxxxxx.htmlé¡µé¢consoleä¸­å³å¯
 
 var vid = '8575297';
 var channel = 'bzsj';
