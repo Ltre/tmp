@@ -20,7 +20,7 @@ loadToLoad(function(loadScript){
 
             //---------------------------------------------------
             var monkeyProduceBtn = '__monkey_produce_dwplaycount';
-            var h = '<button id="'+monkeyProduceBtn+'" style="position:fixed; right:0; top:0; font-size:28px; z-index: 9999999;">增加播放量!<span></span></button>';
+            var h = '<button id="'+monkeyProduceBtn+'" style="position:fixed; right:0; top:0; font-size:28px; z-index: 9999999;">刷播放量!<span></span></button>';
             $('body').append(h);
             $('#'+monkeyProduceBtn).click(function(){
                 var goal = parseInt(prompt('输入目标[真实]播放量 (目前假播放量 = 真实值*3.1 + 用vid计算好的1000以内初始化值。请自行估算)', 10000));
