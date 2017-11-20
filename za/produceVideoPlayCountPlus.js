@@ -69,21 +69,21 @@ loadToLoad(function(loadScript){
                                 alert('恭喜，vid = ' + vid + '刷量结束！还需要等待几分钟才能看到最新播放量，请耐心等待。现在进入页面刷新倒计时..');
                                 Ltrelib.timing({
                                     a: 1,
-                                    z: 25,
+                                    z: 60,
                                     delay: 1000,
                                     onTiming: function(opt){
                                         $('#'+monkeyProduceBtn).html('即将刷新页面..<span></span>');
                                         $('#'+monkeyProduceBtn).children('span').text('(' + (opt.z - opt.i) + ')').css('color', 'red');
-                                        if (opt.i == 10) {
+                                        if (parseInt(opt.i % 4) === 0) {
                                             (new Image()).src = 'http://playstats.v.duowan.com/index.php?r=api/get&vid='+vid+'&nocache=1';
                                         }
-                                        if (opt.i == 20) {
+                                        if (parseInt(opt.i % 8) === 0) {
                                             var aid = articleId || $('#__ARTICLEID__').val();
                                             (new Image()).src = 'http://video.duowan.com/jsapi/playPageVideoInfo/?vids='+vid+'&articleIds='+aid+'&cache=update';
                                         }
-                                        if (opt.i == 25) {
-                                            location.href += (location.href.match(/\d+\.html$/) ? '?' : '&') + 'cache=update';
-                                        }
+                                    },
+                                    onStop: function(opt){
+                                        location.href += (location.href.match(/\d+\.html$/) ? '?' : '&') + 'cache=update';
                                     }
                                 });
                             }
