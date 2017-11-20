@@ -25,7 +25,6 @@ loadToLoad(function(loadScript){
             $('#'+monkeyProduceBtn).click(function(){
                 var goal = parseInt(prompt('输入目标[真实]播放量 (目前假播放量 = 真实值*3.1 + 用vid计算好的1000以内初始化值。请自行估算)', 10000));
                 var vid = prompt('输入vid', (location.href.match(/\/v?play\/(\d+)(\-\d+)?\.html/)||[null,0])[1]);
-                // var articleId = prompt('文章ID(取地址栏"aaaaaaa-bbbbbbbbbbbb.html"的"bbbbbbbbbbbb"部分，没有就算了)', '');
                 var articleId = (location.href.match(/\/v?play\/\d+(\-(\d+))?\.html/)||[null,''])[1];
                 var channel = prompt('专区ID', 'lol');
                 var loop = 100;
