@@ -23,9 +23,10 @@ loadToLoad(function(loadScript){
             var h = '<button id="'+monkeyProduceBtn+'" style="position:fixed; right:0; top:0; font-size:28px; z-index: 9999999;">增加播放量!<span></span></button>';
             $('body').append(h);
             $('#'+monkeyProduceBtn).click(function(){
+                $(this).css('cursor', 'not-allowed').unbind('click');
                 var goal = parseInt(prompt('输入目标[真实]播放量 (目前假播放量 = 真实值*3.1 + 用vid计算好的1000以内初始化值。请自行估算)', 10000));
-                var vid = prompt('输入vid', (location.href.match(/\/v?play\/(\d+)(\-\d+)?\.html/)||[null,0])[1]);
-                var articleId = (location.href.match(/\/v?play\/\d+(\-(\d+))?\.html/)||[null,''])[1];
+                var vid = prompt('输入vid', (location.href.match(/\/(v|new|test)?play\/(\d+)(\-\d+)?\.html/)||[null,null,0])[2]);
+                var articleId = (location.href.match(/\/(v|new|test)?play\/\d+(\-(\d+))?\.html/)||[null,null,''])[2];
                 var channel = prompt('专区ID', 'lol');
                 var loop = 100;
                 var delay = 1000;//每loop次循环，休息delay毫秒
@@ -55,15 +56,18 @@ loadToLoad(function(loadScript){
                                     (new Image()).src = baseUrl + (+ new Date()) + i;
                                 }
                                 console.log('opt.i = ' + opt.i + ', opt.z = ' + opt.z);
+                                $('#'+monkeyProduceBtn).html('刷量中..<span></span>');
                                 $('#'+monkeyProduceBtn).children('span').text('(' + opt.i + '/' + opt.z + ')').css('color', 'red');
                             },
                             onStop: function(opt){ //结束后，来点小甜品
                                 alert('恭喜，vid = ' + vid + '刷量结束！还需要等待几分钟才能看到最新播放量，请耐心等待。现在进入页面刷新倒计时..');
                                 Ltrelib.timing({
-                                    a: 0,
-                                    z: 60,
+                                    a: 1,
+                                    z: 25,
                                     delay: 1000,
                                     onTiming: function(opt){
+                                        $('#'+monkeyProduceBtn).html('刷新计时中..<span></span>');
+                                        $('#'+monkeyProduceBtn).children('span').text('(' + (opt.z - opt.i) + ')').css('color', 'red');
                                         if (opt.i == 10) {
                                             (new Image()).src = 'http://playstats.v.duowan.com/index.php?r=api/get&vid='+vid+'&nocache=1';
                                         }
