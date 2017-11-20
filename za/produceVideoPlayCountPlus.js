@@ -23,15 +23,21 @@ loadToLoad(function(loadScript){
             var h = '<button id="'+monkeyProduceBtn+'" style="position:fixed; right:0; top:0; font-size:28px; z-index: 9999999;">增加播放量!<span></span></button>';
             $('body').append(h);
             $('#'+monkeyProduceBtn).click(function(){
-                $(this).css('cursor', 'not-allowed').unbind('click');
                 var goal = parseInt(prompt('输入目标[真实]播放量 (目前假播放量 = 真实值*3.1 + 用vid计算好的1000以内初始化值。请自行估算)', 10000));
                 var vid = prompt('输入vid', (location.href.match(/\/(v|new|test)?play\/(\d+)(\-\d+)?\.html/)||[null,null,0])[2]);
                 var articleId = (location.href.match(/\/(v|new|test)?play\/\d+(\-(\d+))?\.html/)||[null,null,''])[2];
-                var channel = prompt('专区ID', 'lol');
+                var channel = prompt('专区ID', $('#__CHANNEL__').val()||'');
                 var loop = 100;
                 var delay = 1000;//每loop次循环，休息delay毫秒
                 var laiyuanv3='oldweb';
                 var baseUrl = 'http://playstats.v.duowan.com/index.php?referrer=&laiyuanv3='+laiyuanv3+'&r=play%2Fload&vid='+vid+'&type=web&channelId='+channel+'&source_url=http%3A%2F%2Fvideo%2Eduowan%2Ecom%2Fplay%2F'+vid+'%2Ehtml%3Ft=';
+
+                if (! vid || ! channel) {
+                    alert('参数不足');
+                    return false;
+                }
+
+                $(this).css('cursor', 'not-allowed').unbind('click');//禁用按钮
 
                 function getRealPlayCount(vid, cb){
                     var url = 'http://playstats.v.duowan.com/index.php?r=api/get&vid='+vid+'&nocache=1';
@@ -56,7 +62,7 @@ loadToLoad(function(loadScript){
                                     (new Image()).src = baseUrl + (+ new Date()) + i;
                                 }
                                 console.log('opt.i = ' + opt.i + ', opt.z = ' + opt.z);
-                                $('#'+monkeyProduceBtn).html('刷量中..<span></span>');
+                                $('#'+monkeyProduceBtn).html('刷量中..请勿关闭页面<span></span>');
                                 $('#'+monkeyProduceBtn).children('span').text('(' + opt.i + '/' + opt.z + ')').css('color', 'red');
                             },
                             onStop: function(opt){ //结束后，来点小甜品
@@ -66,7 +72,7 @@ loadToLoad(function(loadScript){
                                     z: 25,
                                     delay: 1000,
                                     onTiming: function(opt){
-                                        $('#'+monkeyProduceBtn).html('刷新计时中..<span></span>');
+                                        $('#'+monkeyProduceBtn).html('即将刷新页面..<span></span>');
                                         $('#'+monkeyProduceBtn).children('span').text('(' + (opt.z - opt.i) + ')').css('color', 'red');
                                         if (opt.i == 10) {
                                             (new Image()).src = 'http://playstats.v.duowan.com/index.php?r=api/get&vid='+vid+'&nocache=1';
