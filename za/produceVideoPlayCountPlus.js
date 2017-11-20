@@ -10,7 +10,7 @@ function loadToLoad(cb){
                 cb.call(this, window.Ltrelib.loadScript);
             }
         }
-    }, 200);
+    }, 100);
 }
 
 
