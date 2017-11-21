@@ -19,6 +19,28 @@ loadToLoad(function(loadScript){
         loadScript('//res.miku.us/res/js/timing.js', function(){
 
             //---------------------------------------------------
+            var atWork = false;//是否工作中
+
+            window.onbeforeunload = function(e){
+                var closeMsg = '关闭页面，将导致播放量无法刷到预期值，且在几分钟内影响下一次刷量的预期准确性! 确定关闭?';
+                e = e || window.event;
+                if (e) {
+                    e.returnValue = closeMsg;
+                }
+                if (atWork) return closeMsg;
+            };
+            
+            function getRealPlayCount(vid, cb){
+                var url = 'http://playstats.v.duowan.com/index.php?r=api/get&vid='+vid+'&nocache=1';
+                $.get(url, function(j){
+                    if (vid in j) {
+                        cb(j[vid]);
+                    } else {
+                        alert('can not get real play count!');
+                    }
+                }, 'jsonp');
+            }
+
             var monkeyProduceBtn = '__monkey_produce_dwplaycount';
             var h = '<button id="'+monkeyProduceBtn+'" style="position:fixed; right:0; top:0; font-size:28px; z-index: 9999999;">刷播放量!<span></span></button>';
             $('body').append(h);
@@ -37,18 +59,8 @@ loadToLoad(function(loadScript){
                     return false;
                 }
 
+                atWork = true;
                 $(this).css('cursor', 'not-allowed').unbind('click');//禁用按钮
-
-                function getRealPlayCount(vid, cb){
-                    var url = 'http://playstats.v.duowan.com/index.php?r=api/get&vid='+vid+'&nocache=1';
-                    $.get(url, function(j){
-                        if (vid in j) {
-                            cb(j[vid]);
-                        } else {
-                            alert('can not get real play count!');
-                        }
-                    }, 'jsonp');
-                }
 
                 getRealPlayCount(vid, function(count){
                     if (goal > count) {
@@ -69,10 +81,12 @@ loadToLoad(function(loadScript){
                                 alert('恭喜，vid = ' + vid + '刷量结束！还需要等待几分钟才能看到最新播放量，请耐心等待。现在进入页面刷新倒计时..');
                                 Ltrelib.timing({
                                     a: 1,
-                                    z: 60,
+                                    z: 180,
                                     delay: 1000,
-                                    onTiming: function(opt){
+                                    onStart: function(opt){
                                         $('#'+monkeyProduceBtn).html('即将刷新页面..<span></span>');
+                                    },
+                                    onTiming: function(opt){
                                         $('#'+monkeyProduceBtn).children('span').text('(' + (opt.z - opt.i) + ')').css('color', 'red');
                                         if (parseInt(opt.i % 4) === 0) {
                                             (new Image()).src = 'http://playstats.v.duowan.com/index.php?r=api/get&vid='+vid+'&nocache=1';
@@ -80,6 +94,9 @@ loadToLoad(function(loadScript){
                                         if (parseInt(opt.i % 8) === 0) {
                                             var aid = articleId || $('#__ARTICLEID__').val();
                                             (new Image()).src = 'http://video.duowan.com/jsapi/playPageVideoInfo/?vids='+vid+'&articleIds='+aid+'&cache=update';
+                                        }
+                                        if (opt.i === 60) {
+                                            atWork = false;//结束后的第60秒，允许直接关闭页面
                                         }
                                     },
                                     onStop: function(opt){
@@ -90,6 +107,7 @@ loadToLoad(function(loadScript){
                         });
                     } else {
                         alert('已达到目标，不需要刷量');
+                        atWork = false;
                     }
                 });
             });
