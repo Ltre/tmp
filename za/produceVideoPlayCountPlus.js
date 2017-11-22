@@ -16,7 +16,7 @@ function loadToLoad(cb){
 
 loadToLoad(function(loadScript){
     loadScript('http://assets.dwstatic.com/common/lib/jquery/1.11.3/jquery-1.11.3.min.js', function(){
-        loadScript('//res.miku.us/res/js/timing.js', function(){
+        loadScript('//res.miku.us/res/js/timing.js?v=qxf2nklop', function(){
 
             //---------------------------------------------------
             var atWork = false;//是否工作中
