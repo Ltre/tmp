@@ -49,8 +49,8 @@ loadToLoad(function(loadScript){
                 var vid = prompt('输入vid', (location.href.match(/\/(v|new|test)?play\/(\d+)(\-\d+)?\.html/)||[null,null,0])[2]);
                 var articleId = (location.href.match(/\/(v|new|test)?play\/\d+(\-(\d+))?\.html/)||[null,null,''])[2];
                 var channel = prompt('专区ID', $('#__CHANNEL__').val()||'');
-                var loop = 100;
-                var delay = 1000;//每loop次循环，休息delay毫秒
+                var loop = 25;
+                var delay = 500;//每loop次循环，休息delay毫秒
                 var laiyuanv3='oldweb';
                 var baseUrl = 'http://playstats.v.duowan.com/index.php?referrer=&laiyuanv3='+laiyuanv3+'&r=play%2Fload&vid='+vid+'&type=web&channelId='+channel+'&source_url=http%3A%2F%2Fvideo%2Eduowan%2Ecom%2Fplay%2F'+vid+'%2Ehtml%3Ft=';
 
