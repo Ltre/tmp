@@ -21,11 +21,12 @@
 
 5、调用第三方接口说明：
     （1）获取原始vid与yyuid对应关系
-        a、接口URL：http://v.huya.com/?r=test/GetVidByUid
+        a、接口URL：http://huya.cms.duowan.com/?r=tool/getVidByUid4cli
         b、说明：每个yyuid对应的vid集合，分为上传者视频集合与个人主页视频集合
-        c、源码：由于接口是放在虎牙前台的TestController.php，随时可能会被删除，故在此处列出源码。
+        c、源码：由于接口是放在原虎牙后台的ToolController.php，随时可能会被删除，故在此处列出源码。
                 ---------------------------------------------------------------------------------------
-                public function actionGetVidByUid(){
+                //【提供给：上传者|播客播放量PHP-CLI程序专用接口】获取原始vid与yyuid对应关系
+                public function actionGetVidByUid4cli(){
                     $uid = arg('uid');
                     $calcMore = (int)arg('calcMore', 1) == 1 ? true : false;//默认计算更多的分月数据
                     $sql0 = "select vid,duration video_duration from upload_list where yyuid=:uid and can_play=1 and status!=-9 order by vid desc";
@@ -36,44 +37,17 @@
                         'upload_uid'=>$ret0,
                         'video_uid'=>$ret1,
                     );
-                    if ($calcMore) {
+                    if ($calcMore) { //这个分支很少用了，如要用到，请仿照代码更改
                         $sql2 = "select vid,duration video_duration from upload_list where yyuid=:uid and can_play=1 and status!=-9 and upload_start_time < ".strtotime('20151201')." order by vid desc";//2015/12之前upload_list
                         $sql3 = "select vid,duration video_duration from upload_list where yyuid=:uid and can_play=1 and status!=-9 and upload_start_time >= ".strtotime('20151201')." and upload_start_time < ".strtotime('20160101')." order by vid desc";//2015/12月份upload_list
                         $sql4 = "select vid,duration video_duration from upload_list where yyuid=:uid and can_play=1 and status!=-9 and upload_start_time >= ".strtotime('20160101')." and upload_start_time < ".strtotime('20160201')." order by vid desc";//2016/1月份upload_list
-                        $sql5 = "select vid,duration video_duration from upload_list where yyuid=:uid and can_play=1 and status!=-9 and upload_start_time >= ".strtotime('20160201')." and upload_start_time < ".strtotime('20160301')." order by vid desc";//2016/2月份upload_list
-                        $sql6 = "select vid,duration video_duration from upload_list where yyuid=:uid and can_play=1 and status!=-9 and upload_start_time >= ".strtotime('20160301')." and upload_start_time < ".strtotime('20160401')." order by vid desc";//2016/3月份upload_list
-                        $sql7 = "select vid,duration video_duration from upload_list where yyuid=:uid and can_play=1 and status!=-9 and upload_start_time >= ".strtotime('20160401')." and upload_start_time < ".strtotime('20160501')." order by vid desc";//2016/4月份upload_list
-                        $sql8 = "select vid,duration video_duration from upload_list where yyuid=:uid and can_play=1 and status!=-9 and upload_start_time >= ".strtotime('20160501')." and upload_start_time < ".strtotime('20160601')." order by vid desc";//2016/5月份upload_list
-                        $sql9 = "select vid,duration video_duration from upload_list where yyuid=:uid and can_play=1 and status!=-9 and upload_start_time >= ".strtotime('20160601')." and upload_start_time < ".strtotime('20160701')." order by vid desc";//2016/6月份upload_list
-                        $sql10 = "select vid,duration video_duration from upload_list where yyuid=:uid and can_play=1 and status!=-9 and upload_start_time >= ".strtotime('20160701')." and upload_start_time < ".strtotime('20160801')." order by vid desc";//2016/7月份upload_list
-                        $sql11 = "select vid,duration video_duration from upload_list where yyuid=:uid and can_play=1 and status!=-9 and upload_start_time >= ".strtotime('20160801')." and upload_start_time < ".strtotime('20160901')." order by vid desc";//2016/8月份upload_list
-                        $sql12 = "select vid,duration video_duration from upload_list where yyuid=:uid and can_play=1 and status!=-9 and upload_start_time >= ".strtotime('20160901')." and upload_start_time < ".strtotime('20161001')." order by vid desc";//2016/9月份upload_list
-                        $sql13 = "select vid,duration video_duration from upload_list where yyuid=:uid and can_play=1 and status!=-9 and upload_start_time >= ".strtotime('20161001')." and upload_start_time < ".strtotime('20161101')." order by vid desc";//2016/10月份upload_list
                         $ret2 = obj('Video')->query($sql2, array('uid'=>$uid));
                         $ret3 = obj('Video')->query($sql3, array('uid'=>$uid));
                         $ret4 = obj('Video')->query($sql4, array('uid'=>$uid));
-                        $ret5 = obj('Video')->query($sql5, array('uid'=>$uid));
-                        $ret6 = obj('Video')->query($sql6, array('uid'=>$uid));
-                        $ret7 = obj('Video')->query($sql7, array('uid'=>$uid));
-                        $ret8 = obj('Video')->query($sql8, array('uid'=>$uid));
-                        $ret9 = obj('Video')->query($sql9, array('uid'=>$uid));
-                        $ret10 = obj('Video')->query($sql10, array('uid'=>$uid));
-                        $ret11 = obj('Video')->query($sql11, array('uid'=>$uid));
-                        $ret12 = obj('Video')->query($sql12, array('uid'=>$uid));
-                        $ret13 = obj('Video')->query($sql13, array('uid'=>$uid));
                         $rs += array(
                             'upload_uid_before'=>$ret2,
                             'upload_uid_201512'=>$ret3,
                             'upload_uid_201601'=>$ret4,
-                            'upload_uid_201602'=>$ret5,
-                            'upload_uid_201603'=>$ret6,
-                            'upload_uid_201604'=>$ret7,
-                            'upload_uid_201605'=>$ret8,
-                            'upload_uid_201606'=>$ret9,
-                            'upload_uid_201607'=>$ret10,
-                            'upload_uid_201608'=>$ret11,
-                            'upload_uid_201609'=>$ret12,
-                            'upload_uid_201610'=>$ret13,
                         );
                     }
                     echo json_encode($rs);

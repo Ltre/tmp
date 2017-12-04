@@ -9,7 +9,7 @@ mb_internal_encoding("GB2312");//本文件运行编码环境为简体中文
 
 define('START_TIME', 20170201);
 define('END_TIME', 20170228);
-define('GET_VIDS_URL', "http://video.duowan.com/?r=test/GetVidByUid&calcMore=0&uid=");//获取vid和duration（多获取分月的数据）
+define('GET_VIDS_URL', "http://huya.cms.duowan.com/tool/getVidByUid4cli&calcMore=1&uid=");//获取vid和duration（多获取分月的数据）
 define('GET_VV_URL', "http://playstats-manager.v.duowan.com/?r=api/getAdPlay&startTime=".START_TIME."&endTime=".END_TIME."&vid="); 
 
 $uids = file("uids.txt");
