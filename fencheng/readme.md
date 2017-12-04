@@ -21,7 +21,7 @@
 
 5、调用第三方接口说明：
     （1）获取原始vid与yyuid对应关系
-        a、接口URL：http://huya.cms.duowan.com/?r=tool/getVidByUid4cli
+        a、接口URL：http://huya.cms.duowan.com/tool/getVidByUid4cli
         b、说明：每个yyuid对应的vid集合，分为上传者视频集合与个人主页视频集合
         c、源码：由于接口是放在原虎牙后台的ToolController.php，随时可能会被删除，故在此处列出源码。
                 ---------------------------------------------------------------------------------------
