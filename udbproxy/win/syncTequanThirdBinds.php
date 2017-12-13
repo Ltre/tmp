@@ -2,14 +2,16 @@
 
 $f1 = date('YmdHis');
 @mkdir($f1, 0777, true);
-
-for ($i = 0; $i <= 1000 - 50; $i += 50) {
+$limit = 300;//在自用window机器上，分片和延迟最好都设置大点，否则CPU和IO忙不过来，很快卡死
+$uSleep = 800;
+for ($i = 0; $i <= 1000 - $limit; $i += $limit) {
     $code = '<?php
         $url = "http://udbproxy.duowan.com/?r=tequan/syncBinding&tableStartNum='.$i.'&taskId='.microtime(1).rand(0, 999999).'";
         while (1) {
             $log = file_get_contents($url);
             file_put_contents("log", $log, FILE_APPEND);
             echo $log;
+            usleep('.$uSleep.');
         }
     ';
     $f2 = "{$f1}/{$i}";
