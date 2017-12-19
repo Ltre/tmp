@@ -5,33 +5,33 @@ require_once 'Model.php';
 require_once 'dwHttp.php';
 
 $bbList = [
-    'ËÕºØ¶«' => ['dw_suhedong', '50031151'],
-    'ÔøÍñÇí' => ['dw_zengwanqiong1', '50074517'],
-    '·ëÑ§äÆ' => ['dw_fengxuegan', '50000334'],
-    'Àè¶¬¿­' => ['dw_lidongkai', '50016778'],
-    'Íõ¾üð¢' => ['dw_wangjunji', '50000373'],
-    'ÕÔèº' => ['dw_zhaotao', '50004058'],
-    'Îâè÷ºÀ' => ['dw_wuzihao', '50075833'],
-    '¼ÎÖ¾' => ['dw_chenjiazhi', '50000537'],
-    'ÅËÎÄÐñ' => ['dw_panwenxu', '50015313'],
-    'ÓàÖ¾·¼' => ['dw_yuzhifang', '50000101'],
-    '»Æî£×Ó' => ['dw_huangruizi', '50075687'],
-    'ÀÍ¼üÃ÷' => ['dw_laojianming', '50075755'],
-    'ÁÖ½¨Ã÷' => ['dw_linjianming', '50075759'],
-    'ÕÅÃÎµÏ' => ['dw_zhangmengdi', '50015629'],
-    '³Â³Ï¹â' => ['dw_chengguang', '50074688'],
-    '¶­Ê¢½Ü' => ['dw_dongshengjie', '50016114'],
-    'ÎâÅô' => ['dw_wupeng', '50000063'],
-    '»ÆºÆ' => ['dw_huanghao1', '50040007'],
-    'Îâ½¨Çì' => ['dw_wujianqing', '50040004'],
-    'Å·ÕñÍ¢' => ['dw_ouzhenting', '50000336'],
-    '¹¨ºã' => ['dw_gongheng', '50013396'],
-    'ÕÅÓñ·å' => ['dw_zhangyufeng', '50013910'],
-    'Áºê×÷è' => ['dw_liangyaoqi', '50002383'],
-    '·ë¾ü' => ['dw_fengjun', '50000095'],
-    'ÓÚÑó' => ['dw_yuyang3', '50031135'],
-    'Ã÷´«Ï²' => ['dw_mingchuanxi', '50031160'],
-    'ÖÓÓîöÎ' => ['dw_zhongyuxin', '734981673'],
+    'è‹è´ºä¸œ' => ['dw_suhedong', '50031151'],
+    'æ›¾å©‰ç¼' => ['dw_zengwanqiong1', '50074517'],
+    'å†¯å­¦æ·¦' => ['dw_fengxuegan', '50000334'],
+    'é»Žå†¬å‡¯' => ['dw_lidongkai', '50016778'],
+    'çŽ‹å†›ç¨·' => ['dw_wangjunji', '50000373'],
+    'èµµéŸ¬' => ['dw_zhaotao', '50004058'],
+    'å´æ¢“è±ª' => ['dw_wuzihao', '50075833'],
+    'å˜‰å¿—' => ['dw_chenjiazhi', '50000537'],
+    'æ½˜æ–‡æ—­' => ['dw_panwenxu', '50015313'],
+    'ä½™å¿—èŠ³' => ['dw_yuzhifang', '50000101'],
+    'é»„ç¿å­' => ['dw_huangruizi', '50075687'],
+    'åŠ³é”®æ˜Ž' => ['dw_laojianming', '50075755'],
+    'æž—å»ºæ˜Ž' => ['dw_linjianming', '50075759'],
+    'å¼ æ¢¦è¿ª' => ['dw_zhangmengdi', '50015629'],
+    'é™ˆè¯šå…‰' => ['dw_chengguang', '50074688'],
+    'è‘£ç››æ°' => ['dw_dongshengjie', '50016114'],
+    'å´é¹' => ['dw_wupeng', '50000063'],
+    'é»„æµ©' => ['dw_huanghao1', '50040007'],
+    'å´å»ºåº†' => ['dw_wujianqing', '50040004'],
+    'æ¬§æŒ¯å»·' => ['dw_ouzhenting', '50000336'],
+    'é¾šæ’' => ['dw_gongheng', '50013396'],
+    'å¼ çŽ‰å³°' => ['dw_zhangyufeng', '50013910'],
+    'æ¢æ›œéº’' => ['dw_liangyaoqi', '50002383'],
+    'å†¯å†›' => ['dw_fengjun', '50000095'],
+    'äºŽæ´‹' => ['dw_yuyang3', '50031135'],
+    'æ˜Žä¼ å–œ' => ['dw_mingchuanxi', '50031160'],
+    'é’Ÿå®‡é‘«' => ['dw_zhongyuxin', '734981673'],
 ];
 
 $monthList = [
@@ -53,13 +53,13 @@ $monthList = [
 function getVV($vid, $startDate, $endDate){
     $url = "http://61.147.186.105/?r=api/getAdPlay&startTime={$startDate}&endTime={$endDate}&vid={$vid}";
     $h = new dwHttp();
-    $h->get($url, 20, "Host: playstats-manager.v.duowan.com");
+    $ret = $h->get($url, 20, "Host: playstats-manager.v.duowan.com");
     $json = json_decode($ret, true);
     return $json['result']['list']['byDate'];        
 }
 
 
-//·ÖÎÄ¼þ¼ÆËã
+//åˆ†æ–‡ä»¶è®¡ç®—
 $kpiDir = 'kpi_'.date('YmdHis');
 @mkdir($kpiDir, 0777, true);
 $videoModel = new Model('upload_list', 'mysql_video');
@@ -67,17 +67,17 @@ foreach ($bbList as $name => $items) {
     list ($udb, $yyuid) = $items;
     $udbDir = "{$kpiDir}/{$udb}";
     @mkdir($udbDir, 0777, true);
-    //¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡öDebug
+    //â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– Debug
     print_r("================================================\n");
     print_r('Created dir: '.$udbDir.', yyuid = '.$yyuid."\n");
-    //¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡öDebug
+    //â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– Debug
     foreach ($monthList as $month) {
         $monthFile = "{$udbDir}/{$month}.csv";
         @unlink($monthFile);
         $monthFp = fopen($monthFile, 'w+');
-        //¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡öDebug
+        //â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– Debug
         print_r('Created file: '.$monthFile."\n");
-        //¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡öDebug
+        //â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– Debug
         
         $titles = ['VID'];
         $startDate = $month.'01';
@@ -87,12 +87,12 @@ foreach ($bbList as $name => $items) {
             ++ $date;
         }
         
-        fputcsv($monthFp, $titles);//Ð´Èë±êÌâÐÐ
-        //¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡öDebug
+        fputcsv($monthFp, $titles);//å†™å…¥æ ‡é¢˜è¡Œ
+        //â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– Debug
         print_r("Wrote titles: \n");
         print_r($titles);
         echo "\n";
-        //¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡öDebug
+        //â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– Debug
         
         //$sql = "select vid from upload_list where yyuid=:yyuid and can_play=1 and status!=-9 and upload_start_time < :endTime order by vid desc";
         //$sql = "select vid from upload_list where yyuid=:yyuid and upload_start_time < :endTime order by vid desc";
@@ -102,30 +102,30 @@ foreach ($bbList as $name => $items) {
         $vidsLen = count($vidQueryRs);
         //$statsTable = "stats_video_play_{$month}";
         //$statsModel = new Model($statsTable, 'mysql');
-        //¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡öDebug
+        //â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– Debug
         print_r('Vids\' count:'.count($vidQueryRs)."\n");
-        //¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡öDebug
+        //â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– Debug
         foreach ($vidQueryRs as $k => $r) {
             $vid = $r['vid'];
-            $vvMap = getVV($vid, $startDate, $endDate);//¸ñÊ½£º[date] => ['load_num' => 0]
-            //¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡öDebug
+            $vvMap = getVV($vid, $startDate, $endDate);//æ ¼å¼ï¼š[date] => ['load_num' => 0]
+            //â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– Debug
             print_r('vvMap is:');
             print_r($vvMap);
             echo "\n";
-            //¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡öDebug
+            //â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– Debug
             $dataLine = [];
             foreach ($titles as $title) {
                 if ($title == 'VID') {
                     $dataLine[] = $vid;
-                } else {//YmdÈÕÆÚ¶ÔÓ¦µÄÄ³ÊÓÆµ²¥·ÅÊý                    
+                } else {//Ymdæ—¥æœŸå¯¹åº”çš„æŸè§†é¢‘æ’­æ”¾æ•°                    
                     //$sql = "select sum(load_num) s from {$statsTable} where vid = :vid and date_hour like :date";
                     //$sumQueryRs = $statsModel->query($sql, ['vid' => $vid, 'date' => "{$date}%"]);
                     //$sum = (int) $sumQueryRs[0]['s'];
                     $sum = (int) $vvMap[$title]['load_num'];
                     $dataLine[] = $sum;
-                    //¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡öDebug
+                    //â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– Debug
                     print_r("[{$k}/{$vidsLen}] Current vid = {$vid}, title = {$title}, sum = {$sum} \n");
-                    //¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡öDebug
+                    //â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– Debug
                 }
             }
             fputcsv($monthFp, $dataLine);
@@ -135,20 +135,20 @@ foreach ($bbList as $name => $items) {
     }
 }
 
-die;//µ½´ËÔÝÍ££¬²âÊÔ£¡
+die;//åˆ°æ­¤æš‚åœï¼Œæµ‹è¯•ï¼
 
 
-//ÒÔÏÂ¿ªÊ¼»ã×Ü
+//ä»¥ä¸‹å¼€å§‹æ±‡æ€»
 
 $file = 'kpi.csv';
 @unlink($file);
 $fp = fopen($file, 'w+');
 $titles = array(
-    'THIS_IS_NAME' => 'ÐÕÃû',
+    'THIS_IS_NAME' => 'å§“å',
     'THIS_IS_UDB' => 'UDB',
     'THIS_IS_YYUID' => 'YYUID',
 );
-foreach ($monthList as $month) $titles[$month] = date('Y', strtotime($month.'01')).'Äê'.date('m', strtotime($month.'01')).'ÔÂ';
+foreach ($monthList as $month) $titles[$month] = date('Y', strtotime($month.'01')).'å¹´'.date('m', strtotime($month.'01')).'æœˆ';
 
 fputcsv($fp, array_values($titles));
 
@@ -162,7 +162,7 @@ foreach ($bbList as $name => $items) {
             $dataLine[] = $udb;
         } elseif ($k == 'THIS_IS_YYUID') {
             $dataLine[] = $yyuid;
-        } else {//ÆäËü¶¼ÊÇÔÂ·Ý
+        } else {//å…¶å®ƒéƒ½æ˜¯æœˆä»½
             $table = "stats_video_play_{$k}";
             $sql = "select sum(load_num) s from {$table} where channel = '{$channel}'";
             $m = new Model($table, 'mysql');
