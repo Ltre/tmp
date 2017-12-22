@@ -1,6 +1,7 @@
 <?php
+@$uniqTaskId = $_SERVER['argv'][1] ?: date('YmdHis');
 
-$tmpDir = 'tmp_'.date('YmdHis');
+$tmpDir = $uniqTaskId;
 @mkdir($tmpDir, 0777, true);
 
 $nohupFile = 'nohup_tmp.sh';
@@ -18,7 +19,7 @@ foreach ($chunks as $k => $v) {
     @copy('kpi.php', "{$chunkDir}/kpi.php");
     file_put_contents("{$chunkDir}/udblist.csv", str_replace(["\r\n", "\r\r", "\n\n"], "\n", join("\n", $v)));
     
-    file_put_contents("{$chunkDir}/kpi.sh", "cd {$chunkDir}; /usr/local/php/bin/php kpi.php");
+    file_put_contents("{$chunkDir}/kpi.sh", "cd {$chunkDir}; /usr/local/php/bin/php kpi.php {$uniqTaskId}");
     $nohupShell[] = "nohup ./{$chunkDir}/kpi.sh >{$chunkDir}/nohup.log &";
 }
 

@@ -38,7 +38,8 @@ require_once 'dwHttp.php';
 $udbList = file("udblist.csv");
 $bbList = [];
 foreach ($udbList as $v) {
-    $bbList[$v[0]] = [$v[1], $v[2]];
+    $v = explode(',', str_replace(["\r", "\n"], '', $v));
+    $bbList[$v[0]] = $v[1];
 }
 
 
@@ -68,11 +69,10 @@ function getVV($vid, $startDate, $endDate){
 
 
 //分文件计算
-$kpiDir = @$_SERVER['argv'][1] ?: 'kpi_'.date('YmdHis');
+$kpiDir = @$_SERVER['argv'][1] ?: date('YmdHis');
 @mkdir($kpiDir, 0777, true);
 $videoModel = new Model('upload_list', 'mysql_video');
-foreach ($bbList as $name => $items) {
-    list ($udb, $yyuid) = $items;
+foreach ($bbList as $udb => $yyuid) {
     $udbDir = "{$kpiDir}/{$udb}";
     @mkdir($udbDir, 0777, true);
     //■■■■■■■■■■■■■■■Debug
@@ -142,6 +142,10 @@ foreach ($bbList as $name => $items) {
         fclose($monthFp);
     }
 }
+
+
+file_put_contents("{$kpiDir}/finish.is", '1');//标记任务完成
+
 
 die;//到此暂停，测试！
 
