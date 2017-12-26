@@ -197,18 +197,28 @@ class Model{
 	}
 }
 
+/* $upM = new Model('upload_list', 'mysql');
+foreach ([8641841,8641843,8641845,8641863,8641867,8651107,8651131,8670797,8670801,8670805,8670809,8670811] as $vid) {
+    echo $vid.',';
+    var_dump($upM->update(['vid' => $vid], ['letv_play' => 1]));
+    var_dump($upM->update(['vid' => $vid], ['letv_play' => 0]));
+}
+
+die; */
 
 $sql = "select vid from upload_list where 
         channel = 'yingshivideo' 
         and source_client = 45 
-        and upload_start_time < unix_timestamp() - 3600*3";
+        and upload_start_time < unix_timestamp() - 3600*3 order by vid desc";
 $upM = new Model('upload_list', 'mysql');
 $list = $upM->query($sql) ?: [];
 foreach ($list as $k => $v) {
-    if ($k % 100 == 0) {
+    if ($k % 10 == 0) {
         sleep(1);
     }
     echo $v['vid'].", ";
     $upM->update(['vid' => $v['vid']], ['letv_play' => 1]);
     $upM->update(['vid' => $v['vid']], ['letv_play' => 0]);
 }
+
+
