@@ -153,4 +153,4 @@ setTimeout(function(){
         onStop: function(opt){
         }
     });
-}, 10);
+}, 10000);
