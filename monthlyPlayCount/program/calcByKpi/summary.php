@@ -50,6 +50,7 @@ while (1) {
             fputcsv($allSummaryFp, array_merge([$udb, $yyuid], array_values($monthlyCountMap)));
         }
         fclose($allSummaryFp);
+        file_put_contents(str_replace('.csv', '-gbk.csv', $allSummaryFile), iconv('UTF-8', 'GBK', file_get_contents($allSummaryFile)));
         file_put_contents($allSummaryJsonFile, json_encode($allSummary, JSON_UNESCAPED_UNICODE));
         echo "\nAll finished!! Saved as {$allSummaryJsonFile}, {$allSummaryFile}\n";
         break;
