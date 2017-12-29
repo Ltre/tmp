@@ -8,7 +8,7 @@ $nohupFile = 'nohup_tmp.sh';
 $nohupShell = [];
 
 $udbList = file('udblist.csv');
-$chunkSize = 3;//分片长度
+@$chunkSize = $_SERVER['argv'][2] ?: 3;//分片长度
 $chunks = array_chunk($udbList, $chunkSize);
 foreach ($chunks as $k => $v) {
     $chunkDir = "{$tmpDir}/{$k}";

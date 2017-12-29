@@ -36,27 +36,18 @@ require_once 'dwHttp.php';
 
 //@Todo: bbList改为读取csv方式
 $udbList = file("udblist.csv");
-$bbList = [];
+//$udbList = $GLOBALS['udbList'];
+/* $bbList = [];
 foreach ($udbList as $v) {
     $v = explode(',', str_replace(["\r", "\n"], '', $v));
     $bbList[$v[0]] = $v[1];
+} */
+foreach ($udbList as $k => $v) {
+    $udbList[$k] = explode(',', str_replace(["\r", "\n"], '', $v));//[[udb,yyuid], ...]
 }
 
 
-$monthList = [
-    '201612',
-    '201701',
-    '201702',
-    '201703',
-    '201704',
-    '201705',
-    '201706',
-    '201707',
-    '201708',
-    '201709',
-    '201710',
-    '201711',
-];
+$monthList = $GLOBALS['monthList'];
 
 
 function getVV($vid, $startDate, $endDate){
@@ -71,8 +62,10 @@ function getVV($vid, $startDate, $endDate){
 //分文件计算
 $kpiDir = @$_SERVER['argv'][1] ?: date('YmdHis');
 @mkdir($kpiDir, 0777, true);
+$summaryData = [];//汇总数据, 第一层用udb，第二层用月份
 $videoModel = new Model('upload_list', 'mysql_video');
-foreach ($bbList as $udb => $yyuid) {
+foreach ($udbList as $udbData) {
+    list ($udb, $yyuid) = $udbData;
     $udbDir = "{$kpiDir}/{$udb}";
     @mkdir($udbDir, 0777, true);
     //■■■■■■■■■■■■■■■Debug
@@ -80,7 +73,7 @@ foreach ($bbList as $udb => $yyuid) {
     print_r('Created dir: '.$udbDir.', yyuid = '.$yyuid."\n");
     //■■■■■■■■■■■■■■■Debug
     foreach ($monthList as $month) {
-        $monthFile = "{$udbDir}/{$month}.csv";
+        $monthFile = "{$udbDir}/{$month}.csv";//每个UDB每个月份对应文件
         @unlink($monthFile);
         $monthFp = fopen($monthFile, 'w+');
         //■■■■■■■■■■■■■■■Debug
@@ -113,6 +106,7 @@ foreach ($bbList as $udb => $yyuid) {
         //■■■■■■■■■■■■■■■Debug
         print_r('Vids\' count:'.count($vidQueryRs)."\n");
         //■■■■■■■■■■■■■■■Debug
+        $playCountPerUDBMonth = 0;//每个UDB经过一个月，汇总一次
         foreach ($vidQueryRs as $k => $r) {
             $vid = $r['vid'];
             $vvMap = getVV($vid, $startDate, $endDate);//格式：[date] => ['load_num' => 0]
@@ -131,6 +125,7 @@ foreach ($bbList as $udb => $yyuid) {
                     //$sum = (int) $sumQueryRs[0]['s'];
                     $sum = (int) $vvMap[$title]['load_num'];
                     $dataLine[] = $sum;
+                    $playCountPerUDBMonth += $sum;
                     //■■■■■■■■■■■■■■■Debug
                     print_r("[{$k}/{$vidsLen}] Current vid = {$vid}, title = {$title}, sum = {$sum} \n");
                     //■■■■■■■■■■■■■■■Debug
@@ -138,12 +133,13 @@ foreach ($bbList as $udb => $yyuid) {
             }
             fputcsv($monthFp, $dataLine);
         }
+        $summaryData[$udb][$month] = $playCountPerUDBMonth;
         
         fclose($monthFp);
     }
 }
 
-
+file_put_contents("{$kpiDir}/summary.json", json_encode($summaryData));//保存汇总文件
 file_put_contents("{$kpiDir}/finish.is", '1');//标记任务完成
 
 
