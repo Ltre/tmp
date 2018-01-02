@@ -21,27 +21,36 @@ $('#media_id>option').each(function(i, e){
     fids.push(fid);
     $('body').append('<iframe id="'+fid+'" src="'+url+'"></iframe>');
 });
-showTip('等待后台进行5秒加载...', true);
+showTip('等待后台进行加载...', false);
 setTimeout(function(){
+    var finishCount = 0;
     fids.forEach(function(e, i){
+        var lockSave = false;
         var iv = setInterval(function(){
-            var saveBtn = window[e].contentWindow.document.getElementById('save');
-            console.log(e, saveBtn);
-            if (saveBtn) {
-                saveBtn.click();
-                showTip('点击保存'+e);
-                var idx=fids.indexOf(e); 
-                //if (idx !== -1) {
-                    //fids = fids.splice(idx, 1);
-                    showTip('完成保存任务[ID=' + e + ']', false);
+            var win = window[e].contentWindow;
+            var doc = win.document;
+            var saveBtn = doc.getElementById('save');
+            if (saveBtn && ! lockSave) {
+                lockSave = true;
+                showTip('子页面['+e+']加载成功，等待执行保存...', false);
+                setTimeout(function(){//加载好页面后，为确保点击可以成功保存，需等待子页面js执行完毕
+                    doc.body.scrollIntoView();
+                    saveBtn.click();
+                    showTip('点击保存'+e, false);
+                    debugger
+                    finishCount ++;
+                    console.log({finishCount: finishCount});
+                    showTip('完成保存任务[ID=' + e + '], ' + (finishCount/fids.length)*100 + '%', false);
                     clearInterval(iv);
-                //}
+                    lockSave = false;
+                }, 1000);
             }
-        }, 200);
+        }, 3000);
     });
-    setInterval(function(){
-        if (fids.length == 0) {
-            showTip('全部搞定啦！', true);
+    var fuck = setInterval(function(){
+        if (finishCount == fids.length) {
+            showTip('全部搞定啦！', false);
+            clearInterval(fuck);
         }
     }, 200);
 }, 5000);
