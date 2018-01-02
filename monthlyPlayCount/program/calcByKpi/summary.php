@@ -55,5 +55,6 @@ while (1) {
         echo "\nAll finished!! Saved as {$allSummaryJsonFile}, {$allSummaryFile}\n";
         break;
     }
+    ++ $waitDur;
 }
 
