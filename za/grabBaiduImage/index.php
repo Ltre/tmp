@@ -53,10 +53,8 @@ $config = [
     ],
 ];
 
-
 $tmpdir = "tmp/" . (new dwPinyin)->str2py($config['word']) . '_' . $config['useFilter'] . '_' . date('YmdHis');
 @mkdir($tmpdir, 0777, true);
-die;
 $p = 1;
 $emptyCount = 0;
 while ($emptyCount < 3) {
