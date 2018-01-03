@@ -4,9 +4,9 @@ include 'dwHttp.php';
 include 'dwPinyin.php';
 
 $config = [
-    'word' => '杨幂',
-    //'tmpdir' => 'tmp'.date('YmdHis'),
+    'word' => '斗图装逼',
     'useFilter' => 'ALL',
+    'get_maybe_gif' => true,//遇到gif类型图，尽可能获取真实gif（百度网页默认不直接加载，需要鼠标hover动作）
     'filterParamsMap' => [
         'ALL' => [ //全部类型
             'lm' => '',
@@ -65,19 +65,42 @@ while ($emptyCount < 3) {
         //$len = $ret['listNum'];//可能没用
         foreach ($list as $k => $v) {
             if (isset($v['middleURL'])) {
-                $getIgs = getimagesize($v['middleURL']);
+                $imgUrl = $v['middleURL'];
+                saveOne($imgUrl, function($ext) use ($tmpdir, $p, $k) {
+                    return "{$tmpdir}/{$p}-{$k}.{$ext}";
+                });
+                if ($v['is_gif'] == 1 && $config['get_maybe_gif']) { //遇到可能是gif的图，则保存hover图到独立的目录，这里的图多数是真正的gif
+                    $imgUrl = $v['replaceUrl'][1]['ObjURL'];
+                    saveOne($imgUrl, function($ext) use ($tmpdir, $p, $k) {
+                        @mkdir("{$tmpdir}/maybe-gif", 0777, true);
+                        return "{$tmpdir}/maybe-gif/{$p}-{$k}.{$ext}";
+                    });
+                }
+                /* $getIgs = getimagesize($imgUrl);
                 if (false === $getIgs) continue;
                 list ($width, $height, $mimetype) = $getIgs;
                 $ext = image_type_to_extension($mimetype, false);
                 $grabFile = "{$tmpdir}/{$p}-{$k}.{$ext}";
-                file_put_contents("{$grabFile}", file_get_contents($v['middleURL']));
-                echo "write file: {$grabFile} \n\n";
+                file_put_contents("{$grabFile}", file_get_contents($imgUrl));
+                echo "write file: {$grabFile} \n\n"; */
             }
         }
     }
     ++ $p;
     echo "----------------emptyCount: {$emptyCount}----------------\r\n";
     echo "----------------p: {$p}----------------\r\n";
+}
+
+
+function saveOne($imgUrl, Closure $genFilePath){
+    $getIgs = getimagesize($imgUrl);
+    if (false === $getIgs) return;
+    list ($width, $height, $mimetype) = $getIgs;
+    $ext = image_type_to_extension($mimetype, false);
+    //$grabFile = "{$tmpdir}/{$p}-{$k}.{$ext}";
+    $grabFile = $genFilePath($ext);
+    file_put_contents("{$grabFile}", file_get_contents($imgUrl));
+    echo "write file: {$grabFile} \n\n";
 }
 
 
@@ -130,13 +153,3 @@ function getWebImageList($word, $p){
     }
 }
 
-
-
-function getExtByUrl($url){
-    $map = [
-        
-    ];
-    $hs = get_header($url, 1);
-    $t = $hs['Content-Type'];
-    return isset($map[$t]) ? ".{$map[$t]}" : '';
-}
