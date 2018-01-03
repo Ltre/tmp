@@ -4,9 +4,9 @@ include 'dwHttp.php';
 include 'dwPinyin.php';
 
 $config = [
-    'word' => '斗图装逼',
+    'word' => '斗图',
     'useFilter' => 'ALL',
-    'get_maybe_gif' => true,//遇到gif类型图，尽可能获取真实gif（百度网页默认不直接加载，需要鼠标hover动作）
+    'get_maybe_gif' => false,//遇到gif类型图，尽可能获取真实gif（百度网页默认不直接加载，需要鼠标hover动作）
     'filterParamsMap' => [
         'ALL' => [ //全部类型
             'lm' => '',
