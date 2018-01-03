@@ -66,7 +66,7 @@ while ($emptyCount < 3) {
         foreach ($list as $k => $v) {
             if (isset($v['middleURL'])) {
                 $imgUrl = $v['middleURL'];
-                saveOne($imgUrl, function($ext) use ($tmpdir, $p, $k) {
+                saveOne($imgUrl, function($ext) use ($tmpdir, $p, $k) { //常规保存
                     return "{$tmpdir}/{$p}-{$k}.{$ext}";
                 });
                 if ($v['is_gif'] == 1 && $config['get_maybe_gif']) { //遇到可能是gif的图，则保存hover图到独立的目录，这里的图多数是真正的gif
@@ -76,13 +76,6 @@ while ($emptyCount < 3) {
                         return "{$tmpdir}/maybe-gif/{$p}-{$k}.{$ext}";
                     });
                 }
-                /* $getIgs = getimagesize($imgUrl);
-                if (false === $getIgs) continue;
-                list ($width, $height, $mimetype) = $getIgs;
-                $ext = image_type_to_extension($mimetype, false);
-                $grabFile = "{$tmpdir}/{$p}-{$k}.{$ext}";
-                file_put_contents("{$grabFile}", file_get_contents($imgUrl));
-                echo "write file: {$grabFile} \n\n"; */
             }
         }
     }
