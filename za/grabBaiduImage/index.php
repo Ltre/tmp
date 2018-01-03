@@ -54,7 +54,7 @@ $config = [
 ];
 
 
-$tmpdir = "tmp/" . (new dwPinyin)->str2py($config['word']) . '_' . (new dwPinyin)->str2py($config['useFilter']) . '_' . date('YmdHis');
+$tmpdir = "tmp/" . (new dwPinyin)->str2py($config['word']) . '_' . $config['useFilter'] . '_' . date('YmdHis');
 @mkdir($tmpdir, 0777, true);
 die;
 $p = 1;
