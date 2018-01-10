@@ -9,9 +9,9 @@ include __DIR__.'/SeniorModel.php';
 function updateOne($v){
     global $global;
     $data = json_decode($v['json_data']?:[], 1);
-    echo "json_data is 【{$v['json_data']}】\n";
-    print_r($data);
-    echo "\n";
+    //echo "json_data is 【{$v['json_data']}】\n";
+    //print_r($data);
+    //echo "\n";
     if (empty($data)) return;
     $nickname = $avatar = '';
     switch ($v['type']) {
@@ -36,13 +36,14 @@ function updateOne($v){
     }
     $tableName = getCurrTableName($global['tableN'], 1);
     $model = new SeniorModel($tableName, $global['mysqlInstance']);
-    echo "tableName={$tableName}, p={$global['p']}, openid={$v['openid']}, type={$v['type']}, nickname={$nickname}, avatar={$avatar} \r\n";
+    echo "tableName={$tableName}, p={$global['p']}, openid={$v['openid']}, type={$v['type']}, nickname={$nickname}, avatar={$avatar} \n";
     if ('' !== $nickname || '' !== $avatar) {
-        $model->update(['openid' => $v['openid'], 'type' => $v['type']], [
+        $updateRet = $model->update(['openid' => $v['openid'], 'type' => $v['type']], [
             'nickname' => $nickname,
             'avatar' => $avatar,
         ]);
-        echo "UPDATED!! \n";
+        $success = false !== $updateRet;
+        echo "UPDATING.. updateRet is [".$updateRet."] Result is ".($success?'success':'fail')."\n";
     } else {
         echo "No nessary! \n";
     }
@@ -71,9 +72,9 @@ function update($tableN = 0, $p = 1, $limit = 100) {
         'pageable' => true,
     ]);
     
-    echo "chunk ret is: \n";
-    print_r($ret);
-    echo "\n";
+    //echo "chunk ret is: \n";
+    //print_r($ret);
+    //echo "\n";
 
     $list = $ret['list'];
     $pages = $ret['pages'];
@@ -136,7 +137,7 @@ function setNextP($isLastP = false){
 //获取当前表名
 function getCurrTableName($tableStartNum, $fullNumLen = 3){
     global $global;
-    $n = intval(@file_get_contents('tableN')?:0);
+    $n = getCache('tableN');
 
     //■■■■■■■■■■■■■■■■■■■DEBUG
     // $n = 0;//固定在某个表进行测试
@@ -158,7 +159,7 @@ function getCurrTableName($tableStartNum, $fullNumLen = 3){
 //设置下一个表名
 function setNextTableName(){
     global $global;
-    if ($global['tableN'] < 999) {
+    if ($global['tableN'] < $global['tableCount']-1) {
         ++ $global['tableN'];
     } else {
         $global['tableN'] = 0;
@@ -171,6 +172,7 @@ $global = [
     'taskId' => 'fuxk', //多任务区分ID
     'tableN' => 0, //当前进度表名
     'p' => 1, //当前进度页码
+    'tableCount' => 10, //总分表个数
     'limit' => 100, //每limit条数据一轮
     'usleep' => 200, //每轮暂停usleep毫秒
     'tableBaseName' => 'third_userinfo',
@@ -185,5 +187,5 @@ $global['p'] = $_SERVER['argv'][3] ?: $global['p'];
 
 while (1) {
     update($global['tableN'], $global['p'], $global['limit']);
-    usleep(100);
+    usleep(500);
 }

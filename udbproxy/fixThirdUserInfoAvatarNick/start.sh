@@ -11,5 +11,5 @@ fi
 for tableN in $( seq 0 9 )
 do
     taskId=$taskIdPre$tableN
-    nohup ./program.php mytaskid_$tableN $tableN $startP >./$tmpdir/nohup_$tableN.output &
+    nohup ./program.php $taskId $tableN $startP >./$tmpdir/nohup_$tableN.output &
 done
