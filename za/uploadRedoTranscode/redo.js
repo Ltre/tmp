@@ -67,17 +67,17 @@ LtreLib.timing = function(opt){
 };
 
 
-function redo(vid, ifrId){
+function redo(vid, parentIfrId){
     (new Image).src = 'http://cloud.v.duowan.com/index.php?r=video/handle&action=upload%2Fprobe&vid=' + vid;
     setTimeout(function(){        
         var url = "http://cloud.v.duowan.com/index.php?r=video/view&id=" + vid;
-        $('body').append('<iframe id="'+ifrId+'" name="'+ifrId+'"></iframe>');
-        $('#'+ifrId).attr('src', url);
+        $('body').append('<iframe id="'+parentIfrId+'" name="'+parentIfrId+'"></iframe>');
+        $('#'+parentIfrId).attr('src', url);
         //debugger;
         //打开视频新详细页
-        $('#'+ifrId)[0].onload = function(){
+        $('#'+parentIfrId)[0].onload = function(){
             //debugger;
-            var currIfrObj = $('#'+ifrId)[0];
+            var currIfrObj = $('#'+parentIfrId)[0];
             var subDoc = currIfrObj.contentDocument;
             var subWin = currIfrObj.contentWindow;
             var subJQ = subWin.$;
@@ -94,7 +94,10 @@ function redo(vid, ifrId){
                     var btn = sub2win.$('button.button.button-large.cyan:contains("重新转码")');
                     sub2win.alert = function(str){
                         console.log("curr vid="+vid+", alert: " + str);
-                        $('#'+ifrId).remove();//确认一个视频的所有转码已全部处理，将清理现场
+                        setTimeout(function(){
+                            //确认一个视频的所有转码已全部处理，将清理现场。因不好确定是否所有方案完全处理完毕，故延迟20秒后再删
+                            $('#'+parentIfrId).remove();
+                        }, 20000);
                     };
                     btn.click();
                 };
