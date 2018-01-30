@@ -1,6 +1,6 @@
 //查2018-01-26 10:00:00之后同步失败、转码失败、发布失败的视频，点击重新转码
 //将代码粘贴到类似http://cloud.v.duowan.com/index.php?r=video/view&id=8737413的页面即可
-
+//select distinct et.vid from encode_task et, upload_list u where et.vid = u.vid and u.update_time >= '2018-01-26 10:00:00' and et.status in (-1, -2, -3)
 window.LtreLib = window.LtreLib || {};//使用一个生僻的名称作为全局变量，以存储自定义的库，防止与其它变量冲突
 LtreLib.timing = function(opt){
     opt.a           = opt.a || 0;//开始
