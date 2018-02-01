@@ -171,6 +171,6 @@ class Bot {
 }
 
 $bot = new Bot;
-for ($i = 0; $i < 5; $i ++) {//先发5篇试试
+for ($i = 0; $i < 1; $i ++) {//先发10篇试试
     $bot->start();
 }
