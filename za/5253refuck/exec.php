@@ -149,8 +149,6 @@ class Bot {
         $this->log("Push params: ".var_export($params, 1));
         $ret = (new dwHttp)->post($url, $params, 20, "Host: huya.cms.duowan.com");
         $this->log("Push ret: ".$ret);
-//DEBUG
-die;
     }
     
     
@@ -173,6 +171,6 @@ die;
 }
 
 $bot = new Bot;
-for ($i = 0; $i < 5; $i ++) {
+for ($i = 0; $i < 5; $i ++) {//先发5篇试试
     $bot->start();
 }
