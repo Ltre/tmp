@@ -149,6 +149,8 @@ class Bot {
         $this->log("Push params: ".var_export($params, 1));
         $ret = (new dwHttp)->post($url, $params, 20, "Host: huya.cms.duowan.com");
         $this->log("Push ret: ".$ret);
+        echo "发文章：{$v['title']}\n";
+        echo "结果：".$ret."\n";
     }
     
     
