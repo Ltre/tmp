@@ -1,5 +1,6 @@
 #!/usr/local/php/bin/php
 <?php
+//放置到221.228.91.194运行，完毕后会生成afterPush.js文件，仔细根据js文件里的提示去做
 
 require_once __DIR__.'/config.php';
 require_once __DIR__.'/Model.php';
@@ -12,9 +13,10 @@ require_once __DIR__.'/Iuc.php';
 class Bot {
     
     private $logFile;
-    private $limit = 10;
-    private $p = 0;
-    
+    private $limit = 20;
+    private $p = 1;
+    private $startP = 1;
+    private $data4AfterPush = [];
     
     private $channelMap = [
         53842 => 'smsy', //蜀门手游smsy.duowan.com
@@ -32,7 +34,7 @@ class Bot {
     ];
     
     private $templateIdMap = [
-        53842 => '381436322584', //蜀门手游smsy.duowan.com
+        53842 => '381436992865', //蜀门手游smsy.duowan.com
         /* 53650 => 'dnsy', //龙之谷手游dnsy.duowan.com
         50014 => 'qqhcs', //青丘狐传说qqhcs.duowan..com
         49882 => 'mhzxsy', //梦幻诛仙手游mhzxsy.duowan.com
@@ -51,8 +53,8 @@ class Bot {
         file_put_contents($this->logFile, '');
     }
     
-    function start(){
-        $p = $this->getCurrP($p);
+    function start(& $isLastP = false){
+        $this->setCurrP($this->startP);
         $gameIds = array_keys($this->channelMap);
         $model = new SeniorModel('tb_article', 'mysql');
         $selectData = $model->seniorSelect([
@@ -68,7 +70,8 @@ class Bot {
         foreach ($list as $v) {
             $this->doit($v);
         }
-        $this->setNextP( $pages['total_page'] <= $p );
+        $isLastP = $pages['total_page'] <= $p;
+        $this->setNextP($isLastP);
     }
     
     
@@ -78,20 +81,20 @@ class Bot {
         $v['templateId'] = $this->templateIdMap[$v['gameId']];
         $cover = $this->upByImgUrl('http://image.5253.com/'.ltrim($v['coverImage'], '/'));
         $v['cover'] = $cover;//备用：$v['images']有多个地址，用逗号隔开；$v['coverImage']仅有一个地址
+        $v['content'] = preg_replace('/{insertgame\:\d+\:\d+}/', '', $v['content']);
         //$this->log("v is: ".json_encode($v, JSON_UNESCAPED_UNICODE));
         $this->log("v is: ".var_export($v, 1));
         $this->pushArticle($v);
     }
 
     
-    private function getCurrP($_p){
+    private function setCurrP($startP){
         @$p = file_get_contents(__DIR__.'/p') ?: false;
         if (false === $p) {
-            $p = $_p;
+            $p = $startP;
             file_put_contents(__DIR__.'/p', $p);
         }
         $this->p = $p;
-        return $p;
     }
 
 
@@ -135,13 +138,15 @@ class Bot {
                 'coverUrl' => (string) $v['cover'],
                 'source' => (string) $v['reprintSrc'],
                 'userId' => '5253bot',
+                'needComment' => '1',
+                'publishTime' => $v['createTime'],
                 'templateId' => (string) $v['templateId'],
             ],
             'time' => (string) time(),
         ];
         $tokenFile = '/home/fangkunbiao/5253refucktoken';
         if (! file_exists($tokenFile)) throw new Exception("token file not found!");
-        @$token = trim(file_get_contents($tokenFile), "\n") ?: '';//token到huyaVideoAdmin项目找
+        @$token = file_get_contents($tokenFile) ?: '';//token到huyaVideoAdmin项目找
         ksort($params, SORT_REGULAR);
         $calcSign = hash_hmac('sha1', json_encode($params), $token);
         $params['sign'] = $calcSign;
@@ -151,11 +156,53 @@ class Bot {
         $this->log("Push ret: ".$ret);
         echo "发文章：{$v['title']}\n";
         echo "结果：".$ret."\n";
+        //准备后续的事：改文章时间（因推送接口指定发布时间失败）
+        $this->afterPush($v, $ret);
+    }
+    
+    
+    function afterPush($v, $ret){
+        $ret = json_decode($ret?:'[]', 1);
+        if (! isset($ret['postRet']['articleId'])) {
+            return false;
+        }
+        $this->data4AfterPush['list'][] = [
+            "artiUrl" => "http://cms.duowan.com/article/toEditArticlePage.do?articleId={$ret['postRet']['articleId']}&channelId={$v['channel']}",
+            "time" => $v['createTime'],
+            "channel" => $v['channel'],
+            "articleId" => $ret['postRet']['articleId'],
+        ];
+        $listCode = json_encode($this->data4AfterPush['list'], JSON_UNESCAPED_UNICODE);
+        $js = "
+            //在cms.duowan.com域名下执行：
+            //console找到名为contentIframe的frame，加上ID abcdefghijklmn
+            var list = {$listCode};
+            function doit(o, cb){
+                document.getElementById('abcdefghijklmn').setAttribute('src', o.artiUrl);
+                setTimeout(function(){
+                    var win = window['abcdefghijklmn'].contentWindow;
+                    var doc = window['abcdefghijklmn'].contentDocument;
+                    doc.getElementById('newPublishTimeStr').value = o.time;
+                    win.updatePublishTime();
+                    setTimeout(function(){
+                        cb();
+                    }, 2000);
+                }, 2000);
+            }
+            function cb(){
+                if (++i < list.length) {
+                    doit(list[i], cb);
+                }
+            }
+            i = 0;
+            doit(list[i], cb);
+        ";
+        file_put_contents(__DIR__.'/afterPush.js', $js);
     }
     
     
     //上传封面，返回url
-    public function upByImgUrl($url, $option = []){
+    function upByImgUrl($url, $option = []){
         $client = new ImgUploadClient;
         if (! preg_match('/^https?\:\/\//', $url) && preg_match('/^\/\/\w/', $url)) {
             $url = 'http:' . $url; //处理抓到的B站url，原始格式形如： //i1.hdslb.com/bfs/archive/72fd7ddb8a35b44f32a388be87b973a0f8994175.jpg
@@ -173,6 +220,12 @@ class Bot {
 }
 
 $bot = new Bot;
-for ($i = 0; $i < 1; $i ++) {//先发10篇试试
-    $bot->start();
+while (1) {
+    $isLastP = $bot->start();
+    if ($isLastP) {
+        echo "finish! \n";
+        break;
+    }
+    echo "wait.. \n";
+    sleep(1);
 }
