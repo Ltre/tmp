@@ -205,7 +205,7 @@ class Bot {
     function upByImgUrl($url, $option = []){
         $client = new ImgUploadClient;
         if (! preg_match('/^https?\:\/\//', $url) && preg_match('/^\/\/\w/', $url)) {
-            $url = 'http:' . $url; //处理抓到的B站url，原始格式形如： //i1.hdslb.com/bfs/archive/72fd7ddb8a35b44f32a388be87b973a0f8994175.jpg
+            $url = 'http:' . $url;
         }
         $ret = $client->upByImgUrl($url, $option);
         if ($ret['code'] != 0) return false;
