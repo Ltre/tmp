@@ -93,6 +93,7 @@ foreach ($udbList as $udbData) {
         $summaryData[$udb][$month] = $playCountPerUDBMonth;
         
         fclose($monthFp);
+        file_put_contents($monthFile, iconv('UTF-8', 'GBK', file_get_contents($monthFile)));
     }
 }
 
