@@ -32,11 +32,11 @@ for ($i = 0; $i < count($list); ++ $i) {
 }
 
 //DEBUG
-die;//@todo: 后面还没测试好
+die;//@todo: 后面还没测试好 
 
 //将一定时刻以前的重试出错数据，标为失败
 $sql = "select l.vid, u.title, l.msg from v_fanhe_article_last_log l, v_fanhe_upload u where l.vid=u.vid and msg like 'get editor realname failed, udb%' and u.status=0 and u.create_time < :time";
-$model = new Model('v_fanhe_upload', 'mysql_dev');
+$model = new Model('v_fanhe_upload', 'mysql');
 $list = $model->query($sql, ['time' => strtotime(date('Ymd'))]) ?: [];//处理当天以前的
 print_r($list);
  
