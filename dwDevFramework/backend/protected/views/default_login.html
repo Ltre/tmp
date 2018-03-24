@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <h1>不是管理员，或你没登录</h1>
+        <button id="in">login</button>
+        <button id="out">logout</button>
+        <script src="http://pub.dwstatic.com/common/js/jquery.js"></script>
+        <script src="http://pub.dwstatic.com/common/js/dwudbproxy.js"></script>
+        <script>
+            $('#in').click(function(){
+                dwUDBProxy.login("/");
+            });
+            $('#out').click(function(){
+                dwUDBProxy.logout("//<{$host}>/logout")
+            });
+        </script>
+    </body>
+</html>
