@@ -2,6 +2,8 @@
 class BaseController extends Controller{
 
 	var $layout = "layout.html";
+    
+    var $yyuid;
 
 	//需要登录的列表
 	private $_mustLogin = array(
