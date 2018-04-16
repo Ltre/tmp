@@ -13,4 +13,5 @@ foreach ($vids as $vid) {
     //$sql = "update upload_list set status = -9 where vid = {$vid} limit 1;\r\n";
     //echo $sql;
     //file_put_contents('delete.sql', $sql, FILE_APPEND);
+    usleep(50);
 }
