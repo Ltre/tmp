@@ -7,9 +7,58 @@
 <link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1 align="center">UI</h1>
+    <div class="container-fluid">
+        <div class="row flex-xl-nowrap">
+            <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+                <h3 id="options"><div>比赛列表<a class="anchorjs-link " href="#options" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a></div></h3>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr id="diy-fields"></tr>
+                    </thead>
+                    <tbody id="diy-datas"></tbody>
+                </table>
+            </main>
+        </div>
+    </div>
     <script>
-    
+    $(function(){
+        var config = {
+            tu: {
+                fields: ['id', 'title', 'description', 'created']
+            }
+        };
+        
+        
+        function finder(source, kws, id, limit){
+            id = id || 1;
+            limit = limit || 1000;
+            kws = kws || [];
+            //表头
+            var fieldsArea = $('#diy-fields');
+            fieldsArea.html('');
+            for (var f of config[source].fields) {
+                fieldsArea.append('<th>' + f + '</th>');
+            }
+            fieldsArea.append('<th>操作</th>');
+            //表体
+            var url = '/finder.php';
+            var params = {id: id, limit: limit, kws: kws, source: source};
+            $.get(url, params, function(list){
+                var area = $('#diy-datas');
+                for (var l of list) {
+                    var line = '<tr data-id="' + l.id + '">';
+                    for (var f of config[source].fields) {
+                        line += '<td>' + l[f] + '</td>';
+                    }
+                    line += '<td><a href="javascript:;" data-id="' + l.id + '">删除</a></td></tr>';
+                    area.append(line);
+                }
+            }, 'json');
+        }
+        
+        finder('tu', ['游戏'], 10, 1000);
+        
+    });
     </script>
 </body>
 </html>

@@ -3,12 +3,32 @@
 include 'config.php';
 include 'dwHttp.php';
 
-$kw = $_REQUEST['kw'];
-$getter = $_REQUEST['getter'];
-$params = $_REQUEST['params'] ?: [];
+$source = $_REQUEST['source'];
+$kws = $_REQUEST['kws'] ?: [];
+$id = $_REQUEST['id'] ?: 1;
+$limit = $_REQUEST['limit'] ?: 1000;
+$kwFields = $GLOBALS['sources'][$source]['keywordFields'];
+
+$getter = $GLOBALS['sources'][$source]['list_api'];
 $http = new dwHttp;
-$ret = $http->post($getter, $params, 55);
+$ret = $http->post($getter, compact('id', 'limit'), 55);
 $list = json_decode($ret?:'[]', 1);
-foreach ($list as $v) {
-    
+$findList = [];
+if (empty($kws)) {
+    echo json_encode($list);
+} else {
+    foreach ($list as $v) {
+        if (is_array($v)) {
+            foreach ($kwFields as $field) {
+                if (! isset($v[$field])) continue;
+                foreach ($kws as $kw) {
+                    if (false !== mb_strpos($v[$field], $kw)) {
+                        $findList[] = $v;
+                        continue 3;
+                    }
+                }
+            }
+        }
+    }
+    echo json_encode($findList);
 }
