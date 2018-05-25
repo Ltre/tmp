@@ -15,6 +15,7 @@
                     <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
                     <select id="source" class="form-control mr-sm-2">
                         <option value="tu">tu</option>
+                        <option value="video">video</option>
                     </select>
                     <a id="fuck" class="btn btn-outline-success my-2 my-sm-0">Search</a>
                     <img id="loading" src="http://s1.dwstatic.com/duowanvideo/20170503/09/5103534.gif" width="16" height="16" style="display: none;">
@@ -40,6 +41,9 @@
         var config = {
             tu: {
                 fields: ['id', 'title', 'description', 'created']
+            },
+            video: {
+                fields: ['id', 'video_title', 'video_subtitle', 'video_upload_time', 'video_tags', 'video_channel', 'video_intro', 'user_id', 'user_nickname']
             }
         };
         
@@ -133,9 +137,12 @@
             var id = 1;//从当次记录游标获取
             var limit = 1000;
             getData(source, kws, id, limit, listRender);
-            //额外的查询，加快速度
-            getData(source, kws, 50000, limit, listRender);
-            getData(source, kws, 100000, limit, listRender);
+            //[tu]额外的查询，加快速度
+            //getData(source, kws, 50000, limit, listRender);
+            //getData(source, kws, 100000, limit, listRender);
+            //[video]
+            getData(source, kws, 3000000, limit, listRender);
+            getData(source, kws, 6000000, limit, listRender);
         }
 
         
