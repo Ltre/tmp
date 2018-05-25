@@ -11,6 +11,11 @@
         <div class="row flex-xl-nowrap">
             <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
                 <h3 id="options"><div>列表<a class="anchorjs-link " href="#options" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a></div></h3>
+                <form class="form-inline my-2 my-lg-0">
+                    <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+                    <a class="btn btn-outline-success my-2 my-sm-0">Search</a>
+                    <img id="loading" src="http://s1.dwstatic.com/duowanvideo/20170503/09/5103534.gif" width="16" height="16" style="display: none;">
+                </form>
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr id="diy-fields"></tr>
@@ -27,7 +32,7 @@
     <script>
     $(function(){
     
-        var pause = true;//是否停止查询
+        var pause = false;//是否停止查询
         
         var config = {
             tu: {
@@ -37,22 +42,22 @@
         
         
         function getData(source, kws, id, limit, cb){
+            $('#loading').show();
             id = id || 1;
             limit = limit || 1000;
             kws = kws || [];
             var url = '/finder.php';
             var params = {id: id, limit: limit, kws: kws, source: source};
-            $.get(url, params, function(list){
-                cb(list, source, kws, id, limit);
+            $.get(url, params, function(j){
+                $('#loading').hide();
+                cb(j, source, kws, id, limit);
             }, 'json');
         }
         
         
-        function listRender(list, source, kws, id, limit){
+        function listRender(j, source, kws, id, limit){
             var area = $('#diy-datas');
-            var lastId = 1;
-            for (var l of list) {
-                lastId = l.id;
+            for (var l of j.list) {
                 var line = $('tr.line-tpl').clone();
                 line.removeClass('line-tpl');
                 line.data('id', l.id);
@@ -83,8 +88,8 @@
             //确定是否继续查询
             if (! pause) {
                 setTimeout(function(){
-                    getData(source, kws, lastId, limit, listRender);
-                }, 1000);
+                    getData(source, kws, j.lastId, limit, listRender);
+                }, 50);
             }
         }
         
@@ -122,10 +127,13 @@
             }
             fieldsArea.append('<th>操作</th>');
             //填充列表
-            var kws = [];//从表单获取
+            var kws = [];//从表单获取，不指定则采用PHP规则
             var id = 1;//从当次记录游标获取
             var limit = 1000;
             getData(source, kws, id, limit, listRender);
+            //额外的查询，加快速度
+            getData(source, kws, 50000, limit, listRender);
+            getData(source, kws, 100000, limit, listRender);
         }
 
         
@@ -139,8 +147,6 @@
             });
         }
 
-        
-        //finder('tu', ['游戏'], 10, 1000);
         
         bindOp();
         toSearch();
