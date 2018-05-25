@@ -1,6 +1,7 @@
 <?php
 
 include 'config.php';
+include 'lib.php';
 include 'dwHttp.php';
 
 $source = $_REQUEST['source'];

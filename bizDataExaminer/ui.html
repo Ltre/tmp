@@ -13,7 +13,10 @@
                 <h3 id="options"><div>列表<a class="anchorjs-link " href="#options" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a></div></h3>
                 <form class="form-inline my-2 my-lg-0">
                     <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
-                    <a class="btn btn-outline-success my-2 my-sm-0">Search</a>
+                    <select id="source" class="form-control mr-sm-2">
+                        <option value="tu">tu</option>
+                    </select>
+                    <a id="fuck" class="btn btn-outline-success my-2 my-sm-0">Search</a>
                     <img id="loading" src="http://s1.dwstatic.com/duowanvideo/20170503/09/5103534.gif" width="16" height="16" style="display: none;">
                 </form>
                 <table class="table table-bordered table-striped">
@@ -68,14 +71,13 @@
                     line.append(cell);
                 }
                 var cell = cellTpl.clone();
-                cell.removeClass('cell-tpl').html('<a class="del" href="javascript:;" data-id="' + l.id + '">删除</a>');
+                cell.removeClass('cell-tpl').html('<a class="d" href="javascript:;" data-id="' + l.id + '">D</a>');
                 line.append(cell);
                 var cell = cellTpl.clone();
                 cell.removeClass('cell-tpl').html('<a class="ignore" href="javascript:;" data-id="' + l.id + '">忽略</a>');
                 line.append(cell).show();
                 area.append(line);
-                
-                
+
                 /*var line = '<tr data-id="' + l.id + '">';
                 for (var f of config[source].fields) {
                     line += '<td>' + l[f] + '</td>';
@@ -103,22 +105,22 @@
         }
         
         
-        function del(source, id){
-            var url = 'del.php';
+        function d(source, id){
+            var url = 'd.php';
         }
         
         
-        function delAll(source){
+        function dAll(source){
             var ids = getIds();
             for (var id of ids) {
-                del(source, id);
+                d(source, id);
             }
         }
         
         
         //点击查询
         function toSearch(){
-            var source = 'tu';//从表单获取资源类型
+            var source = $('#source').val();
             //调整表头
             var fieldsArea = $('#diy-fields');
             fieldsArea.html('');
@@ -138,18 +140,18 @@
 
         
         function bindOp(){
-            //删除
-            $('document').on('a.del', 'click', function(){
+            //D
+            $('document').on('a.d', 'click', function(){
             });
             //标记忽略
             $('document').on('a.ignore', 'click', function(){
                 $(this).addClass('ignore-yes');
             });
+            //fuck
+            $('#fuck').click(toSearch);
         }
-
         
         bindOp();
-        toSearch();
         
     });
     </script>
