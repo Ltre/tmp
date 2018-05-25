@@ -4,9 +4,9 @@ include 'config.php';
 include 'dwHttp.php';
 
 $source = $_REQUEST['source'];
-$kws = $_REQUEST['kws'] ?: [];
-$id = $_REQUEST['id'] ?: 1;
-$limit = $_REQUEST['limit'] ?: 1000;
+@$kws = $_REQUEST['kws'] ?: [];
+@$id = $_REQUEST['id'] ?: 1;
+@$limit = $_REQUEST['limit'] ?: 1000;
 $kwFields = $GLOBALS['sources'][$source]['keywordFields'];
 
 $getter = $GLOBALS['sources'][$source]['list_api'];
@@ -22,7 +22,7 @@ if (empty($kws)) {
             foreach ($kwFields as $field) {
                 if (! isset($v[$field])) continue;
                 foreach ($kws as $kw) {
-                    if (false !== mb_strpos($v[$field], $kw)) {
+                    if ('' !== $kw && false !== mb_strpos($v[$field], $kw)) {
                         $findList[] = $v;
                         continue 3;
                     }

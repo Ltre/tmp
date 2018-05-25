@@ -10,18 +10,25 @@
     <div class="container-fluid">
         <div class="row flex-xl-nowrap">
             <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
-                <h3 id="options"><div>比赛列表<a class="anchorjs-link " href="#options" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a></div></h3>
+                <h3 id="options"><div>列表<a class="anchorjs-link " href="#options" aria-label="Anchor" data-anchorjs-icon="#" style="padding-left: 0.375em;"></a></div></h3>
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr id="diy-fields"></tr>
                     </thead>
-                    <tbody id="diy-datas"></tbody>
+                    <tbody id="diy-datas">
+                        <tr class="line-tpl" style="display:none">
+                            <td class="cell-tpl"></td>
+                        </tr>
+                    </tbody>
                 </table>
             </main>
         </div>
     </div>
     <script>
     $(function(){
+    
+        var pause = true;//是否停止查询
+        
         var config = {
             tu: {
                 fields: ['id', 'title', 'description', 'created']
@@ -29,34 +36,114 @@
         };
         
         
-        function finder(source, kws, id, limit){
+        function getData(source, kws, id, limit, cb){
             id = id || 1;
             limit = limit || 1000;
             kws = kws || [];
-            //表头
+            var url = '/finder.php';
+            var params = {id: id, limit: limit, kws: kws, source: source};
+            $.get(url, params, function(list){
+                cb(list, source, kws, id, limit);
+            }, 'json');
+        }
+        
+        
+        function listRender(list, source, kws, id, limit){
+            var area = $('#diy-datas');
+            var lastId = 1;
+            for (var l of list) {
+                lastId = l.id;
+                var line = $('tr.line-tpl').clone();
+                line.removeClass('line-tpl');
+                line.data('id', l.id);
+                var cellTpl = line.children('td.cell-tpl');
+                for (var f of config[source].fields) {
+                    var cell = cellTpl.clone();
+                    cell.removeClass('cell-tpl').text(l[f]);
+                    line.append(cell);
+                }
+                var cell = cellTpl.clone();
+                cell.removeClass('cell-tpl').html('<a class="del" href="javascript:;" data-id="' + l.id + '">删除</a>');
+                line.append(cell);
+                var cell = cellTpl.clone();
+                cell.removeClass('cell-tpl').html('<a class="ignore" href="javascript:;" data-id="' + l.id + '">忽略</a>');
+                line.append(cell).show();
+                area.append(line);
+                
+                
+                /*var line = '<tr data-id="' + l.id + '">';
+                for (var f of config[source].fields) {
+                    line += '<td>' + l[f] + '</td>';
+                }
+                line += '<td><a class="del" href="javascript:;" data-id="' + l.id + '">删除</a></td>';
+                line += '<td><a class="ignore" href="javascript:;" data-id="' + l.id + '">忽略</a></td>';
+                line += '</tr>';
+                area.append(line);*/
+            }
+            //确定是否继续查询
+            if (! pause) {
+                setTimeout(function(){
+                    getData(source, kws, lastId, limit, listRender);
+                }, 1000);
+            }
+        }
+        
+        
+        function getIds(){
+            var ids = [];
+            $('a.ignore:not(.ignore-yes)').each(function(i, e){
+                ids.push($(e).data('id'));
+            });
+            return ids;
+        }
+        
+        
+        function del(source, id){
+            var url = 'del.php';
+        }
+        
+        
+        function delAll(source){
+            var ids = getIds();
+            for (var id of ids) {
+                del(source, id);
+            }
+        }
+        
+        
+        //点击查询
+        function toSearch(){
+            var source = 'tu';//从表单获取资源类型
+            //调整表头
             var fieldsArea = $('#diy-fields');
             fieldsArea.html('');
             for (var f of config[source].fields) {
                 fieldsArea.append('<th>' + f + '</th>');
             }
             fieldsArea.append('<th>操作</th>');
-            //表体
-            var url = '/finder.php';
-            var params = {id: id, limit: limit, kws: kws, source: source};
-            $.get(url, params, function(list){
-                var area = $('#diy-datas');
-                for (var l of list) {
-                    var line = '<tr data-id="' + l.id + '">';
-                    for (var f of config[source].fields) {
-                        line += '<td>' + l[f] + '</td>';
-                    }
-                    line += '<td><a href="javascript:;" data-id="' + l.id + '">删除</a></td></tr>';
-                    area.append(line);
-                }
-            }, 'json');
+            //填充列表
+            var kws = [];//从表单获取
+            var id = 1;//从当次记录游标获取
+            var limit = 1000;
+            getData(source, kws, id, limit, listRender);
         }
+
         
-        finder('tu', ['游戏'], 10, 1000);
+        function bindOp(){
+            //删除
+            $('document').on('a.del', 'click', function(){
+            });
+            //标记忽略
+            $('document').on('a.ignore', 'click', function(){
+                $(this).addClass('ignore-yes');
+            });
+        }
+
+        
+        //finder('tu', ['游戏'], 10, 1000);
+        
+        bindOp();
+        toSearch();
         
     });
     </script>
