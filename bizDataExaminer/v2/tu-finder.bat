@@ -1,0 +1,1 @@
+start "tu-finder 1~" php tu-finder.php "1" "99999999"

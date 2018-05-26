@@ -61,7 +61,7 @@ class Finder {
     }
     
     
-    function run($lastId = 1, $maxId = 8871709){
+    function run($lastId = 1, $maxId = 99999999){
         while ($lastId != $maxId) {
             $lastId = $this->req($lastId, 1000);
         }    
@@ -70,6 +70,6 @@ class Finder {
 }
 
 @$lastId = $_SERVER['argv'][1] ?: 1;
-@$maxId = $_SERVER['argv'][2] ?: 8871709;
+@$maxId = $_SERVER['argv'][2] ?: 99999999;//这个需要和定造确定最大ID
 $batch = date('Ymd-His').'-'."{$lastId}_to_{$maxId}";
 (new Finder('tu', $batch))->run($lastId, $maxId);
