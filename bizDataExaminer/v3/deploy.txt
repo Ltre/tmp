@@ -1,0 +1,8 @@
+mkdir v3;mv v3.zip v3;cd v3;unzip v3.zip;rm v3.zip
+
+centos:
+nohup php video-finder.php 20180528 scan > video-finder.nohup &
+
+company:
+chmod +x video-finder.php
+./video-finder.php 20180528 scan > video-finder.nohup &

@@ -68,7 +68,7 @@ class Finder {
                 }
             }
         }
-        return $lastId;
+        return [$lastId, count($list)];
     }
     
     
@@ -96,8 +96,9 @@ class Finder {
     
     
     function scan($lastId = 1, $maxId = 8871709){
-        while ($lastId != $maxId) {
-            $lastId = $this->req($lastId, 1000);
+        $limit = 1000;
+        while ($lastId < $maxId) {
+            list($lastId, $total) = $this->req($lastId, $limit);
             $this->log('scan', "lastId: {$lastId}");
         }
     }
