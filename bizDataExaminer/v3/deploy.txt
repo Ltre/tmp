@@ -6,3 +6,14 @@ nohup php video-finder.php 20180528 scan > video-finder.nohup &
 company:
 chmod +x video-finder.php
 ./video-finder.php 20180528 scan > video-finder.nohup &
+
+
+
+
+
+-- 统计微剧院踩中关键词数目
+php video-finder.php 20180528 sql "select count(1),keywords from video where channel = 'yingshivideo' group by keywords order by count(1)"
+
+-- 统计各个专区踩中关键字数
+php video-finder.php 20180528 sql "select count(1),channel from video group by channel order by count(1)"
+
