@@ -98,6 +98,7 @@ class Finder {
     function scan($lastId = 1, $maxId = 8871709){
         while ($lastId != $maxId) {
             $lastId = $this->req($lastId, 1000);
+            $this->log('scan', "lastId: {$lastId}");
         }
     }
     
