@@ -9,7 +9,7 @@ $GLOBALS = [
         ],
         'video' => [
             'list_api' => 'http://video.duowan.com/?r=test/examineList',
-            'd' => '',
+            'd' => 'http://video.duowan.com/?r=test/dv',
             'keywordFields' => ['video_title', 'video_subtitle', 'video_intro'],
         ],
         'comment' => [
