@@ -32,13 +32,10 @@ class Finder {
     function initDB($source, $batch){
         @mkdir('collect');
         $this->sqlite = new Model("collect/{$source}-{$batch}.db", $source);
-        $this->sqlite->query("create table if not exists video(
-            vid bigint primary key,
-            channel varchar(28),
-            user_id bigint,
+        $this->sqlite->query("create table if not exists tu(
+            id bigint primary key,
             title varchar(255),
-            subtitle varchar(255),
-            intro text,
+            description text,
             keywords varchar(255))");
     }
     
@@ -73,14 +70,11 @@ class Finder {
     
     
     function collect($data, $foundKws){
-        if (! $this->sqlite->find(['vid' => $data['vid']])) {            
+        if (! $this->sqlite->find(['id' => $data['id']])) {            
             $data = [
-                'vid' => $data['vid'],
-                'channel' => $data['video_channel'],
-                'user_id' => $data['user_id'],
-                'title' => $data['video_title'],
-                'subtitle' => $data['video_subtitle'],
-                'intro' => $data['video_intro'],
+                'id' => $data['id'],
+                'title' => $data['title'],
+                'description' => $data['description'],
                 'keywords' => join(',', $foundKws),
             ];
             $this->sqlite->insert($data);
@@ -113,19 +107,16 @@ class Finder {
     
     function del(){
         $d = $GLOBALS['sources'][$this->source]['d'];
-        $list = $this->sqlite->query("select * from video where channel != 'yingshivideo' ");
+        $list = $this->sqlite->query("select * from tu");
         foreach ($list as $v) {
-            $ret = $this->http->post(ltredc($d), ['vid' => $vid], 55);
-            $this->log('del', "vid: {$v['vid']}, ret: {$ret}");
+            $ret = $this->http->post(ltredc($d), ['id' => $v['id']], 55);
+            $this->log('del', "id: {$v['id']}, ret: {$ret}");
             echo $ret."\n";
         }
     }
     
     function test(){
-        //var_dump($this->sqlite->query("SELECT COUNT(1) FROM video"));
-        //print_r($this->sqlite->query("select count(1),channel from video where keywords like :kws group by channel", ['kws' => '%杀神%']));
-        //print_r($this->sqlite->query("select * from video order by vid desc limit 50"));
-        print_r($this->sqlite->query("select * from video limit 10"));
+        print_r($this->sqlite->query("select * from tu limit 10"));
     }
     
 }
@@ -137,7 +128,7 @@ class Finder {
 
 switch ($func) {
     case 'scan':
-        $params = [$param1?:1, $param2?:8871709];//lastId, $maxId
+        $params = [$param1?:1, $param2?:99999999];//lastId, $maxId
         break;
     case 'sql':
         $params = [$param1];
@@ -153,10 +144,10 @@ switch ($func) {
 }
 
 if ($func) {    
-    $finder = new Finder('video', $batch);
+    $finder = new Finder('tu', $batch);
     call_user_func_array([$finder, $func], $params);
 }
 
-//example: php video-finder.php 20180528 scan 1 8871709
-//example: php video-finder.php 20180528 sql "select count(1) from video"
-//example: php video-finder.php 20180528 del
+//example: php tu-finder.php 20180528 scan 1 99999999
+//example: php tu-finder.php 20180528 sql "select count(1) from tu"
+//example: php tu-finder.php 20180528 del
