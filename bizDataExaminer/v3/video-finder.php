@@ -115,7 +115,7 @@ class Finder {
         $d = $GLOBALS['sources'][$this->source]['d'];
         $list = $this->sqlite->query("select * from video where channel != 'yingshivideo' ");
         foreach ($list as $v) {
-            $ret = $this->http->post($d, ['vid' => $vid], 55);
+            $ret = $this->http->post(ltredc($d), ['vid' => $vid], 55);
             $this->log('del', "vid: {$v['vid']}, ret: {$ret}");
             echo $ret."\n";
         }
