@@ -110,8 +110,8 @@ class Finder {
         $d = $GLOBALS['sources'][$this->source]['d'];
         $list = $this->sqlite->query("select * from tucao");
         foreach ($list as $v) {
-            $ret = $this->http->post(ltredc($d), ['id' => $v['id'], 'sign' => md5("tucao{$v['id']}")], 55);
-            $log = "id: {$v['id']}, sign: ".md5("tucao{$v['id']}").",ret: {$ret}";
+            $ret = $this->http->post(ltredc($d), ['dels' => $v['id'], 'domain' => $v['domain'], 'sign' => md5("tucao{$v['id']}")], 55);
+            $log = "id: {$v['id']}, domain: {$v['domain']}, sign: ".md5("tucao{$v['id']}").",ret: {$ret}";
             $this->log('del', $log);
             echo $log."\n";
         }
