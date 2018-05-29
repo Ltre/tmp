@@ -44,7 +44,7 @@ class Finder {
         $ret = $this->http->post($this->getter, ['id' => $id, 'limit' => $limit, 'domain' => $domain], 55);
         $list = json_decode($ret?:'[]', 1);
         echo 'get list count: '.count($list)."\r\n";
-        $lastId = 1;
+        $lastId = 0;
         foreach ($list as $v) {
             if (is_array($v)) {
                 $lastId = $v['id'];
@@ -89,7 +89,7 @@ class Finder {
     }
     
     
-    function scan($lastId = 1, $maxId = 99999999, $domain = 'tu.duowan.com'){
+    function scan($lastId = 0, $maxId = 99999999, $domain = 'tu.duowan.com'){
         $limit = 1000;
         $total = $limit;
         while ($total == $limit) {
@@ -130,7 +130,7 @@ class Finder {
 
 switch ($func) {
     case 'scan':
-        $params = [$param1?:1, $param2?:99999999, $param3?:'tu.duowan.com'];//lastId, $maxId, $domain
+        $params = [$param1?:0, $param2?:99999999, $param3?:'tu.duowan.com'];//lastId, $maxId, $domain
         break;
     case 'sql':
         $params = [$param1];
@@ -150,6 +150,6 @@ if ($func) {
     call_user_func_array([$finder, $func], $params);
 }
 
-//example: php comment-finder.php 20180528 scan 1 99999999 "tu.duowan.com"
+//example: php comment-finder.php 20180528 scan 0 99999999 "tu.duowan.com"
 //example: php comment-finder.php 20180528 sql "select count(1) from comment"
 //example: php comment-finder.php 20180528 del
