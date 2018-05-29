@@ -18,7 +18,7 @@ $GLOBALS = [
             'keywordFields' => ['content', 'content2'],
         ],
         'tucao' => [
-            'list_api' => ' http://comment3.duowan.com/index.php?r=mgr/gettclist',
+            'list_api' => 'http://comment3.duowan.com/index.php?r=mgr/gettclist',
             'd' => "DfFvHvXtt0-Lse'W)qAy-6@zn7@EF2SP)5z8UfZW'9UvYHQr'1WpQC-TDg.QWh~Z@0n1zbDr.0ybwmRlKmQmj6.0PMKh!FqcWAVzWyj7L6ig'9M7TR)5H7*@'9DeIfYvyh))",
             'keywordFields' => ['content', 'content2'],
         ],
