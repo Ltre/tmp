@@ -1,0 +1,6678 @@
+sql: select count(1) from video
+ret: Array
+(
+    [0] => Array
+        (
+            [count(1)] => 3902
+        )
+
+)
+
+sql: select count(1) from video
+ret: Array
+(
+    [0] => Array
+        (
+            [count(1)] => 3902
+        )
+
+)
+
+sql: select count(1),channel from video group by channel
+ret: Array
+(
+    [0] => Array
+        (
+            [count(1)] => 1
+            [channel] => 52539yinsy
+        )
+
+    [1] => Array
+        (
+            [count(1)] => 15
+            [channel] => 5253video
+        )
+
+    [2] => Array
+        (
+            [count(1)] => 165
+            [channel] => 5253wzry
+        )
+
+    [3] => Array
+        (
+            [count(1)] => 2
+            [channel] => aion
+        )
+
+    [4] => Array
+        (
+            [count(1)] => 3
+            [channel] => bbs
+        )
+
+    [5] => Array
+        (
+            [count(1)] => 16
+            [channel] => bdota
+        )
+
+    [6] => Array
+        (
+            [count(1)] => 8
+            [channel] => ceshi
+        )
+
+    [7] => Array
+        (
+            [count(1)] => 16
+            [channel] => cf
+        )
+
+    [8] => Array
+        (
+            [count(1)] => 4
+            [channel] => cfm
+        )
+
+    [9] => Array
+        (
+            [count(1)] => 1
+            [channel] => cgamew
+        )
+
+    [10] => Array
+        (
+            [count(1)] => 2
+            [channel] => coc
+        )
+
+    [11] => Array
+        (
+            [count(1)] => 8
+            [channel] => cod
+        )
+
+    [12] => Array
+        (
+            [count(1)] => 2
+            [channel] => cr
+        )
+
+    [13] => Array
+        (
+            [count(1)] => 27
+            [channel] => df
+        )
+
+    [14] => Array
+        (
+            [count(1)] => 1
+            [channel] => dn
+        )
+
+    [15] => Array
+        (
+            [count(1)] => 9
+            [channel] => dota2
+        )
+
+    [16] => Array
+        (
+            [count(1)] => 95
+            [channel] => duowanvideo
+        )
+
+    [17] => Array
+        (
+            [count(1)] => 1
+            [channel] => dzs
+        )
+
+    [18] => Array
+        (
+            [count(1)] => 1
+            [channel] => ffo
+        )
+
+    [19] => Array
+        (
+            [count(1)] => 7
+            [channel] => fortnite
+        )
+
+    [20] => Array
+        (
+            [count(1)] => 1
+            [channel] => hdzt
+        )
+
+    [21] => Array
+        (
+            [count(1)] => 5
+            [channel] => hyxd
+        )
+
+    [22] => Array
+        (
+            [count(1)] => 1
+            [channel] => jx3
+        )
+
+    [23] => Array
+        (
+            [count(1)] => 165
+            [channel] => kan
+        )
+
+    [24] => Array
+        (
+            [count(1)] => 1
+            [channel] => lfzl
+        )
+
+    [25] => Array
+        (
+            [count(1)] => 1050
+            [channel] => lol
+        )
+
+    [26] => Array
+        (
+            [count(1)] => 382
+            [channel] => lolboxvideo
+        )
+
+    [27] => Array
+        (
+            [count(1)] => 26
+            [channel] => ls
+        )
+
+    [28] => Array
+        (
+            [count(1)] => 41
+            [channel] => mc
+        )
+
+    [29] => Array
+        (
+            [count(1)] => 1
+            [channel] => mcboxpc
+        )
+
+    [30] => Array
+        (
+            [count(1)] => 1
+            [channel] => mhyx
+        )
+
+    [31] => Array
+        (
+            [count(1)] => 25
+            [channel] => mil
+        )
+
+    [32] => Array
+        (
+            [count(1)] => 5
+            [channel] => mnsj
+        )
+
+    [33] => Array
+        (
+            [count(1)] => 1
+            [channel] => my
+        )
+
+    [34] => Array
+        (
+            [count(1)] => 12
+            [channel] => newgame
+        )
+
+    [35] => Array
+        (
+            [count(1)] => 1
+            [channel] => newgamekuvideo
+        )
+
+    [36] => Array
+        (
+            [count(1)] => 3
+            [channel] => news
+        )
+
+    [37] => Array
+        (
+            [count(1)] => 1
+            [channel] => ns
+        )
+
+    [38] => Array
+        (
+            [count(1)] => 3
+            [channel] => nz
+        )
+
+    [39] => Array
+        (
+            [count(1)] => 52
+            [channel] => oujtest
+        )
+
+    [40] => Array
+        (
+            [count(1)] => 46
+            [channel] => ow
+        )
+
+    [41] => Array
+        (
+            [count(1)] => 41
+            [channel] => pb
+        )
+
+    [42] => Array
+        (
+            [count(1)] => 22
+            [channel] => pc
+        )
+
+    [43] => Array
+        (
+            [count(1)] => 4
+            [channel] => ps4
+        )
+
+    [44] => Array
+        (
+            [count(1)] => 1
+            [channel] => psv
+        )
+
+    [45] => Array
+        (
+            [count(1)] => 1
+            [channel] => qhyx
+        )
+
+    [46] => Array
+        (
+            [count(1)] => 4
+            [channel] => qqdzz
+        )
+
+    [47] => Array
+        (
+            [count(1)] => 10
+            [channel] => szhj
+        )
+
+    [48] => Array
+        (
+            [count(1)] => 1
+            [channel] => tera
+        )
+
+    [49] => Array
+        (
+            [count(1)] => 8
+            [channel] => tv
+        )
+
+    [50] => Array
+        (
+            [count(1)] => 21
+            [channel] => unknow
+        )
+
+    [51] => Array
+        (
+            [count(1)] => 31
+            [channel] => unknown
+        )
+
+    [52] => Array
+        (
+            [count(1)] => 2
+            [channel] => vhuya
+        )
+
+    [53] => Array
+        (
+            [count(1)] => 6
+            [channel] => vhuyaball
+        )
+
+    [54] => Array
+        (
+            [count(1)] => 5
+            [channel] => vhuyablizzard
+        )
+
+    [55] => Array
+        (
+            [count(1)] => 1
+            [channel] => vhuyacf
+        )
+
+    [56] => Array
+        (
+            [count(1)] => 2
+            [channel] => vhuyacfm
+        )
+
+    [57] => Array
+        (
+            [count(1)] => 4
+            [channel] => vhuyadm
+        )
+
+    [58] => Array
+        (
+            [count(1)] => 23
+            [channel] => vhuyadnf
+        )
+
+    [59] => Array
+        (
+            [count(1)] => 139
+            [channel] => vhuyafans
+        )
+
+    [60] => Array
+        (
+            [count(1)] => 1
+            [channel] => vhuyah1z1
+        )
+
+    [61] => Array
+        (
+            [count(1)] => 148
+            [channel] => vhuyalite
+        )
+
+    [62] => Array
+        (
+            [count(1)] => 92
+            [channel] => vhuyalol
+        )
+
+    [63] => Array
+        (
+            [count(1)] => 7
+            [channel] => vhuyamc
+        )
+
+    [64] => Array
+        (
+            [count(1)] => 4
+            [channel] => vhuyaow
+        )
+
+    [65] => Array
+        (
+            [count(1)] => 2
+            [channel] => vhuyapc
+        )
+
+    [66] => Array
+        (
+            [count(1)] => 8
+            [channel] => vhuyatv
+        )
+
+    [67] => Array
+        (
+            [count(1)] => 9
+            [channel] => vhuyaunknown
+        )
+
+    [68] => Array
+        (
+            [count(1)] => 1
+            [channel] => vhuyawows
+        )
+
+    [69] => Array
+        (
+            [count(1)] => 73
+            [channel] => vhuyawzry
+        )
+
+    [70] => Array
+        (
+            [count(1)] => 25
+            [channel] => vhuyayule
+        )
+
+    [71] => Array
+        (
+            [count(1)] => 110
+            [channel] => videommbk
+        )
+
+    [72] => Array
+        (
+            [count(1)] => 28
+            [channel] => videopcgames
+        )
+
+    [73] => Array
+        (
+            [count(1)] => 6
+            [channel] => webgame
+        )
+
+    [74] => Array
+        (
+            [count(1)] => 30
+            [channel] => wot
+        )
+
+    [75] => Array
+        (
+            [count(1)] => 4
+            [channel] => wow
+        )
+
+    [76] => Array
+        (
+            [count(1)] => 16
+            [channel] => wows
+        )
+
+    [77] => Array
+        (
+            [count(1)] => 4
+            [channel] => wuxia
+        )
+
+    [78] => Array
+        (
+            [count(1)] => 6
+            [channel] => www
+        )
+
+    [79] => Array
+        (
+            [count(1)] => 4
+            [channel] => xr
+        )
+
+    [80] => Array
+        (
+            [count(1)] => 2
+            [channel] => xunxian
+        )
+
+    [81] => Array
+        (
+            [count(1)] => 7
+            [channel] => ycvideo
+        )
+
+    [82] => Array
+        (
+            [count(1)] => 771
+            [channel] => yingshivideo
+        )
+
+    [83] => Array
+        (
+            [count(1)] => 4
+            [channel] => ymrdzz
+        )
+
+    [84] => Array
+        (
+            [count(1)] => 3
+            [channel] => zhibo
+        )
+
+    [85] => Array
+        (
+            [count(1)] => 2
+            [channel] => zjsj
+        )
+
+    [86] => Array
+        (
+            [count(1)] => 2
+            [channel] => zx
+        )
+
+)
+
+sql: select count(1),channel from video group by channel order by count(1) desc
+ret: Array
+(
+    [0] => Array
+        (
+            [count(1)] => 1050
+            [channel] => lol
+        )
+
+    [1] => Array
+        (
+            [count(1)] => 771
+            [channel] => yingshivideo
+        )
+
+    [2] => Array
+        (
+            [count(1)] => 382
+            [channel] => lolboxvideo
+        )
+
+    [3] => Array
+        (
+            [count(1)] => 165
+            [channel] => 5253wzry
+        )
+
+    [4] => Array
+        (
+            [count(1)] => 165
+            [channel] => kan
+        )
+
+    [5] => Array
+        (
+            [count(1)] => 148
+            [channel] => vhuyalite
+        )
+
+    [6] => Array
+        (
+            [count(1)] => 139
+            [channel] => vhuyafans
+        )
+
+    [7] => Array
+        (
+            [count(1)] => 110
+            [channel] => videommbk
+        )
+
+    [8] => Array
+        (
+            [count(1)] => 95
+            [channel] => duowanvideo
+        )
+
+    [9] => Array
+        (
+            [count(1)] => 92
+            [channel] => vhuyalol
+        )
+
+    [10] => Array
+        (
+            [count(1)] => 73
+            [channel] => vhuyawzry
+        )
+
+    [11] => Array
+        (
+            [count(1)] => 52
+            [channel] => oujtest
+        )
+
+    [12] => Array
+        (
+            [count(1)] => 46
+            [channel] => ow
+        )
+
+    [13] => Array
+        (
+            [count(1)] => 41
+            [channel] => mc
+        )
+
+    [14] => Array
+        (
+            [count(1)] => 41
+            [channel] => pb
+        )
+
+    [15] => Array
+        (
+            [count(1)] => 31
+            [channel] => unknown
+        )
+
+    [16] => Array
+        (
+            [count(1)] => 30
+            [channel] => wot
+        )
+
+    [17] => Array
+        (
+            [count(1)] => 28
+            [channel] => videopcgames
+        )
+
+    [18] => Array
+        (
+            [count(1)] => 27
+            [channel] => df
+        )
+
+    [19] => Array
+        (
+            [count(1)] => 26
+            [channel] => ls
+        )
+
+    [20] => Array
+        (
+            [count(1)] => 25
+            [channel] => mil
+        )
+
+    [21] => Array
+        (
+            [count(1)] => 25
+            [channel] => vhuyayule
+        )
+
+    [22] => Array
+        (
+            [count(1)] => 23
+            [channel] => vhuyadnf
+        )
+
+    [23] => Array
+        (
+            [count(1)] => 22
+            [channel] => pc
+        )
+
+    [24] => Array
+        (
+            [count(1)] => 21
+            [channel] => unknow
+        )
+
+    [25] => Array
+        (
+            [count(1)] => 16
+            [channel] => bdota
+        )
+
+    [26] => Array
+        (
+            [count(1)] => 16
+            [channel] => cf
+        )
+
+    [27] => Array
+        (
+            [count(1)] => 16
+            [channel] => wows
+        )
+
+    [28] => Array
+        (
+            [count(1)] => 15
+            [channel] => 5253video
+        )
+
+    [29] => Array
+        (
+            [count(1)] => 12
+            [channel] => newgame
+        )
+
+    [30] => Array
+        (
+            [count(1)] => 10
+            [channel] => szhj
+        )
+
+    [31] => Array
+        (
+            [count(1)] => 9
+            [channel] => dota2
+        )
+
+    [32] => Array
+        (
+            [count(1)] => 9
+            [channel] => vhuyaunknown
+        )
+
+    [33] => Array
+        (
+            [count(1)] => 8
+            [channel] => ceshi
+        )
+
+    [34] => Array
+        (
+            [count(1)] => 8
+            [channel] => cod
+        )
+
+    [35] => Array
+        (
+            [count(1)] => 8
+            [channel] => tv
+        )
+
+    [36] => Array
+        (
+            [count(1)] => 8
+            [channel] => vhuyatv
+        )
+
+    [37] => Array
+        (
+            [count(1)] => 7
+            [channel] => fortnite
+        )
+
+    [38] => Array
+        (
+            [count(1)] => 7
+            [channel] => vhuyamc
+        )
+
+    [39] => Array
+        (
+            [count(1)] => 7
+            [channel] => ycvideo
+        )
+
+    [40] => Array
+        (
+            [count(1)] => 6
+            [channel] => vhuyaball
+        )
+
+    [41] => Array
+        (
+            [count(1)] => 6
+            [channel] => webgame
+        )
+
+    [42] => Array
+        (
+            [count(1)] => 6
+            [channel] => www
+        )
+
+    [43] => Array
+        (
+            [count(1)] => 5
+            [channel] => hyxd
+        )
+
+    [44] => Array
+        (
+            [count(1)] => 5
+            [channel] => mnsj
+        )
+
+    [45] => Array
+        (
+            [count(1)] => 5
+            [channel] => vhuyablizzard
+        )
+
+    [46] => Array
+        (
+            [count(1)] => 4
+            [channel] => cfm
+        )
+
+    [47] => Array
+        (
+            [count(1)] => 4
+            [channel] => ps4
+        )
+
+    [48] => Array
+        (
+            [count(1)] => 4
+            [channel] => qqdzz
+        )
+
+    [49] => Array
+        (
+            [count(1)] => 4
+            [channel] => vhuyadm
+        )
+
+    [50] => Array
+        (
+            [count(1)] => 4
+            [channel] => vhuyaow
+        )
+
+    [51] => Array
+        (
+            [count(1)] => 4
+            [channel] => wow
+        )
+
+    [52] => Array
+        (
+            [count(1)] => 4
+            [channel] => wuxia
+        )
+
+    [53] => Array
+        (
+            [count(1)] => 4
+            [channel] => xr
+        )
+
+    [54] => Array
+        (
+            [count(1)] => 4
+            [channel] => ymrdzz
+        )
+
+    [55] => Array
+        (
+            [count(1)] => 3
+            [channel] => bbs
+        )
+
+    [56] => Array
+        (
+            [count(1)] => 3
+            [channel] => news
+        )
+
+    [57] => Array
+        (
+            [count(1)] => 3
+            [channel] => nz
+        )
+
+    [58] => Array
+        (
+            [count(1)] => 3
+            [channel] => zhibo
+        )
+
+    [59] => Array
+        (
+            [count(1)] => 2
+            [channel] => aion
+        )
+
+    [60] => Array
+        (
+            [count(1)] => 2
+            [channel] => coc
+        )
+
+    [61] => Array
+        (
+            [count(1)] => 2
+            [channel] => cr
+        )
+
+    [62] => Array
+        (
+            [count(1)] => 2
+            [channel] => vhuya
+        )
+
+    [63] => Array
+        (
+            [count(1)] => 2
+            [channel] => vhuyacfm
+        )
+
+    [64] => Array
+        (
+            [count(1)] => 2
+            [channel] => vhuyapc
+        )
+
+    [65] => Array
+        (
+            [count(1)] => 2
+            [channel] => xunxian
+        )
+
+    [66] => Array
+        (
+            [count(1)] => 2
+            [channel] => zjsj
+        )
+
+    [67] => Array
+        (
+            [count(1)] => 2
+            [channel] => zx
+        )
+
+    [68] => Array
+        (
+            [count(1)] => 1
+            [channel] => 52539yinsy
+        )
+
+    [69] => Array
+        (
+            [count(1)] => 1
+            [channel] => cgamew
+        )
+
+    [70] => Array
+        (
+            [count(1)] => 1
+            [channel] => dn
+        )
+
+    [71] => Array
+        (
+            [count(1)] => 1
+            [channel] => dzs
+        )
+
+    [72] => Array
+        (
+            [count(1)] => 1
+            [channel] => ffo
+        )
+
+    [73] => Array
+        (
+            [count(1)] => 1
+            [channel] => hdzt
+        )
+
+    [74] => Array
+        (
+            [count(1)] => 1
+            [channel] => jx3
+        )
+
+    [75] => Array
+        (
+            [count(1)] => 1
+            [channel] => lfzl
+        )
+
+    [76] => Array
+        (
+            [count(1)] => 1
+            [channel] => mcboxpc
+        )
+
+    [77] => Array
+        (
+            [count(1)] => 1
+            [channel] => mhyx
+        )
+
+    [78] => Array
+        (
+            [count(1)] => 1
+            [channel] => my
+        )
+
+    [79] => Array
+        (
+            [count(1)] => 1
+            [channel] => newgamekuvideo
+        )
+
+    [80] => Array
+        (
+            [count(1)] => 1
+            [channel] => ns
+        )
+
+    [81] => Array
+        (
+            [count(1)] => 1
+            [channel] => psv
+        )
+
+    [82] => Array
+        (
+            [count(1)] => 1
+            [channel] => qhyx
+        )
+
+    [83] => Array
+        (
+            [count(1)] => 1
+            [channel] => tera
+        )
+
+    [84] => Array
+        (
+            [count(1)] => 1
+            [channel] => vhuyacf
+        )
+
+    [85] => Array
+        (
+            [count(1)] => 1
+            [channel] => vhuyah1z1
+        )
+
+    [86] => Array
+        (
+            [count(1)] => 1
+            [channel] => vhuyawows
+        )
+
+)
+
+sql: select count(1),channel from video group by channel order by count(1)
+ret: Array
+(
+    [0] => Array
+        (
+            [count(1)] => 1
+            [channel] => 52539yinsy
+        )
+
+    [1] => Array
+        (
+            [count(1)] => 1
+            [channel] => cgamew
+        )
+
+    [2] => Array
+        (
+            [count(1)] => 1
+            [channel] => dn
+        )
+
+    [3] => Array
+        (
+            [count(1)] => 1
+            [channel] => dzs
+        )
+
+    [4] => Array
+        (
+            [count(1)] => 1
+            [channel] => ffo
+        )
+
+    [5] => Array
+        (
+            [count(1)] => 1
+            [channel] => hdzt
+        )
+
+    [6] => Array
+        (
+            [count(1)] => 1
+            [channel] => jx3
+        )
+
+    [7] => Array
+        (
+            [count(1)] => 1
+            [channel] => lfzl
+        )
+
+    [8] => Array
+        (
+            [count(1)] => 1
+            [channel] => mcboxpc
+        )
+
+    [9] => Array
+        (
+            [count(1)] => 1
+            [channel] => mhyx
+        )
+
+    [10] => Array
+        (
+            [count(1)] => 1
+            [channel] => my
+        )
+
+    [11] => Array
+        (
+            [count(1)] => 1
+            [channel] => newgamekuvideo
+        )
+
+    [12] => Array
+        (
+            [count(1)] => 1
+            [channel] => ns
+        )
+
+    [13] => Array
+        (
+            [count(1)] => 1
+            [channel] => psv
+        )
+
+    [14] => Array
+        (
+            [count(1)] => 1
+            [channel] => qhyx
+        )
+
+    [15] => Array
+        (
+            [count(1)] => 1
+            [channel] => tera
+        )
+
+    [16] => Array
+        (
+            [count(1)] => 1
+            [channel] => vhuyacf
+        )
+
+    [17] => Array
+        (
+            [count(1)] => 1
+            [channel] => vhuyah1z1
+        )
+
+    [18] => Array
+        (
+            [count(1)] => 1
+            [channel] => vhuyawows
+        )
+
+    [19] => Array
+        (
+            [count(1)] => 2
+            [channel] => aion
+        )
+
+    [20] => Array
+        (
+            [count(1)] => 2
+            [channel] => coc
+        )
+
+    [21] => Array
+        (
+            [count(1)] => 2
+            [channel] => cr
+        )
+
+    [22] => Array
+        (
+            [count(1)] => 2
+            [channel] => vhuya
+        )
+
+    [23] => Array
+        (
+            [count(1)] => 2
+            [channel] => vhuyacfm
+        )
+
+    [24] => Array
+        (
+            [count(1)] => 2
+            [channel] => vhuyapc
+        )
+
+    [25] => Array
+        (
+            [count(1)] => 2
+            [channel] => xunxian
+        )
+
+    [26] => Array
+        (
+            [count(1)] => 2
+            [channel] => zjsj
+        )
+
+    [27] => Array
+        (
+            [count(1)] => 2
+            [channel] => zx
+        )
+
+    [28] => Array
+        (
+            [count(1)] => 3
+            [channel] => bbs
+        )
+
+    [29] => Array
+        (
+            [count(1)] => 3
+            [channel] => news
+        )
+
+    [30] => Array
+        (
+            [count(1)] => 3
+            [channel] => nz
+        )
+
+    [31] => Array
+        (
+            [count(1)] => 3
+            [channel] => zhibo
+        )
+
+    [32] => Array
+        (
+            [count(1)] => 4
+            [channel] => cfm
+        )
+
+    [33] => Array
+        (
+            [count(1)] => 4
+            [channel] => ps4
+        )
+
+    [34] => Array
+        (
+            [count(1)] => 4
+            [channel] => qqdzz
+        )
+
+    [35] => Array
+        (
+            [count(1)] => 4
+            [channel] => vhuyadm
+        )
+
+    [36] => Array
+        (
+            [count(1)] => 4
+            [channel] => vhuyaow
+        )
+
+    [37] => Array
+        (
+            [count(1)] => 4
+            [channel] => wow
+        )
+
+    [38] => Array
+        (
+            [count(1)] => 4
+            [channel] => wuxia
+        )
+
+    [39] => Array
+        (
+            [count(1)] => 4
+            [channel] => xr
+        )
+
+    [40] => Array
+        (
+            [count(1)] => 4
+            [channel] => ymrdzz
+        )
+
+    [41] => Array
+        (
+            [count(1)] => 5
+            [channel] => hyxd
+        )
+
+    [42] => Array
+        (
+            [count(1)] => 5
+            [channel] => mnsj
+        )
+
+    [43] => Array
+        (
+            [count(1)] => 5
+            [channel] => vhuyablizzard
+        )
+
+    [44] => Array
+        (
+            [count(1)] => 6
+            [channel] => vhuyaball
+        )
+
+    [45] => Array
+        (
+            [count(1)] => 6
+            [channel] => webgame
+        )
+
+    [46] => Array
+        (
+            [count(1)] => 6
+            [channel] => www
+        )
+
+    [47] => Array
+        (
+            [count(1)] => 7
+            [channel] => fortnite
+        )
+
+    [48] => Array
+        (
+            [count(1)] => 7
+            [channel] => vhuyamc
+        )
+
+    [49] => Array
+        (
+            [count(1)] => 7
+            [channel] => ycvideo
+        )
+
+    [50] => Array
+        (
+            [count(1)] => 8
+            [channel] => ceshi
+        )
+
+    [51] => Array
+        (
+            [count(1)] => 8
+            [channel] => cod
+        )
+
+    [52] => Array
+        (
+            [count(1)] => 8
+            [channel] => tv
+        )
+
+    [53] => Array
+        (
+            [count(1)] => 8
+            [channel] => vhuyatv
+        )
+
+    [54] => Array
+        (
+            [count(1)] => 9
+            [channel] => dota2
+        )
+
+    [55] => Array
+        (
+            [count(1)] => 9
+            [channel] => vhuyaunknown
+        )
+
+    [56] => Array
+        (
+            [count(1)] => 10
+            [channel] => szhj
+        )
+
+    [57] => Array
+        (
+            [count(1)] => 12
+            [channel] => newgame
+        )
+
+    [58] => Array
+        (
+            [count(1)] => 15
+            [channel] => 5253video
+        )
+
+    [59] => Array
+        (
+            [count(1)] => 16
+            [channel] => bdota
+        )
+
+    [60] => Array
+        (
+            [count(1)] => 16
+            [channel] => cf
+        )
+
+    [61] => Array
+        (
+            [count(1)] => 16
+            [channel] => wows
+        )
+
+    [62] => Array
+        (
+            [count(1)] => 21
+            [channel] => unknow
+        )
+
+    [63] => Array
+        (
+            [count(1)] => 22
+            [channel] => pc
+        )
+
+    [64] => Array
+        (
+            [count(1)] => 23
+            [channel] => vhuyadnf
+        )
+
+    [65] => Array
+        (
+            [count(1)] => 25
+            [channel] => mil
+        )
+
+    [66] => Array
+        (
+            [count(1)] => 25
+            [channel] => vhuyayule
+        )
+
+    [67] => Array
+        (
+            [count(1)] => 26
+            [channel] => ls
+        )
+
+    [68] => Array
+        (
+            [count(1)] => 27
+            [channel] => df
+        )
+
+    [69] => Array
+        (
+            [count(1)] => 28
+            [channel] => videopcgames
+        )
+
+    [70] => Array
+        (
+            [count(1)] => 30
+            [channel] => wot
+        )
+
+    [71] => Array
+        (
+            [count(1)] => 31
+            [channel] => unknown
+        )
+
+    [72] => Array
+        (
+            [count(1)] => 41
+            [channel] => mc
+        )
+
+    [73] => Array
+        (
+            [count(1)] => 41
+            [channel] => pb
+        )
+
+    [74] => Array
+        (
+            [count(1)] => 46
+            [channel] => ow
+        )
+
+    [75] => Array
+        (
+            [count(1)] => 52
+            [channel] => oujtest
+        )
+
+    [76] => Array
+        (
+            [count(1)] => 73
+            [channel] => vhuyawzry
+        )
+
+    [77] => Array
+        (
+            [count(1)] => 92
+            [channel] => vhuyalol
+        )
+
+    [78] => Array
+        (
+            [count(1)] => 95
+            [channel] => duowanvideo
+        )
+
+    [79] => Array
+        (
+            [count(1)] => 110
+            [channel] => videommbk
+        )
+
+    [80] => Array
+        (
+            [count(1)] => 139
+            [channel] => vhuyafans
+        )
+
+    [81] => Array
+        (
+            [count(1)] => 148
+            [channel] => vhuyalite
+        )
+
+    [82] => Array
+        (
+            [count(1)] => 165
+            [channel] => 5253wzry
+        )
+
+    [83] => Array
+        (
+            [count(1)] => 165
+            [channel] => kan
+        )
+
+    [84] => Array
+        (
+            [count(1)] => 382
+            [channel] => lolboxvideo
+        )
+
+    [85] => Array
+        (
+            [count(1)] => 771
+            [channel] => yingshivideo
+        )
+
+    [86] => Array
+        (
+            [count(1)] => 1050
+            [channel] => lol
+        )
+
+)
+
+sql: select count(1),keywords from video where channel = 'yingshivideo' group by keywords order by count(1)
+ret: Array
+(
+    [0] => Array
+        (
+            [count(1)] => 1
+            [keywords] => 先烈
+        )
+
+    [1] => Array
+        (
+            [count(1)] => 1
+            [keywords] => 董存瑞,炸碉堡
+        )
+
+    [2] => Array
+        (
+            [count(1)] => 1
+            [keywords] => 陈独秀
+        )
+
+    [3] => Array
+        (
+            [count(1)] => 1
+            [keywords] => 雷锋
+        )
+
+    [4] => Array
+        (
+            [count(1)] => 1
+            [keywords] => 齐亮
+        )
+
+    [5] => Array
+        (
+            [count(1)] => 2
+            [keywords] => 卢德铭
+        )
+
+    [6] => Array
+        (
+            [count(1)] => 2
+            [keywords] => 汪洋
+        )
+
+    [7] => Array
+        (
+            [count(1)] => 2
+            [keywords] => 狼牙山五壮士
+        )
+
+    [8] => Array
+        (
+            [count(1)] => 2
+            [keywords] => 白求恩
+        )
+
+    [9] => Array
+        (
+            [count(1)] => 2
+            [keywords] => 雷震
+        )
+
+    [10] => Array
+        (
+            [count(1)] => 2
+            [keywords] => 鲁迅
+        )
+
+    [11] => Array
+        (
+            [count(1)] => 3
+            [keywords] => 热血雷锋侠,雷锋
+        )
+
+    [12] => Array
+        (
+            [count(1)] => 3
+            [keywords] => 革命
+        )
+
+    [13] => Array
+        (
+            [count(1)] => 4
+            [keywords] => 烈士
+        )
+
+    [14] => Array
+        (
+            [count(1)] => 8
+            [keywords] => 江姐
+        )
+
+    [15] => Array
+        (
+            [count(1)] => 12
+            [keywords] => 杀神
+        )
+
+    [16] => Array
+        (
+            [count(1)] => 74
+            [keywords] => 抗日
+        )
+
+    [17] => Array
+        (
+            [count(1)] => 650
+            [keywords] => 杀人
+        )
+
+)
+
+sql: select count(1),channel from video group by channel order by count(1)
+ret: Array
+(
+    [0] => Array
+        (
+            [count(1)] => 1
+            [channel] => 52539yinsy
+        )
+
+    [1] => Array
+        (
+            [count(1)] => 1
+            [channel] => cgamew
+        )
+
+    [2] => Array
+        (
+            [count(1)] => 1
+            [channel] => dn
+        )
+
+    [3] => Array
+        (
+            [count(1)] => 1
+            [channel] => dzs
+        )
+
+    [4] => Array
+        (
+            [count(1)] => 1
+            [channel] => ffo
+        )
+
+    [5] => Array
+        (
+            [count(1)] => 1
+            [channel] => hdzt
+        )
+
+    [6] => Array
+        (
+            [count(1)] => 1
+            [channel] => jx3
+        )
+
+    [7] => Array
+        (
+            [count(1)] => 1
+            [channel] => lfzl
+        )
+
+    [8] => Array
+        (
+            [count(1)] => 1
+            [channel] => mcboxpc
+        )
+
+    [9] => Array
+        (
+            [count(1)] => 1
+            [channel] => mhyx
+        )
+
+    [10] => Array
+        (
+            [count(1)] => 1
+            [channel] => my
+        )
+
+    [11] => Array
+        (
+            [count(1)] => 1
+            [channel] => newgamekuvideo
+        )
+
+    [12] => Array
+        (
+            [count(1)] => 1
+            [channel] => ns
+        )
+
+    [13] => Array
+        (
+            [count(1)] => 1
+            [channel] => psv
+        )
+
+    [14] => Array
+        (
+            [count(1)] => 1
+            [channel] => qhyx
+        )
+
+    [15] => Array
+        (
+            [count(1)] => 1
+            [channel] => tera
+        )
+
+    [16] => Array
+        (
+            [count(1)] => 1
+            [channel] => vhuyacf
+        )
+
+    [17] => Array
+        (
+            [count(1)] => 1
+            [channel] => vhuyah1z1
+        )
+
+    [18] => Array
+        (
+            [count(1)] => 1
+            [channel] => vhuyawows
+        )
+
+    [19] => Array
+        (
+            [count(1)] => 2
+            [channel] => aion
+        )
+
+    [20] => Array
+        (
+            [count(1)] => 2
+            [channel] => coc
+        )
+
+    [21] => Array
+        (
+            [count(1)] => 2
+            [channel] => cr
+        )
+
+    [22] => Array
+        (
+            [count(1)] => 2
+            [channel] => vhuya
+        )
+
+    [23] => Array
+        (
+            [count(1)] => 2
+            [channel] => vhuyacfm
+        )
+
+    [24] => Array
+        (
+            [count(1)] => 2
+            [channel] => vhuyapc
+        )
+
+    [25] => Array
+        (
+            [count(1)] => 2
+            [channel] => xunxian
+        )
+
+    [26] => Array
+        (
+            [count(1)] => 2
+            [channel] => zjsj
+        )
+
+    [27] => Array
+        (
+            [count(1)] => 2
+            [channel] => zx
+        )
+
+    [28] => Array
+        (
+            [count(1)] => 3
+            [channel] => bbs
+        )
+
+    [29] => Array
+        (
+            [count(1)] => 3
+            [channel] => news
+        )
+
+    [30] => Array
+        (
+            [count(1)] => 3
+            [channel] => nz
+        )
+
+    [31] => Array
+        (
+            [count(1)] => 3
+            [channel] => zhibo
+        )
+
+    [32] => Array
+        (
+            [count(1)] => 4
+            [channel] => cfm
+        )
+
+    [33] => Array
+        (
+            [count(1)] => 4
+            [channel] => ps4
+        )
+
+    [34] => Array
+        (
+            [count(1)] => 4
+            [channel] => qqdzz
+        )
+
+    [35] => Array
+        (
+            [count(1)] => 4
+            [channel] => vhuyadm
+        )
+
+    [36] => Array
+        (
+            [count(1)] => 4
+            [channel] => vhuyaow
+        )
+
+    [37] => Array
+        (
+            [count(1)] => 4
+            [channel] => wow
+        )
+
+    [38] => Array
+        (
+            [count(1)] => 4
+            [channel] => wuxia
+        )
+
+    [39] => Array
+        (
+            [count(1)] => 4
+            [channel] => xr
+        )
+
+    [40] => Array
+        (
+            [count(1)] => 4
+            [channel] => ymrdzz
+        )
+
+    [41] => Array
+        (
+            [count(1)] => 5
+            [channel] => hyxd
+        )
+
+    [42] => Array
+        (
+            [count(1)] => 5
+            [channel] => mnsj
+        )
+
+    [43] => Array
+        (
+            [count(1)] => 5
+            [channel] => vhuyablizzard
+        )
+
+    [44] => Array
+        (
+            [count(1)] => 6
+            [channel] => vhuyaball
+        )
+
+    [45] => Array
+        (
+            [count(1)] => 6
+            [channel] => webgame
+        )
+
+    [46] => Array
+        (
+            [count(1)] => 6
+            [channel] => www
+        )
+
+    [47] => Array
+        (
+            [count(1)] => 7
+            [channel] => fortnite
+        )
+
+    [48] => Array
+        (
+            [count(1)] => 7
+            [channel] => vhuyamc
+        )
+
+    [49] => Array
+        (
+            [count(1)] => 7
+            [channel] => ycvideo
+        )
+
+    [50] => Array
+        (
+            [count(1)] => 8
+            [channel] => ceshi
+        )
+
+    [51] => Array
+        (
+            [count(1)] => 8
+            [channel] => cod
+        )
+
+    [52] => Array
+        (
+            [count(1)] => 8
+            [channel] => tv
+        )
+
+    [53] => Array
+        (
+            [count(1)] => 8
+            [channel] => vhuyatv
+        )
+
+    [54] => Array
+        (
+            [count(1)] => 9
+            [channel] => dota2
+        )
+
+    [55] => Array
+        (
+            [count(1)] => 9
+            [channel] => vhuyaunknown
+        )
+
+    [56] => Array
+        (
+            [count(1)] => 10
+            [channel] => szhj
+        )
+
+    [57] => Array
+        (
+            [count(1)] => 12
+            [channel] => newgame
+        )
+
+    [58] => Array
+        (
+            [count(1)] => 15
+            [channel] => 5253video
+        )
+
+    [59] => Array
+        (
+            [count(1)] => 16
+            [channel] => bdota
+        )
+
+    [60] => Array
+        (
+            [count(1)] => 16
+            [channel] => cf
+        )
+
+    [61] => Array
+        (
+            [count(1)] => 16
+            [channel] => wows
+        )
+
+    [62] => Array
+        (
+            [count(1)] => 21
+            [channel] => unknow
+        )
+
+    [63] => Array
+        (
+            [count(1)] => 22
+            [channel] => pc
+        )
+
+    [64] => Array
+        (
+            [count(1)] => 23
+            [channel] => vhuyadnf
+        )
+
+    [65] => Array
+        (
+            [count(1)] => 25
+            [channel] => mil
+        )
+
+    [66] => Array
+        (
+            [count(1)] => 25
+            [channel] => vhuyayule
+        )
+
+    [67] => Array
+        (
+            [count(1)] => 26
+            [channel] => ls
+        )
+
+    [68] => Array
+        (
+            [count(1)] => 27
+            [channel] => df
+        )
+
+    [69] => Array
+        (
+            [count(1)] => 28
+            [channel] => videopcgames
+        )
+
+    [70] => Array
+        (
+            [count(1)] => 30
+            [channel] => wot
+        )
+
+    [71] => Array
+        (
+            [count(1)] => 31
+            [channel] => unknown
+        )
+
+    [72] => Array
+        (
+            [count(1)] => 41
+            [channel] => mc
+        )
+
+    [73] => Array
+        (
+            [count(1)] => 41
+            [channel] => pb
+        )
+
+    [74] => Array
+        (
+            [count(1)] => 46
+            [channel] => ow
+        )
+
+    [75] => Array
+        (
+            [count(1)] => 52
+            [channel] => oujtest
+        )
+
+    [76] => Array
+        (
+            [count(1)] => 73
+            [channel] => vhuyawzry
+        )
+
+    [77] => Array
+        (
+            [count(1)] => 92
+            [channel] => vhuyalol
+        )
+
+    [78] => Array
+        (
+            [count(1)] => 95
+            [channel] => duowanvideo
+        )
+
+    [79] => Array
+        (
+            [count(1)] => 110
+            [channel] => videommbk
+        )
+
+    [80] => Array
+        (
+            [count(1)] => 139
+            [channel] => vhuyafans
+        )
+
+    [81] => Array
+        (
+            [count(1)] => 148
+            [channel] => vhuyalite
+        )
+
+    [82] => Array
+        (
+            [count(1)] => 165
+            [channel] => 5253wzry
+        )
+
+    [83] => Array
+        (
+            [count(1)] => 165
+            [channel] => kan
+        )
+
+    [84] => Array
+        (
+            [count(1)] => 382
+            [channel] => lolboxvideo
+        )
+
+    [85] => Array
+        (
+            [count(1)] => 771
+            [channel] => yingshivideo
+        )
+
+    [86] => Array
+        (
+            [count(1)] => 1050
+            [channel] => lol
+        )
+
+)
+
+sql: select vid from video where channel='yingshivideo'
+ret: Array
+(
+    [0] => Array
+        (
+            [vid] => 8448343
+        )
+
+    [1] => Array
+        (
+            [vid] => 8448545
+        )
+
+    [2] => Array
+        (
+            [vid] => 8449101
+        )
+
+    [3] => Array
+        (
+            [vid] => 8449117
+        )
+
+    [4] => Array
+        (
+            [vid] => 8449223
+        )
+
+    [5] => Array
+        (
+            [vid] => 8449353
+        )
+
+    [6] => Array
+        (
+            [vid] => 8449485
+        )
+
+    [7] => Array
+        (
+            [vid] => 8450025
+        )
+
+    [8] => Array
+        (
+            [vid] => 8451201
+        )
+
+    [9] => Array
+        (
+            [vid] => 8451227
+        )
+
+    [10] => Array
+        (
+            [vid] => 8451253
+        )
+
+    [11] => Array
+        (
+            [vid] => 8451367
+        )
+
+    [12] => Array
+        (
+            [vid] => 8451481
+        )
+
+    [13] => Array
+        (
+            [vid] => 8452509
+        )
+
+    [14] => Array
+        (
+            [vid] => 8452633
+        )
+
+    [15] => Array
+        (
+            [vid] => 8452637
+        )
+
+    [16] => Array
+        (
+            [vid] => 8452711
+        )
+
+    [17] => Array
+        (
+            [vid] => 8452737
+        )
+
+    [18] => Array
+        (
+            [vid] => 8452743
+        )
+
+    [19] => Array
+        (
+            [vid] => 8452815
+        )
+
+    [20] => Array
+        (
+            [vid] => 8453025
+        )
+
+    [21] => Array
+        (
+            [vid] => 8453693
+        )
+
+    [22] => Array
+        (
+            [vid] => 8453721
+        )
+
+    [23] => Array
+        (
+            [vid] => 8453955
+        )
+
+    [24] => Array
+        (
+            [vid] => 8453999
+        )
+
+    [25] => Array
+        (
+            [vid] => 8454037
+        )
+
+    [26] => Array
+        (
+            [vid] => 8454071
+        )
+
+    [27] => Array
+        (
+            [vid] => 8454251
+        )
+
+    [28] => Array
+        (
+            [vid] => 8454265
+        )
+
+    [29] => Array
+        (
+            [vid] => 8454293
+        )
+
+    [30] => Array
+        (
+            [vid] => 8454361
+        )
+
+    [31] => Array
+        (
+            [vid] => 8454611
+        )
+
+    [32] => Array
+        (
+            [vid] => 8454873
+        )
+
+    [33] => Array
+        (
+            [vid] => 8454899
+        )
+
+    [34] => Array
+        (
+            [vid] => 8454949
+        )
+
+    [35] => Array
+        (
+            [vid] => 8455005
+        )
+
+    [36] => Array
+        (
+            [vid] => 8455041
+        )
+
+    [37] => Array
+        (
+            [vid] => 8455161
+        )
+
+    [38] => Array
+        (
+            [vid] => 8455175
+        )
+
+    [39] => Array
+        (
+            [vid] => 8455241
+        )
+
+    [40] => Array
+        (
+            [vid] => 8455283
+        )
+
+    [41] => Array
+        (
+            [vid] => 8455381
+        )
+
+    [42] => Array
+        (
+            [vid] => 8455423
+        )
+
+    [43] => Array
+        (
+            [vid] => 8455527
+        )
+
+    [44] => Array
+        (
+            [vid] => 8455881
+        )
+
+    [45] => Array
+        (
+            [vid] => 8456043
+        )
+
+    [46] => Array
+        (
+            [vid] => 8456045
+        )
+
+    [47] => Array
+        (
+            [vid] => 8456081
+        )
+
+    [48] => Array
+        (
+            [vid] => 8456749
+        )
+
+    [49] => Array
+        (
+            [vid] => 8456851
+        )
+
+    [50] => Array
+        (
+            [vid] => 8457213
+        )
+
+    [51] => Array
+        (
+            [vid] => 8457255
+        )
+
+    [52] => Array
+        (
+            [vid] => 8458681
+        )
+
+    [53] => Array
+        (
+            [vid] => 8458851
+        )
+
+    [54] => Array
+        (
+            [vid] => 8458977
+        )
+
+    [55] => Array
+        (
+            [vid] => 8459005
+        )
+
+    [56] => Array
+        (
+            [vid] => 8459073
+        )
+
+    [57] => Array
+        (
+            [vid] => 8459213
+        )
+
+    [58] => Array
+        (
+            [vid] => 8459371
+        )
+
+    [59] => Array
+        (
+            [vid] => 8459763
+        )
+
+    [60] => Array
+        (
+            [vid] => 8459969
+        )
+
+    [61] => Array
+        (
+            [vid] => 8460001
+        )
+
+    [62] => Array
+        (
+            [vid] => 8460087
+        )
+
+    [63] => Array
+        (
+            [vid] => 8460093
+        )
+
+    [64] => Array
+        (
+            [vid] => 8460099
+        )
+
+    [65] => Array
+        (
+            [vid] => 8460113
+        )
+
+    [66] => Array
+        (
+            [vid] => 8460167
+        )
+
+    [67] => Array
+        (
+            [vid] => 8460177
+        )
+
+    [68] => Array
+        (
+            [vid] => 8460413
+        )
+
+    [69] => Array
+        (
+            [vid] => 8460421
+        )
+
+    [70] => Array
+        (
+            [vid] => 8460489
+        )
+
+    [71] => Array
+        (
+            [vid] => 8460491
+        )
+
+    [72] => Array
+        (
+            [vid] => 8460501
+        )
+
+    [73] => Array
+        (
+            [vid] => 8460535
+        )
+
+    [74] => Array
+        (
+            [vid] => 8460583
+        )
+
+    [75] => Array
+        (
+            [vid] => 8460585
+        )
+
+    [76] => Array
+        (
+            [vid] => 8460679
+        )
+
+    [77] => Array
+        (
+            [vid] => 8460741
+        )
+
+    [78] => Array
+        (
+            [vid] => 8460807
+        )
+
+    [79] => Array
+        (
+            [vid] => 8461045
+        )
+
+    [80] => Array
+        (
+            [vid] => 8461547
+        )
+
+    [81] => Array
+        (
+            [vid] => 8461717
+        )
+
+    [82] => Array
+        (
+            [vid] => 8461815
+        )
+
+    [83] => Array
+        (
+            [vid] => 8462161
+        )
+
+    [84] => Array
+        (
+            [vid] => 8463943
+        )
+
+    [85] => Array
+        (
+            [vid] => 8464689
+        )
+
+    [86] => Array
+        (
+            [vid] => 8467093
+        )
+
+    [87] => Array
+        (
+            [vid] => 8470251
+        )
+
+    [88] => Array
+        (
+            [vid] => 8470383
+        )
+
+    [89] => Array
+        (
+            [vid] => 8472057
+        )
+
+    [90] => Array
+        (
+            [vid] => 8474123
+        )
+
+    [91] => Array
+        (
+            [vid] => 8474165
+        )
+
+    [92] => Array
+        (
+            [vid] => 8475313
+        )
+
+    [93] => Array
+        (
+            [vid] => 8475547
+        )
+
+    [94] => Array
+        (
+            [vid] => 8475559
+        )
+
+    [95] => Array
+        (
+            [vid] => 8475609
+        )
+
+    [96] => Array
+        (
+            [vid] => 8475683
+        )
+
+    [97] => Array
+        (
+            [vid] => 8475781
+        )
+
+    [98] => Array
+        (
+            [vid] => 8475895
+        )
+
+    [99] => Array
+        (
+            [vid] => 8476001
+        )
+
+    [100] => Array
+        (
+            [vid] => 8476055
+        )
+
+    [101] => Array
+        (
+            [vid] => 8476065
+        )
+
+    [102] => Array
+        (
+            [vid] => 8476171
+        )
+
+    [103] => Array
+        (
+            [vid] => 8476251
+        )
+
+    [104] => Array
+        (
+            [vid] => 8476267
+        )
+
+    [105] => Array
+        (
+            [vid] => 8476389
+        )
+
+    [106] => Array
+        (
+            [vid] => 8476405
+        )
+
+    [107] => Array
+        (
+            [vid] => 8476713
+        )
+
+    [108] => Array
+        (
+            [vid] => 8476761
+        )
+
+    [109] => Array
+        (
+            [vid] => 8476801
+        )
+
+    [110] => Array
+        (
+            [vid] => 8476877
+        )
+
+    [111] => Array
+        (
+            [vid] => 8477729
+        )
+
+    [112] => Array
+        (
+            [vid] => 8477861
+        )
+
+    [113] => Array
+        (
+            [vid] => 8477975
+        )
+
+    [114] => Array
+        (
+            [vid] => 8478103
+        )
+
+    [115] => Array
+        (
+            [vid] => 8478129
+        )
+
+    [116] => Array
+        (
+            [vid] => 8478151
+        )
+
+    [117] => Array
+        (
+            [vid] => 8478449
+        )
+
+    [118] => Array
+        (
+            [vid] => 8478869
+        )
+
+    [119] => Array
+        (
+            [vid] => 8479305
+        )
+
+    [120] => Array
+        (
+            [vid] => 8479313
+        )
+
+    [121] => Array
+        (
+            [vid] => 8479315
+        )
+
+    [122] => Array
+        (
+            [vid] => 8479439
+        )
+
+    [123] => Array
+        (
+            [vid] => 8479547
+        )
+
+    [124] => Array
+        (
+            [vid] => 8479741
+        )
+
+    [125] => Array
+        (
+            [vid] => 8479769
+        )
+
+    [126] => Array
+        (
+            [vid] => 8480309
+        )
+
+    [127] => Array
+        (
+            [vid] => 8481099
+        )
+
+    [128] => Array
+        (
+            [vid] => 8481341
+        )
+
+    [129] => Array
+        (
+            [vid] => 8481523
+        )
+
+    [130] => Array
+        (
+            [vid] => 8481661
+        )
+
+    [131] => Array
+        (
+            [vid] => 8482133
+        )
+
+    [132] => Array
+        (
+            [vid] => 8482179
+        )
+
+    [133] => Array
+        (
+            [vid] => 8482253
+        )
+
+    [134] => Array
+        (
+            [vid] => 8482325
+        )
+
+    [135] => Array
+        (
+            [vid] => 8482423
+        )
+
+    [136] => Array
+        (
+            [vid] => 8482465
+        )
+
+    [137] => Array
+        (
+            [vid] => 8482793
+        )
+
+    [138] => Array
+        (
+            [vid] => 8482927
+        )
+
+    [139] => Array
+        (
+            [vid] => 8482947
+        )
+
+    [140] => Array
+        (
+            [vid] => 8483135
+        )
+
+    [141] => Array
+        (
+            [vid] => 8483149
+        )
+
+    [142] => Array
+        (
+            [vid] => 8483901
+        )
+
+    [143] => Array
+        (
+            [vid] => 8483991
+        )
+
+    [144] => Array
+        (
+            [vid] => 8484179
+        )
+
+    [145] => Array
+        (
+            [vid] => 8484185
+        )
+
+    [146] => Array
+        (
+            [vid] => 8484355
+        )
+
+    [147] => Array
+        (
+            [vid] => 8484623
+        )
+
+    [148] => Array
+        (
+            [vid] => 8484713
+        )
+
+    [149] => Array
+        (
+            [vid] => 8485143
+        )
+
+    [150] => Array
+        (
+            [vid] => 8485409
+        )
+
+    [151] => Array
+        (
+            [vid] => 8485555
+        )
+
+    [152] => Array
+        (
+            [vid] => 8485933
+        )
+
+    [153] => Array
+        (
+            [vid] => 8486129
+        )
+
+    [154] => Array
+        (
+            [vid] => 8486205
+        )
+
+    [155] => Array
+        (
+            [vid] => 8486219
+        )
+
+    [156] => Array
+        (
+            [vid] => 8486293
+        )
+
+    [157] => Array
+        (
+            [vid] => 8486779
+        )
+
+    [158] => Array
+        (
+            [vid] => 8486979
+        )
+
+    [159] => Array
+        (
+            [vid] => 8487013
+        )
+
+    [160] => Array
+        (
+            [vid] => 8487023
+        )
+
+    [161] => Array
+        (
+            [vid] => 8487097
+        )
+
+    [162] => Array
+        (
+            [vid] => 8487411
+        )
+
+    [163] => Array
+        (
+            [vid] => 8487593
+        )
+
+    [164] => Array
+        (
+            [vid] => 8488239
+        )
+
+    [165] => Array
+        (
+            [vid] => 8488263
+        )
+
+    [166] => Array
+        (
+            [vid] => 8488543
+        )
+
+    [167] => Array
+        (
+            [vid] => 8488567
+        )
+
+    [168] => Array
+        (
+            [vid] => 8488731
+        )
+
+    [169] => Array
+        (
+            [vid] => 8488771
+        )
+
+    [170] => Array
+        (
+            [vid] => 8488815
+        )
+
+    [171] => Array
+        (
+            [vid] => 8488893
+        )
+
+    [172] => Array
+        (
+            [vid] => 8488985
+        )
+
+    [173] => Array
+        (
+            [vid] => 8489021
+        )
+
+    [174] => Array
+        (
+            [vid] => 8489113
+        )
+
+    [175] => Array
+        (
+            [vid] => 8489295
+        )
+
+    [176] => Array
+        (
+            [vid] => 8489327
+        )
+
+    [177] => Array
+        (
+            [vid] => 8489375
+        )
+
+    [178] => Array
+        (
+            [vid] => 8489387
+        )
+
+    [179] => Array
+        (
+            [vid] => 8489479
+        )
+
+    [180] => Array
+        (
+            [vid] => 8489619
+        )
+
+    [181] => Array
+        (
+            [vid] => 8490095
+        )
+
+    [182] => Array
+        (
+            [vid] => 8490195
+        )
+
+    [183] => Array
+        (
+            [vid] => 8490907
+        )
+
+    [184] => Array
+        (
+            [vid] => 8491677
+        )
+
+    [185] => Array
+        (
+            [vid] => 8491739
+        )
+
+    [186] => Array
+        (
+            [vid] => 8491761
+        )
+
+    [187] => Array
+        (
+            [vid] => 8491883
+        )
+
+    [188] => Array
+        (
+            [vid] => 8491893
+        )
+
+    [189] => Array
+        (
+            [vid] => 8492807
+        )
+
+    [190] => Array
+        (
+            [vid] => 8493293
+        )
+
+    [191] => Array
+        (
+            [vid] => 8493587
+        )
+
+    [192] => Array
+        (
+            [vid] => 8494031
+        )
+
+    [193] => Array
+        (
+            [vid] => 8494037
+        )
+
+    [194] => Array
+        (
+            [vid] => 8494061
+        )
+
+    [195] => Array
+        (
+            [vid] => 8494091
+        )
+
+    [196] => Array
+        (
+            [vid] => 8494105
+        )
+
+    [197] => Array
+        (
+            [vid] => 8494897
+        )
+
+    [198] => Array
+        (
+            [vid] => 8494899
+        )
+
+    [199] => Array
+        (
+            [vid] => 8495081
+        )
+
+    [200] => Array
+        (
+            [vid] => 8495155
+        )
+
+    [201] => Array
+        (
+            [vid] => 8495323
+        )
+
+    [202] => Array
+        (
+            [vid] => 8495505
+        )
+
+    [203] => Array
+        (
+            [vid] => 8495655
+        )
+
+    [204] => Array
+        (
+            [vid] => 8495689
+        )
+
+    [205] => Array
+        (
+            [vid] => 8495869
+        )
+
+    [206] => Array
+        (
+            [vid] => 8495883
+        )
+
+    [207] => Array
+        (
+            [vid] => 8496095
+        )
+
+    [208] => Array
+        (
+            [vid] => 8496151
+        )
+
+    [209] => Array
+        (
+            [vid] => 8497223
+        )
+
+    [210] => Array
+        (
+            [vid] => 8497311
+        )
+
+    [211] => Array
+        (
+            [vid] => 8497357
+        )
+
+    [212] => Array
+        (
+            [vid] => 8497591
+        )
+
+    [213] => Array
+        (
+            [vid] => 8497595
+        )
+
+    [214] => Array
+        (
+            [vid] => 8497597
+        )
+
+    [215] => Array
+        (
+            [vid] => 8497911
+        )
+
+    [216] => Array
+        (
+            [vid] => 8500515
+        )
+
+    [217] => Array
+        (
+            [vid] => 8500545
+        )
+
+    [218] => Array
+        (
+            [vid] => 8501739
+        )
+
+    [219] => Array
+        (
+            [vid] => 8501959
+        )
+
+    [220] => Array
+        (
+            [vid] => 8503613
+        )
+
+    [221] => Array
+        (
+            [vid] => 8503633
+        )
+
+    [222] => Array
+        (
+            [vid] => 8503847
+        )
+
+    [223] => Array
+        (
+            [vid] => 8504083
+        )
+
+    [224] => Array
+        (
+            [vid] => 8504107
+        )
+
+    [225] => Array
+        (
+            [vid] => 8504113
+        )
+
+    [226] => Array
+        (
+            [vid] => 8504399
+        )
+
+    [227] => Array
+        (
+            [vid] => 8504947
+        )
+
+    [228] => Array
+        (
+            [vid] => 8505113
+        )
+
+    [229] => Array
+        (
+            [vid] => 8505137
+        )
+
+    [230] => Array
+        (
+            [vid] => 8505175
+        )
+
+    [231] => Array
+        (
+            [vid] => 8505487
+        )
+
+    [232] => Array
+        (
+            [vid] => 8505565
+        )
+
+    [233] => Array
+        (
+            [vid] => 8505945
+        )
+
+    [234] => Array
+        (
+            [vid] => 8506505
+        )
+
+    [235] => Array
+        (
+            [vid] => 8506557
+        )
+
+    [236] => Array
+        (
+            [vid] => 8506583
+        )
+
+    [237] => Array
+        (
+            [vid] => 8506647
+        )
+
+    [238] => Array
+        (
+            [vid] => 8506673
+        )
+
+    [239] => Array
+        (
+            [vid] => 8507199
+        )
+
+    [240] => Array
+        (
+            [vid] => 8507239
+        )
+
+    [241] => Array
+        (
+            [vid] => 8507265
+        )
+
+    [242] => Array
+        (
+            [vid] => 8507323
+        )
+
+    [243] => Array
+        (
+            [vid] => 8507375
+        )
+
+    [244] => Array
+        (
+            [vid] => 8507453
+        )
+
+    [245] => Array
+        (
+            [vid] => 8507767
+        )
+
+    [246] => Array
+        (
+            [vid] => 8508021
+        )
+
+    [247] => Array
+        (
+            [vid] => 8508055
+        )
+
+    [248] => Array
+        (
+            [vid] => 8508225
+        )
+
+    [249] => Array
+        (
+            [vid] => 8508545
+        )
+
+    [250] => Array
+        (
+            [vid] => 8508563
+        )
+
+    [251] => Array
+        (
+            [vid] => 8510273
+        )
+
+    [252] => Array
+        (
+            [vid] => 8511835
+        )
+
+    [253] => Array
+        (
+            [vid] => 8513911
+        )
+
+    [254] => Array
+        (
+            [vid] => 8514019
+        )
+
+    [255] => Array
+        (
+            [vid] => 8515359
+        )
+
+    [256] => Array
+        (
+            [vid] => 8516199
+        )
+
+    [257] => Array
+        (
+            [vid] => 8516335
+        )
+
+    [258] => Array
+        (
+            [vid] => 8517039
+        )
+
+    [259] => Array
+        (
+            [vid] => 8518573
+        )
+
+    [260] => Array
+        (
+            [vid] => 8518991
+        )
+
+    [261] => Array
+        (
+            [vid] => 8522387
+        )
+
+    [262] => Array
+        (
+            [vid] => 8522817
+        )
+
+    [263] => Array
+        (
+            [vid] => 8523063
+        )
+
+    [264] => Array
+        (
+            [vid] => 8523225
+        )
+
+    [265] => Array
+        (
+            [vid] => 8523409
+        )
+
+    [266] => Array
+        (
+            [vid] => 8524899
+        )
+
+    [267] => Array
+        (
+            [vid] => 8524977
+        )
+
+    [268] => Array
+        (
+            [vid] => 8526047
+        )
+
+    [269] => Array
+        (
+            [vid] => 8526351
+        )
+
+    [270] => Array
+        (
+            [vid] => 8526615
+        )
+
+    [271] => Array
+        (
+            [vid] => 8529901
+        )
+
+    [272] => Array
+        (
+            [vid] => 8530305
+        )
+
+    [273] => Array
+        (
+            [vid] => 8530449
+        )
+
+    [274] => Array
+        (
+            [vid] => 8530727
+        )
+
+    [275] => Array
+        (
+            [vid] => 8531389
+        )
+
+    [276] => Array
+        (
+            [vid] => 8531951
+        )
+
+    [277] => Array
+        (
+            [vid] => 8532459
+        )
+
+    [278] => Array
+        (
+            [vid] => 8533437
+        )
+
+    [279] => Array
+        (
+            [vid] => 8533663
+        )
+
+    [280] => Array
+        (
+            [vid] => 8533919
+        )
+
+    [281] => Array
+        (
+            [vid] => 8533939
+        )
+
+    [282] => Array
+        (
+            [vid] => 8534175
+        )
+
+    [283] => Array
+        (
+            [vid] => 8534541
+        )
+
+    [284] => Array
+        (
+            [vid] => 8536163
+        )
+
+    [285] => Array
+        (
+            [vid] => 8536353
+        )
+
+    [286] => Array
+        (
+            [vid] => 8536419
+        )
+
+    [287] => Array
+        (
+            [vid] => 8537543
+        )
+
+    [288] => Array
+        (
+            [vid] => 8537629
+        )
+
+    [289] => Array
+        (
+            [vid] => 8539037
+        )
+
+    [290] => Array
+        (
+            [vid] => 8539113
+        )
+
+    [291] => Array
+        (
+            [vid] => 8539211
+        )
+
+    [292] => Array
+        (
+            [vid] => 8539925
+        )
+
+    [293] => Array
+        (
+            [vid] => 8540723
+        )
+
+    [294] => Array
+        (
+            [vid] => 8540729
+        )
+
+    [295] => Array
+        (
+            [vid] => 8540799
+        )
+
+    [296] => Array
+        (
+            [vid] => 8540807
+        )
+
+    [297] => Array
+        (
+            [vid] => 8540817
+        )
+
+    [298] => Array
+        (
+            [vid] => 8540941
+        )
+
+    [299] => Array
+        (
+            [vid] => 8541155
+        )
+
+    [300] => Array
+        (
+            [vid] => 8542405
+        )
+
+    [301] => Array
+        (
+            [vid] => 8543187
+        )
+
+    [302] => Array
+        (
+            [vid] => 8544439
+        )
+
+    [303] => Array
+        (
+            [vid] => 8544893
+        )
+
+    [304] => Array
+        (
+            [vid] => 8544997
+        )
+
+    [305] => Array
+        (
+            [vid] => 8545665
+        )
+
+    [306] => Array
+        (
+            [vid] => 8545843
+        )
+
+    [307] => Array
+        (
+            [vid] => 8545897
+        )
+
+    [308] => Array
+        (
+            [vid] => 8547563
+        )
+
+    [309] => Array
+        (
+            [vid] => 8549107
+        )
+
+    [310] => Array
+        (
+            [vid] => 8549979
+        )
+
+    [311] => Array
+        (
+            [vid] => 8550633
+        )
+
+    [312] => Array
+        (
+            [vid] => 8550729
+        )
+
+    [313] => Array
+        (
+            [vid] => 8551131
+        )
+
+    [314] => Array
+        (
+            [vid] => 8551313
+        )
+
+    [315] => Array
+        (
+            [vid] => 8551501
+        )
+
+    [316] => Array
+        (
+            [vid] => 8551875
+        )
+
+    [317] => Array
+        (
+            [vid] => 8553279
+        )
+
+    [318] => Array
+        (
+            [vid] => 8553341
+        )
+
+    [319] => Array
+        (
+            [vid] => 8553375
+        )
+
+    [320] => Array
+        (
+            [vid] => 8555593
+        )
+
+    [321] => Array
+        (
+            [vid] => 8555629
+        )
+
+    [322] => Array
+        (
+            [vid] => 8556429
+        )
+
+    [323] => Array
+        (
+            [vid] => 8557361
+        )
+
+    [324] => Array
+        (
+            [vid] => 8558159
+        )
+
+    [325] => Array
+        (
+            [vid] => 8558289
+        )
+
+    [326] => Array
+        (
+            [vid] => 8558347
+        )
+
+    [327] => Array
+        (
+            [vid] => 8558379
+        )
+
+    [328] => Array
+        (
+            [vid] => 8558401
+        )
+
+    [329] => Array
+        (
+            [vid] => 8560093
+        )
+
+    [330] => Array
+        (
+            [vid] => 8560399
+        )
+
+    [331] => Array
+        (
+            [vid] => 8560407
+        )
+
+    [332] => Array
+        (
+            [vid] => 8560669
+        )
+
+    [333] => Array
+        (
+            [vid] => 8561455
+        )
+
+    [334] => Array
+        (
+            [vid] => 8561495
+        )
+
+    [335] => Array
+        (
+            [vid] => 8561523
+        )
+
+    [336] => Array
+        (
+            [vid] => 8561539
+        )
+
+    [337] => Array
+        (
+            [vid] => 8562067
+        )
+
+    [338] => Array
+        (
+            [vid] => 8564569
+        )
+
+    [339] => Array
+        (
+            [vid] => 8564677
+        )
+
+    [340] => Array
+        (
+            [vid] => 8565319
+        )
+
+    [341] => Array
+        (
+            [vid] => 8565367
+        )
+
+    [342] => Array
+        (
+            [vid] => 8565479
+        )
+
+    [343] => Array
+        (
+            [vid] => 8565751
+        )
+
+    [344] => Array
+        (
+            [vid] => 8566737
+        )
+
+    [345] => Array
+        (
+            [vid] => 8567191
+        )
+
+    [346] => Array
+        (
+            [vid] => 8567271
+        )
+
+    [347] => Array
+        (
+            [vid] => 8567423
+        )
+
+    [348] => Array
+        (
+            [vid] => 8567979
+        )
+
+    [349] => Array
+        (
+            [vid] => 8569059
+        )
+
+    [350] => Array
+        (
+            [vid] => 8569165
+        )
+
+    [351] => Array
+        (
+            [vid] => 8570027
+        )
+
+    [352] => Array
+        (
+            [vid] => 8570153
+        )
+
+    [353] => Array
+        (
+            [vid] => 8572313
+        )
+
+    [354] => Array
+        (
+            [vid] => 8574969
+        )
+
+    [355] => Array
+        (
+            [vid] => 8576523
+        )
+
+    [356] => Array
+        (
+            [vid] => 8576549
+        )
+
+    [357] => Array
+        (
+            [vid] => 8576901
+        )
+
+    [358] => Array
+        (
+            [vid] => 8577711
+        )
+
+    [359] => Array
+        (
+            [vid] => 8577715
+        )
+
+    [360] => Array
+        (
+            [vid] => 8577759
+        )
+
+    [361] => Array
+        (
+            [vid] => 8577923
+        )
+
+    [362] => Array
+        (
+            [vid] => 8578065
+        )
+
+    [363] => Array
+        (
+            [vid] => 8578515
+        )
+
+    [364] => Array
+        (
+            [vid] => 8579519
+        )
+
+    [365] => Array
+        (
+            [vid] => 8579807
+        )
+
+    [366] => Array
+        (
+            [vid] => 8580109
+        )
+
+    [367] => Array
+        (
+            [vid] => 8580117
+        )
+
+    [368] => Array
+        (
+            [vid] => 8580989
+        )
+
+    [369] => Array
+        (
+            [vid] => 8582559
+        )
+
+    [370] => Array
+        (
+            [vid] => 8582679
+        )
+
+    [371] => Array
+        (
+            [vid] => 8582693
+        )
+
+    [372] => Array
+        (
+            [vid] => 8582703
+        )
+
+    [373] => Array
+        (
+            [vid] => 8583003
+        )
+
+    [374] => Array
+        (
+            [vid] => 8584057
+        )
+
+    [375] => Array
+        (
+            [vid] => 8585419
+        )
+
+    [376] => Array
+        (
+            [vid] => 8586003
+        )
+
+    [377] => Array
+        (
+            [vid] => 8586163
+        )
+
+    [378] => Array
+        (
+            [vid] => 8586855
+        )
+
+    [379] => Array
+        (
+            [vid] => 8597155
+        )
+
+    [380] => Array
+        (
+            [vid] => 8597187
+        )
+
+    [381] => Array
+        (
+            [vid] => 8601621
+        )
+
+    [382] => Array
+        (
+            [vid] => 8601623
+        )
+
+    [383] => Array
+        (
+            [vid] => 8601903
+        )
+
+    [384] => Array
+        (
+            [vid] => 8602379
+        )
+
+    [385] => Array
+        (
+            [vid] => 8602381
+        )
+
+    [386] => Array
+        (
+            [vid] => 8603259
+        )
+
+    [387] => Array
+        (
+            [vid] => 8603317
+        )
+
+    [388] => Array
+        (
+            [vid] => 8603321
+        )
+
+    [389] => Array
+        (
+            [vid] => 8605355
+        )
+
+    [390] => Array
+        (
+            [vid] => 8608293
+        )
+
+    [391] => Array
+        (
+            [vid] => 8608749
+        )
+
+    [392] => Array
+        (
+            [vid] => 8608751
+        )
+
+    [393] => Array
+        (
+            [vid] => 8610273
+        )
+
+    [394] => Array
+        (
+            [vid] => 8610359
+        )
+
+    [395] => Array
+        (
+            [vid] => 8610525
+        )
+
+    [396] => Array
+        (
+            [vid] => 8611831
+        )
+
+    [397] => Array
+        (
+            [vid] => 8611865
+        )
+
+    [398] => Array
+        (
+            [vid] => 8611977
+        )
+
+    [399] => Array
+        (
+            [vid] => 8613301
+        )
+
+    [400] => Array
+        (
+            [vid] => 8614611
+        )
+
+    [401] => Array
+        (
+            [vid] => 8615509
+        )
+
+    [402] => Array
+        (
+            [vid] => 8615531
+        )
+
+    [403] => Array
+        (
+            [vid] => 8616463
+        )
+
+    [404] => Array
+        (
+            [vid] => 8616589
+        )
+
+    [405] => Array
+        (
+            [vid] => 8617003
+        )
+
+    [406] => Array
+        (
+            [vid] => 8617585
+        )
+
+    [407] => Array
+        (
+            [vid] => 8618865
+        )
+
+    [408] => Array
+        (
+            [vid] => 8618889
+        )
+
+    [409] => Array
+        (
+            [vid] => 8619073
+        )
+
+    [410] => Array
+        (
+            [vid] => 8619189
+        )
+
+    [411] => Array
+        (
+            [vid] => 8619365
+        )
+
+    [412] => Array
+        (
+            [vid] => 8620063
+        )
+
+    [413] => Array
+        (
+            [vid] => 8620241
+        )
+
+    [414] => Array
+        (
+            [vid] => 8623529
+        )
+
+    [415] => Array
+        (
+            [vid] => 8623559
+        )
+
+    [416] => Array
+        (
+            [vid] => 8623703
+        )
+
+    [417] => Array
+        (
+            [vid] => 8624099
+        )
+
+    [418] => Array
+        (
+            [vid] => 8626475
+        )
+
+    [419] => Array
+        (
+            [vid] => 8626615
+        )
+
+    [420] => Array
+        (
+            [vid] => 8626939
+        )
+
+    [421] => Array
+        (
+            [vid] => 8627397
+        )
+
+    [422] => Array
+        (
+            [vid] => 8627547
+        )
+
+    [423] => Array
+        (
+            [vid] => 8627595
+        )
+
+    [424] => Array
+        (
+            [vid] => 8627627
+        )
+
+    [425] => Array
+        (
+            [vid] => 8627697
+        )
+
+    [426] => Array
+        (
+            [vid] => 8627753
+        )
+
+    [427] => Array
+        (
+            [vid] => 8627947
+        )
+
+    [428] => Array
+        (
+            [vid] => 8627959
+        )
+
+    [429] => Array
+        (
+            [vid] => 8627985
+        )
+
+    [430] => Array
+        (
+            [vid] => 8627989
+        )
+
+    [431] => Array
+        (
+            [vid] => 8628071
+        )
+
+    [432] => Array
+        (
+            [vid] => 8628917
+        )
+
+    [433] => Array
+        (
+            [vid] => 8629055
+        )
+
+    [434] => Array
+        (
+            [vid] => 8629073
+        )
+
+    [435] => Array
+        (
+            [vid] => 8629191
+        )
+
+    [436] => Array
+        (
+            [vid] => 8629215
+        )
+
+    [437] => Array
+        (
+            [vid] => 8629237
+        )
+
+    [438] => Array
+        (
+            [vid] => 8629877
+        )
+
+    [439] => Array
+        (
+            [vid] => 8630017
+        )
+
+    [440] => Array
+        (
+            [vid] => 8630215
+        )
+
+    [441] => Array
+        (
+            [vid] => 8630331
+        )
+
+    [442] => Array
+        (
+            [vid] => 8630599
+        )
+
+    [443] => Array
+        (
+            [vid] => 8630695
+        )
+
+    [444] => Array
+        (
+            [vid] => 8630731
+        )
+
+    [445] => Array
+        (
+            [vid] => 8630805
+        )
+
+    [446] => Array
+        (
+            [vid] => 8630807
+        )
+
+    [447] => Array
+        (
+            [vid] => 8630937
+        )
+
+    [448] => Array
+        (
+            [vid] => 8631043
+        )
+
+    [449] => Array
+        (
+            [vid] => 8631047
+        )
+
+    [450] => Array
+        (
+            [vid] => 8631131
+        )
+
+    [451] => Array
+        (
+            [vid] => 8631339
+        )
+
+    [452] => Array
+        (
+            [vid] => 8631379
+        )
+
+    [453] => Array
+        (
+            [vid] => 8631557
+        )
+
+    [454] => Array
+        (
+            [vid] => 8631591
+        )
+
+    [455] => Array
+        (
+            [vid] => 8631635
+        )
+
+    [456] => Array
+        (
+            [vid] => 8631645
+        )
+
+    [457] => Array
+        (
+            [vid] => 8631655
+        )
+
+    [458] => Array
+        (
+            [vid] => 8631701
+        )
+
+    [459] => Array
+        (
+            [vid] => 8631719
+        )
+
+    [460] => Array
+        (
+            [vid] => 8631765
+        )
+
+    [461] => Array
+        (
+            [vid] => 8631817
+        )
+
+    [462] => Array
+        (
+            [vid] => 8632353
+        )
+
+    [463] => Array
+        (
+            [vid] => 8632403
+        )
+
+    [464] => Array
+        (
+            [vid] => 8632409
+        )
+
+    [465] => Array
+        (
+            [vid] => 8632425
+        )
+
+    [466] => Array
+        (
+            [vid] => 8632443
+        )
+
+    [467] => Array
+        (
+            [vid] => 8632449
+        )
+
+    [468] => Array
+        (
+            [vid] => 8632489
+        )
+
+    [469] => Array
+        (
+            [vid] => 8632525
+        )
+
+    [470] => Array
+        (
+            [vid] => 8632591
+        )
+
+    [471] => Array
+        (
+            [vid] => 8632837
+        )
+
+    [472] => Array
+        (
+            [vid] => 8632971
+        )
+
+    [473] => Array
+        (
+            [vid] => 8633141
+        )
+
+    [474] => Array
+        (
+            [vid] => 8633203
+        )
+
+    [475] => Array
+        (
+            [vid] => 8633855
+        )
+
+    [476] => Array
+        (
+            [vid] => 8634027
+        )
+
+    [477] => Array
+        (
+            [vid] => 8634327
+        )
+
+    [478] => Array
+        (
+            [vid] => 8634447
+        )
+
+    [479] => Array
+        (
+            [vid] => 8634801
+        )
+
+    [480] => Array
+        (
+            [vid] => 8635093
+        )
+
+    [481] => Array
+        (
+            [vid] => 8635103
+        )
+
+    [482] => Array
+        (
+            [vid] => 8635289
+        )
+
+    [483] => Array
+        (
+            [vid] => 8635315
+        )
+
+    [484] => Array
+        (
+            [vid] => 8635625
+        )
+
+    [485] => Array
+        (
+            [vid] => 8636795
+        )
+
+    [486] => Array
+        (
+            [vid] => 8637529
+        )
+
+    [487] => Array
+        (
+            [vid] => 8637635
+        )
+
+    [488] => Array
+        (
+            [vid] => 8637715
+        )
+
+    [489] => Array
+        (
+            [vid] => 8638511
+        )
+
+    [490] => Array
+        (
+            [vid] => 8639025
+        )
+
+    [491] => Array
+        (
+            [vid] => 8639319
+        )
+
+    [492] => Array
+        (
+            [vid] => 8640119
+        )
+
+    [493] => Array
+        (
+            [vid] => 8640145
+        )
+
+    [494] => Array
+        (
+            [vid] => 8640185
+        )
+
+    [495] => Array
+        (
+            [vid] => 8640331
+        )
+
+    [496] => Array
+        (
+            [vid] => 8640523
+        )
+
+    [497] => Array
+        (
+            [vid] => 8640559
+        )
+
+    [498] => Array
+        (
+            [vid] => 8641321
+        )
+
+    [499] => Array
+        (
+            [vid] => 8641521
+        )
+
+    [500] => Array
+        (
+            [vid] => 8641571
+        )
+
+    [501] => Array
+        (
+            [vid] => 8642191
+        )
+
+    [502] => Array
+        (
+            [vid] => 8643277
+        )
+
+    [503] => Array
+        (
+            [vid] => 8643473
+        )
+
+    [504] => Array
+        (
+            [vid] => 8644005
+        )
+
+    [505] => Array
+        (
+            [vid] => 8644955
+        )
+
+    [506] => Array
+        (
+            [vid] => 8645147
+        )
+
+    [507] => Array
+        (
+            [vid] => 8645519
+        )
+
+    [508] => Array
+        (
+            [vid] => 8645545
+        )
+
+    [509] => Array
+        (
+            [vid] => 8645687
+        )
+
+    [510] => Array
+        (
+            [vid] => 8645991
+        )
+
+    [511] => Array
+        (
+            [vid] => 8646163
+        )
+
+    [512] => Array
+        (
+            [vid] => 8646415
+        )
+
+    [513] => Array
+        (
+            [vid] => 8646455
+        )
+
+    [514] => Array
+        (
+            [vid] => 8646505
+        )
+
+    [515] => Array
+        (
+            [vid] => 8647365
+        )
+
+    [516] => Array
+        (
+            [vid] => 8647429
+        )
+
+    [517] => Array
+        (
+            [vid] => 8648617
+        )
+
+    [518] => Array
+        (
+            [vid] => 8649161
+        )
+
+    [519] => Array
+        (
+            [vid] => 8649351
+        )
+
+    [520] => Array
+        (
+            [vid] => 8649371
+        )
+
+    [521] => Array
+        (
+            [vid] => 8649945
+        )
+
+    [522] => Array
+        (
+            [vid] => 8650333
+        )
+
+    [523] => Array
+        (
+            [vid] => 8650391
+        )
+
+    [524] => Array
+        (
+            [vid] => 8650471
+        )
+
+    [525] => Array
+        (
+            [vid] => 8651243
+        )
+
+    [526] => Array
+        (
+            [vid] => 8651301
+        )
+
+    [527] => Array
+        (
+            [vid] => 8651861
+        )
+
+    [528] => Array
+        (
+            [vid] => 8652649
+        )
+
+    [529] => Array
+        (
+            [vid] => 8652707
+        )
+
+    [530] => Array
+        (
+            [vid] => 8653667
+        )
+
+    [531] => Array
+        (
+            [vid] => 8654121
+        )
+
+    [532] => Array
+        (
+            [vid] => 8654753
+        )
+
+    [533] => Array
+        (
+            [vid] => 8654991
+        )
+
+    [534] => Array
+        (
+            [vid] => 8655005
+        )
+
+    [535] => Array
+        (
+            [vid] => 8655011
+        )
+
+    [536] => Array
+        (
+            [vid] => 8655103
+        )
+
+    [537] => Array
+        (
+            [vid] => 8655147
+        )
+
+    [538] => Array
+        (
+            [vid] => 8655247
+        )
+
+    [539] => Array
+        (
+            [vid] => 8655525
+        )
+
+    [540] => Array
+        (
+            [vid] => 8655529
+        )
+
+    [541] => Array
+        (
+            [vid] => 8656371
+        )
+
+    [542] => Array
+        (
+            [vid] => 8656385
+        )
+
+    [543] => Array
+        (
+            [vid] => 8658213
+        )
+
+    [544] => Array
+        (
+            [vid] => 8659349
+        )
+
+    [545] => Array
+        (
+            [vid] => 8659383
+        )
+
+    [546] => Array
+        (
+            [vid] => 8660159
+        )
+
+    [547] => Array
+        (
+            [vid] => 8660193
+        )
+
+    [548] => Array
+        (
+            [vid] => 8660633
+        )
+
+    [549] => Array
+        (
+            [vid] => 8660775
+        )
+
+    [550] => Array
+        (
+            [vid] => 8660841
+        )
+
+    [551] => Array
+        (
+            [vid] => 8661297
+        )
+
+    [552] => Array
+        (
+            [vid] => 8662211
+        )
+
+    [553] => Array
+        (
+            [vid] => 8663215
+        )
+
+    [554] => Array
+        (
+            [vid] => 8663743
+        )
+
+    [555] => Array
+        (
+            [vid] => 8665201
+        )
+
+    [556] => Array
+        (
+            [vid] => 8666757
+        )
+
+    [557] => Array
+        (
+            [vid] => 8667161
+        )
+
+    [558] => Array
+        (
+            [vid] => 8667323
+        )
+
+    [559] => Array
+        (
+            [vid] => 8668063
+        )
+
+    [560] => Array
+        (
+            [vid] => 8668513
+        )
+
+    [561] => Array
+        (
+            [vid] => 8668667
+        )
+
+    [562] => Array
+        (
+            [vid] => 8669267
+        )
+
+    [563] => Array
+        (
+            [vid] => 8670283
+        )
+
+    [564] => Array
+        (
+            [vid] => 8670957
+        )
+
+    [565] => Array
+        (
+            [vid] => 8670987
+        )
+
+    [566] => Array
+        (
+            [vid] => 8670989
+        )
+
+    [567] => Array
+        (
+            [vid] => 8671001
+        )
+
+    [568] => Array
+        (
+            [vid] => 8671025
+        )
+
+    [569] => Array
+        (
+            [vid] => 8671375
+        )
+
+    [570] => Array
+        (
+            [vid] => 8671473
+        )
+
+    [571] => Array
+        (
+            [vid] => 8671787
+        )
+
+    [572] => Array
+        (
+            [vid] => 8671809
+        )
+
+    [573] => Array
+        (
+            [vid] => 8672557
+        )
+
+    [574] => Array
+        (
+            [vid] => 8672579
+        )
+
+    [575] => Array
+        (
+            [vid] => 8673301
+        )
+
+    [576] => Array
+        (
+            [vid] => 8676055
+        )
+
+    [577] => Array
+        (
+            [vid] => 8676151
+        )
+
+    [578] => Array
+        (
+            [vid] => 8677381
+        )
+
+    [579] => Array
+        (
+            [vid] => 8677471
+        )
+
+    [580] => Array
+        (
+            [vid] => 8677591
+        )
+
+    [581] => Array
+        (
+            [vid] => 8678195
+        )
+
+    [582] => Array
+        (
+            [vid] => 8678809
+        )
+
+    [583] => Array
+        (
+            [vid] => 8679991
+        )
+
+    [584] => Array
+        (
+            [vid] => 8680187
+        )
+
+    [585] => Array
+        (
+            [vid] => 8681295
+        )
+
+    [586] => Array
+        (
+            [vid] => 8681935
+        )
+
+    [587] => Array
+        (
+            [vid] => 8682011
+        )
+
+    [588] => Array
+        (
+            [vid] => 8682067
+        )
+
+    [589] => Array
+        (
+            [vid] => 8682107
+        )
+
+    [590] => Array
+        (
+            [vid] => 8682135
+        )
+
+    [591] => Array
+        (
+            [vid] => 8682685
+        )
+
+    [592] => Array
+        (
+            [vid] => 8682915
+        )
+
+    [593] => Array
+        (
+            [vid] => 8683003
+        )
+
+    [594] => Array
+        (
+            [vid] => 8683369
+        )
+
+    [595] => Array
+        (
+            [vid] => 8685047
+        )
+
+    [596] => Array
+        (
+            [vid] => 8686293
+        )
+
+    [597] => Array
+        (
+            [vid] => 8689191
+        )
+
+    [598] => Array
+        (
+            [vid] => 8689739
+        )
+
+    [599] => Array
+        (
+            [vid] => 8690237
+        )
+
+    [600] => Array
+        (
+            [vid] => 8691853
+        )
+
+    [601] => Array
+        (
+            [vid] => 8692049
+        )
+
+    [602] => Array
+        (
+            [vid] => 8692199
+        )
+
+    [603] => Array
+        (
+            [vid] => 8692201
+        )
+
+    [604] => Array
+        (
+            [vid] => 8692477
+        )
+
+    [605] => Array
+        (
+            [vid] => 8692683
+        )
+
+    [606] => Array
+        (
+            [vid] => 8695277
+        )
+
+    [607] => Array
+        (
+            [vid] => 8695279
+        )
+
+    [608] => Array
+        (
+            [vid] => 8695447
+        )
+
+    [609] => Array
+        (
+            [vid] => 8748455
+        )
+
+    [610] => Array
+        (
+            [vid] => 8768205
+        )
+
+    [611] => Array
+        (
+            [vid] => 8771099
+        )
+
+    [612] => Array
+        (
+            [vid] => 8775245
+        )
+
+    [613] => Array
+        (
+            [vid] => 8775805
+        )
+
+    [614] => Array
+        (
+            [vid] => 8779607
+        )
+
+    [615] => Array
+        (
+            [vid] => 8780305
+        )
+
+    [616] => Array
+        (
+            [vid] => 8780327
+        )
+
+    [617] => Array
+        (
+            [vid] => 8781993
+        )
+
+    [618] => Array
+        (
+            [vid] => 8782699
+        )
+
+    [619] => Array
+        (
+            [vid] => 8783577
+        )
+
+    [620] => Array
+        (
+            [vid] => 8785575
+        )
+
+    [621] => Array
+        (
+            [vid] => 8788261
+        )
+
+    [622] => Array
+        (
+            [vid] => 8788353
+        )
+
+    [623] => Array
+        (
+            [vid] => 8789135
+        )
+
+    [624] => Array
+        (
+            [vid] => 8789199
+        )
+
+    [625] => Array
+        (
+            [vid] => 8790625
+        )
+
+    [626] => Array
+        (
+            [vid] => 8791909
+        )
+
+    [627] => Array
+        (
+            [vid] => 8792117
+        )
+
+    [628] => Array
+        (
+            [vid] => 8793513
+        )
+
+    [629] => Array
+        (
+            [vid] => 8794471
+        )
+
+    [630] => Array
+        (
+            [vid] => 8795807
+        )
+
+    [631] => Array
+        (
+            [vid] => 8795987
+        )
+
+    [632] => Array
+        (
+            [vid] => 8796111
+        )
+
+    [633] => Array
+        (
+            [vid] => 8796807
+        )
+
+    [634] => Array
+        (
+            [vid] => 8797679
+        )
+
+    [635] => Array
+        (
+            [vid] => 8798647
+        )
+
+    [636] => Array
+        (
+            [vid] => 8798905
+        )
+
+    [637] => Array
+        (
+            [vid] => 8799233
+        )
+
+    [638] => Array
+        (
+            [vid] => 8799995
+        )
+
+    [639] => Array
+        (
+            [vid] => 8800367
+        )
+
+    [640] => Array
+        (
+            [vid] => 8801393
+        )
+
+    [641] => Array
+        (
+            [vid] => 8802301
+        )
+
+    [642] => Array
+        (
+            [vid] => 8803215
+        )
+
+    [643] => Array
+        (
+            [vid] => 8803475
+        )
+
+    [644] => Array
+        (
+            [vid] => 8803591
+        )
+
+    [645] => Array
+        (
+            [vid] => 8804939
+        )
+
+    [646] => Array
+        (
+            [vid] => 8804973
+        )
+
+    [647] => Array
+        (
+            [vid] => 8807395
+        )
+
+    [648] => Array
+        (
+            [vid] => 8809063
+        )
+
+    [649] => Array
+        (
+            [vid] => 8809451
+        )
+
+    [650] => Array
+        (
+            [vid] => 8810411
+        )
+
+    [651] => Array
+        (
+            [vid] => 8810875
+        )
+
+    [652] => Array
+        (
+            [vid] => 8812927
+        )
+
+    [653] => Array
+        (
+            [vid] => 8813615
+        )
+
+    [654] => Array
+        (
+            [vid] => 8814083
+        )
+
+    [655] => Array
+        (
+            [vid] => 8814229
+        )
+
+    [656] => Array
+        (
+            [vid] => 8816191
+        )
+
+    [657] => Array
+        (
+            [vid] => 8816511
+        )
+
+    [658] => Array
+        (
+            [vid] => 8818579
+        )
+
+    [659] => Array
+        (
+            [vid] => 8819819
+        )
+
+    [660] => Array
+        (
+            [vid] => 8820605
+        )
+
+    [661] => Array
+        (
+            [vid] => 8820921
+        )
+
+    [662] => Array
+        (
+            [vid] => 8822317
+        )
+
+    [663] => Array
+        (
+            [vid] => 8822863
+        )
+
+    [664] => Array
+        (
+            [vid] => 8823811
+        )
+
+    [665] => Array
+        (
+            [vid] => 8824269
+        )
+
+    [666] => Array
+        (
+            [vid] => 8824739
+        )
+
+    [667] => Array
+        (
+            [vid] => 8824783
+        )
+
+    [668] => Array
+        (
+            [vid] => 8826077
+        )
+
+    [669] => Array
+        (
+            [vid] => 8826243
+        )
+
+    [670] => Array
+        (
+            [vid] => 8827507
+        )
+
+    [671] => Array
+        (
+            [vid] => 8827611
+        )
+
+    [672] => Array
+        (
+            [vid] => 8827809
+        )
+
+    [673] => Array
+        (
+            [vid] => 8828221
+        )
+
+    [674] => Array
+        (
+            [vid] => 8828309
+        )
+
+    [675] => Array
+        (
+            [vid] => 8828825
+        )
+
+    [676] => Array
+        (
+            [vid] => 8830817
+        )
+
+    [677] => Array
+        (
+            [vid] => 8831687
+        )
+
+    [678] => Array
+        (
+            [vid] => 8832109
+        )
+
+    [679] => Array
+        (
+            [vid] => 8832241
+        )
+
+    [680] => Array
+        (
+            [vid] => 8832497
+        )
+
+    [681] => Array
+        (
+            [vid] => 8832529
+        )
+
+    [682] => Array
+        (
+            [vid] => 8832561
+        )
+
+    [683] => Array
+        (
+            [vid] => 8832573
+        )
+
+    [684] => Array
+        (
+            [vid] => 8833041
+        )
+
+    [685] => Array
+        (
+            [vid] => 8834125
+        )
+
+    [686] => Array
+        (
+            [vid] => 8836447
+        )
+
+    [687] => Array
+        (
+            [vid] => 8836655
+        )
+
+    [688] => Array
+        (
+            [vid] => 8836939
+        )
+
+    [689] => Array
+        (
+            [vid] => 8837737
+        )
+
+    [690] => Array
+        (
+            [vid] => 8839069
+        )
+
+    [691] => Array
+        (
+            [vid] => 8839089
+        )
+
+    [692] => Array
+        (
+            [vid] => 8839127
+        )
+
+    [693] => Array
+        (
+            [vid] => 8839189
+        )
+
+    [694] => Array
+        (
+            [vid] => 8839913
+        )
+
+    [695] => Array
+        (
+            [vid] => 8839961
+        )
+
+    [696] => Array
+        (
+            [vid] => 8840053
+        )
+
+    [697] => Array
+        (
+            [vid] => 8840103
+        )
+
+    [698] => Array
+        (
+            [vid] => 8841813
+        )
+
+    [699] => Array
+        (
+            [vid] => 8842133
+        )
+
+    [700] => Array
+        (
+            [vid] => 8843195
+        )
+
+    [701] => Array
+        (
+            [vid] => 8843469
+        )
+
+    [702] => Array
+        (
+            [vid] => 8843775
+        )
+
+    [703] => Array
+        (
+            [vid] => 8843853
+        )
+
+    [704] => Array
+        (
+            [vid] => 8844389
+        )
+
+    [705] => Array
+        (
+            [vid] => 8844579
+        )
+
+    [706] => Array
+        (
+            [vid] => 8845233
+        )
+
+    [707] => Array
+        (
+            [vid] => 8845247
+        )
+
+    [708] => Array
+        (
+            [vid] => 8845263
+        )
+
+    [709] => Array
+        (
+            [vid] => 8845271
+        )
+
+    [710] => Array
+        (
+            [vid] => 8845273
+        )
+
+    [711] => Array
+        (
+            [vid] => 8845665
+        )
+
+    [712] => Array
+        (
+            [vid] => 8845993
+        )
+
+    [713] => Array
+        (
+            [vid] => 8846205
+        )
+
+    [714] => Array
+        (
+            [vid] => 8846695
+        )
+
+    [715] => Array
+        (
+            [vid] => 8846781
+        )
+
+    [716] => Array
+        (
+            [vid] => 8848207
+        )
+
+    [717] => Array
+        (
+            [vid] => 8848357
+        )
+
+    [718] => Array
+        (
+            [vid] => 8848765
+        )
+
+    [719] => Array
+        (
+            [vid] => 8849067
+        )
+
+    [720] => Array
+        (
+            [vid] => 8849357
+        )
+
+    [721] => Array
+        (
+            [vid] => 8849615
+        )
+
+    [722] => Array
+        (
+            [vid] => 8850107
+        )
+
+    [723] => Array
+        (
+            [vid] => 8850191
+        )
+
+    [724] => Array
+        (
+            [vid] => 8851313
+        )
+
+    [725] => Array
+        (
+            [vid] => 8852019
+        )
+
+    [726] => Array
+        (
+            [vid] => 8852627
+        )
+
+    [727] => Array
+        (
+            [vid] => 8853041
+        )
+
+    [728] => Array
+        (
+            [vid] => 8853069
+        )
+
+    [729] => Array
+        (
+            [vid] => 8853075
+        )
+
+    [730] => Array
+        (
+            [vid] => 8853281
+        )
+
+    [731] => Array
+        (
+            [vid] => 8853841
+        )
+
+    [732] => Array
+        (
+            [vid] => 8853983
+        )
+
+    [733] => Array
+        (
+            [vid] => 8854139
+        )
+
+    [734] => Array
+        (
+            [vid] => 8854511
+        )
+
+    [735] => Array
+        (
+            [vid] => 8854669
+        )
+
+    [736] => Array
+        (
+            [vid] => 8855609
+        )
+
+    [737] => Array
+        (
+            [vid] => 8855799
+        )
+
+    [738] => Array
+        (
+            [vid] => 8856849
+        )
+
+    [739] => Array
+        (
+            [vid] => 8857247
+        )
+
+    [740] => Array
+        (
+            [vid] => 8857893
+        )
+
+    [741] => Array
+        (
+            [vid] => 8857941
+        )
+
+    [742] => Array
+        (
+            [vid] => 8859147
+        )
+
+    [743] => Array
+        (
+            [vid] => 8859151
+        )
+
+    [744] => Array
+        (
+            [vid] => 8860817
+        )
+
+    [745] => Array
+        (
+            [vid] => 8860845
+        )
+
+    [746] => Array
+        (
+            [vid] => 8861249
+        )
+
+    [747] => Array
+        (
+            [vid] => 8862895
+        )
+
+    [748] => Array
+        (
+            [vid] => 8862989
+        )
+
+    [749] => Array
+        (
+            [vid] => 8863089
+        )
+
+    [750] => Array
+        (
+            [vid] => 8863307
+        )
+
+    [751] => Array
+        (
+            [vid] => 8865839
+        )
+
+    [752] => Array
+        (
+            [vid] => 8866903
+        )
+
+    [753] => Array
+        (
+            [vid] => 8868797
+        )
+
+    [754] => Array
+        (
+            [vid] => 8868817
+        )
+
+    [755] => Array
+        (
+            [vid] => 8869059
+        )
+
+    [756] => Array
+        (
+            [vid] => 8870597
+        )
+
+    [757] => Array
+        (
+            [vid] => 8870783
+        )
+
+    [758] => Array
+        (
+            [vid] => 8870891
+        )
+
+    [759] => Array
+        (
+            [vid] => 8870913
+        )
+
+    [760] => Array
+        (
+            [vid] => 8870917
+        )
+
+    [761] => Array
+        (
+            [vid] => 8871035
+        )
+
+    [762] => Array
+        (
+            [vid] => 8871037
+        )
+
+    [763] => Array
+        (
+            [vid] => 8871139
+        )
+
+    [764] => Array
+        (
+            [vid] => 8871371
+        )
+
+    [765] => Array
+        (
+            [vid] => 8871433
+        )
+
+    [766] => Array
+        (
+            [vid] => 8871545
+        )
+
+    [767] => Array
+        (
+            [vid] => 8871727
+        )
+
+    [768] => Array
+        (
+            [vid] => 8871739
+        )
+
+    [769] => Array
+        (
+            [vid] => 8872013
+        )
+
+    [770] => Array
+        (
+            [vid] => 8873133
+        )
+
+)
+
+sql: select group_concat(vid) from video where channel='yingshivideo'
+ret: Array
+(
+    [0] => Array
+        (
+            [group_concat(vid)] => 8448343,8448545,8449101,8449117,8449223,8449353,8449485,8450025,8451201,8451227,8451253,8451367,8451481,8452509,8452633,8452637,8452711,8452737,8452743,8452815,8453025,8453693,8453721,8453955,8453999,8454037,8454071,8454251,8454265,8454293,8454361,8454611,8454873,8454899,8454949,8455005,8455041,8455161,8455175,8455241,8455283,8455381,8455423,8455527,8455881,8456043,8456045,8456081,8456749,8456851,8457213,8457255,8458681,8458851,8458977,8459005,8459073,8459213,8459371,8459763,8459969,8460001,8460087,8460093,8460099,8460113,8460167,8460177,8460413,8460421,8460489,8460491,8460501,8460535,8460583,8460585,8460679,8460741,8460807,8461045,8461547,8461717,8461815,8462161,8463943,8464689,8467093,8470251,8470383,8472057,8474123,8474165,8475313,8475547,8475559,8475609,8475683,8475781,8475895,8476001,8476055,8476065,8476171,8476251,8476267,8476389,8476405,8476713,8476761,8476801,8476877,8477729,8477861,8477975,8478103,8478129,8478151,8478449,8478869,8479305,8479313,8479315,8479439,8479547,8479741,8479769,8480309,8481099,8481341,8481523,8481661,8482133,8482179,8482253,8482325,8482423,8482465,8482793,8482927,8482947,8483135,8483149,8483901,8483991,8484179,8484185,8484355,8484623,8484713,8485143,8485409,8485555,8485933,8486129,8486205,8486219,8486293,8486779,8486979,8487013,8487023,8487097,8487411,8487593,8488239,8488263,8488543,8488567,8488731,8488771,8488815,8488893,8488985,8489021,8489113,8489295,8489327,8489375,8489387,8489479,8489619,8490095,8490195,8490907,8491677,8491739,8491761,8491883,8491893,8492807,8493293,8493587,8494031,8494037,8494061,8494091,8494105,8494897,8494899,8495081,8495155,8495323,8495505,8495655,8495689,8495869,8495883,8496095,8496151,8497223,8497311,8497357,8497591,8497595,8497597,8497911,8500515,8500545,8501739,8501959,8503613,8503633,8503847,8504083,8504107,8504113,8504399,8504947,8505113,8505137,8505175,8505487,8505565,8505945,8506505,8506557,8506583,8506647,8506673,8507199,8507239,8507265,8507323,8507375,8507453,8507767,8508021,8508055,8508225,8508545,8508563,8510273,8511835,8513911,8514019,8515359,8516199,8516335,8517039,8518573,8518991,8522387,8522817,8523063,8523225,8523409,8524899,8524977,8526047,8526351,8526615,8529901,8530305,8530449,8530727,8531389,8531951,8532459,8533437,8533663,8533919,8533939,8534175,8534541,8536163,8536353,8536419,8537543,8537629,8539037,8539113,8539211,8539925,8540723,8540729,8540799,8540807,8540817,8540941,8541155,8542405,8543187,8544439,8544893,8544997,8545665,8545843,8545897,8547563,8549107,8549979,8550633,8550729,8551131,8551313,8551501,8551875,8553279,8553341,8553375,8555593,8555629,8556429,8557361,8558159,8558289,8558347,8558379,8558401,8560093,8560399,8560407,8560669,8561455,8561495,8561523,8561539,8562067,8564569,8564677,8565319,8565367,8565479,8565751,8566737,8567191,8567271,8567423,8567979,8569059,8569165,8570027,8570153,8572313,8574969,8576523,8576549,8576901,8577711,8577715,8577759,8577923,8578065,8578515,8579519,8579807,8580109,8580117,8580989,8582559,8582679,8582693,8582703,8583003,8584057,8585419,8586003,8586163,8586855,8597155,8597187,8601621,8601623,8601903,8602379,8602381,8603259,8603317,8603321,8605355,8608293,8608749,8608751,8610273,8610359,8610525,8611831,8611865,8611977,8613301,8614611,8615509,8615531,8616463,8616589,8617003,8617585,8618865,8618889,8619073,8619189,8619365,8620063,8620241,8623529,8623559,8623703,8624099,8626475,8626615,8626939,8627397,8627547,8627595,8627627,8627697,8627753,8627947,8627959,8627985,8627989,8628071,8628917,8629055,8629073,8629191,8629215,8629237,8629877,8630017,8630215,8630331,8630599,8630695,8630731,8630805,8630807,8630937,8631043,8631047,8631131,8631339,8631379,8631557,8631591,8631635,8631645,8631655,8631701,8631719,8631765,8631817,8632353,8632403,8632409,8632425,8632443,8632449,8632489,8632525,8632591,8632837,8632971,8633141,8633203,8633855,8634027,8634327,8634447,8634801,8635093,8635103,8635289,8635315,8635625,8636795,8637529,8637635,8637715,8638511,8639025,8639319,8640119,8640145,8640185,8640331,8640523,8640559,8641321,8641521,8641571,8642191,8643277,8643473,8644005,8644955,8645147,8645519,8645545,8645687,8645991,8646163,8646415,8646455,8646505,8647365,8647429,8648617,8649161,8649351,8649371,8649945,8650333,8650391,8650471,8651243,8651301,8651861,8652649,8652707,8653667,8654121,8654753,8654991,8655005,8655011,8655103,8655147,8655247,8655525,8655529,8656371,8656385,8658213,8659349,8659383,8660159,8660193,8660633,8660775,8660841,8661297,8662211,8663215,8663743,8665201,8666757,8667161,8667323,8668063,8668513,8668667,8669267,8670283,8670957,8670987,8670989,8671001,8671025,8671375,8671473,8671787,8671809,8672557,8672579,8673301,8676055,8676151,8677381,8677471,8677591,8678195,8678809,8679991,8680187,8681295,8681935,8682011,8682067,8682107,8682135,8682685,8682915,8683003,8683369,8685047,8686293,8689191,8689739,8690237,8691853,8692049,8692199,8692201,8692477,8692683,8695277,8695279,8695447,8748455,8768205,8771099,8775245,8775805,8779607,8780305,8780327,8781993,8782699,8783577,8785575,8788261,8788353,8789135,8789199,8790625,8791909,8792117,8793513,8794471,8795807,8795987,8796111,8796807,8797679,8798647,8798905,8799233,8799995,8800367,8801393,8802301,8803215,8803475,8803591,8804939,8804973,8807395,8809063,8809451,8810411,8810875,8812927,8813615,8814083,8814229,8816191,8816511,8818579,8819819,8820605,8820921,8822317,8822863,8823811,8824269,8824739,8824783,8826077,8826243,8827507,8827611,8827809,8828221,8828309,8828825,8830817,8831687,8832109,8832241,8832497,8832529,8832561,8832573,8833041,8834125,8836447,8836655,8836939,8837737,8839069,8839089,8839127,8839189,8839913,8839961,8840053,8840103,8841813,8842133,8843195,8843469,8843775,8843853,8844389,8844579,8845233,8845247,8845263,8845271,8845273,8845665,8845993,8846205,8846695,8846781,8848207,8848357,8848765,8849067,8849357,8849615,8850107,8850191,8851313,8852019,8852627,8853041,8853069,8853075,8853281,8853841,8853983,8854139,8854511,8854669,8855609,8855799,8856849,8857247,8857893,8857941,8859147,8859151,8860817,8860845,8861249,8862895,8862989,8863089,8863307,8865839,8866903,8868797,8868817,8869059,8870597,8870783,8870891,8870913,8870917,8871035,8871037,8871139,8871371,8871433,8871545,8871727,8871739,8872013,8873133
+        )
+
+)
+
+sql: select count(1) from video
+ret: Array
+(
+    [0] => Array
+        (
+            [count(1)] => 3902
+        )
+
+)
+
+sql: select group_concat(vid) from video
+ret: Array
+(
+    [0] => Array
+        (
+            [group_concat(vid)] => 1811,1919,2119,2239,3005,3481,3677,4445,4726,4797,6308,6766,7078,7176,7315,7630,7923,8003,8027,8088,8213,8214,8867,9365,9589,9770,9798,9811,9816,9884,10552,10701,11030,11115,11155,11193,11204,11255,11309,11374,11399,11442,11480,11533,11795,11920,12094,12128,12158,12167,12171,12743,12762,13386,13515,13719,13789,13802,14559,14641,14895,14900,15184,15688,16092,16304,16327,16421,16508,16513,16530,16899,16911,16923,17123,17183,17463,17488,17531,17629,17667,18582,18989,19016,19020,19179,19396,19416,19616,19631,19759,19779,19808,19847,19977,19997,20025,20065,20159,20180,20205,20247,20318,20403,20429,20431,20458,20496,20507,20591,20610,20617,20631,20683,20776,20788,20799,20818,21083,21104,21118,21251,21333,21354,21368,21533,21569,21583,21816,21838,21853,22008,22047,22067,22081,22306,22328,22345,22466,22517,22551,22554,22697,22713,22849,22873,22891,23041,23085,23097,23115,23249,23331,23377,23402,23416,23423,23470,23581,23627,23653,23669,23676,23815,24462,24558,25049,25284,25433,25848,25976,26018,26126,26129,26130,26132,26195,26284,26362,26371,26853,27354,27426,27974,28231,28314,28962,29099,29699,30780,31423,31486,31853,31912,32100,32336,32400,32490,32491,32892,33000,33190,33545,33693,33713,34116,34141,34268,34308,34397,34640,35329,35431,35672,35749,35818,35900,35905,36380,36393,36640,37027,37148,37150,37372,37384,37987,38276,38645,38836,38871,39175,39193,39565,39820,39986,40132,40273,40678,41288,41300,41616,41855,42190,42240,43523,43962,44349,44885,45066,45462,45747,46104,46168,46386,46711,47395,47572,47613,47798,47949,48000,48236,48291,48590,49002,49193,49336,50309,50430,50505,50516,50531,50540,50544,50557,50605,50607,50641,50644,50658,50663,50862,50884,51291,51416,51469,51475,51559,51575,51579,51631,51645,51647,51654,51678,51697,51752,51771,51775,51779,51794,51795,51799,51811,51822,51873,51883,51924,51974,52198,52590,52738,52999,53785,54482,54696,54702,55007,55136,55309,55450,55639,56240,56724,57350,57429,57525,57862,57938,58409,58494,59709,59882,59933,60116,60416,60561,60601,60676,60923,61053,61758,62107,62189,62278,62282,62361,62454,62901,62947,62954,62970,63015,63224,63331,63571,63951,63954,64167,64413,64738,64830,64929,64941,65951,66676,66975,67013,67043,67867,68181,68487,68696,68913,69265,69311,69316,69366,69461,71314,71380,71397,71507,71766,72437,72600,72812,73019,73304,73667,74136,74270,74723,74906,75169,75395,75454,75468,75763,75892,76005,76109,76292,76404,76409,77059,77201,77313,77508,78584,78677,78714,78909,79254,79381,79593,79742,81291,82303,82344,82528,82690,83135,83143,83214,83301,83414,83460,83461,83709,84309,84313,84375,84491,84509,85121,85143,85192,85894,85904,85914,86395,86772,86794,86961,87224,87583,87720,87843,88120,88223,89454,89463,89528,89545,89610,89652,89663,89697,89725,89729,90222,90349,90403,90557,90622,90661,90824,90917,91080,91159,91208,91291,91391,91453,91596,91668,91930,91945,91960,91965,92180,92189,92308,92310,92441,92467,92733,93077,93628,94107,95392,95962,96301,96758,96863,96924,97264,97452,97477,97495,97523,97697,98038,98093,98310,99011,99226,99609,99829,99831,100065,100070,100142,100158,100166,100168,100442,100509,100518,100538,100565,100569,100642,100645,100649,100652,100655,100670,101239,101413,101440,101487,101508,101556,101606,101737,101800,101843,101848,101849,101872,101884,101893,101997,102418,102650,102670,103002,103024,103025,103029,103032,103259,103346,103731,103752,103764,103766,103849,103859,103875,103877,103889,103934,104546,105464,105530,105644,105645,106024,106156,106759,108442,108670,109582,109832,109968,110314,110722,111066,111078,111132,111169,111259,111570,111744,111762,111763,111862,112071,112179,112204,112278,112402,112432,113221,113829,114172,114194,114568,114600,114653,114884,115470,115978,116030,116362,116456,116642,116680,116935,117070,117371,117531,117618,119518,119657,119674,119758,119791,119822,119924,120291,120448,120553,120808,120818,120925,120949,121014,122037,123050,123215,123396,124487,124653,125562,125648,125910,125987,126257,126279,126421,126576,127791,128028,128113,129028,129067,130369,130571,130625,130692,131006,131220,131240,131823,131829,131836,131853,131867,131876,131877,131907,132018,132139,132528,132623,133302,133463,134203,134265,134271,135159,135225,135400,135436,135441,135631,135713,136907,137036,137069,137245,137439,138523,138526,138534,138746,138819,139254,139457,139520,139677,140230,140319,141072,141201,141215,141220,141803,142829,143154,143233,143377,143897,143985,144037,144445,144846,144847,144848,144849,144850,144851,144852,144853,145088,145250,145403,145770,145844,145891,145898,147117,147473,147770,147942,148011,148341,148392,148736,148790,149073,149113,149149,149747,150682,150760,151117,151365,152111,152146,152397,152767,153759,153837,154206,154447,154576,154680,154687,155191,155332,155673,155749,155759,155760,155766,155778,155787,155858,155999,156017,156158,156366,156790,156866,156971,157010,157526,157779,158045,158112,159197,159321,159447,159694,159749,160155,161327,163042,163743,164336,164893,165164,165260,166155,167211,167262,167300,167340,167697,168641,168970,169375,169682,170078,170293,170840,171253,172795,172870,173132,173744,173971,174109,174735,175000,175167,175378,175785,175911,176138,177264,177507,177809,178176,178495,178498,178986,179042,179045,179226,180414,180670,181278,181312,181336,181406,181479,181609,181673,181677,181687,181832,181993,182703,182881,182990,183206,183322,183360,183604,183849,184365,185455,185585,185858,185929,185990,186004,186862,186879,186913,187300,188013,188217,188359,188586,188702,188790,188975,189080,189083,189448,189450,190212,190398,190909,190987,191018,191720,191771,191778,191829,191868,191996,192028,192110,192518,192589,192803,193409,193829,194108,195178,195299,195422,195755,196719,197298,199609,199610,200399,200843,207169,207844,212038,212129,212530,213239,213320,213504,215913,216358,216814,217396,218205,218353,226301,229653,298187,298377,298508,319666,319812,320381,338392,359822,360189,362527,373068,395941,411254,413955,416659,417008,418474,419540,424694,434651,434656,434657,436171,438930,440303,448590,456046,466085,473909,484226,492123,494146,495051,495264,496592,500069,500615,502827,505488,556805,557150,557176,561694,563738,564525,564526,568443,596638,601563,611009,615952,626192,626531,628504,632260,634220,634263,634612,634855,645340,651869,677878,680168,696312,698002,720887,722511,723310,723976,741433,766992,767437,767477,781595,782777,815786,819356,832823,834397,834911,835450,841285,848863,852907,878410,899640,917642,918017,920115,931970,948433,948805,954742,965464,979091,991856,1026680,1032617,1056363,1056364,1074782,1081953,1093051,1101040,1112390,1126077,1135038,1153165,1176940,1179831,1186389,1196868,1220445,1238777,1252068,1269178,1270889,1270890,1282063,1282329,1283768,1289117,1290772,1297264,1302983,1351514,1352608,1357554,1357555,1357556,1357557,1358224,1358708,1358853,1359497,1365195,1365319,1367293,1372705,1412556,1413382,1414994,1417601,1418126,1418230,1418810,1419279,1420445,1423357,1424718,1424790,1424807,1425876,1426518,1430743,1431371,1432836,1438392,1439410,1440191,1442094,1447449,1447606,1450981,1451596,1453133,1469979,1484727,1484912,1486147,1486498,1487403,1487986,1492273,1492284,1493145,1498439,1505009,1505011,1509066,1509936,1529177,1537283,1537284,1538534,1538538,1540743,1545747,1551630,1552869,1553824,1553987,1557898,1558058,1559123,1559761,1559989,1560365,1560734,1563355,1564684,1566286,1566973,1569996,1570903,1593910,1611268,1617752,1628685,1632781,1633101,1635104,1635409,1638154,1638186,1638424,1638501,1638549,1639821,1640205,1640461,1640834,1641878,1642521,1642545,1643202,1644768,1645808,1647045,1647052,1647295,1647451,1648921,1649231,1671698,1672171,1677843,1691005,1692386,1692389,1696189,1696814,1697625,1701371,1706773,1738451,1752801,1755972,1755974,1762807,1763030,1763219,1772805,1772963,1792483,1798790,1813152,1819460,1819769,1820571,1820779,1821579,1823687,1824933,1824950,1825976,1826169,1826653,1831304,1831966,1832979,1838170,1838174,1840530,1846455,1846458,1858480,1859071,1860754,1862982,1869411,1876460,1885838,1887488,1888433,1892012,1892531,1892532,1892855,1897626,1899464,1905031,1919489,1941126,1942227,1945458,1946191,1946324,1946645,1946876,1947014,1947016,1947730,1957716,1958361,1959050,1959550,1960715,1963269,1963417,1963422,1974453,1985856,1986947,1989287,1990760,2003489,2003572,2009021,2011047,2015302,2027236,2032979,2033581,2056124,2063414,2063415,2071390,2072180,2074704,2076363,2076660,2076745,2076747,2077801,2077995,2081895,2083862,2083863,2083891,2083958,2084794,2087325,2094091,2094818,2106609,2107969,2123988,2131052,2136948,2137443,2138441,2149752,2150817,2150851,2152112,2153738,2162255,2162413,2167078,2167306,2168118,2168331,2193081,2193944,2195155,2195313,2217482,2217486,2217722,2219814,2223827,2227235,2229354,2233543,2235525,2237774,2240144,2252344,2253429,2281091,2281691,2286075,2286753,2295394,2306047,2308407,2313838,2318541,2319994,2322355,2322510,2327333,2327827,2329323,2329365,2335561,2335562,2338282,2339875,2344448,2350884,2364675,2366366,2368954,2370869,2375138,2381276,2393669,2393673,2394894,2397083,2398086,2422875,2427467,2427639,2427834,2442268,2442271,2442500,2443167,2446345,2448054,2448232,2448351,2452997,2453004,2453509,2454349,2459041,2463658,2464248,2465182,2465442,2465606,2465750,2465842,2466939,2467527,2468465,2489985,2496098,2504820,2519094,2519822,2520078,2525355,2528855,2531171,2531308,2531632,2532477,2544092,2544093,2546422,2546826,2562946,2573083,2579295,2594394,2595684,2597472,2600560,2605947,2615708,2615729,2627100,2627102,2627104,2642386,2654971,2665333,2665346,2665799,2666231,2682492,2684232,2684594,2686657,2689330,2689794,2699039,2699055,2702464,2702466,2715422,2723655,2734080,2735250,2737993,2746947,2748990,2750830,2753086,2756986,2760097,2766022,2766499,2767578,2767640,2767643,2768940,2772361,2772553,2772670,2772906,2773320,2795406,2795446,2796538,2798296,2805449,2805916,2808639,2829346,2832318,2837344,2838457,2841200,2841248,2841303,2841339,2841359,2841529,2843036,2843305,2853326,2853331,2853339,2853341,2856854,2858005,2861708,2864035,2864157,2864196,2864205,2864217,2864467,2865189,2872769,2880811,2881637,2881666,2882524,2883067,2883500,2885102,2890945,2891309,2893007,2893263,2893687,2899194,2905481,2906278,2908699,2910074,2924494,2924528,2924539,2924562,2924564,2924598,2928001,2928232,2928241,2935789,2936332,2945927,2946018,2946180,2946521,2948600,2948614,2948624,2948642,2954139,2957922,2959328,2959355,2959375,2959799,2960544,2961956,2962488,2967284,2971989,2972183,2972192,2972216,2978267,2978271,2978278,2978279,2979945,2990215,2990239,2990255,2990259,2992869,2993328,2998872,2998878,2998887,2998903,3002016,3002896,3004010,3004798,3005371,3014918,3017597,3026896,3040075,3055196,3055480,3055518,3056337,3057630,3061106,3061127,3062426,3062606,3063017,3063075,3063957,3066039,3070876,3072298,3077284,3079630,3080956,3082391,3082882,3087516,3093105,3093292,3094018,3094623,3097957,3100536,3102232,3103163,3105704,3105778,3105779,3105781,3107973,3111066,3111783,3111793,3118137,3119145,3120513,3120519,3120706,3122978,3123093,3123269,3132274,3132825,3135626,3137391,3137856,3139532,3140246,3141951,3145728,3147072,3147273,3147750,3148116,3149249,3149978,3154249,3157530,3158529,3160291,3160294,3162061,3163270,3163292,3181720,3181721,3183332,3191340,3196764,3198177,3199695,3201530,3202969,3205169,3205222,3205255,3205343,3206458,3209123,3229811,3231243,3231248,3233080,3237718,3237765,3240778,3240783,3241861,3242052,3242308,3242311,3242483,3243751,3243792,3244249,3244285,3244457,3244536,3244542,3244666,3244687,3245374,3246398,3246461,3247047,3247841,3247855,3247902,3252063,3264245,3265348,3266143,3266429,3268032,3272410,3272415,3273362,3273555,3275889,3277375,3280715,3282221,3282714,3283344,3284066,3284237,3292021,3301572,3308790,3317026,3317047,3318389,3326145,3327919,3328350,3353851,3355633,3355817,3356520,3356650,3356690,3358191,3359384,3360729,3361187,3361367,3361504,3361961,3361983,3363261,3363575,3363978,3368978,3369589,3369820,3370076,3370824,3372317,3372876,3372895,3374430,3378934,3379122,3381279,3386066,3387767,3394575,3394990,3394999,3395476,3396951,3397025,3401777,3402210,3404109,3404338,3405378,3405387,3407029,3412288,3415215,3420937,3423015,3429539,3432038,3433384,3433786,3435843,3436009,3442579,3447573,3453669,3460848,3462187,3463368,3466133,3466356,3466850,3469626,3469754,3469835,3470195,3472348,3472579,3476119,3477900,3484408,3490327,3492719,3493934,3495059,3495123,3496701,3496720,3496855,3496935,3497275,3497732,3497764,3497884,3497932,3498080,3498779,3499165,3499281,3499829,3499921,3500471,3500550,3500779,3500821,3501098,3501189,3501488,3501509,3501663,3501727,3502099,3502107,3502150,3502366,3502789,3502947,3503313,3503390,3503488,3503656,3503786,3503820,3503825,3503845,3503923,3504408,3504690,3504935,3505099,3505365,3505614,3506281,3506624,3506829,3506895,3506968,3507602,3507967,3508084,3508150,3508421,3508572,3508621,3508683,3508770,3508798,3508800,3508915,3508952,3509085,3509257,3509399,3509529,3509547,3509625,3510614,3510873,3511022,3511228,3511567,3512148,3512159,3512717,3512757,3513065,3513090,3513901,3513928,3513977,3514074,3514150,3514484,3515084,3515206,3515540,3515950,3516354,3516523,3516532,3516535,3516538,3516953,3517169,3517805,3517869,3517883,3518253,3518370,3518796,3519037,3519166,3519218,3519799,3519980,3521178,3521369,3521870,3521875,3521880,3522693,3522695,3522872,3523071,3523106,3523116,3523607,3524395,3524466,3525222,3525285,3525954,3525997,3528077,3528419,3528465,3528784,3529839,3529880,3530759,3530803,3532234,3532267,3532406,3532477,3532565,3532733,3533149,3533273,3533351,3533541,3534079,3534158,3534214,3534472,3534543,3535244,3535617,3536277,3536278,3536289,3536290,3536309,3536310,3536312,3536659,3537120,3537407,3537427,3537568,3537658,3538058,3538256,3538462,3538551,3539385,3539762,3540167,3540277,3541022,3541329,3541788,3541805,3542131,3542295,3542404,3542467,3542743,3542770,3542921,3543009,3543030,3543254,3544297,3544301,3544318,3544695,3545240,3545410,3545429,3545486,3546270,3546346,3546909,3546944,3547004,3547127,3547584,3548339,3548374,3548638,3548639,3549367,3549917,3549951,3550173,3550291,3550312,3550437,3550514,3550606,3551006,3551065,3551340,3551430,3551664,3552028,3552044,3552068,3552256,3552556,3552682,3552958,3554377,3554483,3554542,3554652,3555290,3555725,3556592,3556712,3556748,3556810,3556846,3557120,3557153,3557491,3557723,3557734,3557806,3558244,3558632,3558642,3558644,3558694,3558730,3560012,3560033,3560072,3560172,3560664,3560803,3560804,3560857,3560895,3561388,3561396,3561428,3561517,3561520,3561610,3561931,3562504,3562880,3563110,3563141,3563718,3564021,3564907,3565108,3565117,3565175,3565281,3565628,3565698,3565901,3565941,3565951,3565982,3566130,3566226,3566255,3566531,3566892,3567707,3567786,3567953,3568171,3569127,3569150,3569172,3569346,3569490,3569566,3569794,3569844,3569846,3569882,3569926,3570359,3570369,3570479,3571005,3571287,3571321,3571540,3571946,3572294,3572322,3572884,3572991,3573040,3573076,3573359,3573420,3573798,3574557,3574807,3575065,3575818,3576878,3577082,3577152,3577319,3577810,3577822,3578558,3578574,3578588,3578612,3579029,3579363,3579389,3579415,3580326,3581656,3581839,3581850,3582171,3582414,3582428,3583135,3583585,3583827,3584138,3584148,3584178,3584527,3585380,3585534,3585695,3586384,3586988,3587133,3587136,3587269,3588407,3588529,3588537,3588544,3588545,3588764,3589459,3590017,3590037,3590346,3590446,3590575,3590718,3591175,3591856,3592123,3592330,3592518,3592574,3593518,3594957,3595606,3595801,3596481,3596754,3597273,3598835,3599145,3599238,3599242,3599450,3599692,3600203,3600567,3600581,3600847,3600881,3601067,3601421,3601428,3601448,3601501,3601835,3601872,3601879,3602067,3602725,3602860,3603261,3604355,3610219,3611242,3611437,3614556,3622486,3623009,3623691,3624325,3624788,3625483,3625897,3625936,3626246,3626615,3626779,3626832,3627634,3627965,3627967,3628008,3628032,3629823,3629904,3630037,3631821,3631878,3632816,3632857,3635202,3635372,3637193,3637431,3637471,3637883,3637890,3639672,3640202,3650441,3653807,3657048,3676804,3678555,3678623,3678759,3678797,3679009,3680024,3680079,3680799,3681031,3681052,3681639,3682212,3683437,3684374,3684477,3684942,3688167,3688744,3689496,3690306,3694921,3697555,3703837,3706059,3743564,3746163,3746387,3746479,3747011,3748428,3748825,3750519,3751088,3752976,3753719,3754740,3755097,3756744,3757280,3757283,3758514,3761097,3761963,3764190,3767960,3772831,3778385,3783508,3787960,3791265,3793370,3794570,3795335,3795920,3796453,3796956,3797708,3798481,3799444,3799908,3800969,3802749,3811484,3820386,3852801,3861419,3867388,3885138,3914474,3932485,3980737,3981704,4037208,4038861,4044190,4101739,4130055,4158185,4169987,4177093,4177559,4251869,4262223,4291035,4349347,4351119,4354959,4363983,4372373,4372531,4373165,4377455,4427127,4439833,4456241,4463329,4469697,4529761,4532997,4539179,4555511,4556305,4559701,4585579,4620551,4658189,4768883,4786821,4825443,4825541,4825643,4855207,4855643,4861675,4866849,4867847,4868177,4934669,4950263,4954817,4954971,4988125,5045635,5056439,5081739,5081907,5092591,5099113,5099805,5122521,5123705,5126399,5131305,5138109,5211135,5256477,5263983,5294069,5327293,5329737,5339795,5362685,5377147,5397575,5424561,5431163,5438085,5455841,5457033,5462815,5465919,5468631,5471077,5534009,5534099,5543693,5584063,5597559,5617597,5629911,5632803,5666505,5666877,5688909,5738758,5739397,5759109,5789213,5827139,5827191,5827203,5834473,5836079,5852759,5883865,5884063,5888567,5896505,5911663,5911967,5911969,5921469,5924379,5969703,5971151,6040499,6042071,6065665,6095413,6105905,6119541,6120981,6121049,6153439,6163049,6163051,6163541,6164891,6164931,6172469,6172601,6174759,6175427,6175731,6176655,6178621,6178775,6178865,6181073,6201437,6207483,6217395,6217867,6232359,6232467,6236411,6240963,6243799,6246897,6268901,6291355,6304601,6352525,6416015,6416055,6441557,6443572,6506825,6514417,6545317,6608713,6616639,6616759,6624417,6631579,6633509,6634007,6635025,6635901,6636553,6636895,6643203,6663691,6681265,6696655,6699099,6702861,6706319,6712007,6725639,6749149,6749983,6752951,6771753,6771833,6796275,6796285,6822335,6828351,6828647,6830309,6839789,6841255,6844275,6844483,6853663,6888153,6893413,6893541,6893783,6922353,6941281,6971499,6973955,6974297,7010397,7023121,7040643,7088543,7129323,7146882,7147353,7156079,7158885,7170599,7175942,7187357,7210733,7220365,7229383,7234337,7266996,7274719,7282099,7308674,7321323,7321335,7325988,7338091,7338101,7338883,7356865,7357553,7371595,7401629,7406115,7411124,7423812,7425095,7475492,7477369,7507499,7551582,7563804,7624602,7631032,7647846,7651738,7666157,7671863,7675208,7685255,7745287,7746682,7778894,7780629,7805965,7805976,7811710,7865713,7872180,7879897,7882536,7888694,7894856,7925296,7932946,7944498,7954081,7957485,7958271,7976081,7979270,7994629,8001228,8027803,8040207,8040957,8043936,8044268,8050650,8050678,8050854,8060242,8090192,8111926,8128056,8136547,8162689,8164071,8164222,8179534,8192133,8192157,8227147,8255876,8258224,8262841,8267041,8268618,8290901,8297185,8297345,8303173,8319606,8331710,8353902,8380735,8382809,8384763,8385119,8385331,8385495,8385663,8385829,8386343,8386897,8386963,8387249,8388399,8389069,8389193,8391491,8391835,8391837,8392865,8393081,8393191,8394267,8394673,8394773,8395031,8395215,8396103,8396325,8397019,8397171,8397945,8398477,8398713,8399865,8399891,8400001,8400443,8401475,8401485,8402847,8403477,8403729,8405897,8406117,8406663,8406737,8408215,8410349,8411123,8413793,8414511,8416383,8416833,8416965,8417105,8417139,8417197,8419205,8419459,8421499,8422565,8425181,8425825,8425865,8427327,8427663,8427673,8428749,8429083,8431375,8433419,8433983,8434183,8434459,8434681,8435799,8435927,8436711,8436827,8436861,8437637,8437749,8438619,8438623,8438649,8439069,8439633,8439853,8440535,8440557,8440569,8440571,8441015,8441473,8441501,8441517,8441735,8442201,8442241,8442271,8442413,8442759,8442921,8443239,8444347,8444463,8444775,8444857,8445053,8445205,8445247,8447159,8447415,8447701,8447795,8447807,8447927,8448343,8448545,8448815,8449101,8449117,8449223,8449353,8449485,8450025,8450633,8450651,8451201,8451227,8451253,8451367,8451481,8452509,8452633,8452637,8452711,8452737,8452743,8452815,8453025,8453693,8453721,8453955,8453999,8454037,8454071,8454251,8454265,8454293,8454361,8454611,8454873,8454899,8454949,8455005,8455041,8455161,8455175,8455241,8455283,8455381,8455423,8455527,8455881,8456043,8456045,8456081,8456487,8456489,8456539,8456749,8456851,8457213,8457255,8458681,8458851,8458977,8459005,8459073,8459213,8459371,8459763,8459969,8460001,8460087,8460093,8460099,8460113,8460167,8460177,8460413,8460421,8460489,8460491,8460501,8460535,8460583,8460585,8460679,8460741,8460807,8461045,8461547,8461717,8461815,8462161,8463943,8464689,8467093,8468367,8470251,8470383,8472057,8474123,8474165,8474853,8475139,8475179,8475313,8475547,8475559,8475609,8475683,8475781,8475895,8476001,8476055,8476065,8476171,8476251,8476267,8476389,8476405,8476713,8476761,8476801,8476877,8477031,8477061,8477151,8477165,8477729,8477861,8477947,8477975,8478103,8478129,8478151,8478449,8478869,8479305,8479313,8479315,8479439,8479547,8479741,8479769,8479899,8480309,8481073,8481099,8481341,8481523,8481661,8482133,8482145,8482179,8482253,8482325,8482423,8482465,8482793,8482927,8482947,8483135,8483149,8483901,8483991,8484179,8484185,8484355,8484623,8484713,8485143,8485409,8485555,8485933,8486129,8486205,8486219,8486293,8486779,8486979,8487013,8487023,8487097,8487411,8487593,8488239,8488249,8488263,8488543,8488567,8488731,8488771,8488815,8488893,8488985,8489021,8489113,8489295,8489327,8489375,8489387,8489479,8489619,8490095,8490195,8490907,8491677,8491739,8491761,8491883,8491893,8492131,8492135,8492807,8493293,8493587,8494031,8494037,8494061,8494091,8494105,8494897,8494899,8495081,8495155,8495323,8495505,8495655,8495689,8495869,8495883,8496095,8496151,8497223,8497311,8497357,8497379,8497591,8497595,8497597,8497713,8497809,8497911,8498957,8499001,8499015,8499043,8499061,8500515,8500545,8501197,8501225,8501739,8501765,8501959,8502231,8502305,8503273,8503613,8503633,8503847,8504083,8504107,8504113,8504399,8504947,8505113,8505137,8505175,8505487,8505565,8505945,8506505,8506557,8506583,8506647,8506673,8507199,8507239,8507265,8507323,8507375,8507453,8507767,8508021,8508055,8508225,8508437,8508545,8508563,8508591,8508613,8508741,8508747,8508901,8510273,8510567,8510615,8510651,8510661,8511125,8511441,8511705,8511827,8511835,8511841,8511843,8513371,8513911,8514019,8515323,8515359,8515765,8516199,8516335,8516657,8517039,8517393,8517529,8517897,8517957,8518573,8518991,8519391,8520391,8521537,8521635,8521751,8521855,8521949,8521965,8522387,8522817,8523063,8523225,8523409,8523735,8523753,8523853,8523873,8523903,8523953,8524233,8524241,8524485,8524637,8524899,8524977,8525307,8525729,8526047,8526351,8526615,8527249,8527675,8527997,8528009,8528039,8528463,8528897,8529127,8529143,8529673,8529901,8530305,8530449,8530727,8531389,8531951,8532459,8533437,8533663,8533919,8533939,8534175,8534541,8535659,8536163,8536353,8536419,8537543,8537629,8539037,8539113,8539211,8539429,8539753,8539925,8540207,8540723,8540729,8540799,8540807,8540817,8540941,8541155,8541199,8541623,8542405,8543085,8543187,8543889,8544169,8544439,8544893,8544997,8545347,8545665,8545843,8545897,8546049,8546443,8547123,8547151,8547271,8547563,8549107,8549979,8550633,8550729,8551131,8551313,8551501,8551875,8552197,8552725,8553279,8553341,8553375,8553467,8555005,8555593,8555629,8556429,8556501,8557073,8557361,8557457,8557523,8558159,8558289,8558347,8558379,8558401,8558677,8558737,8558849,8559013,8560093,8560369,8560379,8560399,8560407,8560443,8560597,8560669,8561355,8561455,8561495,8561523,8561539,8561667,8562067,8562409,8562509,8562695,8562733,8563205,8563435,8563503,8563707,8563807,8563855,8563879,8564569,8564677,8564957,8564959,8564967,8565319,8565367,8565419,8565479,8565751,8566737,8566767,8566889,8567191,8567271,8567423,8567609,8567937,8567979,8567983,8568127,8569059,8569165,8569219,8569235,8569263,8569973,8569979,8570027,8570153,8570713,8570833,8571861,8572313,8573123,8574215,8574843,8574969,8575259,8575465,8576523,8576549,8576901,8577711,8577715,8577759,8577923,8578065,8578515,8579519,8579807,8580109,8580117,8580989,8581583,8581647,8581737,8581847,8581923,8582471,8582545,8582559,8582569,8582641,8582679,8582693,8582703,8582877,8583003,8583881,8584057,8584751,8585291,8585419,8586003,8586163,8586855,8588847,8590837,8596703,8597155,8597187,8597329,8598431,8598639,8598929,8601621,8601623,8601903,8602379,8602381,8603259,8603317,8603321,8605355,8608293,8608749,8608751,8609919,8610273,8610359,8610525,8610695,8610751,8610761,8611511,8611549,8611611,8611831,8611865,8611977,8613301,8614611,8614877,8614995,8615509,8615531,8615981,8616463,8616589,8617003,8617519,8617585,8618865,8618889,8619073,8619189,8619365,8620063,8620241,8620427,8620797,8621681,8621997,8622385,8622425,8622545,8622719,8622785,8623179,8623529,8623559,8623703,8624099,8624273,8624821,8624933,8625127,8625585,8625935,8626333,8626475,8626509,8626615,8626939,8626969,8627397,8627433,8627485,8627547,8627595,8627627,8627697,8627753,8627947,8627959,8627985,8627989,8628071,8628269,8628685,8628917,8629055,8629073,8629191,8629215,8629237,8629877,8629939,8629977,8630017,8630215,8630331,8630599,8630695,8630731,8630805,8630807,8630937,8631043,8631047,8631131,8631339,8631379,8631557,8631591,8631635,8631645,8631655,8631701,8631719,8631765,8631817,8632059,8632353,8632403,8632409,8632425,8632443,8632449,8632489,8632525,8632591,8632837,8632971,8633141,8633203,8633355,8633511,8633855,8634027,8634327,8634447,8634801,8635093,8635103,8635289,8635315,8635625,8636795,8637529,8637635,8637715,8638441,8638511,8638681,8639025,8639319,8640119,8640145,8640185,8640331,8640523,8640559,8641321,8641521,8641571,8642191,8642247,8642265,8642969,8643141,8643277,8643473,8643833,8644005,8644037,8644231,8644955,8645147,8645519,8645545,8645687,8645991,8646163,8646415,8646455,8646505,8647365,8647429,8647795,8648617,8648915,8648931,8649161,8649351,8649371,8649945,8650087,8650333,8650391,8650471,8650489,8651243,8651301,8651481,8651861,8652649,8652707,8652997,8653347,8653667,8654121,8654153,8654211,8654753,8654909,8654991,8655005,8655011,8655103,8655147,8655247,8655525,8655529,8655731,8656019,8656119,8656235,8656371,8656385,8656567,8657123,8657995,8658213,8658601,8659349,8659383,8659411,8659493,8659609,8660083,8660125,8660159,8660193,8660449,8660633,8660775,8660841,8660987,8661003,8661297,8661431,8661655,8662085,8662087,8662089,8662091,8662211,8663215,8663255,8663477,8663637,8663743,8663799,8663803,8663859,8663899,8663903,8665201,8665277,8665675,8666741,8666757,8666763,8667031,8667161,8667323,8667791,8667831,8668063,8668345,8668471,8668513,8668667,8668719,8669267,8669503,8669535,8670101,8670283,8670703,8670957,8670987,8670989,8671001,8671025,8671375,8671473,8671787,8671809,8672557,8672579,8673147,8673259,8673301,8674067,8674883,8675655,8675949,8676023,8676055,8676151,8676591,8676861,8677049,8677381,8677471,8677591,8678195,8678809,8679991,8680187,8680321,8681295,8681435,8681535,8681935,8682011,8682067,8682107,8682135,8682437,8682685,8682915,8683003,8683369,8684559,8684975,8685047,8685463,8686293,8686707,8687049,8687965,8688409,8689191,8689739,8690099,8690201,8690237,8691357,8691853,8692049,8692199,8692201,8692477,8692525,8692683,8693085,8693135,8693391,8693629,8693649,8693713,8693715,8693719,8694509,8694623,8695277,8695279,8695447,8747245,8747471,8748275,8748393,8748419,8748455,8768205,8769301,8771099,8775245,8775805,8779385,8779607,8779657,8779739,8779859,8780305,8780327,8781993,8782001,8782573,8782631,8782699,8782817,8783011,8783147,8783277,8783519,8783577,8783671,8784003,8784327,8784331,8784345,8784355,8784821,8784923,8785183,8785575,8785649,8785999,8786409,8786481,8787219,8787495,8787957,8788261,8788353,8789135,8789199,8789581,8789899,8790625,8791297,8791909,8792117,8792527,8793457,8793495,8793513,8793559,8794471,8795567,8795807,8795987,8796111,8796807,8797073,8797295,8797337,8797451,8797459,8797679,8798417,8798647,8798905,8799133,8799233,8799697,8799995,8800367,8800931,8801393,8802301,8803215,8803475,8803591,8804829,8804939,8804973,8805699,8806197,8807227,8807265,8807395,8807903,8808055,8808057,8808827,8809063,8809451,8810411,8810483,8810875,8811963,8812519,8812927,8812929,8812999,8813365,8813615,8813943,8813961,8814003,8814083,8814229,8814885,8816191,8816511,8816537,8817481,8817585,8818579,8819531,8819819,8820461,8820605,8820665,8820921,8822067,8822317,8822863,8823619,8823811,8824269,8824739,8824783,8825039,8826077,8826243,8826579,8827507,8827611,8827809,8828221,8828309,8828703,8828825,8828931,8829271,8830817,8831677,8831687,8832109,8832241,8832265,8832497,8832529,8832561,8832573,8833041,8834125,8834267,8834777,8835899,8836019,8836447,8836655,8836939,8837593,8837737,8838529,8838675,8838875,8839069,8839089,8839127,8839189,8839413,8839913,8839961,8840019,8840053,8840103,8841141,8841371,8841585,8841813,8842133,8842859,8843195,8843305,8843469,8843775,8843811,8843853,8844389,8844579,8845233,8845247,8845263,8845271,8845273,8845639,8845643,8845665,8845993,8846149,8846205,8846341,8846695,8846781,8847133,8848207,8848357,8848595,8848765,8849067,8849357,8849603,8849615,8850107,8850191,8850393,8850563,8851115,8851313,8852019,8852141,8852627,8852745,8853041,8853069,8853075,8853281,8853841,8853983,8854139,8854507,8854511,8854669,8855049,8855325,8855609,8855799,8856849,8856851,8857247,8857327,8857893,8857941,8859147,8859151,8860817,8860845,8861249,8862895,8862989,8863089,8863307,8863581,8864591,8865839,8866497,8866631,8866855,8866903,8868013,8868797,8868817,8869059,8869107,8869399,8870073,8870597,8870783,8870891,8870913,8870917,8871035,8871037,8871139,8871371,8871433,8871545,8871727,8871739,8872013,8873133
+        )
+
+)
+
+sql: select count(vid),channel from video group by channel
+ret: Array
+(
+    [0] => Array
+        (
+            [count(vid)] => 1
+            [channel] => 52539yinsy
+        )
+
+    [1] => Array
+        (
+            [count(vid)] => 15
+            [channel] => 5253video
+        )
+
+    [2] => Array
+        (
+            [count(vid)] => 165
+            [channel] => 5253wzry
+        )
+
+    [3] => Array
+        (
+            [count(vid)] => 2
+            [channel] => aion
+        )
+
+    [4] => Array
+        (
+            [count(vid)] => 3
+            [channel] => bbs
+        )
+
+    [5] => Array
+        (
+            [count(vid)] => 16
+            [channel] => bdota
+        )
+
+    [6] => Array
+        (
+            [count(vid)] => 8
+            [channel] => ceshi
+        )
+
+    [7] => Array
+        (
+            [count(vid)] => 16
+            [channel] => cf
+        )
+
+    [8] => Array
+        (
+            [count(vid)] => 4
+            [channel] => cfm
+        )
+
+    [9] => Array
+        (
+            [count(vid)] => 1
+            [channel] => cgamew
+        )
+
+    [10] => Array
+        (
+            [count(vid)] => 2
+            [channel] => coc
+        )
+
+    [11] => Array
+        (
+            [count(vid)] => 8
+            [channel] => cod
+        )
+
+    [12] => Array
+        (
+            [count(vid)] => 2
+            [channel] => cr
+        )
+
+    [13] => Array
+        (
+            [count(vid)] => 27
+            [channel] => df
+        )
+
+    [14] => Array
+        (
+            [count(vid)] => 1
+            [channel] => dn
+        )
+
+    [15] => Array
+        (
+            [count(vid)] => 9
+            [channel] => dota2
+        )
+
+    [16] => Array
+        (
+            [count(vid)] => 95
+            [channel] => duowanvideo
+        )
+
+    [17] => Array
+        (
+            [count(vid)] => 1
+            [channel] => dzs
+        )
+
+    [18] => Array
+        (
+            [count(vid)] => 1
+            [channel] => ffo
+        )
+
+    [19] => Array
+        (
+            [count(vid)] => 7
+            [channel] => fortnite
+        )
+
+    [20] => Array
+        (
+            [count(vid)] => 1
+            [channel] => hdzt
+        )
+
+    [21] => Array
+        (
+            [count(vid)] => 5
+            [channel] => hyxd
+        )
+
+    [22] => Array
+        (
+            [count(vid)] => 1
+            [channel] => jx3
+        )
+
+    [23] => Array
+        (
+            [count(vid)] => 165
+            [channel] => kan
+        )
+
+    [24] => Array
+        (
+            [count(vid)] => 1
+            [channel] => lfzl
+        )
+
+    [25] => Array
+        (
+            [count(vid)] => 1050
+            [channel] => lol
+        )
+
+    [26] => Array
+        (
+            [count(vid)] => 382
+            [channel] => lolboxvideo
+        )
+
+    [27] => Array
+        (
+            [count(vid)] => 26
+            [channel] => ls
+        )
+
+    [28] => Array
+        (
+            [count(vid)] => 41
+            [channel] => mc
+        )
+
+    [29] => Array
+        (
+            [count(vid)] => 1
+            [channel] => mcboxpc
+        )
+
+    [30] => Array
+        (
+            [count(vid)] => 1
+            [channel] => mhyx
+        )
+
+    [31] => Array
+        (
+            [count(vid)] => 25
+            [channel] => mil
+        )
+
+    [32] => Array
+        (
+            [count(vid)] => 5
+            [channel] => mnsj
+        )
+
+    [33] => Array
+        (
+            [count(vid)] => 1
+            [channel] => my
+        )
+
+    [34] => Array
+        (
+            [count(vid)] => 12
+            [channel] => newgame
+        )
+
+    [35] => Array
+        (
+            [count(vid)] => 1
+            [channel] => newgamekuvideo
+        )
+
+    [36] => Array
+        (
+            [count(vid)] => 3
+            [channel] => news
+        )
+
+    [37] => Array
+        (
+            [count(vid)] => 1
+            [channel] => ns
+        )
+
+    [38] => Array
+        (
+            [count(vid)] => 3
+            [channel] => nz
+        )
+
+    [39] => Array
+        (
+            [count(vid)] => 52
+            [channel] => oujtest
+        )
+
+    [40] => Array
+        (
+            [count(vid)] => 46
+            [channel] => ow
+        )
+
+    [41] => Array
+        (
+            [count(vid)] => 41
+            [channel] => pb
+        )
+
+    [42] => Array
+        (
+            [count(vid)] => 22
+            [channel] => pc
+        )
+
+    [43] => Array
+        (
+            [count(vid)] => 4
+            [channel] => ps4
+        )
+
+    [44] => Array
+        (
+            [count(vid)] => 1
+            [channel] => psv
+        )
+
+    [45] => Array
+        (
+            [count(vid)] => 1
+            [channel] => qhyx
+        )
+
+    [46] => Array
+        (
+            [count(vid)] => 4
+            [channel] => qqdzz
+        )
+
+    [47] => Array
+        (
+            [count(vid)] => 10
+            [channel] => szhj
+        )
+
+    [48] => Array
+        (
+            [count(vid)] => 1
+            [channel] => tera
+        )
+
+    [49] => Array
+        (
+            [count(vid)] => 8
+            [channel] => tv
+        )
+
+    [50] => Array
+        (
+            [count(vid)] => 21
+            [channel] => unknow
+        )
+
+    [51] => Array
+        (
+            [count(vid)] => 31
+            [channel] => unknown
+        )
+
+    [52] => Array
+        (
+            [count(vid)] => 2
+            [channel] => vhuya
+        )
+
+    [53] => Array
+        (
+            [count(vid)] => 6
+            [channel] => vhuyaball
+        )
+
+    [54] => Array
+        (
+            [count(vid)] => 5
+            [channel] => vhuyablizzard
+        )
+
+    [55] => Array
+        (
+            [count(vid)] => 1
+            [channel] => vhuyacf
+        )
+
+    [56] => Array
+        (
+            [count(vid)] => 2
+            [channel] => vhuyacfm
+        )
+
+    [57] => Array
+        (
+            [count(vid)] => 4
+            [channel] => vhuyadm
+        )
+
+    [58] => Array
+        (
+            [count(vid)] => 23
+            [channel] => vhuyadnf
+        )
+
+    [59] => Array
+        (
+            [count(vid)] => 139
+            [channel] => vhuyafans
+        )
+
+    [60] => Array
+        (
+            [count(vid)] => 1
+            [channel] => vhuyah1z1
+        )
+
+    [61] => Array
+        (
+            [count(vid)] => 148
+            [channel] => vhuyalite
+        )
+
+    [62] => Array
+        (
+            [count(vid)] => 92
+            [channel] => vhuyalol
+        )
+
+    [63] => Array
+        (
+            [count(vid)] => 7
+            [channel] => vhuyamc
+        )
+
+    [64] => Array
+        (
+            [count(vid)] => 4
+            [channel] => vhuyaow
+        )
+
+    [65] => Array
+        (
+            [count(vid)] => 2
+            [channel] => vhuyapc
+        )
+
+    [66] => Array
+        (
+            [count(vid)] => 8
+            [channel] => vhuyatv
+        )
+
+    [67] => Array
+        (
+            [count(vid)] => 9
+            [channel] => vhuyaunknown
+        )
+
+    [68] => Array
+        (
+            [count(vid)] => 1
+            [channel] => vhuyawows
+        )
+
+    [69] => Array
+        (
+            [count(vid)] => 73
+            [channel] => vhuyawzry
+        )
+
+    [70] => Array
+        (
+            [count(vid)] => 25
+            [channel] => vhuyayule
+        )
+
+    [71] => Array
+        (
+            [count(vid)] => 110
+            [channel] => videommbk
+        )
+
+    [72] => Array
+        (
+            [count(vid)] => 28
+            [channel] => videopcgames
+        )
+
+    [73] => Array
+        (
+            [count(vid)] => 6
+            [channel] => webgame
+        )
+
+    [74] => Array
+        (
+            [count(vid)] => 30
+            [channel] => wot
+        )
+
+    [75] => Array
+        (
+            [count(vid)] => 4
+            [channel] => wow
+        )
+
+    [76] => Array
+        (
+            [count(vid)] => 16
+            [channel] => wows
+        )
+
+    [77] => Array
+        (
+            [count(vid)] => 4
+            [channel] => wuxia
+        )
+
+    [78] => Array
+        (
+            [count(vid)] => 6
+            [channel] => www
+        )
+
+    [79] => Array
+        (
+            [count(vid)] => 4
+            [channel] => xr
+        )
+
+    [80] => Array
+        (
+            [count(vid)] => 2
+            [channel] => xunxian
+        )
+
+    [81] => Array
+        (
+            [count(vid)] => 7
+            [channel] => ycvideo
+        )
+
+    [82] => Array
+        (
+            [count(vid)] => 771
+            [channel] => yingshivideo
+        )
+
+    [83] => Array
+        (
+            [count(vid)] => 4
+            [channel] => ymrdzz
+        )
+
+    [84] => Array
+        (
+            [count(vid)] => 3
+            [channel] => zhibo
+        )
+
+    [85] => Array
+        (
+            [count(vid)] => 2
+            [channel] => zjsj
+        )
+
+    [86] => Array
+        (
+            [count(vid)] => 2
+            [channel] => zx
+        )
+
+)
+
+sql: select group_concat(vid) from video where channel <> 'yingshivideo'
+ret: Array
+(
+    [0] => Array
+        (
+            [group_concat(vid)] => 1811,1919,2119,2239,3005,3481,3677,4445,4726,4797,6308,6766,7078,7176,7315,7630,7923,8003,8027,8088,8213,8214,8867,9365,9589,9770,9798,9811,9816,9884,10552,10701,11030,11115,11155,11193,11204,11255,11309,11374,11399,11442,11480,11533,11795,11920,12094,12128,12158,12167,12171,12743,12762,13386,13515,13719,13789,13802,14559,14641,14895,14900,15184,15688,16092,16304,16327,16421,16508,16513,16530,16899,16911,16923,17123,17183,17463,17488,17531,17629,17667,18582,18989,19016,19020,19179,19396,19416,19616,19631,19759,19779,19808,19847,19977,19997,20025,20065,20159,20180,20205,20247,20318,20403,20429,20431,20458,20496,20507,20591,20610,20617,20631,20683,20776,20788,20799,20818,21083,21104,21118,21251,21333,21354,21368,21533,21569,21583,21816,21838,21853,22008,22047,22067,22081,22306,22328,22345,22466,22517,22551,22554,22697,22713,22849,22873,22891,23041,23085,23097,23115,23249,23331,23377,23402,23416,23423,23470,23581,23627,23653,23669,23676,23815,24462,24558,25049,25284,25433,25848,25976,26018,26126,26129,26130,26132,26195,26284,26362,26371,26853,27354,27426,27974,28231,28314,28962,29099,29699,30780,31423,31486,31853,31912,32100,32336,32400,32490,32491,32892,33000,33190,33545,33693,33713,34116,34141,34268,34308,34397,34640,35329,35431,35672,35749,35818,35900,35905,36380,36393,36640,37027,37148,37150,37372,37384,37987,38276,38645,38836,38871,39175,39193,39565,39820,39986,40132,40273,40678,41288,41300,41616,41855,42190,42240,43523,43962,44349,44885,45066,45462,45747,46104,46168,46386,46711,47395,47572,47613,47798,47949,48000,48236,48291,48590,49002,49193,49336,50309,50430,50505,50516,50531,50540,50544,50557,50605,50607,50641,50644,50658,50663,50862,50884,51291,51416,51469,51475,51559,51575,51579,51631,51645,51647,51654,51678,51697,51752,51771,51775,51779,51794,51795,51799,51811,51822,51873,51883,51924,51974,52198,52590,52738,52999,53785,54482,54696,54702,55007,55136,55309,55450,55639,56240,56724,57350,57429,57525,57862,57938,58409,58494,59709,59882,59933,60116,60416,60561,60601,60676,60923,61053,61758,62107,62189,62278,62282,62361,62454,62901,62947,62954,62970,63015,63224,63331,63571,63951,63954,64167,64413,64738,64830,64929,64941,65951,66676,66975,67013,67043,67867,68181,68487,68696,68913,69265,69311,69316,69366,69461,71314,71380,71397,71507,71766,72437,72600,72812,73019,73304,73667,74136,74270,74723,74906,75169,75395,75454,75468,75763,75892,76005,76109,76292,76404,76409,77059,77201,77313,77508,78584,78677,78714,78909,79254,79381,79593,79742,81291,82303,82344,82528,82690,83135,83143,83214,83301,83414,83460,83461,83709,84309,84313,84375,84491,84509,85121,85143,85192,85894,85904,85914,86395,86772,86794,86961,87224,87583,87720,87843,88120,88223,89454,89463,89528,89545,89610,89652,89663,89697,89725,89729,90222,90349,90403,90557,90622,90661,90824,90917,91080,91159,91208,91291,91391,91453,91596,91668,91930,91945,91960,91965,92180,92189,92308,92310,92441,92467,92733,93077,93628,94107,95392,95962,96301,96758,96863,96924,97264,97452,97477,97495,97523,97697,98038,98093,98310,99011,99226,99609,99829,99831,100065,100070,100142,100158,100166,100168,100442,100509,100518,100538,100565,100569,100642,100645,100649,100652,100655,100670,101239,101413,101440,101487,101508,101556,101606,101737,101800,101843,101848,101849,101872,101884,101893,101997,102418,102650,102670,103002,103024,103025,103029,103032,103259,103346,103731,103752,103764,103766,103849,103859,103875,103877,103889,103934,104546,105464,105530,105644,105645,106024,106156,106759,108442,108670,109582,109832,109968,110314,110722,111066,111078,111132,111169,111259,111570,111744,111762,111763,111862,112071,112179,112204,112278,112402,112432,113221,113829,114172,114194,114568,114600,114653,114884,115470,115978,116030,116362,116456,116642,116680,116935,117070,117371,117531,117618,119518,119657,119674,119758,119791,119822,119924,120291,120448,120553,120808,120818,120925,120949,121014,122037,123050,123215,123396,124487,124653,125562,125648,125910,125987,126257,126279,126421,126576,127791,128028,128113,129028,129067,130369,130571,130625,130692,131006,131220,131240,131823,131829,131836,131853,131867,131876,131877,131907,132018,132139,132528,132623,133302,133463,134203,134265,134271,135159,135225,135400,135436,135441,135631,135713,136907,137036,137069,137245,137439,138523,138526,138534,138746,138819,139254,139457,139520,139677,140230,140319,141072,141201,141215,141220,141803,142829,143154,143233,143377,143897,143985,144037,144445,144846,144847,144848,144849,144850,144851,144852,144853,145088,145250,145403,145770,145844,145891,145898,147117,147473,147770,147942,148011,148341,148392,148736,148790,149073,149113,149149,149747,150682,150760,151117,151365,152111,152146,152397,152767,153759,153837,154206,154447,154576,154680,154687,155191,155332,155673,155749,155759,155760,155766,155778,155787,155858,155999,156017,156158,156366,156790,156866,156971,157010,157526,157779,158045,158112,159197,159321,159447,159694,159749,160155,161327,163042,163743,164336,164893,165164,165260,166155,167211,167262,167300,167340,167697,168641,168970,169375,169682,170078,170293,170840,171253,172795,172870,173132,173744,173971,174109,174735,175000,175167,175378,175785,175911,176138,177264,177507,177809,178176,178495,178498,178986,179042,179045,179226,180414,180670,181278,181312,181336,181406,181479,181609,181673,181677,181687,181832,181993,182703,182881,182990,183206,183322,183360,183604,183849,184365,185455,185585,185858,185929,185990,186004,186862,186879,186913,187300,188013,188217,188359,188586,188702,188790,188975,189080,189083,189448,189450,190212,190398,190909,190987,191018,191720,191771,191778,191829,191868,191996,192028,192110,192518,192589,192803,193409,193829,194108,195178,195299,195422,195755,196719,197298,199609,199610,200399,200843,207169,207844,212038,212129,212530,213239,213320,213504,215913,216358,216814,217396,218205,218353,226301,229653,298187,298377,298508,319666,319812,320381,338392,359822,360189,362527,373068,395941,411254,413955,416659,417008,418474,419540,424694,434651,434656,434657,436171,438930,440303,448590,456046,466085,473909,484226,492123,494146,495051,495264,496592,500069,500615,502827,505488,556805,557150,557176,561694,563738,564525,564526,568443,596638,601563,611009,615952,626192,626531,628504,632260,634220,634263,634612,634855,645340,651869,677878,680168,696312,698002,720887,722511,723310,723976,741433,766992,767437,767477,781595,782777,815786,819356,832823,834397,834911,835450,841285,848863,852907,878410,899640,917642,918017,920115,931970,948433,948805,954742,965464,979091,991856,1026680,1032617,1056363,1056364,1074782,1081953,1093051,1101040,1112390,1126077,1135038,1153165,1176940,1179831,1186389,1196868,1220445,1238777,1252068,1269178,1270889,1270890,1282063,1282329,1283768,1289117,1290772,1297264,1302983,1351514,1352608,1357554,1357555,1357556,1357557,1358224,1358708,1358853,1359497,1365195,1365319,1367293,1372705,1412556,1413382,1414994,1417601,1418126,1418230,1418810,1419279,1420445,1423357,1424718,1424790,1424807,1425876,1426518,1430743,1431371,1432836,1438392,1439410,1440191,1442094,1447449,1447606,1450981,1451596,1453133,1469979,1484727,1484912,1486147,1486498,1487403,1487986,1492273,1492284,1493145,1498439,1505009,1505011,1509066,1509936,1529177,1537283,1537284,1538534,1538538,1540743,1545747,1551630,1552869,1553824,1553987,1557898,1558058,1559123,1559761,1559989,1560365,1560734,1563355,1564684,1566286,1566973,1569996,1570903,1593910,1611268,1617752,1628685,1632781,1633101,1635104,1635409,1638154,1638186,1638424,1638501,1638549,1639821,1640205,1640461,1640834,1641878,1642521,1642545,1643202,1644768,1645808,1647045,1647052,1647295,1647451,1648921,1649231,1671698,1672171,1677843,1691005,1692386,1692389,1696189,1696814,1697625,1701371,1706773,1738451,1752801,1755972,1755974,1762807,1763030,1763219,1772805,1772963,1792483,1798790,1813152,1819460,1819769,1820571,1820779,1821579,1823687,1824933,1824950,1825976,1826169,1826653,1831304,1831966,1832979,1838170,1838174,1840530,1846455,1846458,1858480,1859071,1860754,1862982,1869411,1876460,1885838,1887488,1888433,1892012,1892531,1892532,1892855,1897626,1899464,1905031,1919489,1941126,1942227,1945458,1946191,1946324,1946645,1946876,1947014,1947016,1947730,1957716,1958361,1959050,1959550,1960715,1963269,1963417,1963422,1974453,1985856,1986947,1989287,1990760,2003489,2003572,2009021,2011047,2015302,2027236,2032979,2033581,2056124,2063414,2063415,2071390,2072180,2074704,2076363,2076660,2076745,2076747,2077801,2077995,2081895,2083862,2083863,2083891,2083958,2084794,2087325,2094091,2094818,2106609,2107969,2123988,2131052,2136948,2137443,2138441,2149752,2150817,2150851,2152112,2153738,2162255,2162413,2167078,2167306,2168118,2168331,2193081,2193944,2195155,2195313,2217482,2217486,2217722,2219814,2223827,2227235,2229354,2233543,2235525,2237774,2240144,2252344,2253429,2281091,2281691,2286075,2286753,2295394,2306047,2308407,2313838,2318541,2319994,2322355,2322510,2327333,2327827,2329323,2329365,2335561,2335562,2338282,2339875,2344448,2350884,2364675,2366366,2368954,2370869,2375138,2381276,2393669,2393673,2394894,2397083,2398086,2422875,2427467,2427639,2427834,2442268,2442271,2442500,2443167,2446345,2448054,2448232,2448351,2452997,2453004,2453509,2454349,2459041,2463658,2464248,2465182,2465442,2465606,2465750,2465842,2466939,2467527,2468465,2489985,2496098,2504820,2519094,2519822,2520078,2525355,2528855,2531171,2531308,2531632,2532477,2544092,2544093,2546422,2546826,2562946,2573083,2579295,2594394,2595684,2597472,2600560,2605947,2615708,2615729,2627100,2627102,2627104,2642386,2654971,2665333,2665346,2665799,2666231,2682492,2684232,2684594,2686657,2689330,2689794,2699039,2699055,2702464,2702466,2715422,2723655,2734080,2735250,2737993,2746947,2748990,2750830,2753086,2756986,2760097,2766022,2766499,2767578,2767640,2767643,2768940,2772361,2772553,2772670,2772906,2773320,2795406,2795446,2796538,2798296,2805449,2805916,2808639,2829346,2832318,2837344,2838457,2841200,2841248,2841303,2841339,2841359,2841529,2843036,2843305,2853326,2853331,2853339,2853341,2856854,2858005,2861708,2864035,2864157,2864196,2864205,2864217,2864467,2865189,2872769,2880811,2881637,2881666,2882524,2883067,2883500,2885102,2890945,2891309,2893007,2893263,2893687,2899194,2905481,2906278,2908699,2910074,2924494,2924528,2924539,2924562,2924564,2924598,2928001,2928232,2928241,2935789,2936332,2945927,2946018,2946180,2946521,2948600,2948614,2948624,2948642,2954139,2957922,2959328,2959355,2959375,2959799,2960544,2961956,2962488,2967284,2971989,2972183,2972192,2972216,2978267,2978271,2978278,2978279,2979945,2990215,2990239,2990255,2990259,2992869,2993328,2998872,2998878,2998887,2998903,3002016,3002896,3004010,3004798,3005371,3014918,3017597,3026896,3040075,3055196,3055480,3055518,3056337,3057630,3061106,3061127,3062426,3062606,3063017,3063075,3063957,3066039,3070876,3072298,3077284,3079630,3080956,3082391,3082882,3087516,3093105,3093292,3094018,3094623,3097957,3100536,3102232,3103163,3105704,3105778,3105779,3105781,3107973,3111066,3111783,3111793,3118137,3119145,3120513,3120519,3120706,3122978,3123093,3123269,3132274,3132825,3135626,3137391,3137856,3139532,3140246,3141951,3145728,3147072,3147273,3147750,3148116,3149249,3149978,3154249,3157530,3158529,3160291,3160294,3162061,3163270,3163292,3181720,3181721,3183332,3191340,3196764,3198177,3199695,3201530,3202969,3205169,3205222,3205255,3205343,3206458,3209123,3229811,3231243,3231248,3233080,3237718,3237765,3240778,3240783,3241861,3242052,3242308,3242311,3242483,3243751,3243792,3244249,3244285,3244457,3244536,3244542,3244666,3244687,3245374,3246398,3246461,3247047,3247841,3247855,3247902,3252063,3264245,3265348,3266143,3266429,3268032,3272410,3272415,3273362,3273555,3275889,3277375,3280715,3282221,3282714,3283344,3284066,3284237,3292021,3301572,3308790,3317026,3317047,3318389,3326145,3327919,3328350,3353851,3355633,3355817,3356520,3356650,3356690,3358191,3359384,3360729,3361187,3361367,3361504,3361961,3361983,3363261,3363575,3363978,3368978,3369589,3369820,3370076,3370824,3372317,3372876,3372895,3374430,3378934,3379122,3381279,3386066,3387767,3394575,3394990,3394999,3395476,3396951,3397025,3401777,3402210,3404109,3404338,3405378,3405387,3407029,3412288,3415215,3420937,3423015,3429539,3432038,3433384,3433786,3435843,3436009,3442579,3447573,3453669,3460848,3462187,3463368,3466133,3466356,3466850,3469626,3469754,3469835,3470195,3472348,3472579,3476119,3477900,3484408,3490327,3492719,3493934,3495059,3495123,3496701,3496720,3496855,3496935,3497275,3497732,3497764,3497884,3497932,3498080,3498779,3499165,3499281,3499829,3499921,3500471,3500550,3500779,3500821,3501098,3501189,3501488,3501509,3501663,3501727,3502099,3502107,3502150,3502366,3502789,3502947,3503313,3503390,3503488,3503656,3503786,3503820,3503825,3503845,3503923,3504408,3504690,3504935,3505099,3505365,3505614,3506281,3506624,3506829,3506895,3506968,3507602,3507967,3508084,3508150,3508421,3508572,3508621,3508683,3508770,3508798,3508800,3508915,3508952,3509085,3509257,3509399,3509529,3509547,3509625,3510614,3510873,3511022,3511228,3511567,3512148,3512159,3512717,3512757,3513065,3513090,3513901,3513928,3513977,3514074,3514150,3514484,3515084,3515206,3515540,3515950,3516354,3516523,3516532,3516535,3516538,3516953,3517169,3517805,3517869,3517883,3518253,3518370,3518796,3519037,3519166,3519218,3519799,3519980,3521178,3521369,3521870,3521875,3521880,3522693,3522695,3522872,3523071,3523106,3523116,3523607,3524395,3524466,3525222,3525285,3525954,3525997,3528077,3528419,3528465,3528784,3529839,3529880,3530759,3530803,3532234,3532267,3532406,3532477,3532565,3532733,3533149,3533273,3533351,3533541,3534079,3534158,3534214,3534472,3534543,3535244,3535617,3536277,3536278,3536289,3536290,3536309,3536310,3536312,3536659,3537120,3537407,3537427,3537568,3537658,3538058,3538256,3538462,3538551,3539385,3539762,3540167,3540277,3541022,3541329,3541788,3541805,3542131,3542295,3542404,3542467,3542743,3542770,3542921,3543009,3543030,3543254,3544297,3544301,3544318,3544695,3545240,3545410,3545429,3545486,3546270,3546346,3546909,3546944,3547004,3547127,3547584,3548339,3548374,3548638,3548639,3549367,3549917,3549951,3550173,3550291,3550312,3550437,3550514,3550606,3551006,3551065,3551340,3551430,3551664,3552028,3552044,3552068,3552256,3552556,3552682,3552958,3554377,3554483,3554542,3554652,3555290,3555725,3556592,3556712,3556748,3556810,3556846,3557120,3557153,3557491,3557723,3557734,3557806,3558244,3558632,3558642,3558644,3558694,3558730,3560012,3560033,3560072,3560172,3560664,3560803,3560804,3560857,3560895,3561388,3561396,3561428,3561517,3561520,3561610,3561931,3562504,3562880,3563110,3563141,3563718,3564021,3564907,3565108,3565117,3565175,3565281,3565628,3565698,3565901,3565941,3565951,3565982,3566130,3566226,3566255,3566531,3566892,3567707,3567786,3567953,3568171,3569127,3569150,3569172,3569346,3569490,3569566,3569794,3569844,3569846,3569882,3569926,3570359,3570369,3570479,3571005,3571287,3571321,3571540,3571946,3572294,3572322,3572884,3572991,3573040,3573076,3573359,3573420,3573798,3574557,3574807,3575065,3575818,3576878,3577082,3577152,3577319,3577810,3577822,3578558,3578574,3578588,3578612,3579029,3579363,3579389,3579415,3580326,3581656,3581839,3581850,3582171,3582414,3582428,3583135,3583585,3583827,3584138,3584148,3584178,3584527,3585380,3585534,3585695,3586384,3586988,3587133,3587136,3587269,3588407,3588529,3588537,3588544,3588545,3588764,3589459,3590017,3590037,3590346,3590446,3590575,3590718,3591175,3591856,3592123,3592330,3592518,3592574,3593518,3594957,3595606,3595801,3596481,3596754,3597273,3598835,3599145,3599238,3599242,3599450,3599692,3600203,3600567,3600581,3600847,3600881,3601067,3601421,3601428,3601448,3601501,3601835,3601872,3601879,3602067,3602725,3602860,3603261,3604355,3610219,3611242,3611437,3614556,3622486,3623009,3623691,3624325,3624788,3625483,3625897,3625936,3626246,3626615,3626779,3626832,3627634,3627965,3627967,3628008,3628032,3629823,3629904,3630037,3631821,3631878,3632816,3632857,3635202,3635372,3637193,3637431,3637471,3637883,3637890,3639672,3640202,3650441,3653807,3657048,3676804,3678555,3678623,3678759,3678797,3679009,3680024,3680079,3680799,3681031,3681052,3681639,3682212,3683437,3684374,3684477,3684942,3688167,3688744,3689496,3690306,3694921,3697555,3703837,3706059,3743564,3746163,3746387,3746479,3747011,3748428,3748825,3750519,3751088,3752976,3753719,3754740,3755097,3756744,3757280,3757283,3758514,3761097,3761963,3764190,3767960,3772831,3778385,3783508,3787960,3791265,3793370,3794570,3795335,3795920,3796453,3796956,3797708,3798481,3799444,3799908,3800969,3802749,3811484,3820386,3852801,3861419,3867388,3885138,3914474,3932485,3980737,3981704,4037208,4038861,4044190,4101739,4130055,4158185,4169987,4177093,4177559,4251869,4262223,4291035,4349347,4351119,4354959,4363983,4372373,4372531,4373165,4377455,4427127,4439833,4456241,4463329,4469697,4529761,4532997,4539179,4555511,4556305,4559701,4585579,4620551,4658189,4768883,4786821,4825443,4825541,4825643,4855207,4855643,4861675,4866849,4867847,4868177,4934669,4950263,4954817,4954971,4988125,5045635,5056439,5081739,5081907,5092591,5099113,5099805,5122521,5123705,5126399,5131305,5138109,5211135,5256477,5263983,5294069,5327293,5329737,5339795,5362685,5377147,5397575,5424561,5431163,5438085,5455841,5457033,5462815,5465919,5468631,5471077,5534009,5534099,5543693,5584063,5597559,5617597,5629911,5632803,5666505,5666877,5688909,5738758,5739397,5759109,5789213,5827139,5827191,5827203,5834473,5836079,5852759,5883865,5884063,5888567,5896505,5911663,5911967,5911969,5921469,5924379,5969703,5971151,6040499,6042071,6065665,6095413,6105905,6119541,6120981,6121049,6153439,6163049,6163051,6163541,6164891,6164931,6172469,6172601,6174759,6175427,6175731,6176655,6178621,6178775,6178865,6181073,6201437,6207483,6217395,6217867,6232359,6232467,6236411,6240963,6243799,6246897,6268901,6291355,6304601,6352525,6416015,6416055,6441557,6443572,6506825,6514417,6545317,6608713,6616639,6616759,6624417,6631579,6633509,6634007,6635025,6635901,6636553,6636895,6643203,6663691,6681265,6696655,6699099,6702861,6706319,6712007,6725639,6749149,6749983,6752951,6771753,6771833,6796275,6796285,6822335,6828351,6828647,6830309,6839789,6841255,6844275,6844483,6853663,6888153,6893413,6893541,6893783,6922353,6941281,6971499,6973955,6974297,7010397,7023121,7040643,7088543,7129323,7146882,7147353,7156079,7158885,7170599,7175942,7187357,7210733,7220365,7229383,7234337,7266996,7274719,7282099,7308674,7321323,7321335,7325988,7338091,7338101,7338883,7356865,7357553,7371595,7401629,7406115,7411124,7423812,7425095,7475492,7477369,7507499,7551582,7563804,7624602,7631032,7647846,7651738,7666157,7671863,7675208,7685255,7745287,7746682,7778894,7780629,7805965,7805976,7811710,7865713,7872180,7879897,7882536,7888694,7894856,7925296,7932946,7944498,7954081,7957485,7958271,7976081,7979270,7994629,8001228,8027803,8040207,8040957,8043936,8044268,8050650,8050678,8050854,8060242,8090192,8111926,8128056,8136547,8162689,8164071,8164222,8179534,8192133,8192157,8227147,8255876,8258224,8262841,8267041,8268618,8290901,8297185,8297345,8303173,8319606,8331710,8353902,8380735,8382809,8384763,8385119,8385331,8385495,8385663,8385829,8386343,8386897,8386963,8387249,8388399,8389069,8389193,8391491,8391835,8391837,8392865,8393081,8393191,8394267,8394673,8394773,8395031,8395215,8396103,8396325,8397019,8397171,8397945,8398477,8398713,8399865,8399891,8400001,8400443,8401475,8401485,8402847,8403477,8403729,8405897,8406117,8406663,8406737,8408215,8410349,8411123,8413793,8414511,8416383,8416833,8416965,8417105,8417139,8417197,8419205,8419459,8421499,8422565,8425181,8425825,8425865,8427327,8427663,8427673,8428749,8429083,8431375,8433419,8433983,8434183,8434459,8434681,8435799,8435927,8436711,8436827,8436861,8437637,8437749,8438619,8438623,8438649,8439069,8439633,8439853,8440535,8440557,8440569,8440571,8441015,8441473,8441501,8441517,8441735,8442201,8442241,8442271,8442413,8442759,8442921,8443239,8444347,8444463,8444775,8444857,8445053,8445205,8445247,8447159,8447415,8447701,8447795,8447807,8447927,8448815,8450633,8450651,8456487,8456489,8456539,8468367,8474853,8475139,8475179,8477031,8477061,8477151,8477165,8477947,8479899,8481073,8482145,8488249,8492131,8492135,8497379,8497713,8497809,8498957,8499001,8499015,8499043,8499061,8501197,8501225,8501765,8502231,8502305,8503273,8508437,8508591,8508613,8508741,8508747,8508901,8510567,8510615,8510651,8510661,8511125,8511441,8511705,8511827,8511841,8511843,8513371,8515323,8515765,8516657,8517393,8517529,8517897,8517957,8519391,8520391,8521537,8521635,8521751,8521855,8521949,8521965,8523735,8523753,8523853,8523873,8523903,8523953,8524233,8524241,8524485,8524637,8525307,8525729,8527249,8527675,8527997,8528009,8528039,8528463,8528897,8529127,8529143,8529673,8535659,8539429,8539753,8540207,8541199,8541623,8543085,8543889,8544169,8545347,8546049,8546443,8547123,8547151,8547271,8552197,8552725,8553467,8555005,8556501,8557073,8557457,8557523,8558677,8558737,8558849,8559013,8560369,8560379,8560443,8560597,8561355,8561667,8562409,8562509,8562695,8562733,8563205,8563435,8563503,8563707,8563807,8563855,8563879,8564957,8564959,8564967,8565419,8566767,8566889,8567609,8567937,8567983,8568127,8569219,8569235,8569263,8569973,8569979,8570713,8570833,8571861,8573123,8574215,8574843,8575259,8575465,8581583,8581647,8581737,8581847,8581923,8582471,8582545,8582569,8582641,8582877,8583881,8584751,8585291,8588847,8590837,8596703,8597329,8598431,8598639,8598929,8609919,8610695,8610751,8610761,8611511,8611549,8611611,8614877,8614995,8615981,8617519,8620427,8620797,8621681,8621997,8622385,8622425,8622545,8622719,8622785,8623179,8624273,8624821,8624933,8625127,8625585,8625935,8626333,8626509,8626969,8627433,8627485,8628269,8628685,8629939,8629977,8632059,8633355,8633511,8638441,8638681,8642247,8642265,8642969,8643141,8643833,8644037,8644231,8647795,8648915,8648931,8650087,8650489,8651481,8652997,8653347,8654153,8654211,8654909,8655731,8656019,8656119,8656235,8656567,8657123,8657995,8658601,8659411,8659493,8659609,8660083,8660125,8660449,8660987,8661003,8661431,8661655,8662085,8662087,8662089,8662091,8663255,8663477,8663637,8663799,8663803,8663859,8663899,8663903,8665277,8665675,8666741,8666763,8667031,8667791,8667831,8668345,8668471,8668719,8669503,8669535,8670101,8670703,8673147,8673259,8674067,8674883,8675655,8675949,8676023,8676591,8676861,8677049,8680321,8681435,8681535,8682437,8684559,8684975,8685463,8686707,8687049,8687965,8688409,8690099,8690201,8691357,8692525,8693085,8693135,8693391,8693629,8693649,8693713,8693715,8693719,8694509,8694623,8747245,8747471,8748275,8748393,8748419,8769301,8779385,8779657,8779739,8779859,8782001,8782573,8782631,8782817,8783011,8783147,8783277,8783519,8783671,8784003,8784327,8784331,8784345,8784355,8784821,8784923,8785183,8785649,8785999,8786409,8786481,8787219,8787495,8787957,8789581,8789899,8791297,8792527,8793457,8793495,8793559,8795567,8797073,8797295,8797337,8797451,8797459,8798417,8799133,8799697,8800931,8804829,8805699,8806197,8807227,8807265,8807903,8808055,8808057,8808827,8810483,8811963,8812519,8812929,8812999,8813365,8813943,8813961,8814003,8814885,8816537,8817481,8817585,8819531,8820461,8820665,8822067,8823619,8825039,8826579,8828703,8828931,8829271,8831677,8832265,8834267,8834777,8835899,8836019,8837593,8838529,8838675,8838875,8839413,8840019,8841141,8841371,8841585,8842859,8843305,8843811,8845639,8845643,8846149,8846341,8847133,8848595,8849603,8850393,8850563,8851115,8852141,8852745,8854507,8855049,8855325,8856851,8857327,8863581,8864591,8866497,8866631,8866855,8868013,8869107,8869399,8870073
+        )
+
+)
+
+sql: select group_concat(vid) from video
+ret: Array
+(
+    [0] => Array
+        (
+            [group_concat(vid)] => 1811,1919,2119,2239,3005,3481,3677,4445,4726,4797,6308,6766,7078,7176,7315,7630,7923,8003,8027,8088,8213,8214,8867,9365,9589,9770,9798,9811,9816,9884,10552,10701,11030,11115,11155,11193,11204,11255,11309,11374,11399,11442,11480,11533,11795,11920,12094,12128,12158,12167,12171,12743,12762,13386,13515,13719,13789,13802,14559,14641,14895,14900,15184,15688,16092,16304,16327,16421,16508,16513,16530,16899,16911,16923,17123,17183,17463,17488,17531,17629,17667,18582,18989,19016,19020,19179,19396,19416,19616,19631,19759,19779,19808,19847,19977,19997,20025,20065,20159,20180,20205,20247,20318,20403,20429,20431,20458,20496,20507,20591,20610,20617,20631,20683,20776,20788,20799,20818,21083,21104,21118,21251,21333,21354,21368,21533,21569,21583,21816,21838,21853,22008,22047,22067,22081,22306,22328,22345,22466,22517,22551,22554,22697,22713,22849,22873,22891,23041,23085,23097,23115,23249,23331,23377,23402,23416,23423,23470,23581,23627,23653,23669,23676,23815,24462,24558,25049,25284,25433,25848,25976,26018,26126,26129,26130,26132,26195,26284,26362,26371,26853,27354,27426,27974,28231,28314,28962,29099,29699,30780,31423,31486,31853,31912,32100,32336,32400,32490,32491,32892,33000,33190,33545,33693,33713,34116,34141,34268,34308,34397,34640,35329,35431,35672,35749,35818,35900,35905,36380,36393,36640,37027,37148,37150,37372,37384,37987,38276,38645,38836,38871,39175,39193,39565,39820,39986,40132,40273,40678,41288,41300,41616,41855,42190,42240,43523,43962,44349,44885,45066,45462,45747,46104,46168,46386,46711,47395,47572,47613,47798,47949,48000,48236,48291,48590,49002,49193,49336,50309,50430,50505,50516,50531,50540,50544,50557,50605,50607,50641,50644,50658,50663,50862,50884,51291,51416,51469,51475,51559,51575,51579,51631,51645,51647,51654,51678,51697,51752,51771,51775,51779,51794,51795,51799,51811,51822,51873,51883,51924,51974,52198,52590,52738,52999,53785,54482,54696,54702,55007,55136,55309,55450,55639,56240,56724,57350,57429,57525,57862,57938,58409,58494,59709,59882,59933,60116,60416,60561,60601,60676,60923,61053,61758,62107,62189,62278,62282,62361,62454,62901,62947,62954,62970,63015,63224,63331,63571,63951,63954,64167,64413,64738,64830,64929,64941,65951,66676,66975,67013,67043,67867,68181,68487,68696,68913,69265,69311,69316,69366,69461,71314,71380,71397,71507,71766,72437,72600,72812,73019,73304,73667,74136,74270,74723,74906,75169,75395,75454,75468,75763,75892,76005,76109,76292,76404,76409,77059,77201,77313,77508,78584,78677,78714,78909,79254,79381,79593,79742,81291,82303,82344,82528,82690,83135,83143,83214,83301,83414,83460,83461,83709,84309,84313,84375,84491,84509,85121,85143,85192,85894,85904,85914,86395,86772,86794,86961,87224,87583,87720,87843,88120,88223,89454,89463,89528,89545,89610,89652,89663,89697,89725,89729,90222,90349,90403,90557,90622,90661,90824,90917,91080,91159,91208,91291,91391,91453,91596,91668,91930,91945,91960,91965,92180,92189,92308,92310,92441,92467,92733,93077,93628,94107,95392,95962,96301,96758,96863,96924,97264,97452,97477,97495,97523,97697,98038,98093,98310,99011,99226,99609,99829,99831,100065,100070,100142,100158,100166,100168,100442,100509,100518,100538,100565,100569,100642,100645,100649,100652,100655,100670,101239,101413,101440,101487,101508,101556,101606,101737,101800,101843,101848,101849,101872,101884,101893,101997,102418,102650,102670,103002,103024,103025,103029,103032,103259,103346,103731,103752,103764,103766,103849,103859,103875,103877,103889,103934,104546,105464,105530,105644,105645,106024,106156,106759,108442,108670,109582,109832,109968,110314,110722,111066,111078,111132,111169,111259,111570,111744,111762,111763,111862,112071,112179,112204,112278,112402,112432,113221,113829,114172,114194,114568,114600,114653,114884,115470,115978,116030,116362,116456,116642,116680,116935,117070,117371,117531,117618,119518,119657,119674,119758,119791,119822,119924,120291,120448,120553,120808,120818,120925,120949,121014,122037,123050,123215,123396,124487,124653,125562,125648,125910,125987,126257,126279,126421,126576,127791,128028,128113,129028,129067,130369,130571,130625,130692,131006,131220,131240,131823,131829,131836,131853,131867,131876,131877,131907,132018,132139,132528,132623,133302,133463,134203,134265,134271,135159,135225,135400,135436,135441,135631,135713,136907,137036,137069,137245,137439,138523,138526,138534,138746,138819,139254,139457,139520,139677,140230,140319,141072,141201,141215,141220,141803,142829,143154,143233,143377,143897,143985,144037,144445,144846,144847,144848,144849,144850,144851,144852,144853,145088,145250,145403,145770,145844,145891,145898,147117,147473,147770,147942,148011,148341,148392,148736,148790,149073,149113,149149,149747,150682,150760,151117,151365,152111,152146,152397,152767,153759,153837,154206,154447,154576,154680,154687,155191,155332,155673,155749,155759,155760,155766,155778,155787,155858,155999,156017,156158,156366,156790,156866,156971,157010,157526,157779,158045,158112,159197,159321,159447,159694,159749,160155,161327,163042,163743,164336,164893,165164,165260,166155,167211,167262,167300,167340,167697,168641,168970,169375,169682,170078,170293,170840,171253,172795,172870,173132,173744,173971,174109,174735,175000,175167,175378,175785,175911,176138,177264,177507,177809,178176,178495,178498,178986,179042,179045,179226,180414,180670,181278,181312,181336,181406,181479,181609,181673,181677,181687,181832,181993,182703,182881,182990,183206,183322,183360,183604,183849,184365,185455,185585,185858,185929,185990,186004,186862,186879,186913,187300,188013,188217,188359,188586,188702,188790,188975,189080,189083,189448,189450,190212,190398,190909,190987,191018,191720,191771,191778,191829,191868,191996,192028,192110,192518,192589,192803,193409,193829,194108,195178,195299,195422,195755,196719,197298,199609,199610,200399,200843,207169,207844,212038,212129,212530,213239,213320,213504,215913,216358,216814,217396,218205,218353,226301,229653,298187,298377,298508,319666,319812,320381,338392,359822,360189,362527,373068,395941,411254,413955,416659,417008,418474,419540,424694,434651,434656,434657,436171,438930,440303,448590,456046,466085,473909,484226,492123,494146,495051,495264,496592,500069,500615,502827,505488,556805,557150,557176,561694,563738,564525,564526,568443,596638,601563,611009,615952,626192,626531,628504,632260,634220,634263,634612,634855,645340,651869,677878,680168,696312,698002,720887,722511,723310,723976,741433,766992,767437,767477,781595,782777,815786,819356,832823,834397,834911,835450,841285,848863,852907,878410,899640,917642,918017,920115,931970,948433,948805,954742,965464,979091,991856,1026680,1032617,1056363,1056364,1074782,1081953,1093051,1101040,1112390,1126077,1135038,1153165,1176940,1179831,1186389,1196868,1220445,1238777,1252068,1269178,1270889,1270890,1282063,1282329,1283768,1289117,1290772,1297264,1302983,1351514,1352608,1357554,1357555,1357556,1357557,1358224,1358708,1358853,1359497,1365195,1365319,1367293,1372705,1412556,1413382,1414994,1417601,1418126,1418230,1418810,1419279,1420445,1423357,1424718,1424790,1424807,1425876,1426518,1430743,1431371,1432836,1438392,1439410,1440191,1442094,1447449,1447606,1450981,1451596,1453133,1469979,1484727,1484912,1486147,1486498,1487403,1487986,1492273,1492284,1493145,1498439,1505009,1505011,1509066,1509936,1529177,1537283,1537284,1538534,1538538,1540743,1545747,1551630,1552869,1553824,1553987,1557898,1558058,1559123,1559761,1559989,1560365,1560734,1563355,1564684,1566286,1566973,1569996,1570903,1593910,1611268,1617752,1628685,1632781,1633101,1635104,1635409,1638154,1638186,1638424,1638501,1638549,1639821,1640205,1640461,1640834,1641878,1642521,1642545,1643202,1644768,1645808,1647045,1647052,1647295,1647451,1648921,1649231,1671698,1672171,1677843,1691005,1692386,1692389,1696189,1696814,1697625,1701371,1706773,1738451,1752801,1755972,1755974,1762807,1763030,1763219,1772805,1772963,1792483,1798790,1813152,1819460,1819769,1820571,1820779,1821579,1823687,1824933,1824950,1825976,1826169,1826653,1831304,1831966,1832979,1838170,1838174,1840530,1846455,1846458,1858480,1859071,1860754,1862982,1869411,1876460,1885838,1887488,1888433,1892012,1892531,1892532,1892855,1897626,1899464,1905031,1919489,1941126,1942227,1945458,1946191,1946324,1946645,1946876,1947014,1947016,1947730,1957716,1958361,1959050,1959550,1960715,1963269,1963417,1963422,1974453,1985856,1986947,1989287,1990760,2003489,2003572,2009021,2011047,2015302,2027236,2032979,2033581,2056124,2063414,2063415,2071390,2072180,2074704,2076363,2076660,2076745,2076747,2077801,2077995,2081895,2083862,2083863,2083891,2083958,2084794,2087325,2094091,2094818,2106609,2107969,2123988,2131052,2136948,2137443,2138441,2149752,2150817,2150851,2152112,2153738,2162255,2162413,2167078,2167306,2168118,2168331,2193081,2193944,2195155,2195313,2217482,2217486,2217722,2219814,2223827,2227235,2229354,2233543,2235525,2237774,2240144,2252344,2253429,2281091,2281691,2286075,2286753,2295394,2306047,2308407,2313838,2318541,2319994,2322355,2322510,2327333,2327827,2329323,2329365,2335561,2335562,2338282,2339875,2344448,2350884,2364675,2366366,2368954,2370869,2375138,2381276,2393669,2393673,2394894,2397083,2398086,2422875,2427467,2427639,2427834,2442268,2442271,2442500,2443167,2446345,2448054,2448232,2448351,2452997,2453004,2453509,2454349,2459041,2463658,2464248,2465182,2465442,2465606,2465750,2465842,2466939,2467527,2468465,2489985,2496098,2504820,2519094,2519822,2520078,2525355,2528855,2531171,2531308,2531632,2532477,2544092,2544093,2546422,2546826,2562946,2573083,2579295,2594394,2595684,2597472,2600560,2605947,2615708,2615729,2627100,2627102,2627104,2642386,2654971,2665333,2665346,2665799,2666231,2682492,2684232,2684594,2686657,2689330,2689794,2699039,2699055,2702464,2702466,2715422,2723655,2734080,2735250,2737993,2746947,2748990,2750830,2753086,2756986,2760097,2766022,2766499,2767578,2767640,2767643,2768940,2772361,2772553,2772670,2772906,2773320,2795406,2795446,2796538,2798296,2805449,2805916,2808639,2829346,2832318,2837344,2838457,2841200,2841248,2841303,2841339,2841359,2841529,2843036,2843305,2853326,2853331,2853339,2853341,2856854,2858005,2861708,2864035,2864157,2864196,2864205,2864217,2864467,2865189,2872769,2880811,2881637,2881666,2882524,2883067,2883500,2885102,2890945,2891309,2893007,2893263,2893687,2899194,2905481,2906278,2908699,2910074,2924494,2924528,2924539,2924562,2924564,2924598,2928001,2928232,2928241,2935789,2936332,2945927,2946018,2946180,2946521,2948600,2948614,2948624,2948642,2954139,2957922,2959328,2959355,2959375,2959799,2960544,2961956,2962488,2967284,2971989,2972183,2972192,2972216,2978267,2978271,2978278,2978279,2979945,2990215,2990239,2990255,2990259,2992869,2993328,2998872,2998878,2998887,2998903,3002016,3002896,3004010,3004798,3005371,3014918,3017597,3026896,3040075,3055196,3055480,3055518,3056337,3057630,3061106,3061127,3062426,3062606,3063017,3063075,3063957,3066039,3070876,3072298,3077284,3079630,3080956,3082391,3082882,3087516,3093105,3093292,3094018,3094623,3097957,3100536,3102232,3103163,3105704,3105778,3105779,3105781,3107973,3111066,3111783,3111793,3118137,3119145,3120513,3120519,3120706,3122978,3123093,3123269,3132274,3132825,3135626,3137391,3137856,3139532,3140246,3141951,3145728,3147072,3147273,3147750,3148116,3149249,3149978,3154249,3157530,3158529,3160291,3160294,3162061,3163270,3163292,3181720,3181721,3183332,3191340,3196764,3198177,3199695,3201530,3202969,3205169,3205222,3205255,3205343,3206458,3209123,3229811,3231243,3231248,3233080,3237718,3237765,3240778,3240783,3241861,3242052,3242308,3242311,3242483,3243751,3243792,3244249,3244285,3244457,3244536,3244542,3244666,3244687,3245374,3246398,3246461,3247047,3247841,3247855,3247902,3252063,3264245,3265348,3266143,3266429,3268032,3272410,3272415,3273362,3273555,3275889,3277375,3280715,3282221,3282714,3283344,3284066,3284237,3292021,3301572,3308790,3317026,3317047,3318389,3326145,3327919,3328350,3353851,3355633,3355817,3356520,3356650,3356690,3358191,3359384,3360729,3361187,3361367,3361504,3361961,3361983,3363261,3363575,3363978,3368978,3369589,3369820,3370076,3370824,3372317,3372876,3372895,3374430,3378934,3379122,3381279,3386066,3387767,3394575,3394990,3394999,3395476,3396951,3397025,3401777,3402210,3404109,3404338,3405378,3405387,3407029,3412288,3415215,3420937,3423015,3429539,3432038,3433384,3433786,3435843,3436009,3442579,3447573,3453669,3460848,3462187,3463368,3466133,3466356,3466850,3469626,3469754,3469835,3470195,3472348,3472579,3476119,3477900,3484408,3490327,3492719,3493934,3495059,3495123,3496701,3496720,3496855,3496935,3497275,3497732,3497764,3497884,3497932,3498080,3498779,3499165,3499281,3499829,3499921,3500471,3500550,3500779,3500821,3501098,3501189,3501488,3501509,3501663,3501727,3502099,3502107,3502150,3502366,3502789,3502947,3503313,3503390,3503488,3503656,3503786,3503820,3503825,3503845,3503923,3504408,3504690,3504935,3505099,3505365,3505614,3506281,3506624,3506829,3506895,3506968,3507602,3507967,3508084,3508150,3508421,3508572,3508621,3508683,3508770,3508798,3508800,3508915,3508952,3509085,3509257,3509399,3509529,3509547,3509625,3510614,3510873,3511022,3511228,3511567,3512148,3512159,3512717,3512757,3513065,3513090,3513901,3513928,3513977,3514074,3514150,3514484,3515084,3515206,3515540,3515950,3516354,3516523,3516532,3516535,3516538,3516953,3517169,3517805,3517869,3517883,3518253,3518370,3518796,3519037,3519166,3519218,3519799,3519980,3521178,3521369,3521870,3521875,3521880,3522693,3522695,3522872,3523071,3523106,3523116,3523607,3524395,3524466,3525222,3525285,3525954,3525997,3528077,3528419,3528465,3528784,3529839,3529880,3530759,3530803,3532234,3532267,3532406,3532477,3532565,3532733,3533149,3533273,3533351,3533541,3534079,3534158,3534214,3534472,3534543,3535244,3535617,3536277,3536278,3536289,3536290,3536309,3536310,3536312,3536659,3537120,3537407,3537427,3537568,3537658,3538058,3538256,3538462,3538551,3539385,3539762,3540167,3540277,3541022,3541329,3541788,3541805,3542131,3542295,3542404,3542467,3542743,3542770,3542921,3543009,3543030,3543254,3544297,3544301,3544318,3544695,3545240,3545410,3545429,3545486,3546270,3546346,3546909,3546944,3547004,3547127,3547584,3548339,3548374,3548638,3548639,3549367,3549917,3549951,3550173,3550291,3550312,3550437,3550514,3550606,3551006,3551065,3551340,3551430,3551664,3552028,3552044,3552068,3552256,3552556,3552682,3552958,3554377,3554483,3554542,3554652,3555290,3555725,3556592,3556712,3556748,3556810,3556846,3557120,3557153,3557491,3557723,3557734,3557806,3558244,3558632,3558642,3558644,3558694,3558730,3560012,3560033,3560072,3560172,3560664,3560803,3560804,3560857,3560895,3561388,3561396,3561428,3561517,3561520,3561610,3561931,3562504,3562880,3563110,3563141,3563718,3564021,3564907,3565108,3565117,3565175,3565281,3565628,3565698,3565901,3565941,3565951,3565982,3566130,3566226,3566255,3566531,3566892,3567707,3567786,3567953,3568171,3569127,3569150,3569172,3569346,3569490,3569566,3569794,3569844,3569846,3569882,3569926,3570359,3570369,3570479,3571005,3571287,3571321,3571540,3571946,3572294,3572322,3572884,3572991,3573040,3573076,3573359,3573420,3573798,3574557,3574807,3575065,3575818,3576878,3577082,3577152,3577319,3577810,3577822,3578558,3578574,3578588,3578612,3579029,3579363,3579389,3579415,3580326,3581656,3581839,3581850,3582171,3582414,3582428,3583135,3583585,3583827,3584138,3584148,3584178,3584527,3585380,3585534,3585695,3586384,3586988,3587133,3587136,3587269,3588407,3588529,3588537,3588544,3588545,3588764,3589459,3590017,3590037,3590346,3590446,3590575,3590718,3591175,3591856,3592123,3592330,3592518,3592574,3593518,3594957,3595606,3595801,3596481,3596754,3597273,3598835,3599145,3599238,3599242,3599450,3599692,3600203,3600567,3600581,3600847,3600881,3601067,3601421,3601428,3601448,3601501,3601835,3601872,3601879,3602067,3602725,3602860,3603261,3604355,3610219,3611242,3611437,3614556,3622486,3623009,3623691,3624325,3624788,3625483,3625897,3625936,3626246,3626615,3626779,3626832,3627634,3627965,3627967,3628008,3628032,3629823,3629904,3630037,3631821,3631878,3632816,3632857,3635202,3635372,3637193,3637431,3637471,3637883,3637890,3639672,3640202,3650441,3653807,3657048,3676804,3678555,3678623,3678759,3678797,3679009,3680024,3680079,3680799,3681031,3681052,3681639,3682212,3683437,3684374,3684477,3684942,3688167,3688744,3689496,3690306,3694921,3697555,3703837,3706059,3743564,3746163,3746387,3746479,3747011,3748428,3748825,3750519,3751088,3752976,3753719,3754740,3755097,3756744,3757280,3757283,3758514,3761097,3761963,3764190,3767960,3772831,3778385,3783508,3787960,3791265,3793370,3794570,3795335,3795920,3796453,3796956,3797708,3798481,3799444,3799908,3800969,3802749,3811484,3820386,3852801,3861419,3867388,3885138,3914474,3932485,3980737,3981704,4037208,4038861,4044190,4101739,4130055,4158185,4169987,4177093,4177559,4251869,4262223,4291035,4349347,4351119,4354959,4363983,4372373,4372531,4373165,4377455,4427127,4439833,4456241,4463329,4469697,4529761,4532997,4539179,4555511,4556305,4559701,4585579,4620551,4658189,4768883,4786821,4825443,4825541,4825643,4855207,4855643,4861675,4866849,4867847,4868177,4934669,4950263,4954817,4954971,4988125,5045635,5056439,5081739,5081907,5092591,5099113,5099805,5122521,5123705,5126399,5131305,5138109,5211135,5256477,5263983,5294069,5327293,5329737,5339795,5362685,5377147,5397575,5424561,5431163,5438085,5455841,5457033,5462815,5465919,5468631,5471077,5534009,5534099,5543693,5584063,5597559,5617597,5629911,5632803,5666505,5666877,5688909,5738758,5739397,5759109,5789213,5827139,5827191,5827203,5834473,5836079,5852759,5883865,5884063,5888567,5896505,5911663,5911967,5911969,5921469,5924379,5969703,5971151,6040499,6042071,6065665,6095413,6105905,6119541,6120981,6121049,6153439,6163049,6163051,6163541,6164891,6164931,6172469,6172601,6174759,6175427,6175731,6176655,6178621,6178775,6178865,6181073,6201437,6207483,6217395,6217867,6232359,6232467,6236411,6240963,6243799,6246897,6268901,6291355,6304601,6352525,6416015,6416055,6441557,6443572,6506825,6514417,6545317,6608713,6616639,6616759,6624417,6631579,6633509,6634007,6635025,6635901,6636553,6636895,6643203,6663691,6681265,6696655,6699099,6702861,6706319,6712007,6725639,6749149,6749983,6752951,6771753,6771833,6796275,6796285,6822335,6828351,6828647,6830309,6839789,6841255,6844275,6844483,6853663,6888153,6893413,6893541,6893783,6922353,6941281,6971499,6973955,6974297,7010397,7023121,7040643,7088543,7129323,7146882,7147353,7156079,7158885,7170599,7175942,7187357,7210733,7220365,7229383,7234337,7266996,7274719,7282099,7308674,7321323,7321335,7325988,7338091,7338101,7338883,7356865,7357553,7371595,7401629,7406115,7411124,7423812,7425095,7475492,7477369,7507499,7551582,7563804,7624602,7631032,7647846,7651738,7666157,7671863,7675208,7685255,7745287,7746682,7778894,7780629,7805965,7805976,7811710,7865713,7872180,7879897,7882536,7888694,7894856,7925296,7932946,7944498,7954081,7957485,7958271,7976081,7979270,7994629,8001228,8027803,8040207,8040957,8043936,8044268,8050650,8050678,8050854,8060242,8090192,8111926,8128056,8136547,8162689,8164071,8164222,8179534,8192133,8192157,8227147,8255876,8258224,8262841,8267041,8268618,8290901,8297185,8297345,8303173,8319606,8331710,8353902,8380735,8382809,8384763,8385119,8385331,8385495,8385663,8385829,8386343,8386897,8386963,8387249,8388399,8389069,8389193,8391491,8391835,8391837,8392865,8393081,8393191,8394267,8394673,8394773,8395031,8395215,8396103,8396325,8397019,8397171,8397945,8398477,8398713,8399865,8399891,8400001,8400443,8401475,8401485,8402847,8403477,8403729,8405897,8406117,8406663,8406737,8408215,8410349,8411123,8413793,8414511,8416383,8416833,8416965,8417105,8417139,8417197,8419205,8419459,8421499,8422565,8425181,8425825,8425865,8427327,8427663,8427673,8428749,8429083,8431375,8433419,8433983,8434183,8434459,8434681,8435799,8435927,8436711,8436827,8436861,8437637,8437749,8438619,8438623,8438649,8439069,8439633,8439853,8440535,8440557,8440569,8440571,8441015,8441473,8441501,8441517,8441735,8442201,8442241,8442271,8442413,8442759,8442921,8443239,8444347,8444463,8444775,8444857,8445053,8445205,8445247,8447159,8447415,8447701,8447795,8447807,8447927,8448343,8448545,8448815,8449101,8449117,8449223,8449353,8449485,8450025,8450633,8450651,8451201,8451227,8451253,8451367,8451481,8452509,8452633,8452637,8452711,8452737,8452743,8452815,8453025,8453693,8453721,8453955,8453999,8454037,8454071,8454251,8454265,8454293,8454361,8454611,8454873,8454899,8454949,8455005,8455041,8455161,8455175,8455241,8455283,8455381,8455423,8455527,8455881,8456043,8456045,8456081,8456487,8456489,8456539,8456749,8456851,8457213,8457255,8458681,8458851,8458977,8459005,8459073,8459213,8459371,8459763,8459969,8460001,8460087,8460093,8460099,8460113,8460167,8460177,8460413,8460421,8460489,8460491,8460501,8460535,8460583,8460585,8460679,8460741,8460807,8461045,8461547,8461717,8461815,8462161,8463943,8464689,8467093,8468367,8470251,8470383,8472057,8474123,8474165,8474853,8475139,8475179,8475313,8475547,8475559,8475609,8475683,8475781,8475895,8476001,8476055,8476065,8476171,8476251,8476267,8476389,8476405,8476713,8476761,8476801,8476877,8477031,8477061,8477151,8477165,8477729,8477861,8477947,8477975,8478103,8478129,8478151,8478449,8478869,8479305,8479313,8479315,8479439,8479547,8479741,8479769,8479899,8480309,8481073,8481099,8481341,8481523,8481661,8482133,8482145,8482179,8482253,8482325,8482423,8482465,8482793,8482927,8482947,8483135,8483149,8483901,8483991,8484179,8484185,8484355,8484623,8484713,8485143,8485409,8485555,8485933,8486129,8486205,8486219,8486293,8486779,8486979,8487013,8487023,8487097,8487411,8487593,8488239,8488249,8488263,8488543,8488567,8488731,8488771,8488815,8488893,8488985,8489021,8489113,8489295,8489327,8489375,8489387,8489479,8489619,8490095,8490195,8490907,8491677,8491739,8491761,8491883,8491893,8492131,8492135,8492807,8493293,8493587,8494031,8494037,8494061,8494091,8494105,8494897,8494899,8495081,8495155,8495323,8495505,8495655,8495689,8495869,8495883,8496095,8496151,8497223,8497311,8497357,8497379,8497591,8497595,8497597,8497713,8497809,8497911,8498957,8499001,8499015,8499043,8499061,8500515,8500545,8501197,8501225,8501739,8501765,8501959,8502231,8502305,8503273,8503613,8503633,8503847,8504083,8504107,8504113,8504399,8504947,8505113,8505137,8505175,8505487,8505565,8505945,8506505,8506557,8506583,8506647,8506673,8507199,8507239,8507265,8507323,8507375,8507453,8507767,8508021,8508055,8508225,8508437,8508545,8508563,8508591,8508613,8508741,8508747,8508901,8510273,8510567,8510615,8510651,8510661,8511125,8511441,8511705,8511827,8511835,8511841,8511843,8513371,8513911,8514019,8515323,8515359,8515765,8516199,8516335,8516657,8517039,8517393,8517529,8517897,8517957,8518573,8518991,8519391,8520391,8521537,8521635,8521751,8521855,8521949,8521965,8522387,8522817,8523063,8523225,8523409,8523735,8523753,8523853,8523873,8523903,8523953,8524233,8524241,8524485,8524637,8524899,8524977,8525307,8525729,8526047,8526351,8526615,8527249,8527675,8527997,8528009,8528039,8528463,8528897,8529127,8529143,8529673,8529901,8530305,8530449,8530727,8531389,8531951,8532459,8533437,8533663,8533919,8533939,8534175,8534541,8535659,8536163,8536353,8536419,8537543,8537629,8539037,8539113,8539211,8539429,8539753,8539925,8540207,8540723,8540729,8540799,8540807,8540817,8540941,8541155,8541199,8541623,8542405,8543085,8543187,8543889,8544169,8544439,8544893,8544997,8545347,8545665,8545843,8545897,8546049,8546443,8547123,8547151,8547271,8547563,8549107,8549979,8550633,8550729,8551131,8551313,8551501,8551875,8552197,8552725,8553279,8553341,8553375,8553467,8555005,8555593,8555629,8556429,8556501,8557073,8557361,8557457,8557523,8558159,8558289,8558347,8558379,8558401,8558677,8558737,8558849,8559013,8560093,8560369,8560379,8560399,8560407,8560443,8560597,8560669,8561355,8561455,8561495,8561523,8561539,8561667,8562067,8562409,8562509,8562695,8562733,8563205,8563435,8563503,8563707,8563807,8563855,8563879,8564569,8564677,8564957,8564959,8564967,8565319,8565367,8565419,8565479,8565751,8566737,8566767,8566889,8567191,8567271,8567423,8567609,8567937,8567979,8567983,8568127,8569059,8569165,8569219,8569235,8569263,8569973,8569979,8570027,8570153,8570713,8570833,8571861,8572313,8573123,8574215,8574843,8574969,8575259,8575465,8576523,8576549,8576901,8577711,8577715,8577759,8577923,8578065,8578515,8579519,8579807,8580109,8580117,8580989,8581583,8581647,8581737,8581847,8581923,8582471,8582545,8582559,8582569,8582641,8582679,8582693,8582703,8582877,8583003,8583881,8584057,8584751,8585291,8585419,8586003,8586163,8586855,8588847,8590837,8596703,8597155,8597187,8597329,8598431,8598639,8598929,8601621,8601623,8601903,8602379,8602381,8603259,8603317,8603321,8605355,8608293,8608749,8608751,8609919,8610273,8610359,8610525,8610695,8610751,8610761,8611511,8611549,8611611,8611831,8611865,8611977,8613301,8614611,8614877,8614995,8615509,8615531,8615981,8616463,8616589,8617003,8617519,8617585,8618865,8618889,8619073,8619189,8619365,8620063,8620241,8620427,8620797,8621681,8621997,8622385,8622425,8622545,8622719,8622785,8623179,8623529,8623559,8623703,8624099,8624273,8624821,8624933,8625127,8625585,8625935,8626333,8626475,8626509,8626615,8626939,8626969,8627397,8627433,8627485,8627547,8627595,8627627,8627697,8627753,8627947,8627959,8627985,8627989,8628071,8628269,8628685,8628917,8629055,8629073,8629191,8629215,8629237,8629877,8629939,8629977,8630017,8630215,8630331,8630599,8630695,8630731,8630805,8630807,8630937,8631043,8631047,8631131,8631339,8631379,8631557,8631591,8631635,8631645,8631655,8631701,8631719,8631765,8631817,8632059,8632353,8632403,8632409,8632425,8632443,8632449,8632489,8632525,8632591,8632837,8632971,8633141,8633203,8633355,8633511,8633855,8634027,8634327,8634447,8634801,8635093,8635103,8635289,8635315,8635625,8636795,8637529,8637635,8637715,8638441,8638511,8638681,8639025,8639319,8640119,8640145,8640185,8640331,8640523,8640559,8641321,8641521,8641571,8642191,8642247,8642265,8642969,8643141,8643277,8643473,8643833,8644005,8644037,8644231,8644955,8645147,8645519,8645545,8645687,8645991,8646163,8646415,8646455,8646505,8647365,8647429,8647795,8648617,8648915,8648931,8649161,8649351,8649371,8649945,8650087,8650333,8650391,8650471,8650489,8651243,8651301,8651481,8651861,8652649,8652707,8652997,8653347,8653667,8654121,8654153,8654211,8654753,8654909,8654991,8655005,8655011,8655103,8655147,8655247,8655525,8655529,8655731,8656019,8656119,8656235,8656371,8656385,8656567,8657123,8657995,8658213,8658601,8659349,8659383,8659411,8659493,8659609,8660083,8660125,8660159,8660193,8660449,8660633,8660775,8660841,8660987,8661003,8661297,8661431,8661655,8662085,8662087,8662089,8662091,8662211,8663215,8663255,8663477,8663637,8663743,8663799,8663803,8663859,8663899,8663903,8665201,8665277,8665675,8666741,8666757,8666763,8667031,8667161,8667323,8667791,8667831,8668063,8668345,8668471,8668513,8668667,8668719,8669267,8669503,8669535,8670101,8670283,8670703,8670957,8670987,8670989,8671001,8671025,8671375,8671473,8671787,8671809,8672557,8672579,8673147,8673259,8673301,8674067,8674883,8675655,8675949,8676023,8676055,8676151,8676591,8676861,8677049,8677381,8677471,8677591,8678195,8678809,8679991,8680187,8680321,8681295,8681435,8681535,8681935,8682011,8682067,8682107,8682135,8682437,8682685,8682915,8683003,8683369,8684559,8684975,8685047,8685463,8686293,8686707,8687049,8687965,8688409,8689191,8689739,8690099,8690201,8690237,8691357,8691853,8692049,8692199,8692201,8692477,8692525,8692683,8693085,8693135,8693391,8693629,8693649,8693713,8693715,8693719,8694509,8694623,8695277,8695279,8695447,8747245,8747471,8748275,8748393,8748419,8748455,8768205,8769301,8771099,8775245,8775805,8779385,8779607,8779657,8779739,8779859,8780305,8780327,8781993,8782001,8782573,8782631,8782699,8782817,8783011,8783147,8783277,8783519,8783577,8783671,8784003,8784327,8784331,8784345,8784355,8784821,8784923,8785183,8785575,8785649,8785999,8786409,8786481,8787219,8787495,8787957,8788261,8788353,8789135,8789199,8789581,8789899,8790625,8791297,8791909,8792117,8792527,8793457,8793495,8793513,8793559,8794471,8795567,8795807,8795987,8796111,8796807,8797073,8797295,8797337,8797451,8797459,8797679,8798417,8798647,8798905,8799133,8799233,8799697,8799995,8800367,8800931,8801393,8802301,8803215,8803475,8803591,8804829,8804939,8804973,8805699,8806197,8807227,8807265,8807395,8807903,8808055,8808057,8808827,8809063,8809451,8810411,8810483,8810875,8811963,8812519,8812927,8812929,8812999,8813365,8813615,8813943,8813961,8814003,8814083,8814229,8814885,8816191,8816511,8816537,8817481,8817585,8818579,8819531,8819819,8820461,8820605,8820665,8820921,8822067,8822317,8822863,8823619,8823811,8824269,8824739,8824783,8825039,8826077,8826243,8826579,8827507,8827611,8827809,8828221,8828309,8828703,8828825,8828931,8829271,8830817,8831677,8831687,8832109,8832241,8832265,8832497,8832529,8832561,8832573,8833041,8834125,8834267,8834777,8835899,8836019,8836447,8836655,8836939,8837593,8837737,8838529,8838675,8838875,8839069,8839089,8839127,8839189,8839413,8839913,8839961,8840019,8840053,8840103,8841141,8841371,8841585,8841813,8842133,8842859,8843195,8843305,8843469,8843775,8843811,8843853,8844389,8844579,8845233,8845247,8845263,8845271,8845273,8845639,8845643,8845665,8845993,8846149,8846205,8846341,8846695,8846781,8847133,8848207,8848357,8848595,8848765,8849067,8849357,8849603,8849615,8850107,8850191,8850393,8850563,8851115,8851313,8852019,8852141,8852627,8852745,8853041,8853069,8853075,8853281,8853841,8853983,8854139,8854507,8854511,8854669,8855049,8855325,8855609,8855799,8856849,8856851,8857247,8857327,8857893,8857941,8859147,8859151,8860817,8860845,8861249,8862895,8862989,8863089,8863307,8863581,8864591,8865839,8866497,8866631,8866855,8866903,8868013,8868797,8868817,8869059,8869107,8869399,8870073,8870597,8870783,8870891,8870913,8870917,8871035,8871037,8871139,8871371,8871433,8871545,8871727,8871739,8872013,8873133
+        )
+
+)
+

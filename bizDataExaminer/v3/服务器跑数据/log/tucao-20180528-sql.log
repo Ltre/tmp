@@ -1,0 +1,59 @@
+sql: select count(1),domain from tucao group by domain
+ret: Array
+(
+    [0] => Array
+        (
+            [count(1)] => 14
+            [domain] => coc.5253.com
+        )
+
+    [1] => Array
+        (
+            [count(1)] => 10
+            [domain] => dnf.duowan.com
+        )
+
+    [2] => Array
+        (
+            [count(1)] => 56
+            [domain] => lol.duowan.com
+        )
+
+    [3] => Array
+        (
+            [count(1)] => 24
+            [domain] => ls.duowan.com
+        )
+
+    [4] => Array
+        (
+            [count(1)] => 19
+            [domain] => newgame.duowan.com
+        )
+
+    [5] => Array
+        (
+            [count(1)] => 764
+            [domain] => tu.duowan.com
+        )
+
+    [6] => Array
+        (
+            [count(1)] => 29
+            [domain] => wot.duowan.com
+        )
+
+    [7] => Array
+        (
+            [count(1)] => 38
+            [domain] => wow.duowan.com
+        )
+
+    [8] => Array
+        (
+            [count(1)] => 30
+            [domain] => www.duowan.com
+        )
+
+)
+
