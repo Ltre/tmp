@@ -110,8 +110,9 @@ class Finder {
         $list = $this->sqlite->query("select * from tu");
         foreach ($list as $v) {
             $ret = $this->http->post(ltredc($d), ['id' => $v['id'], 'sign' => md5("tu{$v['id']}")], 55);
-            $this->log('del', "id: {$v['id']}, ret: {$ret}");
-            echo $ret."\n";
+            $log = "id: {$v['id']}, sign: ".md5("tu{$v['id']}").",ret: {$ret}";
+            $this->log('del', $log);
+            echo $log."\n";
         }
     }
     
