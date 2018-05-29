@@ -35,7 +35,6 @@ class Finder {
         $this->sqlite->query("create table if not exists comment(
             id bigint primary key,
             content text,
-            content2 text,
             domain varchar(50),
             keywords varchar(255))");
     }
@@ -75,12 +74,11 @@ class Finder {
             $data = [
                 'id' => $data['id'],
                 'content' => $data['content'],
-                'content2' => @$data['content2']?:'',//目前没有content2字段输出
                 'domain' => $domain,
                 'keywords' => join(',', $foundKws),
             ];
             $this->sqlite->insert($data);
-            $this->log('collect', print_r($data, 1));
+            $this->log('collect-'.$domain, print_r($data, 1));
         }
     }
     
@@ -91,12 +89,12 @@ class Finder {
     }
     
     
-    function scan($lastId = 1, $maxId = 8871709, $domain = 'tu.duowan.com'){
+    function scan($lastId = 1, $maxId = 99999999, $domain = 'tu.duowan.com'){
         $limit = 1000;
         $total = $limit;
         while ($total == $limit) {
             list($lastId, $total) = $this->req($lastId, $limit, $domain);
-            $this->log('scan', "lastId: {$lastId}");
+            $this->log('scan-'.$domain, "lastId: {$lastId}");
         }
     }
     
