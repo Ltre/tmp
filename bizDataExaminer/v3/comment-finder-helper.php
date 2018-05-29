@@ -29,7 +29,7 @@ class FinderStart {
         $dl = $this->getDomainList();
         foreach ($dl as $d) {
             $shabi = str_replace(['.duowan.com', '.5253.com'], '', $d['domain']);
-            echo "\n nohup php comment-finder.php {$this->batch} scan 1 99999999 \"{$d['domain']}\" > comment-{$shabi}.nohup &";
+            echo "\n nohup php comment-finder.php {$this->batch} scan 0 99999999 \"{$d['domain']}\" > comment-{$shabi}.nohup &";
         }
     }
 
