@@ -43,6 +43,10 @@ class Finder {
     function req($id, $limit, $domain){
         $ret = $this->http->post($this->getter, ['id' => $id, 'limit' => $limit, 'domain' => $domain], 55);
         $list = json_decode($ret?:'[]', 1);
+        if (false === $list && is_string($ret)) {            
+            $this->log('reqerr-domain-'.$domain, 'req: '.print_r(['id' => $id, 'limit' => $limit, 'tb_id' => $tb_id], 1)."\nresponse: {$ret}");
+            return [$id, $limit];//请求出错，返回404页面HTML，这里作重试处理
+        }
         echo 'get list count: '.count($list)."\r\n";
         $lastId = 0;
         foreach ($list as $v) {
