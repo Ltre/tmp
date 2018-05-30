@@ -96,7 +96,7 @@ class Finder {
     
     
     function scan($lastId = 1, $maxId = 99999999, $tb_id = 0){
-        $limit = 5000;
+        $limit = 1000;
         $total = $limit;
         while ($total == $limit) {
             list($lastId, $total) = $this->req($lastId, $limit, $tb_id);
