@@ -15,12 +15,17 @@ $GLOBALS = [
         'comment' => [
             'list_api' => 'http://comment3.duowan.com/index.php?r=mgr/getlist',
             'd' => "(BQti4_L@ERtpdFkSE~ORcJH)5OnFpSwXkDA@0!BQbIF@0)GTC*E.0WpxjFsGj.QXisq-6Mqzb'X.0UxVLLfv7Rnuh.0SPu1o1tfr5ZDUw*R)q~Z-6_sus~1WmYV~1u5_EA7TC..",
-            'keywordFields' => ['content', 'content2'],
+            'keywordFields' => ['content'],
         ],
         'tucao' => [
             'list_api' => 'http://comment3.duowan.com/index.php?r=mgr/gettclist',
             'd' => "DfFvHvXtt0-Lse'W)qAy-6@zn7@EF2SP)5z8UfZW'9UvYHQr'1WpQC-TDg.QWh~Z@0n1zbDr.0ybwmRlKmQmj6.0PMKh!FqcWAVzWyj7L6ig'9M7TR)5H7*@'9DeIfYvyh))",
-            'keywordFields' => ['content', 'content2'],
+            'keywordFields' => ['content'],
+        ],
+        'bbspost' => [
+            'list_api' => 'http://bbs.duowan.com/api/manage.php?op=getlist',
+            'd' => "Ols0Suv6Mroana_uif)5OpGiG1ro.8w7k3Lm'1!O'TtjKnb1ZDG1CA-6vdIjd3Sdig_7ImCe'X.0Qt@QLf.KEai5.0'HEtc1RcRP-6N8hf@0)v*@-6~C_EUrJs",
+            'keywordFields' => ['content', 'title'],
         ],
     ],
 ];
