@@ -94,7 +94,7 @@ class Finder {
         $total = $limit;
         while ($total == $limit) {
             list($lastId, $total) = $this->req($lastId, $limit, $domain);
-            $this->log('scan-'.$domain, "lastId: {$lastId}");
+            $this->log('scan-'.$domain, "lastId: {$lastId}, limit: {$limit}, domain: {$domain}");
         }
     }
     
