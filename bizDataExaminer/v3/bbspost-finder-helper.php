@@ -1,3 +1,4 @@
+#!/usr/local/php/bin/php
 <?php
 
 include 'hehe/config.php';
