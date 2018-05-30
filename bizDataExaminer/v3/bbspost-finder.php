@@ -33,6 +33,7 @@ class Finder {
         $this->sqlite = new Model("collect/{$source}-{$batch}.db", $source);
         $this->sqlite->query("create table if not exists bbspost(
             id bigint primary key,
+            tb_id integer,
             title varchar(255),
             content text,
             dateline varchar(50),
@@ -77,6 +78,7 @@ class Finder {
         if (! $this->sqlite->find(['id' => $data['id']])) {            
             $data = [
                 'id' => $data['id'],
+                'tb_id' => $tb_id,
                 'title' => $data['title'],
                 'content' => $data['content'],
                 'dateline' => $data['dateline'],
@@ -158,5 +160,5 @@ if ($func) {
 
 // /usr/local/php/bin/php
 //example: php bbspost-finder.php 20180528 scan 1 99999999 0
-//example: php bbspost-finder.php 20180528 sql "select count(1) from bbspost"
+//example: /usr/local/php/bin/php bbspost-finder.php 20180528 sql "select count(1) from bbspost"
 //example: php bbspost-finder.php 20180528 del
