@@ -42,3 +42,4 @@ class FinderStart {
 (new FinderStart($batch))->start();
 
 //php comment-finder-helper.php 20180528
+// /usr/local/php/bin/php comment-finder-helper.php 20180528

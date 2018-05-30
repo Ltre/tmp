@@ -1,4 +1,3 @@
-#!/usr/local/php/bin/php
 <?php
 
 include 'hehe/config.php';
@@ -31,3 +30,4 @@ class FinderStart {
 (new FinderStart($batch))->start();
 
 //php bbspost-finder-helper.php 20180528
+// /usr/local/php/bin/php bbspost-finder-helper.php 20180528

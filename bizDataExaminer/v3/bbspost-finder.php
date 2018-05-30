@@ -1,4 +1,3 @@
-#!/usr/local/php/bin/php
 <?php
 
 include 'hehe/config.php';
@@ -157,6 +156,7 @@ if ($func) {
     call_user_func_array([$finder, $func], $params);
 }
 
+// /usr/local/php/bin/php
 //example: php bbspost-finder.php 20180528 scan 1 99999999 0
 //example: php bbspost-finder.php 20180528 sql "select count(1) from bbspost"
 //example: php bbspost-finder.php 20180528 del

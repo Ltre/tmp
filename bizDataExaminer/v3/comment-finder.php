@@ -155,6 +155,7 @@ if ($func) {
     call_user_func_array([$finder, $func], $params);
 }
 
+// /usr/local/php/bin/php
 //example: php comment-finder.php 20180528 scan 0 99999999 "tu.duowan.com"
 //example: php comment-finder.php 20180528 sql "select count(1),domain from comment group by domain"
 //example: php comment-finder.php 20180528 del
