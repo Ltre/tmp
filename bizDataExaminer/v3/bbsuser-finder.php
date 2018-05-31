@@ -146,6 +146,6 @@ if ($func) {
     call_user_func_array([$finder, $func], $params);
 }
 // /usr/local/php/bin/php
-//example: php bbsuser-finder.php 20180528 scan 1 99999999
+//example: /usr/local/php/bin/php bbsuser-finder.php 20180528 scan 1 99999999
 //example: php bbsuser-finder.php 20180528 sql "select count(1) from bbsuser"
 //example: php bbsuser-finder.php 20180528 del
