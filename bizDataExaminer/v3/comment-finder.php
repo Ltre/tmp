@@ -157,5 +157,5 @@ if ($func) {
 
 // /usr/local/php/bin/php
 //example: php comment-finder.php 20180528 scan 0 99999999 "tu.duowan.com"
-//example: php comment-finder.php 20180528 sql "select count(1),domain from comment group by domain"
+//example: /usr/local/php/bin/php comment-finder.php 20180528 sql "select count(1),domain from comment group by domain"
 //example: php comment-finder.php 20180528 del

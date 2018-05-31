@@ -31,3 +31,6 @@ class FinderStart {
 
 //php bbspost-finder-helper.php 20180528
 // /usr/local/php/bin/php bbspost-finder-helper.php 20180528
+
+// 使用三台机器跑：14.17.108.246，61.142.176.138，61.142.176.137，61.142.176.136
+// 每台50个进程

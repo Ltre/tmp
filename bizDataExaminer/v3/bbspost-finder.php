@@ -160,5 +160,5 @@ if ($func) {
 
 // /usr/local/php/bin/php
 //example: php bbspost-finder.php 20180528 scan 1 99999999 0
-//example: /usr/local/php/bin/php bbspost-finder.php 20180528 sql "select count(1) from bbspost"
+//example: /usr/local/php/bin/php bbspost-finder.php 20180528 sql "select count(1),tb_id from bbspost group by tb_id"
 //example: php bbspost-finder.php 20180528 del
