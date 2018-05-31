@@ -27,6 +27,12 @@ $GLOBALS = [
             'd' => "Ols0Suv6Mroana_uif)5OpGiG1ro.8w7k3Lm'1!O'TtjKnb1ZDG1CA-6vdIjd3Sdig_7ImCe'X.0Qt@QLf.KEai5.0'HEtc1RcRP-6N8hf@0)v*@-6~C_EUrJs",
             'keywordFields' => ['content', 'title'],
         ],
+        'bbsuser' => [
+            'list_api' => 'http://bbs.duowan.com/api/manage.php?op=getuser',
+            'd' => "Cbk6z7OkLqEq_UPcVS'9r2Bd-rsp.8w7SBx8'1Iu(O'Zt6WMs6M7ki-6Ksy9JzPaYW_7QuKmIw'1q3ZPQkw8D9Fs.0Zxj8'Y@lus(4N8ge(4D3QN_7-H_Eu1wf",
+            'keywordFields' => ['content', 'title'],
+        ],
+        
     ],
 ];
 
