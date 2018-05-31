@@ -158,7 +158,10 @@ if ($func) {
     call_user_func_array([$finder, $func], $params);
 }
 
+// 将帖子ID，转换为链接http://bbs.duowan.com/forum.php?mod=redirect&goto=findpost&ptid=xxx&pid=xxx
 // /usr/local/php/bin/php
 //example: php bbspost-finder.php 20180528 scan 1 99999999 0
 //example: /usr/local/php/bin/php bbspost-finder.php 20180528 sql "select count(1),tb_id from bbspost group by tb_id"
+// /usr/local/php/bin/php bbspost-finder.php 20180528 sql "select count(1),keywords from bbspost where keywords='杀人' or keywords='杀神' or keywords='杀人,杀神' or keywords='杀神,杀神'  group by keywords"
+// /usr/local/php/bin/php bbspost-finder.php 20180528 sql "select count(1),keywords from bbspost where keywords!='杀人' and keywords!='杀神' and keywords!='杀人,杀神' and keywords!='杀神,杀神'  group by keywords order by count(1)"
 //example: php bbspost-finder.php 20180528 del
