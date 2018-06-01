@@ -158,4 +158,5 @@ if ($func) {
 // /usr/local/php/bin/php
 //example: php comment-finder.php 20180528 scan 0 99999999 "tu.duowan.com"
 //example: /usr/local/php/bin/php comment-finder.php 20180528 sql "select count(1),domain from comment group by domain"
+// /usr/local/php/bin/php comment-finder.php 20180528 sql "select count(1),keywords from comment where domain = 'tu.duowan.com' and keywords!='杀人' and keywords !='杀神' and keywords!='杀人,杀神' and keywords!='杀神,杀人' group by keywords"
 //example: php comment-finder.php 20180528 del

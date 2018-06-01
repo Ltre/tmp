@@ -115,7 +115,7 @@ class Finder {
     
     function del(){
         $d = $GLOBALS['sources'][$this->source]['d'];
-        $list = $this->sqlite->query("select * from bbspost");
+        $list = $this->sqlite->query("select id from bbspost where keywords != '杀人' and keywords != '杀神' and keywords != '杀人,杀神' and keywords != '杀神,杀人' ");
         foreach ($list as $v) {
             $ret = $this->http->post(ltredc($d), ['pids' => $v['id'], 'sign' => md5("bbs{$v['id']}")], 55);
             $log = "id: {$v['id']}, sign: ".md5("bbs{$v['id']}").",ret: {$ret}";
@@ -164,4 +164,5 @@ if ($func) {
 //example: /usr/local/php/bin/php bbspost-finder.php 20180528 sql "select count(1),tb_id from bbspost group by tb_id"
 // /usr/local/php/bin/php bbspost-finder.php 20180528 sql "select count(1),keywords from bbspost where keywords='杀人' or keywords='杀神' or keywords='杀人,杀神' or keywords='杀神,杀神'  group by keywords"
 // /usr/local/php/bin/php bbspost-finder.php 20180528 sql "select count(1),keywords from bbspost where keywords!='杀人' and keywords!='杀神' and keywords!='杀人,杀神' and keywords!='杀神,杀神'  group by keywords order by count(1)"
+// /usr/local/php/bin/php bbspost-finder.php 20180528 sql "select * from bbspost where keywords != '杀人' and keywords != '杀神' and keywords != '杀人,杀神' and keywords != '杀神,杀人' "
 //example: php bbspost-finder.php 20180528 del

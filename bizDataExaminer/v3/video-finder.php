@@ -17,13 +17,13 @@ class Finder {
     var $sqlite;
     
     
-    function __construct($source, $batch){
+    function __construct($source, $batch, $kwsFileName='hehe/kws.txt'){
         $this->batch = $batch;
         $this->source = $source;
         $this->kwFields = $GLOBALS['sources'][$source]['keywordFields'];
         $this->getter = $GLOBALS['sources'][$source]['list_api'];
         $this->http = new dwHttp;
-        $this->kws = file('hehe/kws.txt');
+        $this->kws = file($kwsFileName);
         array_walk($this->kws, function(&$v, $k){$v = trim($v);});
         $this->initDB($source, $batch);
     }
@@ -134,6 +134,7 @@ class Finder {
 @$func = $_SERVER['argv'][2];
 @$param1 = $_SERVER['argv'][3];
 @$param2 = $_SERVER['argv'][4];
+@$param3 = $_SERVER['argv'][5] ?: 'hehe/kws.txt';
 
 switch ($func) {
     case 'scan':
@@ -153,10 +154,10 @@ switch ($func) {
 }
 
 if ($func) {    
-    $finder = new Finder('video', $batch);
+    $finder = new Finder('video', $batch, $param3);
     call_user_func_array([$finder, $func], $params);
 }
 
-//example: php video-finder.php 20180528 scan 1 8871709
-//example: php video-finder.php 20180528 sql "select count(1) from video"
-//example: php video-finder.php 20180528 del
+//example: /usr/local/php/bin/php video-finder.php 20180528 scan 1 8871709 "hehe/kws2.txt"
+//example: /usr/local/php/bin/php video-finder.php 20180528 sql "select count(1) from video"
+//example: /usr/local/php/bin/php video-finder.php 20180528 del
