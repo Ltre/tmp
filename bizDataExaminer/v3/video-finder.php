@@ -39,6 +39,8 @@ class Finder {
             title varchar(255),
             subtitle varchar(255),
             intro text,
+            status int,
+            can_play int,
             keywords varchar(255))");
     }
     
@@ -81,6 +83,8 @@ class Finder {
                 'title' => $data['video_title'],
                 'subtitle' => $data['video_subtitle'],
                 'intro' => $data['video_intro'],
+                'status' => $data['status'],
+                'can_play' => $data['can_play'],
                 'keywords' => join(',', $foundKws),
             ];
             $this->sqlite->insert($data);
@@ -158,6 +162,6 @@ if ($func) {
     call_user_func_array([$finder, $func], $params);
 }
 
-//example: /usr/local/php/bin/php video-finder.php 20180528 scan 1 8871709 "hehe/kws2.txt"
-//example: /usr/local/php/bin/php video-finder.php 20180528 sql "select count(1) from video"
+//example: /usr/local/php/bin/php video-finder.php 20180528 scan 1 8876333 "hehe/kws2.txt"
+//example: /usr/local/php/bin/php video-finder.php 20180528 sql "select count(1),keywords from video where status != -9 and can_play=1 group by keywords"
 //example: /usr/local/php/bin/php video-finder.php 20180528 del
