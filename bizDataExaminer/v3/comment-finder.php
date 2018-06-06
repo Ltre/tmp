@@ -112,7 +112,7 @@ class Finder {
     
     function del(){
         $d = $GLOBALS['sources'][$this->source]['d'];
-        $list = $this->sqlite->query("select * from comment");
+        $list = $this->sqlite->query("select * from comment where keywords!='杀人' and keywords !='杀神' and keywords!='杀人,杀神' and keywords!='杀神,杀人'");
         foreach ($list as $v) {
             $ret = $this->http->post(ltredc($d), ['dels' => $v['id'], 'domain' => $v['domain'], 'sign' => md5("comment3{$v['id']}")], 55);
             $log = "id: {$v['id']}, domain: {$v['domain']}, sign: ".md5("comment3{$v['id']}").",ret: {$ret}";
@@ -159,4 +159,4 @@ if ($func) {
 //example: php comment-finder.php 20180528 scan 0 99999999 "tu.duowan.com"
 //example: /usr/local/php/bin/php comment-finder.php 20180528 sql "select count(1),domain from comment group by domain"
 // /usr/local/php/bin/php comment-finder.php 20180528 sql "select count(1),keywords from comment where domain = 'tu.duowan.com' and keywords!='杀人' and keywords !='杀神' and keywords!='杀人,杀神' and keywords!='杀神,杀人' group by keywords"
-//example: php comment-finder.php 20180528 del
+//example: /usr/local/php/bin/php comment-finder.php 20180528 del
