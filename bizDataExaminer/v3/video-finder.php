@@ -162,6 +162,6 @@ if ($func) {
     call_user_func_array([$finder, $func], $params);
 }
 
-//example: /usr/local/php/bin/php video-finder.php 20180528 scan 1 8876333 "hehe/kws2.txt"
+//example: /usr/local/php/bin/php video-finder.php 20180528 scan 1 8903629 "hehe/kws20180712-1.txt"
 //example: /usr/local/php/bin/php video-finder.php 20180528 sql "select count(1),keywords from video where status != -9 and can_play=1 group by keywords"
 //example: /usr/local/php/bin/php video-finder.php 20180528 del
