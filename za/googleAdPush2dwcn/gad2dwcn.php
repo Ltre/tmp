@@ -1,95 +1,94 @@
 <?php
 class dwCache
 {
-			public $linked_object = null;
-						public $cached_time = 3600;
-						private $mmc = null;
-										private $domain = null;
-										private $version;
+	public $linked_object = null;
+	public $cached_time = 3600;
+	private $mmc = null;
+	private $domain = null;
+	private $version;
 
-															function __construct($domain){
-															     if( !class_exists('Memcached') ){
-															         $this->mmc = new Memcache();
-															     }else{
-															              $this->mmc = new Memcached();
-															          $this->mmc->setOptions(array(
-															          Memcached::OPT_CONNECT_TIMEOUT=>2000,
-															          Memcached::OPT_RETRY_TIMEOUT=>2000,
-															          Memcached::OPT_POLL_TIMEOUT=>2000,
-															          ));
-															          }
-															     if(defined('DWAE_MMC_HOST_1'))$this->mmc->addServer(DWAE_MMC_HOST_1, DWAE_MMC_PORT_1);
-															     if(defined('DWAE_MMC_HOST_2'))$this->mmc->addServer(DWAE_MMC_HOST_2, DWAE_MMC_PORT_2);
-															     $this->domain = $domain;
-															     if(!$this->version = $this->mmc->get('version_'.$domain)){
-															          $this->mmc->set('version_'.$domain, 1);
-															          $this->version = 1;
-															          }
-															     }
+	function __construct($domain){
+		if( !class_exists('Memcached') ){
+		    $this->mmc = new Memcache();
+		}else{
+		    $this->mmc = new Memcached();
+			$this->mmc->setOptions(array(
+							Memcached::OPT_CONNECT_TIMEOUT=>2000,
+							Memcached::OPT_RETRY_TIMEOUT=>2000,
+							Memcached::OPT_POLL_TIMEOUT=>2000,
+					));
+		}
+		if(defined('DWAE_MMC_HOST_1'))$this->mmc->addServer(DWAE_MMC_HOST_1, DWAE_MMC_PORT_1);
+		if(defined('DWAE_MMC_HOST_2'))$this->mmc->addServer(DWAE_MMC_HOST_2, DWAE_MMC_PORT_2);
+		$this->domain = $domain;
+		if(!$this->version = $this->mmc->get('version_'.$domain)){
+			$this->mmc->set('version_'.$domain, 1);
+			$this->version = 1;
+		}
+	}
 
-															function __call($name, $args){
-															     $cache_id = get_class($this->linked_object) . '@' . $name. '#' . print_r($args, 1);
-															     $result = $this->get($cache_id);
-															     if(DEBUG || !$result){
-															     $result = call_user_func_array(array($this->linked_object, $name), $args);
-															          $this->set($cache_id, $result, $this->cached_time);
-															          }
-															     return $result;
-															     }
+	function __call($name, $args){
+		$cache_id = get_class($this->linked_object) . '@' . $name. '#' . print_r($args, 1);
+		$result = $this->get($cache_id);
+		if(DEBUG || !$result){
+			$result = call_user_func_array(array($this->linked_object, $name), $args);
+			$this->set($cache_id, $result, $this->cached_time);
+		}
+		return $result;
+	}
 
-															function set($key, $var, $expire=3600){
-															     if(!$this->mmc)return;
-															     if( !class_exists('Memcached') ){
-															         return $this->mmc->set($this->domain.'_'.$this->version.'_'.$key, $var, 0, $expire);
-															          }else{
-															              return $this->mmc->set($this->domain.'_'.$this->version.'_'.$key, $var, $expire);
-															          }
-															     }
+	function set($key, $var, $expire=3600){
+		if(!$this->mmc)return;
+		if( !class_exists('Memcached') ){
+		    return $this->mmc->set($this->domain.'_'.$this->version.'_'.$key, $var, 0, $expire);
+		}else{
+		    return $this->mmc->set($this->domain.'_'.$this->version.'_'.$key, $var, $expire);
+		}
+	}
 
-															function get($key){
-															     if(!$this->mmc)return;
-															     return $this->mmc->get($this->domain.'_'.$this->version.'_'.$key);
-															     }
-															
-															function add($key, $var, $expire=3600){		
-															     if(!$this->mmc)return;		
-															     if( !class_exists('Memcached') ){
-															     return $this->mmc->add($this->domain.'_'.$this->version.'_'.$key, $var, false, $expire);		    
-															          }else{			
-															              return $this->mmc->add($this->domain.'_'.$this->version.'_'.$key, $var, $expire);
-															          }
-															     }
-															
-															function incr($key, $value=1){
-															     if(!$this->mmc)return;
-															     return $this->mmc->increment($this->domain.'_'.$this->version.'_'.$key, $value);
-															     }
+	function get($key){
+		if(!$this->mmc)return;
+		return $this->mmc->get($this->domain.'_'.$this->version.'_'.$key);
+	}
+	
+	function add($key, $var, $expire=3600){		
+		if(!$this->mmc)return;		
+		if( !class_exists('Memcached') ){
+			return $this->mmc->add($this->domain.'_'.$this->version.'_'.$key, $var, false, $expire);		    
+		}else{			
+		    return $this->mmc->add($this->domain.'_'.$this->version.'_'.$key, $var, $expire);
+		}
+	}
+	
+	function incr($key, $value=1){
+		if(!$this->mmc)return;
+		return $this->mmc->increment($this->domain.'_'.$this->version.'_'.$key, $value);
+	}
 
-															function decr($key, $value=1){
-															     if(!$this->mmc)return;
-															     return $this->mmc->decrement($this->domain.'_'.$this->version.'_'.$key, $value);
-															     }
+	function decr($key, $value=1){
+		if(!$this->mmc)return;
+		return $this->mmc->decrement($this->domain.'_'.$this->version.'_'.$key, $value);
+	}
 
-															function delete($key){
-															     if(!$this->mmc)return;
-															     return $this->mmc->delete($this->domain.'_'.$this->version.'_'.$key);
-															     }
+	function delete($key){
+		if(!$this->mmc)return;
+		return $this->mmc->delete($this->domain.'_'.$this->version.'_'.$key);
+	}
 
-															function flush(){
-															     if(!$this->mmc)return;
-															     ++$this->version;
-															     $this->mmc->set('version_'.$this->domain, $this->version);
-															     }
-															
-															function getVersion(){
-															         return $this->version;
-															     }
-															
-															function getDomain(){
-															         return $this->domain ;
-															     }
+	function flush(){
+		if(!$this->mmc)return;
+		++$this->version;
+		$this->mmc->set('version_'.$this->domain, $this->version);
+	}
+	
+	function getVersion(){
+	    return $this->version;
+	}
+	
+	function getDomain(){
+	    return $this->domain ;
+	}
 }
-
 
 
 if(!defined('DWAE_MMC_HOST_1'))define('DWAE_MMC_HOST_1', '10.21.46.47');
