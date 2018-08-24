@@ -1,0 +1,3 @@
+push google ad to duowan.cn.
+
+execute in duowan.cn's machine.

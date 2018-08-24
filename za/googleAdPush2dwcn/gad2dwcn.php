@@ -1,3 +1,4 @@
+#!/usr/local/php/bin/php
 <?php
 class dwCache
 {
@@ -98,7 +99,7 @@ if(!defined('DWAE_MMC_PORT_2'))define('DWAE_MMC_PORT_2', 11218);
 
 $mmc = new dwCache('dwcn');
 
-for ($i=0; $i < 10000; $i++){
+for ($i=0; $i < 20; $i++){
     //www.duowan.cn首页
     $articleHtml = $mmc->get('article_duowan_home');
     $html = file_get_contents('http://www.duowan.com/1704/m_355943548854.html');
