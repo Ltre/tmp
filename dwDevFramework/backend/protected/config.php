@@ -54,5 +54,14 @@ $setting = array(
 );
 
 define('DEBUG', $setting[$_SERVER["HTTP_HOST"]]["debug"]);
+if (DEBUG) {
+	define('DWAE_MMC_HOST_1', '61.160.36.225');
+	define('DWAE_MMC_PORT_1', '11212');
+} else {
+	define('DWAE_MMC_HOST_1', '10.20.160.28');//2G
+	define('DWAE_MMC_PORT_1', '11229');
+	define('DWAE_MMC_HOST_2', '10.20.160.19');//2G
+	define('DWAE_MMC_PORT_2', '11229');
+}
 $bizConfig = require(BASE_DIR.'protected/biz_config.php');//分离具体业务的配置
 return $bizConfig + ($setting[$_SERVER["HTTP_HOST"]] ?: array()) + $config;

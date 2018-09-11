@@ -13,7 +13,7 @@ class OpLock {
     public function __construct($key = null){
         $this->_currKey = $key;
         if (empty(self::$mmc)) {
-            self::$mmc = obj('dwCache', array(__CLASS.__FUNCTION__), '', true);
+            self::$mmc = obj('dwCache', array(__CLASS__.__FUNCTION__), '', true);
         }
     }
 

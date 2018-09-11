@@ -2,12 +2,21 @@
 class BaseController extends Controller{
 
 	var $layout = "layout.html";
-    
+
     var $yyuid;
 
 	//需要登录的列表
 	private $_mustLogin = array(
         'default/*',
+        'activity/*',
+        'guess/*',
+        'matches/*',
+        'score/*',
+        'team/*',
+        'tool/*',
+        'user/*',
+        'encour/*',
+        'test/login',
     );
 
 
@@ -18,6 +27,8 @@ class BaseController extends Controller{
     );
 
 	function init(){
+        //按需跳转HTTPS
+        $this->_gotoHttps();
         //开启通用缓存支持
         $this->setCacheAble();
         //将控制器注入全局
@@ -25,30 +36,47 @@ class BaseController extends Controller{
         //注入登录态
         $lgInfo = obj('Admin')->isLogin();
         $this->loginInfo = $lgInfo;
-        @$this->uid = $lgInfo['yyuid'];
+        @$this->yyuid = $lgInfo['yyuid'];
+        obj('RuntimeLifeCycle')->setData('loginInfo', $lgInfo);
+        @obj('RuntimeLifeCycle')->setData('yyuid', $lgInfo['yyuid']);
         //$GLOBALS全局变量从此处往后，禁止再被赋值
         $this->globals = $GLOBALS;
         //路由控制
 		$route1 = CONTROLLER_NAME .'/*';
 		$route2 = CONTROLLER_NAME .'/'. ACTION_NAME;
 		$this->route = $route2;//共享当前路由值
-        //按需跳转HTTPS
-        $this->_gotoHttps();
         //登录拦截
 		if( in_array($route1, $this->_mustLogin) || in_array($route2, $this->_mustLogin) ){
 			if( in_array($route2, $this->_mustLoginExclude) ){
 				return ;
 			}
             if (empty($lgInfo)){
-                if (isset($_SERVER["HTTP_X_REQUESTED_WITH"]) && strtolower($_SERVER["HTTP_X_REQUESTED_WITH"])=="xmlhttprequest") {
-                    $this->jsonOutput(array('rs' => false, 'msg' => '未登录'));
-                } else {
-                    header("location: //{$_SERVER['HTTP_HOST']}/login");
-                }
-                exit;
-            }	
-		}
+                $this->refuce('未登录', true);
+            }
+		} else {
+            //允许$_mustLogin声明之外的不登录，且不用检测后续操作权限。
+            //此处避免在访问一些不需登录的地方时，由于未登录，但还要被执行后续的多余操作：obj('Admin')->checkAuthority所带来的麻烦
+            return;
+        }
+        //检测操作权限
+        if (! obj('Admin')->checkAuthority(@$lgInfo['udb'], $this->route)) {
+            $this->refuce('权限不足', false);
+        }
 	}
+
+
+    private function refuce($msg, $relogin=true){
+        if (isset($_SERVER["HTTP_X_REQUESTED_WITH"]) && strtolower($_SERVER["HTTP_X_REQUESTED_WITH"])=="xmlhttprequest") {
+            $this->jsonOutput(array('rs' => false, 'msg' => $msg));
+        } else {
+            if ($relogin) {
+                $this->alert($msg, "//{$_SERVER['HTTP_HOST']}/login");
+            } else {
+                $this->alert($msg);
+            }
+        }
+        exit;
+    }
 
 
     public function arg($name = null, $default = null, $callback_funcname = null){
@@ -64,7 +92,7 @@ class BaseController extends Controller{
     
 	public function jsonOutput($data, $callback='callback'){
 	    header("Content-Type: application/x-javascript; charset=UTF-8");
-        header('Access-Control-Allow-Origin: '.($_SERVER['HTTP_ORIGIN']?:'*'));
+        @header('Access-Control-Allow-Origin: '.($_SERVER['HTTP_ORIGIN']?:'*'));
         header('Access-Control-Allow-Credentials: true');
 		$fun = $this->arg($callback);
 		$json = json_encode($data);
@@ -93,6 +121,22 @@ class BaseController extends Controller{
             $gourl = "window.location.href = '{$url}'";
         }
         echo "<script>$alert_msg $gourl</script>";
+        exit;
+    }
+
+
+    protected function confirm($msg = null, $url = null){
+        header("Content-type: text/html; charset=utf-8");
+        if ($msg && $url) {
+            $code = "if(confirm('{$msg}')) location.href='{$url}';";
+        } elseif ($msg && null === $url) {
+            $code = "alert('{$msg}'); history.go(-1);";
+        } elseif (null === $msg && $url) {
+            $code = "if(confirm('确定前往{$url}吗?')) location.href='{$url}'";
+        } else {
+            $code = '';
+        }
+        echo "<script>{$code}</script>";
         exit;
     }
 
@@ -163,5 +207,20 @@ class BaseController extends Controller{
             $GLOBALS['cache_control']['CACHE_SET_ABLE'] = true;
 		}
 	}
+
+
+    /**
+     * 批量获取参数
+     * @param array $fields 参数名数组
+     */
+    protected function getParams(array $fields){
+        $data = [];
+        foreach ($fields as $f) {
+            if (isset($_REQUEST[$f])) {
+                $data[$f] = $this->arg($f);
+            }
+        }
+        return $data;
+    }
 
 } 
