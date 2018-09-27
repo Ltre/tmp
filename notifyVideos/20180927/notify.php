@@ -12,5 +12,5 @@ foreach ($vids as $vid) {
     echo "vid: {$vid}, result: ";
     var_dump($m->update(['vid' => $vid], ['letv_vu' => '']));
     echo "\n";
-    sleep(6);
+    sleep(60);
 }
