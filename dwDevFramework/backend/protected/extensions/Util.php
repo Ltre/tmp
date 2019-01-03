@@ -278,4 +278,47 @@ class Util{
         return $ret['udb'];
     }
 
+    
+    /**
+     * 劫持obj('Cache')的全局key，强制控制所有用以下方式管理的缓存
+     *      obj('Util')->cache()->getOther('test');
+     *      obj('Util')->cache()->setOther('test', 123);
+     * 刷新方法：
+     *      obj('Util')->cache()->flush();
+     * 使用前提：需要在Cache.php的$cacheMap中声明'Ver'项
+     * @return class
+     */
+    public function cache(){
+        // include_once BASE_DIR.'protected/extensions/Cache.php';
+        //return new class extends Cache{  语法仅适用于PHP7，这里暂时改为旧语法
+        return new TmpCache();
+    }
+
 }
+
+
+
+
+obj('Cache');
+class TmpCache extends Cache{
+    public function flush(){
+        obj('Cache')->setVer(1, sha1(microtime(1).rand(0, 9999)));
+    }
+    protected function ctrlHashKey($hashKey){
+        $ver = obj('Cache')->getVer(1) ?: 1;
+        obj('Cache')->setVer(1, $ver);
+        return $hashKey.$ver;
+    }
+    protected function _get($cacheType, $methodName, $hashKey, $expire){
+        $hashKey = $this->ctrlHashKey($hashKey);
+        return parent::_get($cacheType, $methodName, $hashKey, $expire);
+    }
+    protected function _set($cacheType, $methodName, $hashKey, $data){
+        $hashKey = $this->ctrlHashKey($hashKey);
+        return parent::_set($cacheType, $methodName, $hashKey, $data);
+    }
+    protected function _del($cacheType, $methodName, $hashKey){
+        $hashKey = $this->ctrlHashKey($hashKey);
+        return parent::_del($cacheType, $methodName, $hashKey);
+    }
+};

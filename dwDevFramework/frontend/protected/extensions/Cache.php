@@ -8,6 +8,7 @@
 class Cache {	         
     protected $cacheMap = array(
         'OpLock' =>  array('ver'=>'1', 'expire'=>86400,  'type'=>'redis'), //操作锁
+        'Ver' => array('ver'=>'1', 'expire'=>86400,  'type'=>'memcache'), //缓存版本控制, 详见Util.php的cache()方法和TmpCache类
         'Other' =>  array('ver'=>'1', 'expire'=>86400,  'type'=>'redis'), //未归类的缓存
     );
     
