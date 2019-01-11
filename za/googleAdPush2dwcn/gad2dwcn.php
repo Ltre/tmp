@@ -103,15 +103,16 @@ for ($i=0; $i < 20; $i++){
     //www.duowan.cn首页
     $articleHtml = $mmc->get('article_duowan_home');
     $html = file_get_contents('http://www.duowan.com/1704/m_355943548854.html');
-    $html = preg_replace('/\<\/head\>/i', '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({google_ad_client: "ca-pub-7403881508152497",enable_page_level_ads: true});</script></head>', $html);
+    $html = preg_replace('/\<\/head\>/i', '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({google_ad_client: "ca-pub-7403881508152497", enable_page_level_ads: true});</script></head>', $html);
     var_dump($mmc, '#LTRE1', $articleHtml, '#LTRE2', $html, '#LTRE3');
     var_dump($mmc->set('article_duowan_home', $html, 60*5));
     //文章页
     $articleHtml = $mmc->get('article_common_js_css');
     $html = file_get_contents('http://www.duowan.com/1705/m_359028129759.html');
-    $html .= '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({google_ad_client: "ca-pub-7403881508152497",enable_page_level_ads: true});</script></head>';
+    $html .= '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({google_ad_client: "ca-pub-7403881508152497", enable_page_level_ads: true});</script></head>';
     var_dump($mmc, '#LTRE4', $articleHtml, '#LTRE5', $html, '#LTRE6');
     var_dump($mmc->set('article_common_js_css', $html, 60*5));
     sleep(5);
 }
-                                                        
+    
+
