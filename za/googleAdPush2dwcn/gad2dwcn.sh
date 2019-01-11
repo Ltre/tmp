@@ -1,5 +1,5 @@
 gad2dwcnExec(){
-    gad2dwcndir=/home/zhongxiaofa/gad2dwcn
+    gad2dwcndir=/home/liuyadan/gad2dwcn
     gad2dwcnbin=${gad2dwcndir}/gad2dwcn.php
     sudo chmod +x $gad2dwcnbin
     sudo nohup ${gad2dwcnbin} > ${gad2dwcndir}/log.log &
