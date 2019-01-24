@@ -12,6 +12,11 @@ $GLOBALS = [
             'd' => "-Bm9K5WU-6FcJhe0PmK7da*3Sr~m(~_7Terp)5xbw8j7'1(HYOw0)H_DGt.0_JvhXKRzOj_sGE-6!nAy-6Si74-6PqVsQnsb",
             'keywordFields' => ['video_title', 'video_subtitle', 'video_intro'],
         ],
+        'user' => [
+            'list_api' => 'http://video.duowan.com/?r=test/examineList4User',
+            'd' => "",//待定
+            'keywordFields' => ['nickname', 'user_intro'],
+        ],
         'comment' => [
             'list_api' => 'http://comment3.duowan.com/index.php?r=mgr/getlist',
             'd' => "(BQti4_L@ERtpdFkSE~ORcJH)5OnFpSwXkDA@0!BQbIF@0)GTC*E.0WpxjFsGj.QXisq-6Mqzb'X.0UxVLLfv7Rnuh.0SPu1o1tfr5ZDUw*R)q~Z-6_sus~1WmYV~1u5_EA7TC..",

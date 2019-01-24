@@ -32,15 +32,11 @@ class Finder {
     function initDB($source, $batch){
         @mkdir('collect');
         $this->sqlite = new Model("collect/{$source}-{$batch}.db", $source);
-        $this->sqlite->query("create table if not exists video(
-            vid bigint primary key,
-            channel varchar(28),
-            user_id bigint,
-            title varchar(255),
-            subtitle varchar(255),
-            intro text,
-            status int,
-            can_play int,
+        $this->sqlite->query("create table if not exists user(
+            user_id bigint primary key,
+            udb varchar(30),
+            nickname varchar(50),
+            user_intro varchar(255),
             keywords varchar(255))");
     }
     
@@ -49,15 +45,15 @@ class Finder {
         $ret = $this->http->post($this->getter, ['id' => $id, 'limit' => $limit], 55);
         $list = json_decode($ret?:'[]', 1);
         echo 'get list count: '.count($list)."\r\n";
-        $lastId = 1;
+        $lastId = 9223372036854775807;
         foreach ($list as $v) {
             if (is_array($v)) {
                 $lastId = $v['id'];
-                //echo 'foreach by id: '.$v['id']."\r\n";
+                echo 'foreach by id: '.$v['id']."\r\n";
                 $foundKws = [];
                 foreach ($this->kws as $kw) {
                     foreach ($this->kwFields as $field) {
-                        //echo 'foreach by id: '.$v['id'].', by field: '.$field."\r\n";
+                        echo 'foreach by id: '.$v['id'].', by field: '.$field."\r\n";
                         if (isset($v[$field]) && '' !== $kw && false !== mb_strpos($v[$field], $kw)) {
                             in_array($kw, $foundKws) OR $foundKws[] = $kw;
                             continue 2;
@@ -77,14 +73,9 @@ class Finder {
     function collect($data, $foundKws){
         if (! $this->sqlite->find(['vid' => $data['vid']])) {            
             $data = [
-                'vid' => $data['vid'],
-                'channel' => $data['video_channel'],
                 'user_id' => $data['user_id'],
-                'title' => $data['video_title'],
-                'subtitle' => $data['video_subtitle'],
-                'intro' => $data['video_intro'],
-                'status' => $data['status'],
-                'can_play' => $data['can_play'],
+                'udb' => $data['udb'],
+                'nickname' => $data['nickname'],
                 'keywords' => join(',', $foundKws),
             ];
             $this->sqlite->insert($data);
@@ -99,9 +90,13 @@ class Finder {
     }
     
     
-    function scan($lastId = 1, $maxId = 8871709){
+    //@todo 执行到某行时出错：Found id: 549762506740
+        //PHP Fatal error:  Call to a member function bindParam() on a non-object in /home/fangkunbiao/bizDataExaminer/hehe/Model.php on line 153
+    //以后再修
+    function scan($lastId = 9223372036854775807, $minId = 1){
         $limit = 1000;
-        while ($lastId < $maxId) {
+        while ($lastId > $minId) {
+            echo "lastId: {$lastId}\n";
             list($lastId, $total) = $this->req($lastId, $limit);
             $this->log('scan', "lastId: {$lastId}");
         }
@@ -117,7 +112,7 @@ class Finder {
     
     function del(){
         $d = $GLOBALS['sources'][$this->source]['d'];
-        $list = $this->sqlite->query("select * from video where channel != 'yingshivideo' ");
+        $list = $this->sqlite->query("select * from user ");
         foreach ($list as $v) {
             $ret = $this->http->post(ltredc($d), ['vid' => $vid], 55);
             $this->log('del', "vid: {$v['vid']}, ret: {$ret}");
@@ -126,10 +121,7 @@ class Finder {
     }
     
     function test(){
-        //var_dump($this->sqlite->query("SELECT COUNT(1) FROM video"));
-        //print_r($this->sqlite->query("select count(1),channel from video where keywords like :kws group by channel", ['kws' => '%杀神%']));
-        //print_r($this->sqlite->query("select * from video order by vid desc limit 50"));
-        print_r($this->sqlite->query("select * from video limit 10"));
+        print_r($this->sqlite->query("select * from user limit 10"));
     }
     
 }
@@ -158,16 +150,15 @@ switch ($func) {
 }
 
 if ($func) {    
-    $finder = new Finder('video', $batch, $param3);
+    $finder = new Finder('user', $batch, $param3);
     call_user_func_array([$finder, $func], $params);
 }
 
-//example: /usr/local/php/bin/php video-finder.php 20180528 scan 1 8903629 "hehe/kws20180712-1.txt"
-//example: /usr/local/php/bin/php video-finder.php 20180528 sql "select count(1),keywords from video where status != -9 and can_play=1 group by keywords"
-//example: /usr/local/php/bin/php video-finder.php 20180528 del
+//example: /usr/local/php/bin/php user-finder.php 20180528 scan 9223372036854775807 1 "hehe/kws20190124.txt"
+//example: /usr/local/php/bin/php user-finder.php 20180528 sql "select count(1),keywords from user group by keywords"
+//example: /usr/local/php/bin/php user-finder.php 20180528 del
 
 //导出到HTML的操作：
-//先执行: /usr/local/php/bin/php video-finder.php 20180528 sql "select *, 'http://cloud.v.duowan.com/index.php?r=public/play&vid='||vid as backurl, 'http://video.duowan.com/play/'||vid||'.html' as playurl from video where status != -9" > video.export.20180712-1.txt
+//先执行: /usr/local/php/bin/php user-finder.php 20180528 sql "select *, 'http://cloud.v.duowan.com/index.php?r=public/play&vid='||vid as backurl, 'http://video.duowan.com/play/'||vid||'.html' as userurl from user" > user.export.20190124-1.txt
 //在notepad++中用正则将链接替换成超链接标签
-//  http\:\/\/video\.duowan\.com\/play\/\d+\.html  ->  <a target="_blank" href="$0">$0</a>
-//  http\:\/\/cloud\.v\.duowan\.com\/index\.php\?r=public\/play&vid=\d+  ->  <a target="_blank" href="$0">$0</a>
+//  http\:\/\/user\.duowan\.com\/u\/\d+  ->  <a target="_blank" href="$0">$0</a>
