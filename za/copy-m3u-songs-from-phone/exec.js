@@ -14,7 +14,7 @@ client.on('ready', function(){
     var lines = fs.readFileSync("Favorites.m3u.txt", 'utf8');
     var src, dest;
     lines.split("\n").forEach(function(e, i){
-        src = '/sdcard/' + e.trim();
+        src = '/sdcard' + e.trim();
         dest = '/xlight-ftp-upload/' + path.basename(e);
         client.put(src, dest, function(err){
             console.log(err);
