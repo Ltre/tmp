@@ -6,3 +6,18 @@
 4、修改exec.php中的AFTP_***常量为第三步中的FTP具体连接。
 5、执行 php -c /d/InstalledApp/wamp/bin/php/php7.0.4/php.ini exec.php，会在本目录下创建子目录，格式为 songs+年月日。
 6、下载曲目完毕后，此时可以用USB连接耳机盒，将曲目等同拷贝到左右耳对应的目录中。
+
+
+如果以上过程出现PHP没有FTP扩展，那可以考虑以下步骤：
+
+
+1、进入Musicolet的Favorites列表，点击右上角的[...]上下文菜单按钮，选择"Export playlist"->"Export as .M3U file"。
+2、将m3u文件发送到PC，用notepad++等编辑器打开，用正则表达式删除首行的"$EXTM3U"和"#EXTINF"的所有行，仅保留歌曲文件路径的行。
+3、在PC架设好FTP服务，假定连接是172.16.14.111:21，用户名密码都是qqqq，用于上传的FTP路径是/xlight-ftp-upload
+4、将FTP连接信息填写到exec.js对应代码中
+5、将编辑好的m3u文件和本目录的exec.js拷贝到手机。
+6、手机安装Termux，在终端安装nodejs和nodejs的FTP模块
+        pkg install nodejs
+        npm install ftp
+7、执行： node exec.js
+8、下载曲目完毕后，此时可以用USB连接耳机盒，将曲目等同拷贝到左右耳对应的目录中。
