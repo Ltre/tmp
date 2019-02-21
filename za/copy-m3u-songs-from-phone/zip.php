@@ -10,7 +10,7 @@ $list = file("Favorites.m3u.txt");
 foreach ($list as $v) {
     $f = trim($v);
     if (empty($f)) continue;
-    $f = "/sdcard/{$f}";
+    $f = "/sdcard{$f}";
     $zip->addFile($f, basename($f));
     $msg = "added {$f} \n";
 }
