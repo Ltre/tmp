@@ -1,7 +1,7 @@
 const fs = require('fs');
 const ftpc = require('ftp');
 const path = require('path');
-const iconv = require('iconv-lite');
+
 
 var client = new ftpc();
 var connProperties = {
@@ -16,7 +16,6 @@ client.on('ready', function(){
     var src, dest;
     lines.split("\n").forEach(function(e, i){
         src = '/sdcard' + e.trim();
-        src = iconv.encode(src, 'GBK').toString();
         dest = '/xlight-ftp-upload/' + path.basename(e);
         client.put(src, dest, function(err){
             console.log(err);
