@@ -1,0 +1,8 @@
+从Musicolet导出Favorites列表到Gear iconx蓝牙耳机的步骤
+
+1、进入Musicolet的Favorites列表，点击右上角的[...]上下文菜单按钮，选择"Export playlist"->"Export as .M3U file"。
+2、将m3u文件发送到PC，用notepad++等编辑器打开，用正则表达式删除首行的"$EXTM3U"和"#EXTINF"的所有行，仅保留歌曲文件路径的行。
+3、在Android机安装本目录下的“wifi数据线_4.6.apk”，启动后，假定FTP连接是172.16.15.111:8000, 用户名和密码都是qqqq。
+4、修改exec.php中的AFTP_***常量为第三步中的FTP具体连接。
+5、执行 php -c /d/InstalledApp/wamp/bin/php/php7.0.4/php.ini exec.php，会在本目录下创建子目录，格式为 songs+年月日。
+6、下载曲目完毕后，此时可以用USB连接耳机盒，将曲目等同拷贝到左右耳对应的目录中。
