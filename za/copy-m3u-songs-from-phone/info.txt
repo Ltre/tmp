@@ -22,3 +22,8 @@
         npm install iconv-lite
 7、执行： node exec.js
 8、下载曲目完毕后，此时可以用USB连接耳机盒，将曲目等同拷贝到左右耳对应的目录中。
+
+
+最后手段
+
+如果还不行，就在手机执行zip.sh，然后把打包得到的bigsongs.zip上传到PC
