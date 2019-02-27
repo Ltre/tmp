@@ -1,0 +1,8 @@
+批量封：
+http://huya.cms.duowan.com/userban/MultiSet?uids=2354706609,2354706686,2354706787
+
+
+
+
+批量扫用户关键字：
+sudo /data/webapps/video.duowan.com/cli.php -ctest -aFuckWangjian
