@@ -1,5 +1,28 @@
 <?php
 
+
+/**
+ * 
+CREATE TABLE `mc_info` (
+  `music_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `mc_type_id` int(11) NOT NULL DEFAULT '0',
+  `cover_thumb` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cover_medium` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cover_large` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cover_hd` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` char(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `play_url` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `save_path` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `duration` int(11) NOT NULL DEFAULT '0',
+  `status` tinyint(4) NOT NULL DEFAULT '1',
+  `created` int(11) NOT NULL,
+  PRIMARY KEY (`music_id`),
+  KEY `idx_type` (`mc_type_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+ */
+
+
 include 'config.php';
 include 'Model.php';
 
@@ -19,7 +42,7 @@ class FuckDouyin {
             -H "X-Khronos: 1552123398" \
             -H "X-Gorgon: 03006cc00000dc9a2db3a76ab9c9eccb135c4fc5dff8f97fbab1" \
             -H "X-Pods: " \
-            "https://api.amemv.com/aweme/v1/music/list/?mc_id='.$mc_id.'&cursor=0&count=30&ts=1552123219&js_sdk_version=1.10.4&app_type=normal&manifest_version_code=530&_rticket=1552123219697&ac=wifi&device_id=48912932681&iid=65343929505&mcc_mnc=46000&os_version=8.0.0&channel=huawei&version_code=530&device_type=VTR-AL00&language=zh&resolution=1080*1920&openudid=6b1e80386b74f00c&update_version_code=5302&app_name=aweme&version_name=5.3.0&os_api=26&device_brand=HUAWEI&ssmix=a&device_platform=android&dpi=480&aid=1128&as=a115c87893752c35634388&cp=8f5ac25034398857e1OyWg&mas=01888c81175f386ffb492b1e8ac6d153c91c1ccc2ccc6cacccc64c" \
+            "https://api.amemv.com/aweme/v1/music/list/?mc_id='.$mc_id.'&cursor='.$cursor.'&count='.$count.'&ts=1552123219&js_sdk_version=1.10.4&app_type=normal&manifest_version_code=530&_rticket=1552123219697&ac=wifi&device_id=48912932681&iid=65343929505&mcc_mnc=46000&os_version=8.0.0&channel=huawei&version_code=530&device_type=VTR-AL00&language=zh&resolution=1080*1920&openudid=6b1e80386b74f00c&update_version_code=5302&app_name=aweme&version_name=5.3.0&os_api=26&device_brand=HUAWEI&ssmix=a&device_platform=android&dpi=480&aid=1128&as=a115c87893752c35634388&cp=8f5ac25034398857e1OyWg&mas=01888c81175f386ffb492b1e8ac6d153c91c1ccc2ccc6cacccc64c" \
             > shabidouyin.txt');
         $resp = file_get_contents('shabidouyin.txt');
 
@@ -74,6 +97,7 @@ class FuckDouyin {
     }
 
 
+    //@todo 貌似写不进去目录
     function downloadMusic($mid, $url){
         $typeMap = [
             'mpeg/mp3' => 'mp3',
@@ -83,13 +107,14 @@ class FuckDouyin {
         ];
         $h = get_headers($url, 1);
         $ext = $typeMap[$h['Content-Type']];
-        $path = "/path/to/music/{$mid}.{$ext}";
+        $path = "/tmp/pio_test/music/{$mid}.{$ext}";
         $c = file_get_contents($url);
         file_put_contents($path, $c);
         return $path;
     }
 
 
+    //@todo 貌似写不进去目录
     function downloadImg($mid, $level, $url){
                 $typeMap = [
             'image/jpeg' => 'jpg',
@@ -101,7 +126,7 @@ class FuckDouyin {
         ];
         $h = get_headers($url, 1);
         $ext = $typeMap[$h['Content-Type']];
-        $path = "/path/to/cover/{$mid}-{$level}.{$ext}";
+        $path = "/tmp/pio_test/cover/{$mid}-{$level}.{$ext}";
         return $path;
     }
 
@@ -119,3 +144,5 @@ class FuckDouyin {
 }
 
 (new FuckDouyin)->doFuck(84);
+
+

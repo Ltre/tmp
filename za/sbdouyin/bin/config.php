@@ -6,7 +6,7 @@ $GLOBALS = [
         'MYSQL_PORT'=>'3306',
         'MYSQL_USER'=>'ojiatest',
         'MYSQL_PASS'=>'ojia305',
-        'MYSQL_DB'=>'video_dw',
+        'MYSQL_DB'=>'pio_test',
         'MYSQL_CHARSET'=>'UTF8',
     ],
 ];
