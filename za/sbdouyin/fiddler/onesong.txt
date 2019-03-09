@@ -1,0 +1,28 @@
+GET /obj/13fc50006a06cf630475a HTTP/1.1
+User-Agent: stagefright/1.2 (Linux;Android 8.0.0)
+Host: p22-dy.bytecdn.cn
+Connection: Keep-Alive
+Accept-Encoding: gzip
+
+
+
+
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Fri, 08 Mar 2019 04:33:48 GMT
+Content-Type: audio/mpeg
+Content-Length: 928812
+Connection: keep-alive
+Age: 392531
+Bd-Request-Id: 164c915321651582026a353d898d1932
+Bd-Status: TCP_HIT
+Cache-Control: max-age=31536000
+Nw-Session-Id: 628f6e19-4f5d-4d4f-b421-e06ab0ab6091
+Nw-Session-Trace: 2019-03-03T23:31:37.726933012+08:00 36
+Via: http/1.1 cache29.hlimg (bdcache [cHs f ]), cache09.hlimg, http/1.1 ORI-CLOUD-GZ-MIX-11 (jcs [cHs f ]), http/1.1 WH-CT-1-MIX-48 (jcs [cRs f ])
+X-Response-Date: Sun, 03 Mar 2019 23:31:37 GMT
+X-Tt-Logid: 2019030323313701001301622426729
+X-Trace: 200;200-1551786354938-0-0-0-3-3;200-1552019628520-0-0-0-0-0
+
+
