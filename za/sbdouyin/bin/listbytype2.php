@@ -3,10 +3,11 @@
 include 'config.php';
 include 'Model.php';
 
-//初始化： mkdir /tmp/pio_test; mkdir /tmp/pio_test/music; mkdir /tmp/pio_test/cover; chmod -R 777 /tmp/pio_test; rm /tmp/pio_test/music/* -f; rm /tmp/pio_test/cover/* -f; rm /tmp/pio_test/log.log
+//初始化： mkdir /tmp/pio_test; mkdir /tmp/pio_test/music; mkdir /tmp/pio_test/cover; mkdir /tmp/pio_test/typecover; chmod -R 777 /tmp/pio_test; rm /tmp/pio_test/music/* -rf; rm /tmp/pio_test/cover/* -rf; rm /tmp/pio_test/typecover/* -rf; rm /tmp/pio_test/log.log -f
 //清理数据表： TRUNCATE mc_info; TRUNCATE mc_type; TRUNCATE mc_relate; 
 //更新程序： rm /home/web/pio/sbdouyin/* -f; cd /home/web/pio/sbdouyin #之后拖放一次本目录下的所有php文件
-//执行：  /usr/local/php/bin/php listbytype2.php
+//执行全部：  /usr/local/php/bin/php listbytype2.php
+//执行单个归类：  nohup /usr/local/php/bin/php listbytype2.php 865 >> 865.nohup &
 //仅在linux执行
 
 class LuDouyin {
@@ -15,8 +16,41 @@ class LuDouyin {
 
     var $debug = 0;
 
-    //入口
-    function doFuckTypes(){
+    //新版入口：可指定一个分类，为多路程序提供支持
+    function doFuckTypes($mc_id = 0){
+        $totalTypes = [];
+        do {
+            @list ($succ, $msg, $resp, $types, $hasMore, $cursor) 
+                = $this->getTypes($cursor);
+            $this->log("--> doFuckTypes: cursor={$cursor}");//debug
+            $this->log("result: succ={$succ}, msg={$msg}, types_count=".count($types).', hasMore= '.($hasMore?1:0).', new_cursor='.$cursor);//debug
+            $succ || $this->log("result is failure, resp={$resp}");//debug
+            if (! $succ) {
+                throw new Exception($msg);
+            }
+            foreach ($types as $t) array_push($totalTypes, $t);
+        } while ($hasMore);
+
+        if ($mc_id) {
+            foreach ($totalTypes as $type) {
+                if ($type['mc_id'] == $mc_id) {
+                    echo "@@@ mc_id={$mc_id}\n";//debug
+                    $this->saveType($type);
+                    $this->doFuckList($type['mc_id']);
+                }
+            }
+        } else {
+            foreach ($totalTypes as $type) {
+                echo "### mc_id={$type['mc_id']}\n";//debug
+                $this->saveType($type);
+                $this->doFuckList($type['mc_id']);
+            }
+        }
+    }
+
+
+    //旧版入口：单线循环每个归类（效率低）
+    function doFuckTypes_OLD(){
         do {
             @list ($succ, $msg, $resp, $types, $hasMore, $cursor) 
                 = $this->getTypes($cursor);
@@ -27,6 +61,7 @@ class LuDouyin {
                 throw new Exception($msg);
             }
             foreach ($types as $type) {
+                $this->saveType($type);
                 $this->doFuckList($type['mc_id']);
             }
         } while ($hasMore);
@@ -56,10 +91,49 @@ class LuDouyin {
         if (! isset($respData['mc_list']) || $respData['status_code'] != 0) {
             return [false, 'parse types error', $resp, [], false];
         }
-        $list = $respData['mc_list'];
         $hasMore = $respData['has_more'] == 1;
         $cursor = $respData['cursor'];
-        return [true, 'ok', $resp, $list, $hasMore, $cursor];
+        $types = $respData['mc_list'];
+        return [true, 'ok', $resp, $types, $hasMore, $cursor];
+    }
+
+
+    function saveType(array $type){
+        $typeT = $this->table('mc_type');
+        $path = $this->downloadTypeCover($type);
+        $data = [
+            'type_id' => $type['mc_id'],
+            'type_name' => $type['mc_name'],
+            'type_cover' => $path,
+        ];
+        if ($typeT->find($data)) {
+            $typeT->update(['type_id' => $type['mc_id']], $data);
+        } else {
+            $typeT->insert($data);
+        }
+    }
+
+
+    //下载分类的封面
+    function downloadTypeCover(array $type){
+        $coverUrl = $type['cover']['url_list'][0] ?: $type['aweme_cover']['url_list'][0];
+        $typeMap = [
+            'image/jpeg' => 'jpg',
+            'image/jpg' => 'jpg',
+            'image/png' => 'png',
+            'image/apng' => 'png',
+            'image/gif' => 'gif',
+            'image/webp' => 'webp',
+        ];
+        $h = get_headers($coverUrl, 1);
+        $ext = $typeMap[$h['Content-Type']];
+        $path = "typecover/{$type['mc_id']}.{$ext}";
+        $c = file_get_contents($coverUrl);
+        file_put_contents("{$this->pathPre}/{$path}", $c);
+        $this->log("typecover path: {$path}\n");
+        $this->log("typecover url: {$coverUrl}\n");
+        $this->log("save typecover to: {$this->pathPre}/{$path}");
+        return $path;
     }
 
 
@@ -126,8 +200,10 @@ class LuDouyin {
                 'created' => time(),
             ];
             if ($find) {
+                $this->log("update mc_info by mid={$v['mid']}");
                 $musicT->update(['mid' => $v['mid']], $data);
             } else {
+                $this->log("insert mc_info by mid={$v['mid']}");
                 $musicT->insert($data);
             }
 
@@ -144,7 +220,7 @@ class LuDouyin {
     }
 
 
-    //@todo 貌似写不进去目录
+    //保存音乐相对路径，方便迁移
     function downloadMusic($mid, $url){
         /* $typeMap = [
             'mpeg/mp3' => 'mp3',
@@ -155,16 +231,20 @@ class LuDouyin {
         $h = get_headers($url, 1);
         $ext = $typeMap[$h['Content-Type']]; */
         $ext = 'mp3';//链接实际返回document类型，故强制设置mp3
-        $path = "{$this->pathPre}/music/{$mid}.{$ext}";
+        $subdir = substr($mid, 0, 2);
+        $midGuard = sha1($mid);
+        $path = "music/{$subdir}/{$midGuard}.{$ext}";
+        @mkdir("{$this->pathPre}/music/{$subdir}");
         $c = file_get_contents($url);
-        file_put_contents($path, $c);
+        file_put_contents("{$this->pathPre}/{$path}", $c);
         $this->log("music path: {$path}\n");
         $this->log("music url: {$url}\n");
+        $this->log("save music to: {$this->pathPre}/{$path}");
         return $path;
     }
 
 
-    //@todo 貌似写不进去目录
+    //保存封面相对路径，方便迁移
     function downloadImg($mid, $level, $url){
         $typeMap = [
             'image/jpeg' => 'jpg',
@@ -176,9 +256,15 @@ class LuDouyin {
         ];
         $h = get_headers($url, 1);
         $ext = $typeMap[$h['Content-Type']];
-        $path = "{$this->pathPre}/cover/{$mid}-{$level}.{$ext}";
+        $subdir = substr($mid, 0, 2);
+        $midGuard = sha1($mid);
+        $path = "cover/{$subdir}/{$midGuard}-{$level}.{$ext}";
+        @mkdir("{$this->pathPre}/cover/{$subdir}");
+        $c = file_get_contents($url);
+        file_put_contents("{$this->pathPre}/{$path}", $c);
         $this->log("image path: {$path}\n");
         $this->log("image url: {$url}\n");
+        $this->log("save image to: {$this->pathPre}/{$path}");
         return $path;
     }
 
@@ -208,6 +294,7 @@ class LuDouyin {
 
 $l = new LuDouyin;
 $l->debug = 1;
-$l->doFuckTypes();
+@$mc_id = $_SERVER['argv'][1] ?: 0;
+$l->doFuckTypes($mc_id);
 
 

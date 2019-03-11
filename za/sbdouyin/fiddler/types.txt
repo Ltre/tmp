@@ -67,3 +67,51 @@ curl -A "com.ss.android.ugc.aweme/530 (Linux; U; Android 8.0.0; zh_CN_#Hans; VTR
 
 
 ==================================================================
+
+
+所有mc_id
+865
+866
+1
+6631448622997179150
+31
+860
+20
+87
+84
+6616178533779802884
+6616178774952119044
+18
+6601750711774644995
+9
+5
+4
+114
+90
+12
+
+
+
+nohup /usr/local/php/bin/php listbytype2.php 865 >> 865.nohup &
+nohup /usr/local/php/bin/php listbytype2.php 866 >> 866.nohup &
+nohup /usr/local/php/bin/php listbytype2.php 1 >> 1.nohup &
+nohup /usr/local/php/bin/php listbytype2.php 6631448622997179150 >> 6631448622997179150.nohup &
+nohup /usr/local/php/bin/php listbytype2.php 31 >> 31.nohup &
+nohup /usr/local/php/bin/php listbytype2.php 860 >> 860.nohup &
+nohup /usr/local/php/bin/php listbytype2.php 20 >> 20.nohup &
+nohup /usr/local/php/bin/php listbytype2.php 87 >> 87.nohup &
+nohup /usr/local/php/bin/php listbytype2.php 84 >> 84.nohup &
+nohup /usr/local/php/bin/php listbytype2.php 6616178533779802884 >> 6616178533779802884.nohup &
+nohup /usr/local/php/bin/php listbytype2.php 6616178774952119044 >> 6616178774952119044.nohup &
+nohup /usr/local/php/bin/php listbytype2.php 18 >> 18.nohup &
+nohup /usr/local/php/bin/php listbytype2.php 6601750711774644995 >> 6601750711774644995.nohup &
+nohup /usr/local/php/bin/php listbytype2.php 9 >> 9.nohup &
+nohup /usr/local/php/bin/php listbytype2.php 5 >> 5.nohup &
+nohup /usr/local/php/bin/php listbytype2.php 4 >> 4.nohup &
+nohup /usr/local/php/bin/php listbytype2.php 114 >> 114.nohup &
+nohup /usr/local/php/bin/php listbytype2.php 90 >> 90.nohup &
+nohup /usr/local/php/bin/php listbytype2.php 12 >> 12.nohup &
+
+
+
+麻痹，不让并行抓，会被拦截！
