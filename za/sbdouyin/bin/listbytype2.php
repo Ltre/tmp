@@ -1,34 +1,14 @@
 <?php
 
 
-/**
- * 
-CREATE TABLE `mc_info` (
-  `music_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `mc_type_id` int(11) NOT NULL DEFAULT '0',
-  `cover_thumb` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `cover_medium` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `cover_large` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `cover_hd` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `title` char(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `play_url` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `save_path` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `duration` int(11) NOT NULL DEFAULT '0',
-  `status` tinyint(4) NOT NULL DEFAULT '1',
-  `created` int(11) NOT NULL,
-  PRIMARY KEY (`music_id`),
-  KEY `idx_type` (`mc_type_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
- */
-
-
 include 'config.php';
 include 'Model.php';
 
 //      /usr/local/php/bin/php listbytype2.php
 
-class FuckDouyin {
+class LuDouyin {
+
+    var $pathPre = '/tmp/pio_test';
 
     function getListByType($mc_id, $cursor = 0, $count = 30){
         @unlink('shabidouyin.txt');
@@ -68,16 +48,17 @@ class FuckDouyin {
             if (! $succ) {
                 throw new Exception($msg);
             }
-            $this->save($list);
+            $this->save($list, $mc_id);
         } while ($hasMore);
     }
 
 
-    function save($list){
+    function save($list, $mc_id){
         $musicT = $this->table('mc_info');//@todo 新建一个库再跑
         foreach ($list as $v) {
-            $find = $musicT->find(['music_id' => $v['mid']]);
+            $find = $musicT->find(['mid' => $v['mid']]);
             $data = [
+                'mid' => $v['mid'],
                 'cover_thumb' => $this->downloadImg($v['mid'], 'thumb', $v['cover_thumb']['url_list'][0]),
                 'cover_medium' => $this->downloadImg($v['mid'], 'medium', $v['cover_medium']['url_list'][0]),
                 'cover_large' => $this->downloadImg($v['mid'], 'large', $v['cover_large']['url_list'][0]),
@@ -85,13 +66,23 @@ class FuckDouyin {
                 'title' => $v['title'],
                 'play_url' => $v['play_url']['url_list'][0],
                 'duration' => $v['duration'],
-                'save_path' => $this->downloadMusic($v['mid'], $v['play_url']),
+                'save_path' => $this->downloadMusic($v['mid'], $v['play_url']['url_list'][0]),
                 'created' => time(),
             ];
             if ($find) {
-                $musicT->update(['music_id' => $v['mid']], $data);
+                $musicT->update(['mid' => $v['mid']], $data);
             } else {
                 $musicT->insert($data);
+            }
+
+            $relate = [
+                'type_id' => $mc_id,
+                'mid' => $v['mid'],
+            ];
+            $relateT = $this->table('mc_relate');
+            $relateData = $relateT->find($relate);
+            if (! $relateT->find($relate)) {
+                $relateT->insert($relate);
             }
         }
     }
@@ -99,24 +90,27 @@ class FuckDouyin {
 
     //@todo 貌似写不进去目录
     function downloadMusic($mid, $url){
-        $typeMap = [
+        /* $typeMap = [
             'mpeg/mp3' => 'mp3',
             // '' => 'aac',
             // '' => 'ogg',
             // '' => 'm4a',
         ];
         $h = get_headers($url, 1);
-        $ext = $typeMap[$h['Content-Type']];
-        $path = "/tmp/pio_test/music/{$mid}.{$ext}";
+        $ext = $typeMap[$h['Content-Type']]; */
+        $ext = 'mp3';//链接实际返回document类型，故强制设置mp3
+        $path = "{$this->pathPre}/music/{$mid}.{$ext}";
         $c = file_get_contents($url);
         file_put_contents($path, $c);
+        echo "music path: {$path}\n";//debug
+        echo "music url: {$url}\n";//debug
         return $path;
     }
 
 
     //@todo 貌似写不进去目录
     function downloadImg($mid, $level, $url){
-                $typeMap = [
+        $typeMap = [
             'image/jpeg' => 'jpg',
             'image/jpg' => 'jpg',
             'image/png' => 'png',
@@ -126,7 +120,9 @@ class FuckDouyin {
         ];
         $h = get_headers($url, 1);
         $ext = $typeMap[$h['Content-Type']];
-        $path = "/tmp/pio_test/cover/{$mid}-{$level}.{$ext}";
+        $path = "{$this->pathPre}/cover/{$mid}-{$level}.{$ext}";
+        echo "image path: {$path}\n";//debug
+        echo "image url: {$url}\n";//debug
         return $path;
     }
 
@@ -141,8 +137,13 @@ class FuckDouyin {
         return $m;
     }
 
+    function log($str){
+        $now = date('Y-m-d H:i:s.').preg_replace('/\d+\./', '', microtime(1));
+        file_put_contents("[{$now}] {$this->pathPre}/log.log", FILE_APPEND);
+    }
+
 }
 
-(new FuckDouyin)->doFuck(84);
+(new LuDouyin)->doFuck(84);
 
 
