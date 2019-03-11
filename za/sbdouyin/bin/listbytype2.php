@@ -1,14 +1,67 @@
 <?php
 
-
 include 'config.php';
 include 'Model.php';
 
-//      /usr/local/php/bin/php listbytype2.php
+//初始化： mkdir /tmp/pio_test; mkdir /tmp/pio_test/music; mkdir /tmp/pio_test/cover; chmod -R 777 /tmp/pio_test; rm /tmp/pio_test/music/* -f; rm /tmp/pio_test/cover/* -f; rm /tmp/pio_test/log.log
+//清理数据表： TRUNCATE mc_info; TRUNCATE mc_type; TRUNCATE mc_relate; 
+//更新程序： rm /home/web/pio/sbdouyin/* -f; cd /home/web/pio/sbdouyin #之后拖放一次本目录下的所有php文件
+//执行：  /usr/local/php/bin/php listbytype2.php
+//仅在linux执行
 
 class LuDouyin {
 
     var $pathPre = '/tmp/pio_test';
+
+    var $debug = 0;
+
+    //入口
+    function doFuckTypes(){
+        do {
+            @list ($succ, $msg, $resp, $types, $hasMore, $cursor) 
+                = $this->getTypes($cursor);
+            $this->log("--> doFuckTypes: cursor={$cursor}");//debug
+            $this->log("result: succ={$succ}, msg={$msg}, types_count=".count($types).', hasMore= '.($hasMore?1:0).', new_cursor='.$cursor);//debug
+            $succ || $this->log("result is failure, resp={$resp}");//debug
+            if (! $succ) {
+                throw new Exception($msg);
+            }
+            foreach ($types as $type) {
+                $this->doFuckList($type['mc_id']);
+            }
+        } while ($hasMore);
+    }
+
+
+    function getTypes($cursor = 0){
+        @unlink('sbtypes.txt');
+        shell_exec('curl -A "com.ss.android.ugc.aweme/530 (Linux; U; Android 8.0.0; zh_CN_#Hans; VTR-AL00; Build/HUAWEIVTR-AL00; Cronet/58.0.2991.0)" \
+            -b "install_id=65343929505; ttreq=1$d7a1dd3c78fdfc6c0a392d01870aad0a90aad819; odin_tt=e08ae73c9ba20641a66a9b2fb888ea7a0672f38beecc0efe5e2f6205609428b7a5796455e568ea6c309147478477d9d7; sid_guard=0cf354f1237af5f7104349f9c0c516bc%7C1551865956%7C5184000%7CSun%2C+05-May-2019+09%3A52%3A36+GMT; uid_tt=4024e1833ba336fbf3c5c5f154356f61; sid_tt=0cf354f1237af5f7104349f9c0c516bc; sessionid=0cf354f1237af5f7104349f9c0c516bc; qh[360]=1" \
+            -H "Host: api.amemv.com" \
+            -H "Connection: keep-alive" \
+            -H "X-SS-REQ-TICKET: 1552019091946" \
+            -H "X-Tt-Token: 000cf354f1237af5f7104349f9c0c516bc935cfc3e394b34009e4ac65998088402b276f5eaa0fa2e9377e531e600bc02f44b" \
+            -H "sdk-version: 1" \
+            -H "X-Khronos: 1552019091" \
+            -H "X-Gorgon: 030039908000263c8b5fc3e8db88ef6a6af0198d89d313a1ddc6" \
+            -H "X-Pods: " \
+            "https://api.amemv.com/aweme/v1/music/collection/?cursor='.$cursor.'&count=1024&ts=1552019092&js_sdk_version=1.10.4&app_type=normal&manifest_version_code=530&_rticket=1552019091954&ac=wifi&device_id=48912932681&iid=65343929505&mcc_mnc=46000&os_version=8.0.0&channel=huawei&version_code=530&device_type=VTR-AL00&language=zh&resolution=1080*1920&openudid=6b1e80386b74f00c&update_version_code=5302&app_name=aweme&version_name=5.3.0&os_api=26&device_brand=HUAWEI&ssmix=a&device_platform=android&dpi=480&aid=1128&as=a105cea864098c0e114166&cp=ec98c6584d1a8fefe1KySg&mas=01a2f1c4200aca73c3586e384cd0639b4d6c6c8c2c8c8ca60cc61c" \
+        > sbtypes.txt');
+        $resp = file_get_contents('sbtypes.txt');
+
+        if (false === $resp || empty($resp)) {
+            return [false, 'req types error', '', [], false];
+        }
+        $respData = json_decode($resp, 1);
+        if (! isset($respData['mc_list']) || $respData['status_code'] != 0) {
+            return [false, 'parse types error', $resp, [], false];
+        }
+        $list = $respData['mc_list'];
+        $hasMore = $respData['has_more'] == 1;
+        $cursor = $respData['cursor'];
+        return [true, 'ok', $resp, $list, $hasMore, $cursor];
+    }
+
 
     function getListByType($mc_id, $cursor = 0, $count = 30){
         @unlink('shabidouyin.txt');
@@ -41,10 +94,13 @@ class LuDouyin {
 
 
 
-    function doFuck($mc_id, $cursor = 0){
+    function doFuckList($mc_id, $cursor = 0){
         do {
-            list ($succ, $msg, $resp, $list, $hasMore, $cursor) 
+            @list ($succ, $msg, $resp, $list, $hasMore, $cursor) 
                 = $this->getListByType($mc_id, $cursor, $hasMore);
+            $this->log("--> getListByType: mc_id={$mc_id}, cursor={$cursor}");//debug
+            $this->log("result: succ={$succ}, msg={$msg}, list_count=".count($list).', hasMore= '.($hasMore?1:0).', new_cursor='.$cursor);//debug
+            $succ || $this->log("result is failure, resp={$resp}");//debug
             if (! $succ) {
                 throw new Exception($msg);
             }
@@ -102,8 +158,8 @@ class LuDouyin {
         $path = "{$this->pathPre}/music/{$mid}.{$ext}";
         $c = file_get_contents($url);
         file_put_contents($path, $c);
-        echo "music path: {$path}\n";//debug
-        echo "music url: {$url}\n";//debug
+        $this->log("music path: {$path}\n");
+        $this->log("music url: {$url}\n");
         return $path;
     }
 
@@ -121,8 +177,8 @@ class LuDouyin {
         $h = get_headers($url, 1);
         $ext = $typeMap[$h['Content-Type']];
         $path = "{$this->pathPre}/cover/{$mid}-{$level}.{$ext}";
-        echo "image path: {$path}\n";//debug
-        echo "image url: {$url}\n";//debug
+        $this->log("image path: {$path}\n");
+        $this->log("image url: {$url}\n");
         return $path;
     }
 
@@ -139,11 +195,19 @@ class LuDouyin {
 
     function log($str){
         $now = date('Y-m-d H:i:s.').preg_replace('/\d+\./', '', microtime(1));
-        file_put_contents("[{$now}] {$this->pathPre}/log.log", FILE_APPEND);
+        $str = "[{$now}] {$str}\n";
+        if ($this->debug) echo $str;
+        file_put_contents("{$this->pathPre}/log.log", $str, FILE_APPEND);
     }
+
+
+
 
 }
 
-(new LuDouyin)->doFuck(84);
+
+$l = new LuDouyin;
+$l->debug = 1;
+$l->doFuckTypes();
 
 
