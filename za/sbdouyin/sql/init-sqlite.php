@@ -6,7 +6,7 @@ include 'SQLiteModel.php';
 
 $m = new SQLiteModel("{$GLOBALS['sqlite']['dbpath']}/mc.sqlite");
 
-var_dump($m->query("CREATE TABLE if not exists mc_info (
+$m->query("CREATE TABLE if not exists mc_info (
   mid varchar(128) primary key,
   cover_thumb varchar(255),
   cover_medium varchar(255),
@@ -18,16 +18,16 @@ var_dump($m->query("CREATE TABLE if not exists mc_info (
   duration int(11) ,
   status tinyint(4) ,
   created bigint
-)"));
+)");
 
-var_dump($m->query("CREATE TABLE if not exists mc_relate (
+$m->query("CREATE TABLE if not exists mc_relate (
   relate_id bigint primary key,
   mid varchar(128),
   type_id varchar(128)
-)"));
+)");
 
-var_dump($m->query("CREATE TABLE if not exists mc_type (
+$m->query("CREATE TABLE if not exists mc_type (
   type_id varchar(128) primary key,
   type_name varchar(64),
   type_cover varchar(255)
-)"));
+)");
