@@ -9,4 +9,8 @@ $GLOBALS = [
         'MYSQL_DB'=>'pio_test',
         'MYSQL_CHARSET'=>'UTF8',
     ],
+    'sqlite' => [
+        'dbpath' => 'sqlitedata',
+    ],
+    'driver' => 'mysql',//sqlite, mysql
 ];

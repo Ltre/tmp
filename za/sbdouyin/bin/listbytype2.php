@@ -2,6 +2,7 @@
 
 include 'config.php';
 include 'Model.php';
+include 'SQLiteModel.php';
 
 //初始化： mkdir /tmp/pio_test; mkdir /tmp/pio_test/music; mkdir /tmp/pio_test/cover; mkdir /tmp/pio_test/typecover; chmod -R 777 /tmp/pio_test; rm /tmp/pio_test/music/* -rf; rm /tmp/pio_test/cover/* -rf; rm /tmp/pio_test/typecover/* -rf; rm /tmp/pio_test/log.log -f
 //清理数据表： TRUNCATE mc_info; TRUNCATE mc_type; TRUNCATE mc_relate; 
@@ -15,6 +16,8 @@ class LuDouyin {
     var $pathPre = '/tmp/pio_test';
 
     var $debug = 0;
+
+    var $sqlite;
 
     //新版入口：可指定一个分类，为多路程序提供支持
     function doFuckTypes($mc_id = 0){
@@ -274,7 +277,13 @@ class LuDouyin {
         if (isset($objs[$table]) && $force === false) {
             return $objs[$table];
         }
-        $m = new Model($table, 'mysql_dev');
+
+        if ($GLOBALS['driver'] == 'mysql') {
+            $m = new Model($table, 'mysql_dev');
+        } else {
+            $m = new SQLiteModel("{$GLOBALS['sqlite']['dbpath']}/{$table}.sqlite", $table);
+        }
+
         $objs[$table] = $m;
         return $m;
     }
