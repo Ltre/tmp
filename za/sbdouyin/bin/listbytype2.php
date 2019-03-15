@@ -109,7 +109,7 @@ class LuDouyin {
             'type_name' => $type['mc_name'],
             'type_cover' => $path,
         ];
-        if ($typeT->find($data)) {
+        if ($typeT->find(['type_id' => $type['mc_id']])) {
             $typeT->update(['type_id' => $type['mc_id']], $data);
         } else {
             $typeT->insert($data);
