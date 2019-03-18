@@ -5,7 +5,7 @@ if (! isset($_FILES['f'])) {
 $f = $_FILES['f'];
 if (is_uploaded_file($f['tmp_name'])) {
     move_uploaded_file($f['tmp_name'], 'ludouyin.zip');
-        exit('done');
+    exit('done');
 } else {
     die('wtf');
 }
