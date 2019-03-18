@@ -17,7 +17,7 @@ E54J3BZ5Qp
 
 线上部署：
 sudo svn co https://github.com/Ltre/tmp/trunk/za/sbdouyin/bin /data1/webapps/mcstatic.duowan.com/bin
-//初始化资源目录： mkdir /data1/webapps/mcstatic.duowan.com/music; mkdir /data1/webapps/mcstatic.duowan.com/cover; mkdir /data1/webapps/mcstatic.duowan.com/typecover; rm /data1/webapps/mcstatic.duowan.com/log.log -f
+//初始化资源目录： sudo mkdir /data1/webapps/mcstatic.duowan.com/audio; sudo mkdir /data1/webapps/mcstatic.duowan.com/cover; sudo mkdir /data1/webapps/mcstatic.duowan.com/typecover; sudo rm /data1/webapps/mcstatic.duowan.com/log.log -f
 //清理数据表： TRUNCATE mc_info; TRUNCATE mc_type; TRUNCATE mc_relate; 
 //更新程序： svn up
 //执行全部： /usr/local/php/bin/php listbytype2.php
