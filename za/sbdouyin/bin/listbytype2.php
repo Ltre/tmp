@@ -304,7 +304,7 @@ class LuDouyin {
 
 
 $l = new LuDouyin;
-$l->debug = 1;
+$l->debug = $GLOBALS['debug'] ?: 0;
 @$mc_id = $_SERVER['argv'][1] ?: 0;
 $l->doFuckTypes($mc_id);
 
