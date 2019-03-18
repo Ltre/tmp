@@ -2,7 +2,7 @@
 <?php
 
 include 'config.php';
-include 'SQLiteModel.php';
+include 'Model.php';
 
 $m = new Model('', 'mysql_prod');
 
