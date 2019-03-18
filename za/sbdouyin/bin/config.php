@@ -21,4 +21,5 @@ $GLOBALS = [
         'dbpath' => 'sqlitedata',
     ],
     'driver' => 'mysql_prod',//sqlite, mysql_dev, mysql_prod
+    'resource' => '/data1/webapps/mcstatic.duowan.com',// /tmp/pio_test
 ];
