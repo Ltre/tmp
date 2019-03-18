@@ -5,3 +5,11 @@ CREATE TABLE `mc_type` (
   PRIMARY KEY (`type_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+
+sqlite:
+
+CREATE TABLE if not exists mc_type (
+  type_id varchar(128) primary key,
+  type_name varchar(64),
+  type_cover varchar(255)
+);

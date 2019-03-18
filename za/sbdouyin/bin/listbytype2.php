@@ -103,13 +103,14 @@ class LuDouyin {
 
     function saveType(array $type){
         $typeT = $this->table('mc_type');
-        $path = $this->downloadTypeCover($type);
+        $find = $typeT->find(['type_id' => $type['mc_id']]);
+        $path = $find ? $find['type_cover'] : $this->downloadTypeCover($type);
         $data = [
             'type_id' => $type['mc_id'],
             'type_name' => $type['mc_name'],
             'type_cover' => $path,
         ];
-        if ($typeT->find(['type_id' => $type['mc_id']])) {
+        if ($find) {
             $typeT->update(['type_id' => $type['mc_id']], $data);
         } else {
             $typeT->insert($data);
@@ -192,14 +193,14 @@ class LuDouyin {
             $find = $musicT->find(['mid' => $v['mid']]);
             $data = [
                 'mid' => $v['mid'],
-                'cover_thumb' => $this->downloadImg($v['mid'], 'thumb', $v['cover_thumb']['url_list'][0]),
-                'cover_medium' => $this->downloadImg($v['mid'], 'medium', $v['cover_medium']['url_list'][0]),
-                'cover_large' => $this->downloadImg($v['mid'], 'large', $v['cover_large']['url_list'][0]),
-                'cover_hd' => $this->downloadImg($v['mid'], 'hd', $v['cover_hd']['url_list'][0]),
+                'cover_thumb' => $find ? $find['cover_thumb'] : $this->downloadImg($v['mid'], 'thumb', $v['cover_thumb']['url_list'][0]),
+                'cover_medium' => $find ? $find['cover_medium'] : $this->downloadImg($v['mid'], 'medium', $v['cover_medium']['url_list'][0]),
+                'cover_large' => $find ? $find['cover_large'] : $this->downloadImg($v['mid'], 'large', $v['cover_large']['url_list'][0]),
+                'cover_hd' => $find ? $find['cover_hd'] : $this->downloadImg($v['mid'], 'hd', $v['cover_hd']['url_list'][0]),
                 'title' => $v['title'],
                 'play_url' => $v['play_url']['url_list'][0],
                 'duration' => $v['duration'],
-                'save_path' => $this->downloadMusic($v['mid'], $v['play_url']['url_list'][0]),
+                'save_path' => $find ? $find['save_path'] : $this->downloadMusic($v['mid'], $v['play_url']['url_list'][0]),
                 'created' => time(),
             ];
             if ($find) {
@@ -278,10 +279,10 @@ class LuDouyin {
             return $objs[$table];
         }
 
-        if ($GLOBALS['driver'] == 'mysql') {
-            $m = new Model($table, 'mysql_dev');
-        } else {
+        if ($GLOBALS['driver'] == 'sqlite') {
             $m = new SQLiteModel("{$GLOBALS['sqlite']['dbpath']}/{$table}.sqlite", $table);
+        } else {
+            $m = new Model($table, $GLOBALS['driver']);
         }
 
         $objs[$table] = $m;
@@ -294,9 +295,6 @@ class LuDouyin {
         if ($this->debug) echo $str;
         file_put_contents("{$this->pathPre}/log.log", $str, FILE_APPEND);
     }
-
-
-
 
 }
 

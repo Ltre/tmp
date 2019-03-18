@@ -8,3 +8,13 @@ CREATE TABLE `mc_relate` (
   KEY `mid` (`mid`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='音频信息与归类关联表';
 
+
+
+sqlite:
+
+CREATE TABLE if not exists mc_relate (
+  relate_id bigint primary key,
+  mid varchar(128),
+  type_id varchar(128),
+);
+

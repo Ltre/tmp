@@ -13,3 +13,24 @@ CREATE TABLE `mc_info` (
   PRIMARY KEY (`mid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+
+
+
+
+
+sqlite:
+
+CREATE TABLE if not exists mc_info (
+  mid varchar(128) primary key,
+  cover_thumb varchar(255),
+  cover_medium varchar(255),
+  cover_large varchar(255),
+  cover_hd varchar(255),
+  title char(64) ,
+  play_url varchar(255),
+  save_path varchar(255) ,
+  duration int(11) ,
+  status tinyint(4) ,
+  created bigint
+);
+
