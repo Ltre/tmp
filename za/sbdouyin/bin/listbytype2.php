@@ -4,7 +4,7 @@ include 'config.php';
 include 'Model.php';
 include 'SQLiteModel.php';
 
-//初始化： mkdir /tmp/pio_test; mkdir /tmp/pio_test/music; mkdir /tmp/pio_test/cover; mkdir /tmp/pio_test/typecover; chmod -R 777 /tmp/pio_test; rm /tmp/pio_test/music/* -rf; rm /tmp/pio_test/cover/* -rf; rm /tmp/pio_test/typecover/* -rf; rm /tmp/pio_test/log.log -f
+//初始化： mkdir /tmp/pio_test; mkdir /tmp/pio_test/audio; mkdir /tmp/pio_test/cover; mkdir /tmp/pio_test/typecover; chmod -R 777 /tmp/pio_test; rm /tmp/pio_test/audio/* -rf; rm /tmp/pio_test/cover/* -rf; rm /tmp/pio_test/typecover/* -rf; rm /tmp/pio_test/log.log -f
 //清理数据表： TRUNCATE mc_info; TRUNCATE mc_type; TRUNCATE mc_relate; 
 //更新程序： rm /home/web/pio/sbdouyin/* -f; cd /home/web/pio/sbdouyin #之后拖放一次本目录下的所有php文件
 //执行全部：  /usr/local/php/bin/php listbytype2.php
@@ -241,8 +241,8 @@ class LuDouyin {
         $ext = 'mp3';//链接实际返回document类型，故强制设置mp3
         $subdir = substr($mid, 0, 2);
         $midGuard = sha1($mid);
-        $path = "music/{$subdir}/{$midGuard}.{$ext}";
-        @mkdir("{$this->pathPre}/music/{$subdir}");
+        $path = "audio/{$subdir}/{$midGuard}.{$ext}";
+        @mkdir("{$this->pathPre}/audio/{$subdir}");
         $c = file_get_contents($url);
         file_put_contents("{$this->pathPre}/{$path}", $c);
         $this->log("music path: {$path}\n");
