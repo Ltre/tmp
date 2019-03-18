@@ -1,6 +1,7 @@
 <?php
 
 $GLOBALS = [
+    'debug' => 1,
     'mysql_dev' => [
         'MYSQL_HOST'=>'61.160.36.225',
         'MYSQL_PORT'=>'3306',

@@ -13,11 +13,15 @@ include 'SQLiteModel.php';
 
 class LuDouyin {
 
-    var $pathPre = '/tmp/pio_test';
+    var $pathPre;
 
     var $debug = 0;
 
     var $sqlite;
+
+    function __construct(){
+        $this->pathPre = $GLOBALS['resource'] ?: '/tmp/pio_test';
+    }
 
     //新版入口：可指定一个分类，为多路程序提供支持
     function doFuckTypes($mc_id = 0){

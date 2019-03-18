@@ -12,3 +12,5 @@ E54J3BZ5Qp
 
 10.21.43.42:6304  (主写)
 58.215.169.34:6305 (主读)
+
+sudo svn co https://github.com/Ltre/tmp/trunk/za/sbdouyin/bin /data1/webapps/mcstatic.duowan.com/bin
