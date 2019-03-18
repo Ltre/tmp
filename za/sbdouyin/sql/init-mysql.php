@@ -4,7 +4,7 @@
 include 'config.php';
 include 'SQLiteModel.php';
 
-$m = new Model();
+$m = new Model('', 'mysql_prod');
 
 $m->query("CREATE TABLE `mc_info` (
   `mid` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
