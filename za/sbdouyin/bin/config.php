@@ -15,7 +15,7 @@ $GLOBALS = [
         'MYSQL_PORT'=>'6304',
         'MYSQL_USER'=>'douyin_media_rw',
         'MYSQL_PASS'=>'E54J3BZ5Qp',
-        'MYSQL_DB'=>'dou_yin',
+        'MYSQL_DB'=>'douyin_media',
         'MYSQL_CHARSET'=>'UTF8',
     ],
     'sqlite' => [
