@@ -23,3 +23,7 @@ sudo svn co https://github.com/Ltre/tmp/trunk/za/sbdouyin/bin /data1/webapps/mcs
 //执行全部： /usr/local/php/bin/php listbytype2.php
 //执行单个归类： nohup /usr/local/php/bin/php listbytype2.php 865 >> 865.nohup &
 //仅在linux执行
+
+
+文件同步处理：
+所有变动以 14.17.108.113 为主，手动用rsync、wget等方式同步到114机器
