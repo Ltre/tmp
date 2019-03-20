@@ -13,7 +13,11 @@ E54J3BZ5Qp
 10.21.43.42:6304  (主写)
 58.215.169.34:6305 (主读)
 
+业务：
 mysql -udouyin_media_rw -P6304 -h10.21.43.42 -pE54J3BZ5Qp douyin_media
+
+管理：
+mysql -udouyin_admin -P6304 -h10.21.43.42 -p69w0ZxIp douyin_media -A
 
 线上部署：
 sudo svn co https://github.com/Ltre/tmp/trunk/za/sbdouyin/bin /data1/webapps/mcstatic.duowan.com/bin
