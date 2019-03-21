@@ -48,6 +48,6 @@ $types = $i->types();
 var_dump($types);
 file_put_contents("output-types.json", json_encode($types));
 foreach ($types as $type) {
-    $songs = $i->listByType($type['mc_id']);
-    file_put_contents("output-songs-{$type['mc_id']}.json", json_encode($songs));
+    $songs = $i->listByType($type['type_id']);
+    file_put_contents("output-songs-{$type['type_id']}.json", json_encode($songs));
 }
