@@ -26,25 +26,26 @@ class Interfacez {
     }
 
     function listByType($mc_id){
-        $list = table('mc_relate')->select(['mc_id' => $mc_id], '*', '', [$p, $limit, 10]) ?: [];
+        $list = $this->table('mc_relate')->select(['mc_id' => $mc_id], '*', '', [$p, $limit, 10]) ?: [];
         $rsList = [];
         foreach ($list as $v) {
-            $rsList[] = table('mc_info')->find(['mid' => $v['mid']]);
+            $rsList[] = $this->table('mc_info')->find(['mid' => $v['mid']]);
         }
         return [
             'list' => $rsList,
-            'page' => table('mc_relate')->page,
+            'page' => $this->table('mc_relate')->page,
         ];
     }
 
     function types(){
-        return table('mc_type')->select();
+        return $this->table('mc_type')->select();
     }
 
 }
 
 $i = new Interfacez;
 $types = $i->types();
+var_dump($types);
 file_put_contents("output-types.json", json_encode($types));
 foreach ($types as $type) {
     $songs = $i->listByType($type['mc_id']);
