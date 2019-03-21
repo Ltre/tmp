@@ -30,7 +30,15 @@ class Interfacez {
         $list = $this->table('mc_relate')->select(['type_id' => $type_id], '*', '', [$p, $limit, 10]) ?: [];
         $rsList = [];
         foreach ($list as $v) {
-            $rsList[] = $this->table('mc_info')->find(['mid' => $v['mid']]);
+            $tmp = $this->table('mc_info')->find(['mid' => $v['mid']]);
+            $tmp['cover_thumb'] = "//mcstatic.duowan.com/{$tmp['cover_thumb']}";
+            $tmp['cover_medium'] = "//mcstatic.duowan.com/{$tmp['cover_medium']}";
+            $tmp['cover_large'] = "//mcstatic.duowan.com/{$tmp['cover_large']}";
+            $tmp['cover_hd'] = "//mcstatic.duowan.com/{$tmp['cover_hd']}";
+            $tmp['save_path'] = "//mcstatic.duowan.com/{$tmp['save_path']}";
+            $tmp['duration'] = (int) $tmp['duration'];
+            $tmp['created'] = (int) $tmp['created'];
+            $rsList[] = $tmp;
         }
         return [
             'list' => $rsList,
