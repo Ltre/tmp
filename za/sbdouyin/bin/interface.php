@@ -1,6 +1,7 @@
 <?php
 
 include 'config.php';
+include 'lib.php';
 include 'Model.php';
 include 'SQLiteModel.php';
 
@@ -25,8 +26,8 @@ class Interfacez {
         return $m;
     }
 
-    function listByType($mc_id){
-        $list = $this->table('mc_relate')->select(['mc_id' => $mc_id], '*', '', [$p, $limit, 10]) ?: [];
+    function listByType($type_id, $p = 1, $limit = 100){
+        $list = $this->table('mc_relate')->select(['type_id' => $type_id], '*', '', [$p, $limit, 10]) ?: [];
         $rsList = [];
         foreach ($list as $v) {
             $rsList[] = $this->table('mc_info')->find(['mid' => $v['mid']]);
@@ -44,10 +45,16 @@ class Interfacez {
 }
 
 $i = new Interfacez;
-$types = $i->types();
-var_dump($types);
-file_put_contents("output-types.json", json_encode($types));
-foreach ($types as $type) {
-    $songs = $i->listByType($type['type_id']);
-    file_put_contents("output-songs-{$type['type_id']}.json", json_encode($songs));
+
+switch (arg('a')) {
+    case 'types':
+        $types = $i->types();
+        // file_put_contents("output-types.json", json_encode($types));
+        exit(json_encode($types));
+    case 'songs':
+        $songs = $i->listByType($type['type_id'], arg('p', 1), arg('limit', 100));
+        // file_put_contents("output-songs-{$type['type_id']}.json", json_encode($songs));
+        exit(json_encode($songs));
+    default:
+        die('wtf');
 }

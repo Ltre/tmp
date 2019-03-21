@@ -1,5 +1,17 @@
 <?php
 
+@$GLOBALS['request_args'] = $_GET + $_POST;
+function arg($name = null, $default = null, $callback_funcname = null) {
+    if($name){
+        if(!isset($GLOBALS['request_args'][$name]))return $default;
+        $arg = $GLOBALS['request_args'][$name];
+    }else{
+        $arg = $GLOBALS['request_args'];
+    }
+    if($callback_funcname)array_walk_recursive($arg, $callback_funcname);
+    return $arg;
+}
+
 function curlGet($url, $header="", $ssl_verify = false,  $timeout=20) {
     $header = empty($header) ? $this->defaultHeader() : $header;
     $ch = curl_init();
