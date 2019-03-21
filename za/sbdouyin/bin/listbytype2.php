@@ -76,7 +76,7 @@ class LuDouyin {
 
 
     function getTypes($cursor = 0){
-        @unlink('sbtypes.txt');
+        @unlink('dytypes.txt');
         shell_exec('curl -A "com.ss.android.ugc.aweme/530 (Linux; U; Android 8.0.0; zh_CN_#Hans; VTR-AL00; Build/HUAWEIVTR-AL00; Cronet/58.0.2991.0)" \
             -b "install_id=65343929505; ttreq=1$d7a1dd3c78fdfc6c0a392d01870aad0a90aad819; odin_tt=e08ae73c9ba20641a66a9b2fb888ea7a0672f38beecc0efe5e2f6205609428b7a5796455e568ea6c309147478477d9d7; sid_guard=0cf354f1237af5f7104349f9c0c516bc%7C1551865956%7C5184000%7CSun%2C+05-May-2019+09%3A52%3A36+GMT; uid_tt=4024e1833ba336fbf3c5c5f154356f61; sid_tt=0cf354f1237af5f7104349f9c0c516bc; sessionid=0cf354f1237af5f7104349f9c0c516bc; qh[360]=1" \
             -H "Host: api.amemv.com" \
@@ -88,8 +88,8 @@ class LuDouyin {
             -H "X-Gorgon: 030039908000263c8b5fc3e8db88ef6a6af0198d89d313a1ddc6" \
             -H "X-Pods: " \
             "https://api.amemv.com/aweme/v1/music/collection/?cursor='.$cursor.'&count=1024&ts=1552019092&js_sdk_version=1.10.4&app_type=normal&manifest_version_code=530&_rticket=1552019091954&ac=wifi&device_id=48912932681&iid=65343929505&mcc_mnc=46000&os_version=8.0.0&channel=huawei&version_code=530&device_type=VTR-AL00&language=zh&resolution=1080*1920&openudid=6b1e80386b74f00c&update_version_code=5302&app_name=aweme&version_name=5.3.0&os_api=26&device_brand=HUAWEI&ssmix=a&device_platform=android&dpi=480&aid=1128&as=a105cea864098c0e114166&cp=ec98c6584d1a8fefe1KySg&mas=01a2f1c4200aca73c3586e384cd0639b4d6c6c8c2c8c8ca60cc61c" \
-        > sbtypes.txt');
-        $resp = file_get_contents('sbtypes.txt');
+        > dytypes.txt');
+        $resp = file_get_contents('dytypes.txt');
 
         if (false === $resp || empty($resp)) {
             return [false, 'req types error', '', [], false];
@@ -146,7 +146,7 @@ class LuDouyin {
 
 
     function getListByType($mc_id, $cursor = 0, $count = 30){
-        @unlink('shabidouyin.txt');
+        @unlink('douyin.txt');
         shell_exec('curl -A "com.ss.android.ugc.aweme/530 (Linux; U; Android 8.0.0; zh_CN_#Hans; VTR-AL00; Build/HUAWEIVTR-AL00; Cronet/58.0.2991.0)" \
             -b "install_id=65343929505; ttreq=1$d7a1dd3c78fdfc6c0a392d01870aad0a90aad819; odin_tt=e08ae73c9ba20641a66a9b2fb888ea7a0672f38beecc0efe5e2f6205609428b7a5796455e568ea6c309147478477d9d7; sid_guard=0cf354f1237af5f7104349f9c0c516bc%7C1551865956%7C5184000%7CSun%2C+05-May-2019+09%3A52%3A36+GMT; uid_tt=4024e1833ba336fbf3c5c5f154356f61; sid_tt=0cf354f1237af5f7104349f9c0c516bc; sessionid=0cf354f1237af5f7104349f9c0c516bc; qh[360]=1" \
             -H "Host: api.amemv.com" \
@@ -158,8 +158,8 @@ class LuDouyin {
             -H "X-Gorgon: 03006cc00000dc9a2db3a76ab9c9eccb135c4fc5dff8f97fbab1" \
             -H "X-Pods: " \
             "https://api.amemv.com/aweme/v1/music/list/?mc_id='.$mc_id.'&cursor='.$cursor.'&count='.$count.'&ts=1552123219&js_sdk_version=1.10.4&app_type=normal&manifest_version_code=530&_rticket=1552123219697&ac=wifi&device_id=48912932681&iid=65343929505&mcc_mnc=46000&os_version=8.0.0&channel=huawei&version_code=530&device_type=VTR-AL00&language=zh&resolution=1080*1920&openudid=6b1e80386b74f00c&update_version_code=5302&app_name=aweme&version_name=5.3.0&os_api=26&device_brand=HUAWEI&ssmix=a&device_platform=android&dpi=480&aid=1128&as=a115c87893752c35634388&cp=8f5ac25034398857e1OyWg&mas=01888c81175f386ffb492b1e8ac6d153c91c1ccc2ccc6cacccc64c" \
-            > shabidouyin.txt');
-        $resp = file_get_contents('shabidouyin.txt');
+            > douyin.txt');
+        $resp = file_get_contents('douyin.txt');
 
         if (false === $resp || empty($resp)) {
             return [false, 'req error', '', [], false];
