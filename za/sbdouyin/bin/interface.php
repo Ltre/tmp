@@ -15,10 +15,10 @@ class Interfacez {
             return $objs[$table];
         }
 
-        if ($GLOBALS['driver'] == 'mysql') {
-            $m = new Model($table, 'mysql_dev');
-        } else {
+        if ($GLOBALS['driver'] == 'sqlite') {
             $m = new SQLiteModel("{$GLOBALS['sqlite']['dbpath']}/{$table}.sqlite", $table);
+        } else {
+            $m = new Model($table, $GLOBALS['driver']);
         }
 
         $objs[$table] = $m;
