@@ -31,3 +31,8 @@ sudo svn co https://github.com/Ltre/tmp/trunk/za/sbdouyin/bin /data1/webapps/mcs
 
 文件同步处理：
 所有变动以 14.17.108.113 为主，手动用rsync、wget等方式同步到114机器
+
+
+=====================================================
+抓取程序：bin/grab.php
+数据接口：bin/interface.php

@@ -52,7 +52,9 @@ switch (arg('a')) {
         // file_put_contents("output-types.json", json_encode($types));
         exit(json_encode($types));
     case 'songs':
-        $songs = $i->listByType($type['type_id'], arg('p', 1), arg('limit', 100));
+        $t = arg('t');
+        empty($t) && exit('[]');
+        $songs = $i->listByType($t, arg('p', 1), arg('limit', 100));
         // file_put_contents("output-songs-{$type['type_id']}.json", json_encode($songs));
         exit(json_encode($songs));
     default:
