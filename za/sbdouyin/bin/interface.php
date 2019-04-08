@@ -47,7 +47,11 @@ class Interfacez {
     }
 
     function types(){
-        return $this->table('mc_type')->select();
+        $types = $this->table('mc_type')->select();
+        foreach ($types as $k => $type) {
+            $types[$k]['type_cover'] = "//mcstatic.duowan.com/{$type['type_cover']}";
+        }
+        return $types;
     }
 
 }

@@ -36,3 +36,12 @@ sudo svn co https://github.com/Ltre/tmp/trunk/za/sbdouyin/bin /data1/webapps/mcs
 =====================================================
 抓取程序：bin/grab.php
 数据接口：bin/interface.php
+
+
+
+=============================================
+    分类列表：
+    http://mcstatic.duowan.com/bin/interface.php?a=types
+    查看某分类下的曲目：
+    http://mcstatic.duowan.com/bin/interface.php?a=songs&t=12&p=1&limit=50
+    参数：t=分类ID， p=页码， limit=限制条数
