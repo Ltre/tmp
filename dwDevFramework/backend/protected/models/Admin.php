@@ -49,7 +49,7 @@ class Admin extends Model {
         $setup = $GLOBALS['adminList'][$username];
 
         //验证特殊权限
-        $currSp = 'something2';//@todo 获取当前会使用到的特殊权限（具体逻辑待定，执行代码可以独立到一个新的文件里）
+        $currSp = null;//@todo 获取当前会使用到的特殊权限（具体逻辑待定，执行代码可以独立到一个新的文件里）
         $checkSp = null !== $currSp && in_array($currSp, $setup['spList']);
 
         //分别验证超管和普管
