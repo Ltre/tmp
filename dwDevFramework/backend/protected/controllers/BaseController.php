@@ -1,4 +1,18 @@
 <?php
+/**
+ * 需要登录的范围（A）：$this->_mustLogin规定的、且排除$this->_mustLoginExclude规定的特例
+ * 常规的权限可访问性：
+ *      游客: 非A
+ *      超管: A内，且 role_authority.superAdmin + role_authority.regular
+ *      普管: A内，且 仅role_authority.regular
+ *      查询员：A内，非（role_authority.superAdmin + role_authority.regular）
+ * 特殊权限的可访问性：
+ *      游客：无
+ *      超管：A内，不限制
+ *      普管：A内，验证adminList中配置的spList
+ *      查询员：无
+ * 查询员意义：为一些需要临时访问后台的用户设立的默认权限
+ */
 class BaseController extends Controller{
 
 	var $layout = "layout.html";
@@ -8,15 +22,6 @@ class BaseController extends Controller{
 	//需要登录的列表
 	private $_mustLogin = array(
         'default/*',
-        'activity/*',
-        'guess/*',
-        'matches/*',
-        'score/*',
-        'team/*',
-        'tool/*',
-        'user/*',
-        'encour/*',
-        'test/login',
     );
 
 
@@ -48,7 +53,7 @@ class BaseController extends Controller{
         //登录拦截
 		if( in_array($route1, $this->_mustLogin) || in_array($route2, $this->_mustLogin) ){
 			if( in_array($route2, $this->_mustLoginExclude) ){
-				return ;
+				return;
 			}
             if (empty($lgInfo)){
                 $this->refuce('未登录', true);
@@ -58,9 +63,10 @@ class BaseController extends Controller{
             //此处避免在访问一些不需登录的地方时，由于未登录，但还要被执行后续的多余操作：obj('Admin')->checkAuthority所带来的麻烦
             return;
         }
-        //检测操作权限
-        if (! obj('Admin')->checkAuthority(@$lgInfo['udb'], $this->route)) {
-            $this->refuce('权限不足', false);
+        //检测权限
+        list ($succ, $msg) = obj('Admin')->checkAuthority(@$lgInfo['udb'], $this->route);
+        if (! $succ) {
+            $this->refuce($msg, false);
         }
 	}
 

@@ -2,13 +2,14 @@
 @session_start();
 
 $config = array(
-	'product_domain' => 'mg-admin.duowan.com',//正式使用的域名
+	'product_domain' => 'pagegame-admin.duowan.com',//正式使用的域名
 	'rewrite' => array(
-		'login' => 'default/login',
-		'logout' => 'default/logout',
+		// 'login' => 'default/login',
+		// 'logout' => 'default/logout',
+		'login.do' => 'default/login',
 		'<c>/<a>' => '<c>/<a>',
 	),
-	'app_id' => 'match_guess',
+	'app_id' => 'page_game',
 	'image_service' => array(
         'url' => 'http://adimageservice.dwstatic.com/upload.do',//开发广告自助系统时上线的传图接口(@date 20170811开始支持传其它文件)
     ),
@@ -19,23 +20,23 @@ $config = array(
 );
 
 $setting = array(
-	"mg-admin.webdev2.duowan.com" => array(
+	"pagegame-admin.webdev2.duowan.com" => array(
 		'debug' => 1,
 		'mysql' => array(
-			'MYSQL_HOST' => '1.1.1.1',
-			'MYSQL_PORT' => '1234',
-			'MYSQL_USER' => 'xxx',
-			'MYSQL_DB'   => 'xxx',
-			'MYSQL_PASS' => 'ojia305',
+			'MYSQL_HOST' => '',
+			'MYSQL_PORT' => '',
+			'MYSQL_USER' => '',
+			'MYSQL_DB'   => '',
+			'MYSQL_PASS' => '',
 			'MYSQL_CHARSET' => 'utf8',
 		),
 		'redis'=>array(
-			'host'=>'1.1.1.1',
-			'port'=>'1234',
-            'auth' => '4564',
+			'host'=>'',
+			'port'=>'',
+            'auth' => '',
 		),
 	),
-	"mg-admin.duowan.com" => array(
+	"pagegame-admin.duowan.com" => array(
 		'debug' => 0,
 		'mysql' => array(
 			'MYSQL_HOST' => '',

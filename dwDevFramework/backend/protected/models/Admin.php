@@ -35,29 +35,40 @@ class Admin extends Model {
 
     //检测权限
     public function checkAuthority($username, $route){
-        if (! key_exists($username, $GLOBALS['adminList'])) {
-            return false;//不在配置列表里声明的，就不是管理员
-        }
-        $setup = $GLOBALS['adminList'][$username];
-        $ac_id = obj('Activity')->getCurrActivity();
-        $inAcList = in_array($ac_id, $setup['acList']);
+        $route = strtolower($route);
         $superRoutes = $GLOBALS['role_authority']['superAdmin'];
         $regularRoutes = $GLOBALS['role_authority']['regular'];
-        $route = strtolower($route);
-        if (in_array($route, $superRoutes)) {//验证超管操作: 仅需验证是否为超管，不需要验证活动列表
+        if (! key_exists($username, $GLOBALS['adminList'])) {//遇到查询员
+            if (in_array($route, array_merge($superRoutes, $regularRoutes))) {
+                return [false, '权限不足，必须是管理员'];//拒绝[查询员]访问[超管]和[普管]的权限范围
+            } else {
+                return [true, '校验成功，当前为查询员'];//允许查询员访问其他不重要的范围
+            }
+        }
+
+        $setup = $GLOBALS['adminList'][$username];
+
+        //验证特殊权限
+        $currSp = 'something2';//@todo 获取当前会使用到的特殊权限（具体逻辑待定，执行代码可以独立到一个新的文件里）
+        $checkSp = null !== $currSp && in_array($currSp, $setup['spList']);
+
+        //分别验证超管和普管
+        if (in_array($route, $superRoutes)) {//验证超管操作
+
             if ($setup['superAdmin']) {
-                return true;
+                return [true, 'ok'];
             } else {
-                return false;
+                return [true, '权限不足，不是超管'];
             }
-        } elseif (in_array($route, $regularRoutes)) {//验证普管操作：具备超管权限的，或普管有对应活动权限的
-            if ($setup['superAdmin'] || $inAcList) {
-                return true;
+
+        } else {//验证普管操作：超管可以访问普管的权限，且不受特殊权限校验的影响；普管如踩中特殊权限，则需要验证
+            
+            if (! $setup['superAdmin'] && ! $checkSp) {
+                return [false, '未配置此特殊权限'];
             } else {
-                return false;
+                return [true, 'ok'];
             }
-        } else {//当前路由没在操作限制范围内，可直接通过
-            return true;
+
         }
     }
 
@@ -80,8 +91,8 @@ class Admin extends Model {
             'udb' => $udb,
             'nickname' => $nickname,
             'avatar' => $avatar,
-            'create_time' => time(),
-            'update_time' => time(),
+            'created' => time(),
+            'updated' => time(),
         ];
         if ($find) {
             $this->update(['yyuid' => $yyuid], $data);
