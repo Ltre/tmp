@@ -1,6 +1,6 @@
 <?php
 
-class TrailerController extends BaseController {
+class VideoController extends BaseController {
 
     function actionNotify(){
         echo json_encode([
