@@ -18,6 +18,12 @@ $bizConfig = array(
             'EXPRESS' => '3',
         ),
     ),
+    //一些常用的redis key
+	'redis_key' => [
+		'example' => [
+			'queue' => 'dwDevFramework:example:queue',//示例队列
+		],
+	],
 );
 
 
