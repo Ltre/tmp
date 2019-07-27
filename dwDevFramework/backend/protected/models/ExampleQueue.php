@@ -8,14 +8,14 @@ include_once(__DIR__."/BaseQueue.php");
 class Login4RolesQueue extends BaseQueue {
 
     public function __construct(){
-        $this->keyPre = $GLOBALS['redis_key']['login4roles']['queue'];
+        $this->keyPre = $GLOBALS['redis_key']['example']['queue'];
         $this->cliCookieName = 'pgamecli';
         $this->queueNum = 3;
     }
 
 
     protected function handleOne($elem){
-        $host = DEBUG ? 'test-pgame.duowan.com' : 'pgame.duowan.com';
+        $host = DEBUG ? 'a.com' : 'b.com';
         obj('dwHttp')->post("https://{$host}/cron/syncRoleRelate", [
             'uid' => $elem['data']['uid'],
             'gid' => $elem['data']['gid'],
