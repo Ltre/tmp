@@ -1,0 +1,16 @@
+﻿
+
+/usr/local/php/bin/php cron_userinfo_insert.php 1
+/usr/local/php/bin/php cron_userinfo_insert.php 2
+/usr/local/php/bin/php cron_userinfo_insert.php 3
+/usr/local/php/bin/php cron_userinfo_insert.php 4
+/usr/local/php/bin/php cron_userinfo_insert.php 5
+
+
+
+
+
+smvideo
+
+mysql -h221.228.79.52 -P6304 -uvideo_tuku_rw -pZc4onxc79u video_tuku
+
