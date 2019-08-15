@@ -1,6 +1,6 @@
 <?php
 
-define('AFTP_HOST', '172.16.15.162');
+define('AFTP_HOST', '172.16.15.244');
 define('AFTP_PORT', '8000');
 define('AFTP_USER', 'qqqq');
 define('AFTP_PSWD', 'qqqq');
@@ -34,7 +34,7 @@ function main(){
         die($msg);
     }
     
-    $list = file("Favorites.m3u.txt");
+    $list = file("AlarmClock.m3u");
     $songsDir = 'songs_'.date('YmdHi');
     @mkdir($songsDir);
     foreach ($list as $v) {

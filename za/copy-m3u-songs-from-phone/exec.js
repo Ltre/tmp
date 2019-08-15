@@ -5,8 +5,8 @@ const path = require('path');
 
 var client = new ftpc();
 var connProperties = {
-    host: '172.16.14.111',
-    port: 21,
+    host: '172.16.15.244',
+    port: 8000,
     user: 'qqqq',
     password: 'qqqq'
 };
