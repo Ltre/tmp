@@ -51,6 +51,9 @@ $bizConfig = [
 			'queue' => 'dwDevFramework:example:queue',//示例队列
 		],
 	],
+    'web_client' => [
+        'cliCookieName' => 'your_site_cli_name',//客户端标识的cookie名
+    ]
 ];
 
 
