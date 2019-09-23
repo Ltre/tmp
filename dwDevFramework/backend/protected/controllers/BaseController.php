@@ -50,6 +50,8 @@ class BaseController extends Controller{
 		$route1 = CONTROLLER_NAME .'/*';
 		$route2 = CONTROLLER_NAME .'/'. ACTION_NAME;
 		$this->route = $route2;//共享当前路由值
+        //客户端标识
+        $this->cli = $this->getCli();
         //登录拦截
 		if( in_array($route1, $this->_mustLogin) || in_array($route2, $this->_mustLogin) ){
 			if( in_array($route2, $this->_mustLoginExclude) ){
@@ -196,6 +198,20 @@ class BaseController extends Controller{
             return true;
         }
         return false;
+    }
+
+
+    //设置客户端标识
+    private function getCli(){
+        $ckName = $GLOBALS['web_client']['cliCookieName'];
+        if (! isset($_COOKIE[$ckName])) {
+            // getIP();  @todo 限制同个IP不能生成太多客户端标识，具体待定
+            $cli = sha1(microtime(1).mt_rand(0, 9999));
+            setcookie($ckName, $cli, time()+86400*30, '/');
+            return $cli;
+        } else {
+            return $_COOKIE[$ckName];
+        }
     }
 
 
