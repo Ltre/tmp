@@ -1,0 +1,58 @@
+diy系统表单中json显示的控制
+
+
+默认是展开的
+
+
+这里进行魔改，达到一进来收缩的效果
+
+
+
+
+
+
+内嵌CSS或JS填写以下内容：
+
+=======================================================================
+<style>
+  div.js-json>span.json_object{display:none;}
+</style>
+
+<script>
+  
+   var lock_fvsd78af4fsd9848sdfffds7a8fafdsf48ds9a = {};
+  var lock_fvsd78af4fsd9848sdfffds7a8fafdsf48ds9a__2 = {};
+   setInterval(function(){
+   		$('.js-json').each(function(i, e){
+     		if (! (i in lock_fvsd78af4fsd9848sdfffds7a8fafdsf48ds9a)) {
+         		lock_fvsd78af4fsd9848sdfffds7a8fafdsf48ds9a[i] = 1;
+              $(e).mouseenter(function(){
+                 if (! (i in lock_fvsd78af4fsd9848sdfffds7a8fafdsf48ds9a__2)) {
+                    lock_fvsd78af4fsd9848sdfffds7a8fafdsf48ds9a__2[i] = 1;
+              			var o = $(this).children('.btn-open');
+                  	  if (o.size() > 0) o.click();
+                 }
+               });
+          }
+   		});
+   }, 1000);
+   
+</script>
+=======================================================================
+
+
+
+
+
+
+json字段类型选择“json”, 控件选择“普通输入”，在字段回调输入框内填写“  return "<div class='js-json'>$_val</div>";  ”
+
+
+
+
+
+
+
+大功告成！
+
+
