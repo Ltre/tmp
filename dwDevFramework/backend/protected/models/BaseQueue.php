@@ -15,7 +15,7 @@ abstract class BaseQueue {
         $keys = $this->getQueueKeys();
         foreach ($keys as $key) {
             $total = $redis->lLen($key);
-            $limit = $total <= 300 ? 300 : $total;
+            $limit = $total >= 50 ? 50 : $total;
             echo "Queue: {$key}, total={$total}, limit={$limit} \n";
             try {
                 $list = $redis->lRange($key, 0, $limit-1);
