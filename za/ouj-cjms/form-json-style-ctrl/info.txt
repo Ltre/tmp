@@ -15,7 +15,8 @@ diy系统表单中json显示的控制
 
 =======================================================================
 <style>
-  div.js-json>span.json_object{display:none;}
+  /*div.js-json>span.json_object{display:none;}*/
+  span.json_array{display:none;}
 </style>
 
 <script>
