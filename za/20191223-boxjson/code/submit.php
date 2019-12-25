@@ -26,7 +26,7 @@ if (isset($showTimes) && count($showTimes) == 2) {
 
 
 //字段 ID
-$id = file_get_contents("id.txt");
+$id = @file_get_contents("nextid.txt");
 if ($id && is_numeric($id)) {
     $id = (int) $id;
     if ($id < 1) {
@@ -35,15 +35,13 @@ if ($id && is_numeric($id)) {
 } else {
     $id = 1;
 }
-file_put_contents("id.txt", ++ $id);
-
 
 
 $data = [
     'name' => $r['name'],
     'msg_raw' => $r['content'],
     'priority' => $r['priority'],
-    'msg' => '', // ??? 例：http://tool.duowan.com/postman/content/popup_content.777.html
+    'msg' => 'http://tool.duowan.com/postman/content/popup_content.'.$id.'.html', // ??? 例：http://tool.duowan.com/postman/content/popup_content.777.html
     'conditions' => [
         'popup_if_less_than_this' => $r['popup_if_less_than_this'],
         'triggers' => [//写死：交互触发条件，只能选类型 b '关闭游戏大厅后弹'
@@ -108,6 +106,9 @@ $data = [
     ],
     'id' => $id,
 ];
+
+
+file_put_contents("nextid.txt", ++ $id);
 
 @mkdir("json", 0777, true);
 file_put_contents("json/{$id}.json", json_encode([$data]));
