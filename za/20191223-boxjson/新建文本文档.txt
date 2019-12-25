@@ -1,0 +1,592 @@
+view-source:http://legacy.lolbox.duowan.com:9090/admin/popup_configs/popupconfig/780/change/
+
+
+http://legacy.lolbox.duowan.com:9090/popup_config/latest/
+
+
+
+
+csrfmiddlewaretoken: qOFL48juh1QrzhBLdOXDwzedLyr52Yh1
+name: NAMENAME
+priority: 1
+processes_exist: YY.exe
+processes_not_exist: Chrome.exe
+popup_if_less_than_this: 1000000
+os_version: 6
+region: 4
+show_time: 2015-06-11T14:00:00 ~ 2015-06-11T18:00:00
+trigger: 2
+window_pos: 2
+window_width: 800
+window_height: 600
+content: kaerlol
+extra_args: {"query_string": "fps=60", "op": "append"}
+_save: Save
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+
+<html lang="en-us" >
+<head>
+<title>Change popup config | Django site admin</title>
+<link rel="stylesheet" type="text/css" href="http://legacy.lolbox.duowan.com/static/admin/css/base.css" />
+<link rel="stylesheet" type="text/css" href="http://legacy.lolbox.duowan.com/static/admin/css/forms.css" />
+
+
+<script type="text/javascript" src="/admin/jsi18n/"></script>
+<script type="text/javascript" src="http://legacy.lolbox.duowan.com/static/admin/js/core.js"></script>
+<script type="text/javascript" src="http://legacy.lolbox.duowan.com/static/admin/js/vendor/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="http://legacy.lolbox.duowan.com/static/admin/js/jquery.init.js"></script>
+<script type="text/javascript" src="http://legacy.lolbox.duowan.com/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<script type="text/javascript" src="http://legacy.lolbox.duowan.com/static/admin/js/actions.min.js"></script>
+<script type="text/javascript" src="http://legacy.lolbox.duowan.com/static/admin/js/urlify.js"></script>
+<script type="text/javascript" src="http://legacy.lolbox.duowan.com/static/admin/js/prepopulate.min.js"></script>
+<script type="text/javascript" src="http://legacy.lolbox.duowan.com/static/admin/js/vendor/xregexp/xregexp.min.js"></script>
+
+<meta name="robots" content="NONE,NOARCHIVE" />
+</head>
+
+
+<body class=" app-popup_configs model-popupconfig change-form"
+  data-admin-utc-offset="0">
+
+<!-- Container -->
+<div id="container">
+
+    
+    <!-- Header -->
+    <div id="header">
+        <div id="branding">
+        
+<h1 id="site-name"><a href="/admin/">Django administration</a></h1>
+
+        </div>
+        
+        
+        <div id="user-tools">
+            
+                Welcome,
+                <strong>wangqingke</strong>.
+            
+            
+                
+                    <a href="/">View site</a> /
+                
+                
+                    
+                    
+                
+                
+                <a href="/admin/password_change/">Change password</a> /
+                
+                <a href="/admin/logout/">Log out</a>
+            
+        </div>
+        
+        
+        
+    </div>
+    <!-- END Header -->
+    
+<div class="breadcrumbs">
+<a href="/admin/">Home</a>
+&rsaquo; <a href="/admin/popup_configs/">Popup_Configs</a>
+&rsaquo; <a href="/admin/popup_configs/popupconfig/">Popup configs</a>
+&rsaquo; &lt;PopupConfig id:780 name:WOT盒子12月24号小&gt;
+</div>
+
+    
+
+    
+        
+    
+
+    <!-- Content -->
+    <div id="content" class="colM">
+        
+        <h1>Change popup config</h1>
+        <div id="content-main">
+
+
+  <ul class="object-tools">
+    
+    <li>
+        
+        <a href="/admin/popup_configs/popupconfig/780/history/" class="historylink">History</a>
+    </li>
+    
+    
+  </ul>
+
+
+<form enctype="multipart/form-data" action="" method="post" id="popupconfig_form" novalidate><input type='hidden' name='csrfmiddlewaretoken' value='qOFL48juh1QrzhBLdOXDwzedLyr52Yh1' />
+<div>
+
+
+
+
+
+
+
+  <fieldset class="module aligned ">
+    
+    
+    
+        <div class="form-row field-name">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_name">Name:</label>
+                        
+                            <input class="vTextField" id="id_name" maxlength="64" name="name" type="text" value="WOT盒子12月24号小" />
+                        
+                    
+                    
+                        <p class="help">配置名称，建议使用弹窗内容简写</p>
+                    
+                </div>
+            
+        </div>
+    
+</fieldset>
+
+
+  <fieldset class="module aligned ">
+    <h2>Conditions</h2>
+    
+    
+        <div class="form-row field-priority">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_priority">Priority:</label>
+                        
+                            <input class="vIntegerField" id="id_priority" name="priority" type="text" value="1" />
+                        
+                    
+                    
+                        <p class="help">弹窗优先级，3 > 2 > 1</p>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-processes_exist">
+            
+            
+                <div>
+                    
+                    
+                        <label for="id_processes_exist">Processes exist:</label>
+                        
+                            <textarea class="vLargeTextField" cols="40" id="id_processes_exist" name="processes_exist" rows="10">
+WOTBox.exe</textarea>
+                        
+                    
+                    
+                        <p class="help">标识当前弹窗配置的归属 ，多个名字使用|分割，如"YY.exe|Google Chrome.exe" </p>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-processes_not_exist">
+            
+            
+                <div>
+                    
+                    
+                        <label for="id_processes_not_exist">Processes not exist:</label>
+                        
+                            <textarea class="vLargeTextField" cols="40" id="id_processes_not_exist" name="processes_not_exist" rows="10">
+</textarea>
+                        
+                    
+                    
+                        <p class="help">当进程不存在时触发，多个名字使用|分割，如"YY.exe|Google Chrome.exe" </p>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-popup_if_less_than_this">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_popup_if_less_than_this">Popup if less than this:</label>
+                        
+                            <input class="vIntegerField" id="id_popup_if_less_than_this" name="popup_if_less_than_this" type="text" value="1000000" />
+                        
+                    
+                    
+                        <p class="help">弹窗总数控制，达到总数后不再弹。注意：如果弹窗持续多天，那么这里应该填写 总数/n天</p>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-os_version">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_os_version">Os version:</label>
+                        
+                            
+<div class="related-widget-wrapper">
+    <select multiple="multiple" id="id_os_version" name="os_version">
+<option value="1" selected="selected">&lt;OSVersion ver:all note:所有操作系统&gt;</option>
+<option value="2">&lt;OSVersion ver:5.1 note:WinXP&gt;</option>
+<option value="3">&lt;OSVersion ver:5.2 note:WinXP 64-bit, Win2003&gt;</option>
+<option value="4">&lt;OSVersion ver:6.0 note:WinVista, Win2008&gt;</option>
+<option value="5">&lt;OSVersion ver:6.1 note:Win7, Win2008R2&gt;</option>
+<option value="6">&lt;OSVersion ver:6.2 note:Win8, Win2012&gt;</option>
+<option value="7">&lt;OSVersion ver:6.3 note:Win8.1, Win2012R2&gt;</option>
+<option value="8">&lt;OSVersion ver:10.0 note:Win10, Win2016&gt;</option>
+</select>
+    
+        
+        
+        <a class="related-widget-wrapper-link add-related" id="add_id_os_version"
+            href="/admin/popup_configs/osversion/add/?_to_field=id&amp;_popup=1"
+            title="Add another os version">
+            <img src="http://legacy.lolbox.duowan.com/static/admin/img/icon-addlink.svg" alt="Add"/>
+        </a>
+        
+        
+    
+</div>
+
+                        
+                    
+                    
+                        <p class="help">操作系统 Hold down "Control", or "Command" on a Mac, to select more than one.</p>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-region">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_region">Region:</label>
+                        
+                            
+<div class="related-widget-wrapper">
+    <select multiple="multiple" id="id_region" name="region">
+<option value="1">&lt;Region id:350000 name:福建省&gt;</option>
+<option value="2">&lt;Region id:650000 name:新疆维吾尔自治区&gt;</option>
+<option value="3">&lt;Region id:640000 name:宁夏回族自治区&gt;</option>
+<option value="4" selected="selected">&lt;Region id:440000 name:广东省&gt;</option>
+<option value="5">&lt;Region id:500000 name:重庆市&gt;</option>
+<option value="6">&lt;Region id:620000 name:甘肃省&gt;</option>
+<option value="7">&lt;Region id:230000 name:黑龙江省&gt;</option>
+<option value="8">&lt;Region id:410000 name:河南省&gt;</option>
+<option value="9">&lt;Region id:340000 name:安徽省&gt;</option>
+<option value="10">&lt;Region id:320000 name:江苏省&gt;</option>
+<option value="11">&lt;Region id:110000 name:北京市&gt;</option>
+<option value="12">&lt;Region id:430000 name:湖南省&gt;</option>
+<option value="13">&lt;Region id:330000 name:浙江省&gt;</option>
+<option value="14">&lt;Region id:450000 name:广西壮族自治区&gt;</option>
+<option value="15">&lt;Region id:520000 name:贵州省&gt;</option>
+<option value="16">&lt;Region id:610000 name:陕西省&gt;</option>
+<option value="17">&lt;Region id:140000 name:山西省&gt;</option>
+<option value="18">&lt;Region id:630000 name:青海省&gt;</option>
+<option value="19">&lt;Region id:540000 name:西藏自治区&gt;</option>
+<option value="20">&lt;Region id:460000 name:海南省&gt;</option>
+<option value="21">&lt;Region id:120000 name:天津市&gt;</option>
+<option value="22">&lt;Region id:210000 name:辽宁省&gt;</option>
+<option value="23">&lt;Region id:360000 name:江西省&gt;</option>
+<option value="24">&lt;Region id:150000 name:内蒙古自治区&gt;</option>
+<option value="25">&lt;Region id:220000 name:吉林省&gt;</option>
+<option value="26">&lt;Region id:130000 name:河北省&gt;</option>
+<option value="27">&lt;Region id:510000 name:四川省&gt;</option>
+<option value="28">&lt;Region id:530000 name:云南省&gt;</option>
+<option value="29">&lt;Region id:370000 name:山东省&gt;</option>
+<option value="30">&lt;Region id:310000 name:上海市&gt;</option>
+<option value="31">&lt;Region id:420000 name:湖北省&gt;</option>
+</select>
+    
+        
+        
+        <a class="related-widget-wrapper-link add-related" id="add_id_region"
+            href="/admin/popup_configs/region/add/?_to_field=id&amp;_popup=1"
+            title="Add another region">
+            <img src="http://legacy.lolbox.duowan.com/static/admin/img/icon-addlink.svg" alt="Add"/>
+        </a>
+        
+        
+    
+</div>
+
+                        
+                    
+                    
+                        <p class="help">省份触发条件 Hold down "Control", or "Command" on a Mac, to select more than one.</p>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-show_time">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_show_time">Show time:</label>
+                        
+                            <textarea class="vLargeTextField" cols="40" id="id_show_time" name="show_time" rows="10">
+2019-12-24T00:00:01~2019-12-24T23:59:59</textarea>
+                        
+                    
+                    
+                        <p class="help">
+    <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601</a> 格式时间戳，
+    起始和终止时刻之间用 " ~ " 英文波浪号分割。
+    示例："2015-06-11T14:00:00 ~ 2015-06-11T18:00:00"
+    </p>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-trigger">
+            
+            
+                <div>
+                    
+                    
+                        <label for="id_trigger">Trigger:</label>
+                        
+                            
+<div class="related-widget-wrapper">
+    <select id="id_trigger" name="trigger">
+<option value="">---------</option>
+<option value="1">&lt;Trigger name:b count:0 program_name: note:&gt;</option>
+<option value="2" selected="selected">&lt;Trigger name:d count:0 program_name: note:盒子启动弹&gt;</option>
+</select>
+    
+        
+        <a class="related-widget-wrapper-link change-related" id="change_id_trigger"
+            data-href-template="/admin/popup_configs/trigger/__fk__/change/?_to_field=id&amp;_popup=1"
+            title="Change selected trigger">
+            <img src="http://legacy.lolbox.duowan.com/static/admin/img/icon-changelink.svg" alt="Change"/>
+        </a>
+        
+        
+        <a class="related-widget-wrapper-link add-related" id="add_id_trigger"
+            href="/admin/popup_configs/trigger/add/?_to_field=id&amp;_popup=1"
+            title="Add another trigger">
+            <img src="http://legacy.lolbox.duowan.com/static/admin/img/icon-addlink.svg" alt="Add"/>
+        </a>
+        
+        
+    
+</div>
+
+                        
+                    
+                    
+                        <p class="help">交互触发条件，只能选类型 b '关闭游戏大厅后弹' </p>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-window_pos">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_window_pos">Window pos:</label>
+                        
+                            <select id="id_window_pos" name="window_pos">
+<option value="2">右下无边框</option>
+<option value="3" selected="selected">中间无边框</option>
+</select>
+                        
+                    
+                    
+                        <p class="help">弹窗位置</p>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-window_width">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_window_width">Window width:</label>
+                        
+                            <input class="vIntegerField" id="id_window_width" name="window_width" type="text" value="300" />
+                        
+                    
+                    
+                        <p class="help">弹窗宽度</p>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-window_height">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_window_height">Window height:</label>
+                        
+                            <input class="vIntegerField" id="id_window_height" name="window_height" type="text" value="250" />
+                        
+                    
+                    
+                        <p class="help">弹窗高度。窗口实际高度(height)是，目标网页宽度+50，额外的 50 是窗口顶部“非客户区”高度。</p>
+                    
+                </div>
+            
+        </div>
+    
+</fieldset>
+
+
+  <fieldset class="module aligned ">
+    <h2>Content</h2>
+    
+    
+        <div class="form-row field-content">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_content">Content:</label>
+                        
+                            <textarea class="vLargeTextField" cols="40" id="id_content" name="content" rows="10">
+http://yxdt.duowan.com/1907/m_426167133588.html</textarea>
+                        
+                    
+                    
+                        <p class="help">转向的 URL（如 http://wan.yy.com/ ) 或者 关联虎牙直播某个直播间关联的 UID/privateHost （如 kaerlol、1270325567）</p>
+                    
+                </div>
+            
+        </div>
+    
+</fieldset>
+
+
+  <fieldset class="module aligned ">
+    <h2>Misc</h2>
+    
+    
+        <div class="form-row field-extra_args">
+            
+            
+                <div>
+                    
+                    
+                        <label for="id_extra_args">Extra args:</label>
+                        
+                            <textarea class="vLargeTextField" cols="40" id="id_extra_args" name="extra_args" rows="10">
+</textarea>
+                        
+                    
+                    
+                        <p class="help">序列化后的 JSON 字串，传递给客户端的额外参数，示例：{"query_string": "fps=60", "op": "append"} </p>
+                    
+                </div>
+            
+        </div>
+    
+</fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="submit-row">
+<input type="submit" value="Save" class="default" name="_save" />
+
+    
+    <p class="deletelink-box"><a href="/admin/popup_configs/popupconfig/780/delete/" class="deletelink">Delete</a></p>
+
+
+<input type="submit" value="Save and add another" name="_addanother" />
+<input type="submit" value="Save and continue editing" name="_continue" />
+</div>
+
+
+
+    <script type="text/javascript">
+        (function($) {
+            $(document).ready(function() {
+                $('.add-another').click(function(e) {
+                    e.preventDefault();
+                    var event = $.Event('django:add-another-related');
+                    $(this).trigger(event);
+                    if (!event.isDefaultPrevented()) {
+                        showAddAnotherPopup(this);
+                    }
+                });
+
+            
+            });
+        })(django.jQuery);
+    </script>
+
+
+
+
+<script type="text/javascript">
+(function($) {
+    var field;
+
+
+})(django.jQuery);
+</script>
+
+
+</div>
+</form></div>
+
+        
+        <br class="clear" />
+    </div>
+    <!-- END Content -->
+
+    <div id="footer"></div>
+</div>
+<!-- END Container -->
+
+</body>
+</html>

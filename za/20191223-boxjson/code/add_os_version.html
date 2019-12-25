@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+
+<html lang="en-us" >
+<head>
+<title>Add os version | Django site admin</title>
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css" />
+
+
+<script type="text/javascript" src="/static/admin/js/jsi18n.js"></script>
+<script type="text/javascript" src="/static/admin/js/core.js"></script>
+<script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+<script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<script type="text/javascript" src="/static/admin/js/actions.min.js"></script>
+<script type="text/javascript" src="/static/admin/js/urlify.js"></script>
+<script type="text/javascript" src="/static/admin/js/prepopulate.min.js"></script>
+<script type="text/javascript" src="/static/admin/js/vendor/xregexp/xregexp.min.js"></script>
+
+<meta name="robots" content="NONE,NOARCHIVE" />
+</head>
+
+
+<body class="popup  app-popup_configs model-osversion change-form"
+  data-admin-utc-offset="0">
+
+<!-- Container -->
+<div id="container">
+
+    
+
+    
+        
+    
+
+    <!-- Content -->
+    <div id="content" class="colM">
+        
+        <h1>Add os version</h1>
+        <div id="content-main">
+
+
+
+<form enctype="multipart/form-data" action="" method="post" id="osversion_form" novalidate><input type='hidden' name='csrfmiddlewaretoken' value='qOFL48juh1QrzhBLdOXDwzedLyr52Yh1' />
+<div>
+<input type="hidden" name="_popup" value="1" />
+<input type="hidden" name="_to_field" value="id" />
+
+
+
+
+
+  <fieldset class="module aligned ">
+    
+    
+    
+        <div class="form-row field-ver">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_ver">Ver:</label>
+                        
+                            <input class="vTextField" id="id_ver" maxlength="12" name="ver" type="text" />
+                        
+                    
+                    
+                        <p class="help">操作系统版本, 5.1 表示 Windows XP</p>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-note">
+            
+            
+                <div>
+                    
+                    
+                        <label for="id_note">Note:</label>
+                        
+                            <input class="vTextField" id="id_note" maxlength="32" name="note" type="text" />
+                        
+                    
+                    
+                </div>
+            
+        </div>
+    
+</fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="submit-row">
+<input type="submit" value="Save" class="default" name="_save" />
+
+
+
+
+</div>
+
+
+
+    <script type="text/javascript">
+        (function($) {
+            $(document).ready(function() {
+                $('.add-another').click(function(e) {
+                    e.preventDefault();
+                    var event = $.Event('django:add-another-related');
+                    $(this).trigger(event);
+                    if (!event.isDefaultPrevented()) {
+                        showAddAnotherPopup(this);
+                    }
+                });
+
+            
+                $('form#osversion_form :input:visible:enabled:first').focus()
+            
+            });
+        })(django.jQuery);
+    </script>
+
+
+
+
+<script type="text/javascript">
+(function($) {
+    var field;
+
+
+})(django.jQuery);
+</script>
+
+
+</div>
+</form></div>
+
+        
+        <br class="clear" />
+    </div>
+    <!-- END Content -->
+
+    <div id="footer"></div>
+</div>
+<!-- END Container -->
+
+</body>
+</html>

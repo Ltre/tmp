@@ -1,0 +1,218 @@
+[
+  {
+    "name": "WOT\u76d2\u5b5012\u670822\u53f7\u5927", 
+    "msg_raw": "http://yxdt.duowan.com/1907/m_426167090375.html", 
+    "priority": 1, 
+    "msg": "http://tool.duowan.com/postman/content/popup_content.777.html", 
+    "conditions": {
+      "popup_if_less_than_this": 1000000, 
+      "triggers": {
+        "count": null, 
+        "program_name": "", 
+        "name": "d"
+      }, 
+      "processes_not_exist": [], 
+      "window_height": 450, 
+      "window_width": 615, 
+      "extra_args": "", 
+      "os_version": [
+        "all", 
+        "5.1", 
+        "5.2", 
+        "6.0", 
+        "6.1", 
+        "6.2", 
+        "6.3", 
+        "10.0"
+      ], 
+      "window_pos": 3, 
+      "processes_exist": [
+        "WOTBox.exe"
+      ], 
+      "show_times": [
+        [
+          "2019-12-22T00:00:01", 
+          "2019-12-22T23:59:59"
+        ]
+      ], 
+      "region_ids": [
+        "350000", 
+        "650000", 
+        "640000", 
+        "440000", 
+        "500000", 
+        "620000", 
+        "230000", 
+        "410000", 
+        "340000", 
+        "320000", 
+        "110000", 
+        "430000", 
+        "330000", 
+        "450000", 
+        "520000", 
+        "610000", 
+        "140000", 
+        "630000", 
+        "540000", 
+        "460000", 
+        "120000", 
+        "210000", 
+        "360000", 
+        "150000", 
+        "220000", 
+        "130000", 
+        "510000", 
+        "530000", 
+        "370000", 
+        "310000", 
+        "420000"
+      ]
+    }, 
+    "id": 777
+  }, 
+  {
+    "name": "WOT\u76d2\u5b5012\u670817\u53f7\u5c0f", 
+    "msg_raw": "http://yxdt.duowan.com/1907/m_426167133588.html", 
+    "priority": 1, 
+    "msg": "http://tool.duowan.com/postman/content/popup_content.778.html", 
+    "conditions": {
+      "popup_if_less_than_this": 1000000, 
+      "triggers": {
+        "count": null, 
+        "program_name": "", 
+        "name": "d"
+      }, 
+      "processes_not_exist": [], 
+      "window_height": 250, 
+      "window_width": 300, 
+      "extra_args": "", 
+      "os_version": [
+        "all", 
+        "5.1", 
+        "5.2", 
+        "6.0", 
+        "6.1", 
+        "6.2", 
+        "6.3", 
+        "10.0"
+      ], 
+      "window_pos": 2, 
+      "processes_exist": [
+        "WOTBox.exe"
+      ], 
+      "show_times": [
+        [
+          "2019-12-17T00:00:01", 
+          "2019-12-17T23:59:59"
+        ]
+      ], 
+      "region_ids": [
+        "350000", 
+        "650000", 
+        "640000", 
+        "440000", 
+        "500000", 
+        "620000", 
+        "230000", 
+        "410000", 
+        "340000", 
+        "320000", 
+        "110000", 
+        "430000", 
+        "330000", 
+        "450000", 
+        "520000", 
+        "610000", 
+        "140000", 
+        "630000", 
+        "540000", 
+        "460000", 
+        "120000", 
+        "210000", 
+        "360000", 
+        "150000", 
+        "220000", 
+        "130000", 
+        "510000", 
+        "530000", 
+        "370000", 
+        "310000", 
+        "420000"
+      ]
+    }, 
+    "id": 778
+  }, 
+  {
+    "name": "WOT\u76d2\u5b5012\u670820\u53f7\u5c0f", 
+    "msg_raw": "http://yxdt.duowan.com/1907/m_426167133588.html", 
+    "priority": 1, 
+    "msg": "http://tool.duowan.com/postman/content/popup_content.779.html", 
+    "conditions": {
+      "popup_if_less_than_this": 1000000, 
+      "triggers": {
+        "count": null, 
+        "program_name": "", 
+        "name": "d"
+      }, 
+      "processes_not_exist": [], 
+      "window_height": 250, 
+      "window_width": 300, 
+      "extra_args": "", 
+      "os_version": [
+        "all", 
+        "5.1", 
+        "5.2", 
+        "6.0", 
+        "6.1", 
+        "6.2", 
+        "6.3", 
+        "10.0"
+      ], 
+      "window_pos": 2, 
+      "processes_exist": [
+        "WOTBox.exe"
+      ], 
+      "show_times": [
+        [
+          "2019-12-20T00:00:01", 
+          "2019-12-20T23:59:59"
+        ]
+      ], 
+      "region_ids": [
+        "350000", 
+        "650000", 
+        "640000", 
+        "440000", 
+        "500000", 
+        "620000", 
+        "230000", 
+        "410000", 
+        "340000", 
+        "320000", 
+        "110000", 
+        "430000", 
+        "330000", 
+        "450000", 
+        "520000", 
+        "610000", 
+        "140000", 
+        "630000", 
+        "540000", 
+        "460000", 
+        "120000", 
+        "210000", 
+        "360000", 
+        "150000", 
+        "220000", 
+        "130000", 
+        "510000", 
+        "530000", 
+        "370000", 
+        "310000", 
+        "420000"
+      ]
+    }, 
+    "id": 779
+  }
+]

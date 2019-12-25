@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+
+<html lang="en-us" >
+<head>
+<title>Add trigger | Django site admin</title>
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css" />
+
+
+<script type="text/javascript" src="/static/admin/js/jsi18n.js"></script>
+<script type="text/javascript" src="/static/admin/js/core.js"></script>
+<script type="text/javascript" src="/static/admin/js/vendor/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+<script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<script type="text/javascript" src="/static/admin/js/actions.min.js"></script>
+<script type="text/javascript" src="/static/admin/js/urlify.js"></script>
+<script type="text/javascript" src="/static/admin/js/prepopulate.min.js"></script>
+<script type="text/javascript" src="/static/admin/js/vendor/xregexp/xregexp.min.js"></script>
+
+<meta name="robots" content="NONE,NOARCHIVE" />
+</head>
+
+
+<body class="popup  app-popup_configs model-trigger change-form"
+  data-admin-utc-offset="0">
+
+<!-- Container -->
+<div id="container">
+
+    
+
+    
+        
+    
+
+    <!-- Content -->
+    <div id="content" class="colM">
+        
+        <h1>Add trigger</h1>
+        <div id="content-main">
+
+
+
+<form enctype="multipart/form-data" action="" method="post" id="trigger_form" novalidate><input type='hidden' name='csrfmiddlewaretoken' value='qOFL48juh1QrzhBLdOXDwzedLyr52Yh1' />
+<div>
+<input type="hidden" name="_popup" value="1" />
+<input type="hidden" name="_to_field" value="id" />
+
+
+
+
+
+  <fieldset class="module aligned ">
+    
+    
+    
+        <div class="form-row field-name">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_name">Name:</label>
+                        
+                            <input class="vTextField" id="id_name" maxlength="64" name="name" type="text" />
+                        
+                    
+                    
+                        <p class="help">触发交互条件名称</p>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-count">
+            
+            
+                <div>
+                    
+                    
+                        <label for="id_count">Count:</label>
+                        
+                            <input class="vIntegerField" id="id_count" name="count" type="text" />
+                        
+                    
+                    
+                        <p class="help">计数器</p>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-program_name">
+            
+            
+                <div>
+                    
+                    
+                        <label for="id_program_name">Program name:</label>
+                        
+                            <input class="vTextField" id="id_program_name" maxlength="64" name="program_name" type="text" />
+                        
+                    
+                    
+                        <p class="help">某个进程名称运行时</p>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="form-row field-note">
+            
+            
+                <div>
+                    
+                    
+                        <label for="id_note">Note:</label>
+                        
+                            <input class="vTextField" id="id_note" maxlength="128" name="note" type="text" />
+                        
+                    
+                    
+                        <p class="help">备注</p>
+                    
+                </div>
+            
+        </div>
+    
+</fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="submit-row">
+<input type="submit" value="Save" class="default" name="_save" />
+
+
+
+
+</div>
+
+
+
+    <script type="text/javascript">
+        (function($) {
+            $(document).ready(function() {
+                $('.add-another').click(function(e) {
+                    e.preventDefault();
+                    var event = $.Event('django:add-another-related');
+                    $(this).trigger(event);
+                    if (!event.isDefaultPrevented()) {
+                        showAddAnotherPopup(this);
+                    }
+                });
+
+            
+                $('form#trigger_form :input:visible:enabled:first').focus()
+            
+            });
+        })(django.jQuery);
+    </script>
+
+
+
+
+<script type="text/javascript">
+(function($) {
+    var field;
+
+
+})(django.jQuery);
+</script>
+
+
+</div>
+</form></div>
+
+        
+        <br class="clear" />
+    </div>
+    <!-- END Content -->
+
+    <div id="footer"></div>
+</div>
+<!-- END Container -->
+
+</body>
+</html>
