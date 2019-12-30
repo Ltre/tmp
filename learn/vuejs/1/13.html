@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <!-- 生产环境版本，优化了尺寸和速度 -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    </head>
+    <body>
+
+        <div id="app">
+            <div :style="{ fontSize: postFontSize + 'em' }">
+                <blog-post
+                    v-for="post in posts"
+                    v-bind:key="post.id"
+                    v-bind:post="post"
+                    v-on:enlarge-text="onEnlargeText"
+                ></blog-post>
+            </div>
+        </div>
+
+        <script>
+            Vue.component('blog-post', {
+                props: ['post'],
+                template: `
+                    <div class="blog-post">
+                        <h3>{{ post.title }}</h3>
+                        <button v-on:click="$emit('enlarge-text', 0.5)">
+                            Enlarge text
+                        </button>
+                        <div v-html="post.content"></div>
+                    </div>
+                `/* ,
+                data: function(){
+                    return {
+                        posts: [
+                            {id: 1, title: 'title1', content: 'content1'},
+                            {id: 2, title: 'title2', content: 'content2'},
+                            {id: 3, title: 'title3', content: 'content2'}
+                        ]
+                    }
+                } */
+            })
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    posts: [
+                        {id: 1, title: 'title1', content: 'content1'},
+                        {id: 2, title: 'title2', content: 'content2'},
+                        {id: 3, title: 'title3', content: 'content2'}
+                    ],
+                    postFontSize: 1
+                },
+                methods: {
+                    onEnlargeText: function(enlargeAmount){
+                        this.postFontSize += enlargeAmount
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <!-- 生产环境版本，优化了尺寸和速度 -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    </head>
+    <body>
+        <div id="app">
+            <p>{{ message }}</p>
+            <button v-on:click="reverseMethod">逆转</button>
+        </div>
+
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    message: '这是消息'
+                },
+                methods: {
+                    reverseMethod: function(){ //绝对不能换成 () => {}, 否则this就不是Vue对象
+                        this.message = this.message.split('').reverse().join('')
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

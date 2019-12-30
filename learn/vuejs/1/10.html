@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <!-- 生产环境版本，优化了尺寸和速度 -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    </head>
+    <body>
+        <div id="app">
+            <blog-post title="My journey with Vue"></blog-post>
+            <blog-post title="Blogging with Vue"></blog-post>
+            <blog-post title="Why Vue is so fun"></blog-post>
+        </div>
+
+        <script>
+            Vue.component('blog-post', {
+                props: ['title'],
+                template: '<h3>{{ title }}</h3>'
+            })
+            var app = new Vue({
+                el: '#app'
+            })
+        </script>
+    </body>
+</html>

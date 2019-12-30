@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <!-- 生产环境版本，优化了尺寸和速度 -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    </head>
+    <body>
+
+        <div id="app">
+            <!-- <custom-input
+                v-bind:value="searchText"
+                v-on:input="searchText = $event"
+            ></custom-input> -->
+            <!-- 等价于 -->
+            <custom-input v-model="searchText"></custom-input>
+        </div>
+
+        <script>
+            Vue.component('custom-input', {
+                props: ['value'],
+                template: `
+                    <input
+                        v-bind:value="value"
+                        v-on:input="$emit('input', $event.target.value)"
+                    >
+                `
+            })
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    // searchText: ''//加上此属性就能双向绑定
+                },
+                methods: {
+                }
+            })
+        </script>
+    </body>
+</html>
