@@ -1,0 +1,124 @@
+/*mark*/
+@CHARSET "UTF-8";.popup-mask {
+    z-index: 30001;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    zoom:1;}
+
+.popup-mask iframe {
+    position: absolute;
+    z-index: -1;
+}
+
+.udbsdk_login {
+    position: absolute;
+    display: none;
+    left: 0px;
+    top: 0px;
+}
+
+.udbsdk_close {
+    font: 13px/1.5 Tahoma,Arial,Verdana;
+    text-align: right;
+    position: relative;
+    top: 23px;
+    right: -4px;
+}
+
+.udbsdk_href {
+    TEXT-DECORATION: none;
+    color: #A7CFEC;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.udbsdk_href:hover {
+    text-decoration: none !important;
+}
+
+.udbsdk_frm1 {
+    width: 524px;
+    *width: 526px;
+    _width: 526px;
+    height: 298px;
+    *height: 300px;
+    _height: 312px;
+}
+
+.udbsdk_frm {
+    width: 537px ;
+    height: 335px;
+    *width: 525px;
+    *height: 313px;
+    width: 535px\9;
+    height: 323px\9;
+}
+
+.udbsdk_login_ie6, .udbsdk_login_nock {
+    background: #fff;
+    color: #e12;
+    width: 540px;
+    height: 320px;
+    line-height: 320px;
+    text-align: center;
+    font-size: 18px;
+    position: fixed;
+    _position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 99999;
+    border: 1px solid #ddd;
+    margin-top: -160px;
+    margin-left: -270px;
+}
+
+.udbsdk_login_nock {
+    width: 360px;
+    height: 86px;
+    margin-top: -43px;
+    margin-left: -180px;
+    line-height: 86px;
+    font-size: 16px;
+}
+
+.udbsdk_login_nock a {
+    color: #0c86e4;
+    font-size: 16px;
+}
+
+.udbsdk_login_ie6 .dialog_close, .udbsdk_login_nock .dialog_close {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: url(/lgn/x/images/dialog_close.png) no-repeat scroll 0 0 transparent;
+    font-size: 0px;
+    overflow: hidden;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.udbsdk_login_ie6 img {
+    display: block;
+    margin: 50px auto 0;
+}
+
+.udbsdk_login_ie6 .go_yybrowser {
+    display: block;
+    width: 242px;
+    height: 37px;
+    position: absolute;
+    bottom: 38px;
+    left: 148px;
+    background: url("about:blank");
+    overflow: hidden;
+    text-indent: 200px;
+}
